@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "chemical-engineering-ai999x: an offline, verified chemical engineering solver"
+authors:
+  - family-names: Farabi
+    given-names: Ibnul Jaif
+    affiliation: AI999X
+version: 1.0.0
+license: Apache-2.0
+url: "https://huggingface.co/AI999X/chemical-engineering-ai999x"
+repository-code: "https://huggingface.co/AI999X/chemical-engineering-ai999x"
+keywords:
+  - chemical engineering
+  - material balances
+  - energy balances
+  - reactor design
+  - CSTR
+  - plug flow reactor
+  - distillation
+  - McCabe-Thiele
+  - flash calculation
+  - absorption
+  - liquid extraction
+  - activity coefficients
