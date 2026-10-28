@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chemical-engineering-ai999x"
-version = "1.0.2"
+version = "1.0.3"
 description = "Offline chemical engineering solver: material and energy balances, reactor design, separations (distillation, absorption, extraction), transport phenomena, process control and reservoir and petroleum basics, with steps, LaTeX and honest refusals"
 readme = "README.md"
 requires-python = ">=3.10"
