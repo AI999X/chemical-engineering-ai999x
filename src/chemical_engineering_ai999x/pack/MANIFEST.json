@@ -1,5 +1,5 @@
 {
- "package": "1.0.1",
+ "package": "1.0.2",
  "pack": "1.0.1",
  "knowledge_db": null,
  "files": {
@@ -9,7 +9,7 @@
   "knowledge/reference_cases.json": "7414a14e2c4202a7fae8cdd14e1a2ef7267f35a9665b0633001349c698d4e4e7",
   "capabilities/procedures.py": "e936b33cecc32126dcd24fdefefadcc444ef4fbd884e9d47aefb1a17e9588bba",
   "capabilities/procedures_certified.json": "cf7381f11c5df51d67846abc717f18e92817dc7db6b80d33cfd5bdeb6ef8aedb",
-  "chemical_engineering_knowledge_public.sqlite": "ead07361677cb804a06e3cab9019f21cc98d096d9f47653e25ca03a14c55beff",
+  "chemical_engineering_knowledge_public.sqlite": "2a4acd82b0b7e9c4a9100b2ed2609c306c370d3939b5715b678c684480b4abc1",
   "search/encoder.int8.onnx": "521452d928a72da4d241b1835ab0f46b0e81ff58ffff0367b9a7029bd129fbd9",
   "search/tokenizer.json": "b2f2deb461e6ad672b8e42aac29773e7a9be77d582cdf58808113ea43fda565e",
   "search/index.json": "d8f81d9706c9a0efa7d9643bcec3d39a6c3500766ce0f44937d85ad90f772507"

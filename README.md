@@ -4,7 +4,7 @@
 
 **[Install](https://pypi.org/project/chemical-engineering-ai999x/)** · **[Capability guide](https://huggingface.co/AI999X/chemical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/chemical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.1
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.2
 
 Field: **Engineering** · Tasks: Question Answering, Sentence Similarity, Feature Extraction
 
@@ -27,7 +27,7 @@ chemical-engineering-ai999x is an offline, deterministic Python solver that answ
 
 | Property | Value |
 |---|---|
-| Package | `chemical-engineering-ai999x` 1.0.1 (import `chemical_engineering_ai999x`) |
+| Package | `chemical-engineering-ai999x` 1.0.2 (import `chemical_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic chemical engineering engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 91 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -61,7 +61,7 @@ chemical_engineering.ask("Who created you?").message
 # -> chemical-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-Command line: `chemical-engineering-ai999x "<question>"`, `chemical-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on chemical-engineering-ai999x 1.0.1.
+Command line: `chemical-engineering-ai999x "<question>"`, `chemical-engineering-ai999x --capabilities`. The outputs above were produced by running this exact code on chemical-engineering-ai999x 1.0.2.
 
 ## Find the right capability, and draw it
 
@@ -216,10 +216,10 @@ _Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) in N equa
 ## Citation
 
 ```bibtex
-@software{chemical_engineering_ai999x_1_0_1,
+@software{chemical_engineering_ai999x_1_0_2,
   title  = {chemical-engineering-ai999x: an offline, verified chemical engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.1},
+  year   = {2026}, version = {1.0.2},
   url    = {https://huggingface.co/AI999X/chemical-engineering-ai999x}
 }
 ```
