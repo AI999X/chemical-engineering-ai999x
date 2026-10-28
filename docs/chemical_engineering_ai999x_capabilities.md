@@ -1071,6 +1071,10 @@ $$
 - **Assumes:** steady state, perfect mixing, constant density, $-r_A = k$ C_A
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Conversion of a first-order reaction (k = 0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-cstr-conversion-first-order-reactor.svg)
+
+*Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) against total volume for one CSTR, three equal CSTRs in series and a plug-flow reactor, each computed by the package at 60 volumes. At V = 20 m³ the PFR reaches X = 0.864665; marked: V = 20 m³, X = 0.666667 (CSTR).*
+
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstr_conversion_first_order', v0=0.01, V=20.0, k=0.001)
 # -> X = 0.666667   (SOLVED)
@@ -1425,6 +1429,10 @@ $$
 - **Method:** each tank divides the concentration by (1 + k tau_i): X = 1 - (1 + k V/v0)^(-N)
 - **Assumes:** equal tanks; steady state, perfect mixing in each tank, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Conversion of a first-order reaction (k = 0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-cstrs-in-series-first-order-heatmap.svg)
+
+*Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) in N equal CSTRs in series (rows, N = 1 to 5) sharing a total volume of 5, 10, 20, 40, 80 m³ (columns), each cell computed by the package. More tanks approach plug flow: a PFR of the same volumes gives 0.393469, 0.632121, 0.864665, 0.981684, 0.999665.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstrs_in_series_first_order', v0=0.01, V=5.0, k=0.001, N=3)
@@ -1891,6 +1899,10 @@ $$
 - **Assumes:** ideal liquid and ideal gas; fractions sum to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
+![Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law with the Antoine constants [[6](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-raoult-bubble-temperature-phase.svg)
+
+*Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law with the Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], mmHg and °C): bubble and dew temperatures computed by the package at 40 compositions each; between them (shaded) liquid and vapour coexist. The tie line joins a liquid with x₁ = 0.4 to its vapour y₁ = 0.621849; marked: x₁ = 0.4, T = 368.292 K.*
+
 ```python
 chemical_engineering_ai999x.solve('chemeng_raoult_bubble_temperature', ant=[[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], units='mmHg_degC', base='log10', x=[0.4, 0.6], P=101325.0)
 # -> T = 368.292 K, y = [0.62184905372, 0.37815094628]   (SOLVED)
@@ -1982,6 +1994,10 @@ $$
 - **Method:** Rachford-Rice equation sum z_i (K_i - 1)/(1 + V $(K_i - 1)$) = 0 solved for V by bisection; x_i = z_i/(1 + V $(K_i - 1)$), $y_i = K_i$ x_i
 - **Assumes:** two-phase: sum z $K > 1$ and sum $z/K > 1$; K-values independent of composition; some K-value differs from 1 by more than 1 % (well-conditioned)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Isothermal flash of a 3-component feed z = [0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-rachford-rice-flash-bars.svg)
+
+*Isothermal flash of a 3-component feed z = [0.5, 0.3, 0.2] with equilibrium ratios K = [1.685, 0.742, 0.532]: the package solves the Rachford–Rice equation for a vapour fraction of 0.69073 and returns the liquid x = [0.339409, 0.365056, 0.295535] and vapour y = [0.571904, 0.270872, 0.157225] compositions (bars).*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_rachford_rice_flash', z=[0.5, 0.3, 0.2], K=[1.685, 0.742, 0.532])
@@ -3700,6 +3716,10 @@ $$
 - **Method:** $q = qi$ (1 + b Di t)^(-1/b); $Np = qi^{b}$/($(1 - b)$ Di) (qi^(1-b) - q^(1-b))
 - **Assumes:** $0 < b < 1$; boundary-dominated flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![Well production rate against time for three decline laws from the same initial rate qi = 158](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-hyperbolic-decline-decline.svg)
+
+*Well production rate against time for three decline laws from the same initial rate qi = 158.987 m³/day, each computed by the package at 81 times over 10 years. After 10 years: exponential (Di = 0.3 per year) 7.91551 m³/day; hyperbolic, b = 0.5 (Di = 0.5 per year) 12.9786 m³/day; harmonic (Di = 0.4 per year) 31.7975 m³/day.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_hyperbolic_decline', qi=0.0018401307283333335, Di=1.5844043907014474e-08, b=0.5, t=94672800.0)
