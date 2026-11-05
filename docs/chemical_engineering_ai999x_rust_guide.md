@@ -1,4 +1,4 @@
-# chemical-engineering: the Chemical Engineering program — user guide
+# chemical-engineering: the Chemical Engineering program, user guide
 
 **chemical-engineering-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
@@ -17,63 +17,63 @@ Chemical Engineering covers material and energy balances, reactor design, separa
 
 ## 1. Get it
 
-Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Chemical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-windows-x86_64.zip |
-| Desktop app: Chemical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: Chemical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-windows-x86_64.zip |
+| Desktop app: Chemical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Chemical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-chemical-engineering-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-chemical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Chemical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-chemical-engineering-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-chemical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
-./ai999x-chemical-engineering-1.4.0-linux-x86_64/ai999x-chemical-engineering
+tar xzf ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz
+./ai999x-chemical-engineering-1.5.0-linux-x86_64/ai999x-chemical-engineering
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
-./ai999x-1.4.0-linux-x86_64/ai999x
+tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
+./ai999x-1.5.0-linux-x86_64/ai999x
 ```
 
-### Command line — Linux
+### Command line: Linux
 
 The bundle holds one program per model; `chemical-engineering` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 chemical-engineering --version
 ```
 
-### Command line — Windows (PowerShell)
+### Command line: Windows (PowerShell)
 
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 chemical-engineering --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ chemical-engineering --version
-chemical-engineering-ai999x 1.0.3 (Rust build, ax-engine 0.1.0)
+chemical-engineering-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
 ```
 
 ### 2.2 Ask in words
@@ -197,35 +197,7 @@ $ chemical-engineering solve chemeng_cstr_volume_first_order "v0=36 m^3/h" "k=0.
 NEEDS_INPUT: chemeng_cstr_volume_first_order needs X (conversion of A wanted). Example: solve('chemeng_cstr_volume_first_order', v0='0.01 m^3/s', k='0.001 1/s', X=0.9).
 ```
 
-### 2.9 Draw the figures
-
-The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```shell
-$ chemical-engineering figures chemeng_cstr_volume_first_order "v0=36 m^3/h" "k=0.06 1/min" X=0.9 --out .
-[
-  {
-    "slug": "chemeng-cstr-volume-first-order-process",
-    "title": "CSTR: volume for a first-order reaction",
-    "caption": "A continuous stirred-tank reactor for a first-order (-rA = k·CA) reaction: feed 0.01 m³/s, k = 0.001 1/s, conversion X = 0.9 wanted. Marked: the model's V = 90 m³ and τ = 9000 s. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": ".\\chemeng-cstr-volume-first-order-process.svg"
-  },
-  {
-    "slug": "chemeng-cstr-volume-first-order-live-1",
-    "title": "Reactor volume as conversion of A wanted varies",
-    "caption": "Reactor volume as X runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your X = 0.9 gives V = 90. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": ".\\chemeng-cstr-volume-first-order-live-1.svg"
-  },
-  {
-    "slug": "chemeng-cstr-volume-first-order-live-2",
-    "title": "Reactor volume as volumetric feed flow varies",
-    "caption": "Reactor volume as v0 runs from 9 to 63 m^3/h, every other input as you entered it (29 solutions). Marked: your v0 = 36 m^3/h gives V = 90. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": ".\\chemeng-cstr-volume-first-order-live-2.svg"
-  }
-]
-```
-
-### 2.10 Many questions at once
+### 2.9 Many questions at once
 
 One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | chemical-engineering batch
 
@@ -298,30 +270,6 @@ answers = [json.loads(line) for line in out.splitlines()]
 
 `chemical-engineering figures <capability> name=value ... --out DIR` draws the live figures for those inputs and writes each as an SVG file into DIR (an existing folder); without `--out` the SVG text comes back as JSON. The desktop app and the model page draw the same figures as soon as you press Compute.
 
-```shell
-$ chemical-engineering figures chemeng_cstr_volume_first_order "v0=36 m^3/h" "k=0.06 1/min" X=0.9 --out .
-[
-  {
-    "slug": "chemeng-cstr-volume-first-order-process",
-    "title": "CSTR: volume for a first-order reaction",
-    "caption": "A continuous stirred-tank reactor for a first-order (-rA = k·CA) reaction: feed 0.01 m³/s, k = 0.001 1/s, conversion X = 0.9 wanted. Marked: the model's V = 90 m³ and τ = 9000 s. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": ".\\chemeng-cstr-volume-first-order-process.svg"
-  },
-  {
-    "slug": "chemeng-cstr-volume-first-order-live-1",
-    "title": "Reactor volume as conversion of A wanted varies",
-    "caption": "Reactor volume as X runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your X = 0.9 gives V = 90. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": ".\\chemeng-cstr-volume-first-order-live-1.svg"
-  },
-  {
-    "slug": "chemeng-cstr-volume-first-order-live-2",
-    "title": "Reactor volume as volumetric feed flow varies",
-    "caption": "Reactor volume as v0 runs from 9 to 63 m^3/h, every other input as you entered it (29 solutions). Marked: your v0 = 36 m^3/h gives V = 90. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": ".\\chemeng-cstr-volume-first-order-live-2.svg"
-  }
-]
-```
-
 ## 7. In a web page or Node.js: WebAssembly
 
 The same model is a WebAssembly module, `chemical_engineering_ai999x.wasm` (https://www.ai999x.com/compute/rust/chemical_engineering_ai999x.wasm), with a small loader, `ax-wasm.js` (https://www.ai999x.com/compute/rust/ax-wasm.js). It runs in a browser, a Web Worker or Node.js, with no server.
@@ -345,7 +293,7 @@ By topic. For each: what it does, what it needs and gives, when it applies, and 
 
 <a id="chemeng_adiabatic_flame_temperature"></a>
 
-#### Adiabatic flame temperature (complete combustion, NASA polynomials) — `chemeng_adiabatic_flame_temperature`
+#### Adiabatic flame temperature (complete combustion, NASA polynomials), `chemeng_adiabatic_flame_temperature`
 
 Adiabatic flame temperature of a gaseous fuel burned with excess dry air at constant pressure, complete combustion without dissociation, from NASA 7-coefficient polynomials (GRI-Mech 3.0 data).
 
@@ -355,8 +303,8 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `fuel` | in | fuel: CH4, C2H6, C3H8, H2, CO, C2H4, C2H2, CH3OH | — |
-| `excess_air` | in | excess air as a fraction of theoretical (0 = stoichiometric) | — |
+| `fuel` | in | fuel: CH4, C2H6, C3H8, H2, CO, C2H4, C2H2, CH3OH | - |
+| `excess_air` | in | excess air as a fraction of theoretical (0 = stoichiometric) | - |
 | `T_in` | in | temperature of the fuel and air entering | K |
 | `T_ad` | out | adiabatic flame temperature | K |
 
@@ -376,7 +324,7 @@ T_ad = 2326.321765 K
 
 <a id="chemeng_adiabatic_reactor_temperature"></a>
 
-#### Adiabatic reactor outlet temperature — `chemeng_adiabatic_reactor_temperature`
+#### Adiabatic reactor outlet temperature: `chemeng_adiabatic_reactor_temperature`
 
 Outlet temperature of an adiabatic reactor from the feed, the conversion of the limiting reactant, the heat of reaction at a reference temperature and polynomial heat capacities.
 
@@ -386,14 +334,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `n0` | in | feed amounts of each species, mol (or mol/s) on one basis | — |
-| `nu` | in | stoichiometric coefficients, negative for reactants | — |
-| `cp` | in | heat-capacity coefficients, one row (a, b, c, d) per species; cp = a + bT + cT^2 + dT^3 in J/(mol K) | — |
+| `n0` | in | feed amounts of each species, mol (or mol/s) on one basis | - |
+| `nu` | in | stoichiometric coefficients, negative for reactants | - |
+| `cp` | in | heat-capacity coefficients, one row (a, b, c, d) per species; cp = a + bT + cT^2 + dT^3 in J/(mol K) | - |
 | `dH` | in | heat of reaction at T_ref, per mole of extent | J/mol |
 | `T_ref` | in | reference temperature of dH | K |
 | `T_in` | in | feed temperature | K |
-| `key` | in | number of the limiting reactant in the species list (1 = first) | — |
-| `X` | in | conversion of the limiting reactant | — |
+| `key` | in | number of the limiting reactant in the species list (1 = first) | - |
+| `X` | in | conversion of the limiting reactant | - |
 | `T_out` | out | adiabatic outlet temperature | K |
 
 **Applies when:** adiabatic, no shaft work, no phase change; outlet between 200 and 3200 K.
@@ -413,7 +361,7 @@ T_out = 932.3482853 K
 
 <a id="chemeng_batch_coil_cooling"></a>
 
-#### Batch cooling (or heating) with a non-isothermal coolant in a coil — `chemeng_batch_coil_cooling`
+#### Batch cooling (or heating) with a non-isothermal coolant in a coil, `chemeng_batch_coil_cooling`
 
 Temperature of a well-stirred batch after time t when a coolant (or heating liquid) flows once through a coil and leaves warmer (Kern's batch cooling).
 
@@ -454,7 +402,7 @@ T = 312.7322125 K
 
 <a id="chemeng_batch_heating_temperature"></a>
 
-#### Batch heating of a stirred tank: temperature after a time — `chemeng_batch_heating_temperature`
+#### Batch heating of a stirred tank: temperature after a time, `chemeng_batch_heating_temperature`
 
 Temperature of a well-stirred batch heated or cooled by a medium at constant temperature (condensing steam, boiling refrigerant) after time t.
 
@@ -491,7 +439,7 @@ T = 375.2878822 K
 
 <a id="chemeng_batch_heating_time"></a>
 
-#### Batch heating of a stirred tank: time to reach a temperature — `chemeng_batch_heating_time`
+#### Batch heating of a stirred tank: time to reach a temperature, `chemeng_batch_heating_time`
 
 Time for a well-stirred batch heated or cooled by a medium at constant temperature to reach a stated temperature.
 
@@ -528,7 +476,7 @@ t = 1915.04763 s
 
 <a id="chemeng_reaction_enthalpy_at_temperature"></a>
 
-#### Heat of reaction at another temperature (Kirchhoff) — `chemeng_reaction_enthalpy_at_temperature`
+#### Heat of reaction at another temperature (Kirchhoff), `chemeng_reaction_enthalpy_at_temperature`
 
 The heat of reaction at T from its value at T0 and the polynomial heat capacities of the species (Kirchhoff's law).
 
@@ -538,8 +486,8 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `nu` | in | stoichiometric coefficients, negative for reactants and positive for products | — |
-| `cp` | in | heat-capacity coefficients, one row (a, b, c, d) per species in the order of nu; cp = a + bT + cT^2 + dT^3 in J/(mol K) | — |
+| `nu` | in | stoichiometric coefficients, negative for reactants and positive for products | - |
+| `cp` | in | heat-capacity coefficients, one row (a, b, c, d) per species in the order of nu; cp = a + bT + cT^2 + dT^3 in J/(mol K) | - |
 | `dH0` | in | heat of reaction at T0, per mole of extent | J/mol |
 | `T0` | in | temperature of the known heat of reaction | K |
 | `T` | in | temperature wanted | K |
@@ -561,7 +509,7 @@ dH = -105497.1648 J/mol
 
 <a id="chemeng_sensible_heat_cp_polynomial"></a>
 
-#### Sensible heat with a polynomial heat capacity — `chemeng_sensible_heat_cp_polynomial`
+#### Sensible heat with a polynomial heat capacity, `chemeng_sensible_heat_cp_polynomial`
 
 Heat needed to take n moles from T1 to T2 when cp = a + bT + cT^2 + dT^3 (J/(mol K), T in K), and the mean heat capacity over the range.
 
@@ -572,10 +520,10 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `n` | in | amount of substance | mol |
-| `a` | in | cp coefficient a, J/(mol K) | — |
-| `b` | in | cp coefficient b, J/(mol K^2) | — |
-| `c` | in | cp coefficient c, J/(mol K^3) (default 0) (optional) | — |
-| `d` | in | cp coefficient d, J/(mol K^4) (default 0) (optional) | — |
+| `a` | in | cp coefficient a, J/(mol K) | - |
+| `b` | in | cp coefficient b, J/(mol K^2) | - |
+| `c` | in | cp coefficient c, J/(mol K^3) (default 0) (optional) | - |
+| `d` | in | cp coefficient d, J/(mol K^4) (default 0) (optional) | - |
 | `T1` | in | initial temperature | K |
 | `T2` | in | final temperature | K |
 | `Q` | out | heat added (negative when cooled) | J |
@@ -604,7 +552,7 @@ cp_mean = 29.8 J/(mol*K)
 
 <a id="chemeng_npsh_available"></a>
 
-#### Net positive suction head available — `chemeng_npsh_available`
+#### Net positive suction head available: `chemeng_npsh_available`
 
 The net positive suction head available at a pump inlet, NPSHa = (p_s - p_v)/(rho g) + z_s - h_f, from the pressure on the liquid surface, the vapour pressure, the static head and the suction-line loss; with the required NPSH, the margin.
 
@@ -645,7 +593,7 @@ In the worked example, p_s = 101325 Pa, p_v = 2339 Pa, rho = 998 kg/m^3, z_s = 2
 
 <a id="chemeng_pump_head"></a>
 
-#### Pump total head and power — `chemeng_pump_head`
+#### Pump total head and power: `chemeng_pump_head`
 
 The total head a pump adds between its suction and discharge, H = (p2 - p1)/(rho g) + (z2 - z1) + (v2^2 - v1^2)/(2g), with the hydraulic power rho g Q H and the shaft power for an efficiency.
 
@@ -662,7 +610,7 @@ $$
 | `v1` | in | suction velocity (default 0) (optional) | m/s |
 | `v2` | in | discharge velocity (default 0) (optional) | m/s |
 | `Q` | in | volumetric flow (optional, for the power) (optional) | m^3/s |
-| `eta` | in | pump efficiency (optional, with Q) (optional) | — |
+| `eta` | in | pump efficiency (optional, with Q) (optional) | - |
 | `H` | out | total head | m |
 | `dp_equivalent` | out | head as a pressure rho g H | Pa |
 | `P_hydraulic` | out | hydraulic power rho g Q H | W |
@@ -687,7 +635,7 @@ In the worked example, p1 = 100000 Pa, p2 = 400000 Pa, rho = 1000 kg/m^3 go thro
 
 <a id="chemeng_blending_flows"></a>
 
-#### Blending: feed flows that make a product of given composition — `chemeng_blending_flows`
+#### Blending: feed flows that make a product of given composition, `chemeng_blending_flows`
 
 The mass flow of each feed stream needed to make a product of stated flow and composition, from the component balances (as many feeds as components).
 
@@ -697,11 +645,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `W` | in | mass fractions of the feed streams: one row per feed stream, one column per component (rows sum to 1) | — |
-| `p` | in | mass fractions of the product, one per component (sum to 1) | — |
+| `W` | in | mass fractions of the feed streams: one row per feed stream, one column per component (rows sum to 1) | - |
+| `p` | in | mass fractions of the product, one per component (sum to 1) | - |
 | `P` | in | product mass flow | kg/s |
 | `F1` | out | flow of the first feed stream | kg/s |
-| `F` | out | flow of every feed stream, in kg/s, in the order of the rows of W | — |
+| `F` | out | flow of every feed stream, in kg/s, in the order of the rows of W | - |
 
 **Applies when:** as many feed streams as components (2 to 6); each composition sums to 1; the product lies within the reach of the feeds (no negative flow).
 
@@ -718,7 +666,7 @@ F = [42.8571428571,57.1428571429]
 
 <a id="chemeng_combustion_flue_gas"></a>
 
-#### Combustion with excess air: air requirement and flue-gas composition — `chemeng_combustion_flue_gas`
+#### Combustion with excess air: air requirement and flue-gas composition, `chemeng_combustion_flue_gas`
 
 Theoretical oxygen, air supplied, flue-gas moles and wet and dry compositions, and the air-fuel mass ratio for complete combustion of a fuel with excess dry air (21 % O2, 79 % N2).
 
@@ -728,19 +676,19 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `fuel` | in | molecular formula of the fuel (C, H, O, N and S), e.g. CH4, C3H8, C2H5OH | — |
-| `excess_air` | in | excess air as a fraction of the theoretical air (20% = 0.2) | — |
-| `O2_theoretical` | out | theoretical O2, mol per mol fuel | — |
-| `air` | out | air supplied, mol per mol fuel | — |
-| `n_CO2` | out | CO2 in the flue gas, mol per mol fuel | — |
-| `n_H2O` | out | H2O, mol per mol fuel | — |
-| `n_SO2` | out | SO2, mol per mol fuel | — |
-| `n_O2` | out | O2, mol per mol fuel | — |
-| `n_N2` | out | N2, mol per mol fuel | — |
-| `y_CO2_dry` | out | CO2 mole fraction, dry basis | — |
-| `y_O2_dry` | out | O2 mole fraction, dry basis | — |
-| `y_H2O_wet` | out | H2O mole fraction, wet basis | — |
-| `AFR_mass` | out | air-fuel ratio, kg air per kg fuel | — |
+| `fuel` | in | molecular formula of the fuel (C, H, O, N and S), e.g. CH4, C3H8, C2H5OH | - |
+| `excess_air` | in | excess air as a fraction of the theoretical air (20% = 0.2) | - |
+| `O2_theoretical` | out | theoretical O2, mol per mol fuel | - |
+| `air` | out | air supplied, mol per mol fuel | - |
+| `n_CO2` | out | CO2 in the flue gas, mol per mol fuel | - |
+| `n_H2O` | out | H2O, mol per mol fuel | - |
+| `n_SO2` | out | SO2, mol per mol fuel | - |
+| `n_O2` | out | O2, mol per mol fuel | - |
+| `n_N2` | out | N2, mol per mol fuel | - |
+| `y_CO2_dry` | out | CO2 mole fraction, dry basis | - |
+| `y_O2_dry` | out | O2 mole fraction, dry basis | - |
+| `y_H2O_wet` | out | H2O mole fraction, wet basis | - |
+| `AFR_mass` | out | air-fuel ratio, kg air per kg fuel | - |
 
 **Applies when:** complete combustion to CO2, H2O and SO2; fuel N leaves as N2; dry air 21 % O2 / 79 % N2; 0 <= excess air <= 500 %.
 
@@ -767,7 +715,7 @@ AFR_mass = 20.55283933
 
 <a id="chemeng_variable_volume_tank"></a>
 
-#### Filling or draining well-mixed tank (variable volume) — `chemeng_variable_volume_tank`
+#### Filling or draining well-mixed tank (variable volume), `chemeng_variable_volume_tank`
 
 Volume and concentration of a well-mixed tank whose inflow and outflow differ, at time t.
 
@@ -806,7 +754,7 @@ C = 750 mol/m^3
 
 <a id="chemeng_mass_to_mole_fractions"></a>
 
-#### Mass fractions to mole fractions and mean molar mass — `chemeng_mass_to_mole_fractions`
+#### Mass fractions to mole fractions and mean molar mass, `chemeng_mass_to_mole_fractions`
 
 Mole fractions of a mixture and its mean molar mass from the mass fractions and the molar masses of the components.
 
@@ -816,9 +764,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `w` | in | mass fractions (sum to 1) | — |
-| `MW` | in | molar masses of the components, g/mol | — |
-| `z` | out | mole fractions | — |
+| `w` | in | mass fractions (sum to 1) | - |
+| `MW` | in | molar masses of the components, g/mol | - |
+| `z` | out | mole fractions | - |
 | `MW_mean` | out | mean molar mass of the mixture | kg/mol |
 
 **Applies when:** fractions sum to 1; positive molar masses.
@@ -835,7 +783,7 @@ MW_mean = 0.02306317318 kg/mol
 
 <a id="chemeng_recycle_purge"></a>
 
-#### Reactor with recycle and purge — `chemeng_recycle_purge`
+#### Reactor with recycle and purge: `chemeng_recycle_purge`
 
 Steady-state flows of a reactor A -> B with complete product separation, recycle of unreacted A and inert, and a purge that removes a fraction of the recycle stream to stop the inert accumulating.
 
@@ -846,15 +794,15 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `F0` | in | fresh feed flow (reactant A plus inert) | mol/s |
-| `zA` | in | mole fraction of A in the fresh feed (the rest is inert) | — |
-| `X` | in | single-pass conversion of A in the reactor | — |
-| `f` | in | purge fraction: the fraction of the separator overhead (unreacted A + inert) that is purged | — |
+| `zA` | in | mole fraction of A in the fresh feed (the rest is inert) | - |
+| `X` | in | single-pass conversion of A in the reactor | - |
+| `f` | in | purge fraction: the fraction of the separator overhead (unreacted A + inert) that is purged | - |
 | `R` | out | recycle flow | mol/s |
 | `P` | out | purge flow | mol/s |
 | `reactor_feed` | out | combined reactor feed flow | mol/s |
-| `X_overall` | out | overall conversion of A (fresh feed to product) | — |
+| `X_overall` | out | overall conversion of A (fresh feed to product) | - |
 | `product` | out | production rate of B | mol/s |
-| `y_inert` | out | mole fraction of inert in the recycle and purge | — |
+| `y_inert` | out | mole fraction of inert in the recycle and purge | - |
 
 **Applies when:** 0 < zA <= 1; 0 < X < 1; 0 < f < 1; A -> B one to one; the separator removes all B.
 
@@ -878,7 +826,7 @@ y_inert = 0.08125
 
 <a id="chemeng_binary_separator_balance"></a>
 
-#### Two-product separator balance (binary distillation column) — `chemeng_binary_separator_balance`
+#### Two-product separator balance (binary distillation column), `chemeng_binary_separator_balance`
 
 Distillate and bottoms flows of a binary separator from the feed flow and the three compositions, with the recoveries of the light component in the distillate and of the heavy component in the bottoms.
 
@@ -889,13 +837,13 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `F` | in | feed molar flow | mol/s |
-| `zF` | in | mole fraction of the light component in the feed | — |
-| `xD` | in | mole fraction of the light component in the distillate (top product) | — |
-| `xB` | in | mole fraction of the light component in the bottoms | — |
+| `zF` | in | mole fraction of the light component in the feed | - |
+| `xD` | in | mole fraction of the light component in the distillate (top product) | - |
+| `xB` | in | mole fraction of the light component in the bottoms | - |
 | `D` | out | distillate flow | mol/s |
 | `B` | out | bottoms flow | mol/s |
-| `recovery_D` | out | fraction of the light component recovered in the distillate | — |
-| `recovery_B` | out | fraction of the heavy component recovered in the bottoms | — |
+| `recovery_D` | out | fraction of the light component recovered in the distillate | - |
+| `recovery_B` | out | fraction of the heavy component recovered in the bottoms | - |
 
 **Applies when:** xB < zF < xD; steady state, no reaction.
 
@@ -917,7 +865,7 @@ recovery_B = 0.9675925926
 
 <a id="chemeng_unsteady_mixing_tank"></a>
 
-#### Unsteady well-mixed tank (concentration change) — `chemeng_unsteady_mixing_tank`
+#### Unsteady well-mixed tank (concentration change), `chemeng_unsteady_mixing_tank`
 
 Concentration in a constant-volume well-mixed tank at time t after the inlet concentration changes (inflow equals outflow).
 
@@ -954,7 +902,7 @@ C = 316.0602794 mol/m^3
 
 <a id="chemeng_exponential_decline"></a>
 
-#### Exponential decline curve: rate and cumulative production — `chemeng_exponential_decline`
+#### Exponential decline curve: rate and cumulative production, `chemeng_exponential_decline`
 
 Production rate and cumulative production at time t of a well in exponential (constant-percentage) decline (Arps b = 0).
 
@@ -987,7 +935,7 @@ Np = 87335.19227 m^3
 
 <a id="chemeng_gas_well_backpressure"></a>
 
-#### Gas-well deliverability from a back-pressure test (Rawlins-Schellhardt) — `chemeng_gas_well_backpressure`
+#### Gas-well deliverability from a back-pressure test (Rawlins-Schellhardt), `chemeng_gas_well_backpressure`
 
 Exponent n, coefficient C and absolute open flow of a gas well from multi-rate test data fitted to q = C (pr^2 - pwf^2)^n.
 
@@ -997,13 +945,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `q` | in | test gas rates, in q_unit | — |
-| `pwf` | in | flowing bottom-hole pressures at those rates, in p_unit | — |
-| `q_unit` | in | unit of the rates: m3_per_day or Mscf_per_day | — |
-| `p_unit` | in | unit of the flowing pressures | — |
+| `q` | in | test gas rates, in q_unit | - |
+| `pwf` | in | flowing bottom-hole pressures at those rates, in p_unit | - |
+| `q_unit` | in | unit of the rates: m3_per_day or Mscf_per_day | - |
+| `p_unit` | in | unit of the flowing pressures | - |
 | `pr` | in | average reservoir (shut-in) pressure | Pa |
-| `n` | out | back-pressure exponent | — |
-| `log10_C` | out | log10 of the coefficient C, with q in m^3/s and pressures in Pa | — |
+| `n` | out | back-pressure exponent | - |
+| `log10_C` | out | log10 of the coefficient C, with q in m^3/s and pressures in Pa | - |
 | `AOF` | out | absolute open flow (rate at pwf = 0) | m^3/s |
 
 **Applies when:** stabilised flow at every rate; 0.3 < n < 1.5.
@@ -1024,7 +972,7 @@ AOF = 20.97290776 m^3/s
 
 <a id="chemeng_harmonic_decline"></a>
 
-#### Harmonic decline curve: rate and cumulative production — `chemeng_harmonic_decline`
+#### Harmonic decline curve: rate and cumulative production, `chemeng_harmonic_decline`
 
 Production rate and cumulative production at time t of a well in harmonic decline (Arps b = 1).
 
@@ -1057,7 +1005,7 @@ Np = 114464.513 m^3
 
 <a id="chemeng_hyperbolic_decline"></a>
 
-#### Hyperbolic decline curve: rate and cumulative production — `chemeng_hyperbolic_decline`
+#### Hyperbolic decline curve: rate and cumulative production, `chemeng_hyperbolic_decline`
 
 Production rate and cumulative production at time t of a well in hyperbolic decline with Arps exponent 0 < b < 1.
 
@@ -1069,7 +1017,7 @@ $$
 |---|---|---|---|
 | `qi` | in | initial rate (bbl/day and STB/day are converted here) | m^3/s |
 | `Di` | in | initial nominal decline rate, e.g. 0.3 1/yr | 1/s |
-| `b` | in | Arps decline exponent (0 < b < 1) | — |
+| `b` | in | Arps decline exponent (0 < b < 1) | - |
 | `t` | in | time since the start of the decline | s |
 | `q` | out | rate at time t | m^3/s |
 | `Np` | out | cumulative production to time t | m^3 |
@@ -1094,7 +1042,7 @@ Np = 99548.75907 m^3
 
 <a id="chemeng_closed_loop_stability"></a>
 
-#### Closed-loop stability of a P-controlled process (closed-loop poles) — `chemeng_closed_loop_stability`
+#### Closed-loop stability of a P-controlled process (closed-loop poles), `chemeng_closed_loop_stability`
 
 Whether a feedback loop with a proportional controller Kc around a process G(s) = num(s)/den(s) is stable: the largest real part of the closed-loop poles and how many lie in the right half-plane.
 
@@ -1104,12 +1052,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `num` | in | numerator coefficients of G(s), highest power of s first | — |
-| `den` | in | denominator coefficients of G(s), highest power of s first | — |
-| `Kc` | in | controller gain | — |
-| `max_real` | out | largest real part of the closed-loop poles, 1/(time unit of the coefficients) | — |
-| `n_rhp` | out | number of closed-loop poles in the right half-plane | — |
-| `stable` | out | stable or unstable (text) | — |
+| `num` | in | numerator coefficients of G(s), highest power of s first | - |
+| `den` | in | denominator coefficients of G(s), highest power of s first | - |
+| `Kc` | in | controller gain | - |
+| `max_real` | out | largest real part of the closed-loop poles, 1/(time unit of the coefficients) | - |
+| `n_rhp` | out | number of closed-loop poles in the right half-plane | - |
+| `stable` | out | stable or unstable (text) | - |
 
 **Applies when:** proper process; no pole on the imaginary axis or nearly repeated poles (refused).
 
@@ -1127,7 +1075,7 @@ stable = unstable
 
 <a id="chemeng_pid_controller_output"></a>
 
-#### Discrete PID controller output for an error history — `chemeng_pid_controller_output`
+#### Discrete PID controller output for an error history, `chemeng_pid_controller_output`
 
 Output of a digital position-form PID controller at each sample for a stated history of errors (rectangular integration, derivative on the error, loop at rest before the first sample).
 
@@ -1137,14 +1085,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Kc` | in | controller gain | — |
+| `Kc` | in | controller gain | - |
 | `tauI` | in | integral (reset) time | s |
 | `tauD` | in | derivative time (0 for PI) | s |
 | `dt` | in | sampling interval | s |
-| `e` | in | error samples e_1 ... e_n (set point minus measurement) | — |
-| `bias` | in | controller output bias (output when the error has always been zero) | — |
-| `u_last` | out | controller output at the last sample | — |
-| `u` | out | controller output at every sample | — |
+| `e` | in | error samples e_1 ... e_n (set point minus measurement) | - |
+| `bias` | in | controller output bias (output when the error has always been zero) | - |
+| `u_last` | out | controller output at the last sample | - |
+| `u` | out | controller output at every sample | - |
 
 **Applies when:** position form, e_0 = 0 before the first sample; rectangular integration including the current sample.
 
@@ -1165,7 +1113,7 @@ u = [54.2,51.56,50.86,50.72]
 
 <a id="chemeng_fopdt_step_response"></a>
 
-#### First-order-plus-dead-time process: response to a step — `chemeng_fopdt_step_response`
+#### First-order-plus-dead-time process: response to a step, `chemeng_fopdt_step_response`
 
 Deviation of the output of a first-order process with dead time at time t after a step of size M in its input.
 
@@ -1175,12 +1123,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `K` | in | process gain (output change per unit input change) | — |
+| `K` | in | process gain (output change per unit input change) | - |
 | `tau` | in | process time constant | s |
 | `theta` | in | dead time | s |
-| `M` | in | size of the input step (deviation) | — |
+| `M` | in | size of the input step (deviation) | - |
 | `t` | in | time after the step | s |
-| `y` | out | output deviation at time t (in the output's units) | — |
+| `y` | out | output deviation at time t (in the output's units) | - |
 
 **Applies when:** the process starts at steady state; linear first-order dynamics with dead time.
 
@@ -1200,7 +1148,7 @@ y = 6.321205588
 
 <a id="chemeng_lag_frequency_response"></a>
 
-#### Frequency response of first-order lags in series (amplitude ratio and phase) — `chemeng_lag_frequency_response`
+#### Frequency response of first-order lags in series (amplitude ratio and phase), `chemeng_lag_frequency_response`
 
 Amplitude ratio and phase angle of a process made of one to three first-order lags in series, at angular frequency w.
 
@@ -1210,12 +1158,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `K` | in | process gain | — |
-| `taus` | in | time constants of the lags, in t_unit | — |
-| `t_unit` | in | unit of the time constants | — |
+| `K` | in | process gain | - |
+| `taus` | in | time constants of the lags, in t_unit | - |
+| `t_unit` | in | unit of the time constants | - |
 | `w` | in | angular frequency of the input sinusoid | rad/s |
-| `AR` | out | amplitude ratio (output amplitude per input amplitude) | — |
-| `phase_deg` | out | phase angle in degrees (negative: lag) | — |
+| `AR` | out | amplitude ratio (output amplitude per input amplitude) | - |
+| `phase_deg` | out | phase angle in degrees (negative: lag) | - |
 
 **Applies when:** K > 0; linear lags without dead time.
 
@@ -1234,7 +1182,7 @@ phase_deg = -45
 
 <a id="chemeng_pi_loop_margins"></a>
 
-#### Gain and phase margins of a PI loop around lags in series — `chemeng_pi_loop_margins`
+#### Gain and phase margins of a PI loop around lags in series, `chemeng_pi_loop_margins`
 
 Gain margin, phase margin and the two crossover frequencies of a loop with a PI controller and a process of three to five first-order lags.
 
@@ -1244,13 +1192,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Kc` | in | controller gain | — |
+| `Kc` | in | controller gain | - |
 | `tauI` | in | integral time | s |
-| `K` | in | process gain | — |
-| `taus` | in | time constants of the lags, in t_unit (the integral time is converted to this unit too) | — |
-| `t_unit` | in | unit of the time constants | — |
-| `GM` | out | gain margin (ratio) | — |
-| `PM_deg` | out | phase margin, degrees | — |
+| `K` | in | process gain | - |
+| `taus` | in | time constants of the lags, in t_unit (the integral time is converted to this unit too) | - |
+| `t_unit` | in | unit of the time constants | - |
+| `GM` | out | gain margin (ratio) | - |
+| `PM_deg` | out | phase margin, degrees | - |
 | `w_pc` | out | phase-crossover frequency (phase -180 degrees) | rad/s |
 | `w_gc` | out | gain-crossover frequency (\|L\| = 1) | rad/s |
 
@@ -1274,7 +1222,7 @@ w_gc = 0.01313168583 rad/s
 
 <a id="chemeng_first_order_step_fit"></a>
 
-#### Process gain and time constant from step-test data (least squares) — `chemeng_first_order_step_fit`
+#### Process gain and time constant from step-test data (least squares), `chemeng_first_order_step_fit`
 
 Gain and time constant of a first-order process (dead time known) fitted by least squares to the recorded response of a step test.
 
@@ -1284,12 +1232,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `t` | in | sample times from the moment of the step, in t_unit | — |
-| `y` | in | output deviations at those times | — |
-| `t_unit` | in | unit of the times | — |
-| `M` | in | size of the input step | — |
+| `t` | in | sample times from the moment of the step, in t_unit | - |
+| `y` | in | output deviations at those times | - |
+| `t_unit` | in | unit of the times | - |
+| `M` | in | size of the input step | - |
 | `theta` | in | dead time (known) | s |
-| `K` | out | process gain | — |
+| `K` | out | process gain | - |
 | `tau` | out | time constant | s |
 
 **Applies when:** step from steady state; first-order response after the dead time; a unique interior least-squares minimum.
@@ -1309,7 +1257,7 @@ tau = 292.7781377 s
 
 <a id="chemeng_p_control_offset"></a>
 
-#### Proportional control: steady-state offset after a set-point step — `chemeng_p_control_offset`
+#### Proportional control: steady-state offset after a set-point step, `chemeng_p_control_offset`
 
 Steady-state output (as a fraction of a set-point step) and the offset of a P-only feedback loop around a process of first-order lags in series, after checking the loop is stable.
 
@@ -1319,12 +1267,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `Kc` | in | controller gain | — |
-| `K` | in | process gain | — |
-| `taus` | in | time constants of the first-order lags in series, in t_unit | — |
-| `t_unit` | in | unit of the time constants | — |
-| `y_ss` | out | final output change per unit set-point change | — |
-| `offset` | out | steady-state offset per unit set-point change | — |
+| `Kc` | in | controller gain | - |
+| `K` | in | process gain | - |
+| `taus` | in | time constants of the first-order lags in series, in t_unit | - |
+| `t_unit` | in | unit of the time constants | - |
+| `y_ss` | out | final output change per unit set-point change | - |
+| `offset` | out | steady-state offset per unit set-point change | - |
 
 **Applies when:** Kc K > 0; the closed loop is stable (checked by the Routh array).
 
@@ -1343,7 +1291,7 @@ offset = 0.25
 
 <a id="chemeng_ziegler_nichols_tuning"></a>
 
-#### Ziegler-Nichols closed-loop tuning of lags in series — `chemeng_ziegler_nichols_tuning`
+#### Ziegler-Nichols closed-loop tuning of lags in series, `chemeng_ziegler_nichols_tuning`
 
 Ultimate gain and period of a process of first-order lags in series, and the Ziegler-Nichols closed-loop settings of a P, PI or PID controller.
 
@@ -1353,13 +1301,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `K` | in | process gain | — |
-| `taus` | in | time constants of the lags (three or more), in t_unit | — |
-| `t_unit` | in | unit of the time constants | — |
-| `controller` | in | controller type: P, PI or PID | — |
-| `Ku` | out | ultimate gain | — |
+| `K` | in | process gain | - |
+| `taus` | in | time constants of the lags (three or more), in t_unit | - |
+| `t_unit` | in | unit of the time constants | - |
+| `controller` | in | controller type: P, PI or PID | - |
+| `Ku` | out | ultimate gain | - |
 | `Pu` | out | ultimate period | s |
-| `Kc` | out | controller gain | — |
+| `Kc` | out | controller gain | - |
 | `tauI` | out | integral time (PI, PID) | s |
 | `tauD` | out | derivative time (PID) | s |
 
@@ -1374,8 +1322,8 @@ tauI = 108.8279619 s
 tauD = 27.20699046 s
   by: Ziegler-Nichols closed-loop tuning of lags in series  (phase crossover sum atan(w tau_i) = pi (bisection); Ku = 1/|G(j wu)|, Pu = 2 pi/wu; P: 0.5 Ku; PI: 0.45 Ku, Pu/1.2; PID: 0.6 Ku, Pu/2, Pu/8)
   K = 2
-  controller = PID
   t_unit = min
+  controller = PID
   assumes: three or more lags (a finite ultimate gain); K > 0
 ```
 
@@ -1385,7 +1333,7 @@ tauD = 27.20699046 s
 
 <a id="chemeng_virial_compressibility"></a>
 
-#### Gas compressibility from the virial equation (Pitzer-Abbott correlation) — `chemeng_virial_compressibility`
+#### Gas compressibility from the virial equation (Pitzer-Abbott correlation), `chemeng_virial_compressibility`
 
 Second virial coefficient from the Abbott (Pitzer) correlation and the compressibility factor Z = 1 + BP/(RT) of a gas at moderate pressure.
 
@@ -1399,9 +1347,9 @@ $$
 | `P` | in | pressure | Pa |
 | `Tc` | in | critical temperature | K |
 | `Pc` | in | critical pressure | Pa |
-| `omega` | in | acentric factor | — |
+| `omega` | in | acentric factor | - |
 | `B` | out | second virial coefficient | m^3/mol |
-| `Z` | out | compressibility factor | — |
+| `Z` | out | compressibility factor | - |
 
 **Applies when:** moderate pressure (truncated virial equation); non-polar or slightly polar gas.
 
@@ -1422,7 +1370,7 @@ Z = 0.878925087
 
 <a id="chemeng_watson_heat_of_vaporization"></a>
 
-#### Heat of vaporisation at another temperature (Watson) — `chemeng_watson_heat_of_vaporization`
+#### Heat of vaporisation at another temperature (Watson), `chemeng_watson_heat_of_vaporization`
 
 Heat of vaporisation at T from a known value at T_ref and the critical temperature (Watson's correlation, exponent 0.38).
 
@@ -1455,7 +1403,7 @@ Hvap = 44571.73799 J/mol
 
 <a id="chemeng_riedel_heat_of_vaporization"></a>
 
-#### Heat of vaporisation at the normal boiling point (Riedel) — `chemeng_riedel_heat_of_vaporization`
+#### Heat of vaporisation at the normal boiling point (Riedel), `chemeng_riedel_heat_of_vaporization`
 
 Heat of vaporisation at the normal boiling point from the boiling point and critical constants (Riedel's equation, Pc in bar).
 
@@ -1486,7 +1434,7 @@ Hvap_b = 26828.59041 J/mol
 
 <a id="chemeng_pitzer_heat_of_vaporization"></a>
 
-#### Heat of vaporisation from the acentric factor (Pitzer) — `chemeng_pitzer_heat_of_vaporization`
+#### Heat of vaporisation from the acentric factor (Pitzer), `chemeng_pitzer_heat_of_vaporization`
 
 Heat of vaporisation at T from the critical temperature and acentric factor (Pitzer's corresponding-states correlation as fitted by Carruth and Kobayashi).
 
@@ -1498,7 +1446,7 @@ $$
 |---|---|---|---|
 | `T` | in | temperature | K |
 | `Tc` | in | critical temperature | K |
-| `omega` | in | acentric factor | — |
+| `omega` | in | acentric factor | - |
 | `Hvap` | out | heat of vaporisation | J/mol |
 
 **Applies when:** 0.6 < Tr < 1 (fit range).
@@ -1517,7 +1465,7 @@ Hvap = 36690.97947 J/mol
 
 <a id="chemeng_peng_robinson"></a>
 
-#### Peng-Robinson equation of state: compressibility and fugacity coefficient — `chemeng_peng_robinson`
+#### Peng-Robinson equation of state: compressibility and fugacity coefficient, `chemeng_peng_robinson`
 
 Compressibility factors (vapour and liquid roots) and fugacity coefficients of a pure substance at T and P from the Peng-Robinson equation of state.
 
@@ -1529,14 +1477,14 @@ $$
 |---|---|---|---|
 | `Tc` | in | critical temperature | K |
 | `Pc` | in | critical pressure | Pa |
-| `omega` | in | acentric factor | — |
+| `omega` | in | acentric factor | - |
 | `T` | in | temperature | K |
 | `P` | in | pressure | Pa |
-| `Z_vapour` | out | compressibility factor of the vapour-like (largest) root | — |
-| `Z_liquid` | out | compressibility factor of the liquid-like (smallest) root | — |
-| `phi_vapour` | out | fugacity coefficient on the vapour root | — |
-| `phi_liquid` | out | fugacity coefficient on the liquid root | — |
-| `n_roots` | out | number of real roots above the covolume (1 or 3) | — |
+| `Z_vapour` | out | compressibility factor of the vapour-like (largest) root | - |
+| `Z_liquid` | out | compressibility factor of the liquid-like (smallest) root | - |
+| `phi_vapour` | out | fugacity coefficient on the vapour root | - |
+| `phi_liquid` | out | fugacity coefficient on the liquid root | - |
+| `n_roots` | out | number of real roots above the covolume (1 or 3) | - |
 
 **Applies when:** pure substance; not too close to the critical point or a spinodal (a double root is refused); one real root: both roots reported equal.
 
@@ -1560,7 +1508,7 @@ In the worked example, Tc = 507.6 K, Pc = 3025000 Pa, omega = 0.2975, T = 400 K,
 
 <a id="chemeng_rackett_liquid_volume"></a>
 
-#### Saturated liquid molar volume (Rackett) — `chemeng_rackett_liquid_volume`
+#### Saturated liquid molar volume (Rackett): `chemeng_rackett_liquid_volume`
 
 Molar volume of a saturated liquid from the critical constants and the critical compressibility factor (Rackett equation).
 
@@ -1573,7 +1521,7 @@ $$
 | `T` | in | temperature | K |
 | `Tc` | in | critical temperature | K |
 | `Pc` | in | critical pressure | Pa |
-| `Zc` | in | critical compressibility factor | — |
+| `Zc` | in | critical compressibility factor | - |
 | `Vm` | out | saturated liquid molar volume | m^3/mol |
 
 **Applies when:** T < Tc.
@@ -1593,7 +1541,7 @@ Vm = 8.299225005e-05 m^3/mol
 
 <a id="chemeng_srk"></a>
 
-#### Soave-Redlich-Kwong equation of state: compressibility and fugacity coefficient — `chemeng_srk`
+#### Soave-Redlich-Kwong equation of state: compressibility and fugacity coefficient, `chemeng_srk`
 
 Compressibility factors (vapour and liquid roots) and fugacity coefficients of a pure substance at T and P from the Soave-Redlich-Kwong equation of state.
 
@@ -1605,14 +1553,14 @@ $$
 |---|---|---|---|
 | `Tc` | in | critical temperature | K |
 | `Pc` | in | critical pressure | Pa |
-| `omega` | in | acentric factor | — |
+| `omega` | in | acentric factor | - |
 | `T` | in | temperature | K |
 | `P` | in | pressure | Pa |
-| `Z_vapour` | out | compressibility factor of the vapour-like (largest) root | — |
-| `Z_liquid` | out | compressibility factor of the liquid-like (smallest) root | — |
-| `phi_vapour` | out | fugacity coefficient on the vapour root | — |
-| `phi_liquid` | out | fugacity coefficient on the liquid root | — |
-| `n_roots` | out | number of real roots above the covolume (1 or 3) | — |
+| `Z_vapour` | out | compressibility factor of the vapour-like (largest) root | - |
+| `Z_liquid` | out | compressibility factor of the liquid-like (smallest) root | - |
+| `phi_vapour` | out | fugacity coefficient on the vapour root | - |
+| `phi_liquid` | out | fugacity coefficient on the liquid root | - |
+| `n_roots` | out | number of real roots above the covolume (1 or 3) | - |
 
 **Applies when:** pure substance; not too close to the critical point or a spinodal; one real root: both roots reported equal.
 
@@ -1636,7 +1584,7 @@ In the worked example, Tc = 507.6 K, Pc = 3025000 Pa, omega = 0.2975, T = 400 K,
 
 <a id="chemeng_lee_kesler_vapour_pressure"></a>
 
-#### Vapour pressure by the Lee-Kesler correlation — `chemeng_lee_kesler_vapour_pressure`
+#### Vapour pressure by the Lee-Kesler correlation, `chemeng_lee_kesler_vapour_pressure`
 
 Vapour pressure of a pure substance from its critical constants and acentric factor (Lee-Kesler corresponding-states correlation).
 
@@ -1649,7 +1597,7 @@ $$
 | `T` | in | temperature | K |
 | `Tc` | in | critical temperature | K |
 | `Pc` | in | critical pressure | Pa |
-| `omega` | in | acentric factor | — |
+| `omega` | in | acentric factor | - |
 | `Psat` | out | vapour pressure | Pa |
 
 **Applies when:** T < Tc; non-polar or slightly polar substances.
@@ -1671,7 +1619,7 @@ Psat = 104829.4568 Pa
 
 <a id="chemeng_batch_conversion_first_order"></a>
 
-#### Batch reactor conversion after a time (first order) — `chemeng_batch_conversion_first_order`
+#### Batch reactor conversion after a time (first order), `chemeng_batch_conversion_first_order`
 
 Conversion reached in an isothermal batch reactor after time t for a first-order reaction.
 
@@ -1683,7 +1631,7 @@ $$
 |---|---|---|---|
 | `k` | in | first-order rate constant | 1/s |
 | `t` | in | reaction time | s |
-| `X` | out | conversion of A | — |
+| `X` | out | conversion of A | - |
 
 **Applies when:** isothermal, constant volume, -r_A = k C_A.
 
@@ -1700,7 +1648,7 @@ X = 0.6321205588
 
 <a id="chemeng_batch_conversion_second_order"></a>
 
-#### Batch reactor conversion after a time (second order) — `chemeng_batch_conversion_second_order`
+#### Batch reactor conversion after a time (second order), `chemeng_batch_conversion_second_order`
 
 Conversion and concentration reached in an isothermal batch reactor after time t when -r_A = k C_A^2.
 
@@ -1713,7 +1661,7 @@ $$
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
 | `CA0` | in | feed (initial) concentration of A | mol/m^3 |
 | `t` | in | reaction time | s |
-| `X` | out | conversion of A | — |
+| `X` | out | conversion of A | - |
 | `CA` | out | concentration of A at time t | mol/m^3 |
 
 **Applies when:** isothermal, constant volume.
@@ -1733,7 +1681,7 @@ CA = 200 mol/m^3
 
 <a id="chemeng_batch_time_first_order"></a>
 
-#### Batch reactor time for a conversion (first order) — `chemeng_batch_time_first_order`
+#### Batch reactor time for a conversion (first order), `chemeng_batch_time_first_order`
 
 Reaction time an isothermal batch reactor needs to reach conversion X for a first-order reaction.
 
@@ -1744,7 +1692,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `k` | in | first-order rate constant | 1/s |
-| `X` | in | conversion of A wanted | — |
+| `X` | in | conversion of A wanted | - |
 | `t` | out | reaction time | s |
 
 **Applies when:** 0 <= X < 1; isothermal, constant volume, -r_A = k C_A.
@@ -1762,7 +1710,7 @@ t = 2302.585093 s
 
 <a id="chemeng_batch_time_second_order"></a>
 
-#### Batch reactor time for a conversion (second order) — `chemeng_batch_time_second_order`
+#### Batch reactor time for a conversion (second order), `chemeng_batch_time_second_order`
 
 Reaction time an isothermal batch reactor needs to reach conversion X when -r_A = k C_A^2.
 
@@ -1774,7 +1722,7 @@ $$
 |---|---|---|---|
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
 | `CA0` | in | feed (initial) concentration of A | mol/m^3 |
-| `X` | in | conversion of A wanted | — |
+| `X` | in | conversion of A wanted | - |
 | `t` | out | reaction time | s |
 
 **Applies when:** 0 <= X < 1; isothermal, constant volume.
@@ -1793,7 +1741,7 @@ t = 40 s
 
 <a id="chemeng_cstr_conversion_first_order"></a>
 
-#### CSTR conversion for a volume (first order) — `chemeng_cstr_conversion_first_order`
+#### CSTR conversion for a volume (first order), `chemeng_cstr_conversion_first_order`
 
 Steady-state conversion of a CSTR of volume V for a first-order liquid-phase reaction.
 
@@ -1806,7 +1754,7 @@ $$
 | `v0` | in | volumetric feed flow | m^3/s |
 | `V` | in | reactor volume | m^3 |
 | `k` | in | first-order rate constant | 1/s |
-| `X` | out | conversion of A | — |
+| `X` | out | conversion of A | - |
 
 **Applies when:** steady state, perfect mixing, constant density, -r_A = k C_A.
 
@@ -1824,7 +1772,7 @@ X = 0.6666666667
 
 <a id="chemeng_cstr_conversion_second_order"></a>
 
-#### CSTR conversion for a volume (second order) — `chemeng_cstr_conversion_second_order`
+#### CSTR conversion for a volume (second order), `chemeng_cstr_conversion_second_order`
 
 Steady-state conversion and exit concentration of a CSTR of volume V when -r_A = k C_A^2.
 
@@ -1838,7 +1786,7 @@ $$
 | `V` | in | reactor volume | m^3 |
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
 | `CA0` | in | feed (initial) concentration of A | mol/m^3 |
-| `X` | out | conversion of A | — |
+| `X` | out | conversion of A | - |
 | `CA` | out | exit concentration of A | mol/m^3 |
 
 **Applies when:** steady state, perfect mixing, constant density.
@@ -1859,7 +1807,7 @@ CA = 500 mol/m^3
 
 <a id="chemeng_cstr_volume_first_order"></a>
 
-#### CSTR volume for a conversion (first order) — `chemeng_cstr_volume_first_order`
+#### CSTR volume for a conversion (first order), `chemeng_cstr_volume_first_order`
 
 Volume and space time of a CSTR that reaches conversion X for a first-order liquid-phase reaction.
 
@@ -1871,7 +1819,7 @@ $$
 |---|---|---|---|
 | `v0` | in | volumetric feed flow | m^3/s |
 | `k` | in | first-order rate constant | 1/s |
-| `X` | in | conversion of A wanted | — |
+| `X` | in | conversion of A wanted | - |
 | `V` | out | reactor volume | m^3 |
 | `tau` | out | space time V/v0 | s |
 
@@ -1892,7 +1840,7 @@ tau = 9000 s
 
 <a id="chemeng_cstr_volume_second_order"></a>
 
-#### CSTR volume for a conversion (second order) — `chemeng_cstr_volume_second_order`
+#### CSTR volume for a conversion (second order), `chemeng_cstr_volume_second_order`
 
 Volume and space time of a CSTR that reaches conversion X when -r_A = k C_A^2 (liquid phase, constant density).
 
@@ -1905,7 +1853,7 @@ $$
 | `v0` | in | volumetric feed flow | m^3/s |
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
 | `CA0` | in | feed (initial) concentration of A | mol/m^3 |
-| `X` | in | conversion of A wanted | — |
+| `X` | in | conversion of A wanted | - |
 | `V` | out | reactor volume | m^3 |
 | `tau` | out | space time V/v0 | s |
 
@@ -1927,7 +1875,7 @@ tau = 2000 s
 
 <a id="chemeng_cstrs_in_series_first_order"></a>
 
-#### Equal CSTRs in series: conversion (first order) — `chemeng_cstrs_in_series_first_order`
+#### Equal CSTRs in series: conversion (first order), `chemeng_cstrs_in_series_first_order`
 
 Conversion leaving N equal CSTRs in series, each of volume V, for a first-order liquid-phase reaction.
 
@@ -1940,8 +1888,8 @@ $$
 | `v0` | in | volumetric feed flow | m^3/s |
 | `V` | in | volume of EACH tank | m^3 |
 | `k` | in | first-order rate constant | 1/s |
-| `N` | in | number of equal tanks in series | — |
-| `X` | out | overall conversion of A | — |
+| `N` | in | number of equal tanks in series | - |
+| `X` | out | overall conversion of A | - |
 
 **Applies when:** equal tanks; steady state, perfect mixing in each tank, constant density.
 
@@ -1959,7 +1907,7 @@ X = 0.7037037037
 
 <a id="chemeng_cstrs_in_series_second_order"></a>
 
-#### Equal CSTRs in series: conversion (second order) — `chemeng_cstrs_in_series_second_order`
+#### Equal CSTRs in series: conversion (second order), `chemeng_cstrs_in_series_second_order`
 
 Conversion leaving N equal CSTRs in series, each of volume V, when -r_A = k C_A^2.
 
@@ -1973,8 +1921,8 @@ $$
 | `V` | in | volume of EACH tank | m^3 |
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
 | `CA0` | in | feed (initial) concentration of A | mol/m^3 |
-| `N` | in | number of equal tanks in series | — |
-| `X` | out | overall conversion of A | — |
+| `N` | in | number of equal tanks in series | - |
+| `X` | out | overall conversion of A | - |
 | `CA` | out | exit concentration of A | mol/m^3 |
 
 **Applies when:** equal tanks; steady state, perfect mixing, constant density.
@@ -1995,7 +1943,7 @@ CA = 325.6412154 mol/m^3
 
 <a id="chemeng_pfr_gas_volume_first_order"></a>
 
-#### Gas-phase PFR volume with volume change (first order) — `chemeng_pfr_gas_volume_first_order`
+#### Gas-phase PFR volume with volume change (first order), `chemeng_pfr_gas_volume_first_order`
 
 Volume of an isothermal, isobaric gas-phase plug-flow reactor for conversion X of a first-order reaction whose mole number changes (factor eps).
 
@@ -2008,8 +1956,8 @@ $$
 | `FA0` | in | molar feed flow of A | mol/s |
 | `CA0` | in | concentration of A at the inlet | mol/m^3 |
 | `k` | in | first-order rate constant | 1/s |
-| `eps` | in | volume-change factor eps = y_A0 * (change in moles per mole of A); e.g. A -> 2B with pure A: eps = 1 | — |
-| `X` | in | conversion of A wanted | — |
+| `eps` | in | volume-change factor eps = y_A0 * (change in moles per mole of A); e.g. A -> 2B with pure A: eps = 1 | - |
+| `X` | in | conversion of A wanted | - |
 | `V` | out | reactor volume | m^3 |
 
 **Applies when:** isothermal, isobaric ideal gas; eps > -1; 0 <= X < 1.
@@ -2030,7 +1978,7 @@ V = 12.09437912 m^3
 
 <a id="chemeng_pfr_gas_volume_second_order"></a>
 
-#### Gas-phase PFR volume with volume change (second order) — `chemeng_pfr_gas_volume_second_order`
+#### Gas-phase PFR volume with volume change (second order), `chemeng_pfr_gas_volume_second_order`
 
 Volume of an isothermal, isobaric gas-phase plug-flow reactor for conversion X when -r_A = k C_A^2 and the mole number changes (factor eps).
 
@@ -2043,8 +1991,8 @@ $$
 | `FA0` | in | molar feed flow of A | mol/s |
 | `CA0` | in | concentration of A at the inlet | mol/m^3 |
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
-| `eps` | in | volume-change factor eps = y_A0 * (change in moles per mole of A); e.g. A -> 2B with pure A: eps = 1 | — |
-| `X` | in | conversion of A wanted | — |
+| `eps` | in | volume-change factor eps = y_A0 * (change in moles per mole of A); e.g. A -> 2B with pure A: eps = 1 | - |
+| `X` | in | conversion of A wanted | - |
 | `V` | out | reactor volume | m^3 |
 
 **Applies when:** isothermal, isobaric ideal gas; eps > -1; 0 <= X < 1.
@@ -2065,7 +2013,7 @@ V = 64.76405219 m^3
 
 <a id="chemeng_pfr_conversion_first_order"></a>
 
-#### PFR conversion for a volume (first order, liquid) — `chemeng_pfr_conversion_first_order`
+#### PFR conversion for a volume (first order, liquid), `chemeng_pfr_conversion_first_order`
 
 Conversion at the exit of an isothermal plug-flow reactor of volume V for a first-order constant-density reaction.
 
@@ -2078,7 +2026,7 @@ $$
 | `v0` | in | volumetric feed flow | m^3/s |
 | `V` | in | reactor volume | m^3 |
 | `k` | in | first-order rate constant | 1/s |
-| `X` | out | conversion of A | — |
+| `X` | out | conversion of A | - |
 
 **Applies when:** plug flow, isothermal, constant density.
 
@@ -2096,7 +2044,7 @@ X = 0.8646647168
 
 <a id="chemeng_pfr_conversion_second_order"></a>
 
-#### PFR conversion for a volume (second order, liquid) — `chemeng_pfr_conversion_second_order`
+#### PFR conversion for a volume (second order, liquid), `chemeng_pfr_conversion_second_order`
 
 Exit conversion and concentration of an isothermal plug-flow reactor of volume V when -r_A = k C_A^2 (constant density).
 
@@ -2110,7 +2058,7 @@ $$
 | `V` | in | reactor volume | m^3 |
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
 | `CA0` | in | feed (initial) concentration of A | mol/m^3 |
-| `X` | out | conversion of A | — |
+| `X` | out | conversion of A | - |
 | `CA` | out | exit concentration of A | mol/m^3 |
 
 **Applies when:** plug flow, isothermal, constant density.
@@ -2131,7 +2079,7 @@ CA = 333.3333333 mol/m^3
 
 <a id="chemeng_pfr_volume_first_order"></a>
 
-#### PFR volume for a conversion (first order, liquid) — `chemeng_pfr_volume_first_order`
+#### PFR volume for a conversion (first order, liquid), `chemeng_pfr_volume_first_order`
 
 Volume of an isothermal plug-flow reactor that reaches conversion X for a first-order constant-density reaction.
 
@@ -2143,7 +2091,7 @@ $$
 |---|---|---|---|
 | `v0` | in | volumetric feed flow | m^3/s |
 | `k` | in | first-order rate constant | 1/s |
-| `X` | in | conversion of A wanted | — |
+| `X` | in | conversion of A wanted | - |
 | `V` | out | reactor volume | m^3 |
 
 **Applies when:** 0 <= X < 1; plug flow, isothermal, constant density.
@@ -2162,7 +2110,7 @@ V = 23.02585093 m^3
 
 <a id="chemeng_pfr_volume_second_order"></a>
 
-#### PFR volume for a conversion (second order, liquid) — `chemeng_pfr_volume_second_order`
+#### PFR volume for a conversion (second order, liquid), `chemeng_pfr_volume_second_order`
 
 Volume of an isothermal plug-flow reactor that reaches conversion X when -r_A = k C_A^2 (constant density).
 
@@ -2175,7 +2123,7 @@ $$
 | `v0` | in | volumetric feed flow | m^3/s |
 | `k` | in | second-order rate constant (-r_A = k C_A^2) | m^3/(mol*s) |
 | `CA0` | in | feed (initial) concentration of A | mol/m^3 |
-| `X` | in | conversion of A wanted | — |
+| `X` | in | conversion of A wanted | - |
 | `V` | out | reactor volume | m^3 |
 
 **Applies when:** 0 <= X < 1; plug flow, isothermal, constant density.
@@ -2195,7 +2143,7 @@ V = 4 m^3
 
 <a id="chemeng_recycle_reactor_first_order"></a>
 
-#### Plug-flow reactor with recycle: conversion (first order) — `chemeng_recycle_reactor_first_order`
+#### Plug-flow reactor with recycle: conversion (first order), `chemeng_recycle_reactor_first_order`
 
 Overall conversion of a plug-flow reactor with recycle ratio R (recycled flow / product flow) for a first-order constant-density reaction.
 
@@ -2208,8 +2156,8 @@ $$
 | `v0` | in | fresh volumetric feed flow | m^3/s |
 | `V` | in | reactor volume | m^3 |
 | `k` | in | first-order rate constant | 1/s |
-| `R` | in | recycle ratio: recycled flow divided by the flow leaving the system | — |
-| `X` | out | overall conversion of A | — |
+| `R` | in | recycle ratio: recycled flow divided by the flow leaving the system | - |
+| `X` | out | overall conversion of A | - |
 
 **Applies when:** R >= 0 (R = 0 is a plain PFR; large R approaches a CSTR); isothermal, constant density.
 
@@ -2228,7 +2176,7 @@ X = 0.7398003103
 
 <a id="chemeng_rtd_moments"></a>
 
-#### Residence-time distribution: mean, variance and tanks-in-series number from tracer data — `chemeng_rtd_moments`
+#### Residence-time distribution: mean, variance and tanks-in-series number from tracer data, `chemeng_rtd_moments`
 
 Mean residence time, variance and the equivalent number of tanks in series from a pulse-tracer response C(t) (trapezoidal rule, uneven spacing allowed).
 
@@ -2238,12 +2186,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `t` | in | sample times, in the unit t_unit | — |
-| `C` | in | tracer concentrations at those times (any unit) | — |
-| `t_unit` | in | unit of the times: s, min or h | — |
+| `t` | in | sample times, in the unit t_unit | - |
+| `C` | in | tracer concentrations at those times (any unit) | - |
+| `t_unit` | in | unit of the times: s, min or h | - |
 | `t_mean` | out | mean residence time | s |
 | `variance` | out | variance of the RTD | s^2 |
-| `N_tanks` | out | equivalent number of equal tanks in series, t_mean^2/variance | — |
+| `N_tanks` | out | equivalent number of equal tanks in series, t_mean^2/variance | - |
 
 **Applies when:** pulse tracer, closed vessel; times increasing, concentrations >= 0.
 
@@ -2261,7 +2209,7 @@ N_tanks = 4.417534531
 
 <a id="chemeng_reversible_first_order_batch"></a>
 
-#### Reversible first-order reaction A <-> B in a batch reactor — `chemeng_reversible_first_order_batch`
+#### Reversible first-order reaction A <-> B in a batch reactor, `chemeng_reversible_first_order_batch`
 
 Concentrations and conversion after time t, and the equilibrium conversion, for A <-> B with first-order forward and reverse steps.
 
@@ -2278,8 +2226,8 @@ $$
 | `t` | in | reaction time | s |
 | `CA` | out | concentration of A at t | mol/m^3 |
 | `CB` | out | concentration of B at t | mol/m^3 |
-| `X` | out | conversion of A at t | — |
-| `X_eq` | out | equilibrium conversion of A | — |
+| `X` | out | conversion of A at t | - |
+| `X_eq` | out | equilibrium conversion of A | - |
 
 **Applies when:** isothermal, constant volume.
 
@@ -2302,7 +2250,7 @@ X_eq = 0.6666666667
 
 <a id="chemeng_series_reaction_maximum"></a>
 
-#### Series reactions A -> B -> C: maximum of the intermediate (batch or PFR) — `chemeng_series_reaction_maximum`
+#### Series reactions A -> B -> C: maximum of the intermediate (batch or PFR), `chemeng_series_reaction_maximum`
 
 Time (or plug-flow space time) at which the intermediate B of first-order series reactions A -> B -> C peaks, starting from pure A, and the concentrations there.
 
@@ -2341,7 +2289,7 @@ CC = 250 mol/m^3
 
 <a id="chemeng_gas_pz_material_balance"></a>
 
-#### Gas initially in place from the p/z plot — `chemeng_gas_pz_material_balance`
+#### Gas initially in place from the p/z plot: `chemeng_gas_pz_material_balance`
 
 Original gas in place of a volumetric gas reservoir from the straight line of p/z against cumulative gas production.
 
@@ -2351,11 +2299,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `p` | in | average reservoir pressures, in p_unit | — |
-| `z` | in | gas deviation factors at those pressures | — |
-| `Gp` | in | cumulative gas production at standard conditions, in gp_unit | — |
-| `p_unit` | in | unit of the pressures | — |
-| `gp_unit` | in | unit of Gp: m3, MMscf or Bscf | — |
+| `p` | in | average reservoir pressures, in p_unit | - |
+| `z` | in | gas deviation factors at those pressures | - |
+| `Gp` | in | cumulative gas production at standard conditions, in gp_unit | - |
+| `p_unit` | in | unit of the pressures | - |
+| `gp_unit` | in | unit of Gp: m3, MMscf or Bscf | - |
 | `G` | out | original gas in place at standard conditions | m^3 |
 | `pz_initial` | out | p/z extrapolated to no production | Pa |
 
@@ -2366,8 +2314,8 @@ $ chemical-engineering solve chemeng_gas_pz_material_balance "p=[3200, 2925, 252
 G = 4993507777 m^3
 pz_initial = 26084853.14 Pa
   by: Gas initially in place from the p/z plot  (least squares of p/z = (p/z)_i (1 - Gp/G): G = -intercept/slope)
-  gp_unit = Bscf
   p_unit = psi
+  gp_unit = Bscf
   assumes: volumetric (no water drive) gas reservoir; p/z falls with production
 ```
 
@@ -2375,7 +2323,7 @@ pz_initial = 26084853.14 Pa
 
 <a id="chemeng_havlena_odeh_gas_cap"></a>
 
-#### Oil in place and gas-cap size from the material balance (Havlena-Odeh, gas cap) — `chemeng_havlena_odeh_gas_cap`
+#### Oil in place and gas-cap size from the material balance (Havlena-Odeh, gas cap), `chemeng_havlena_odeh_gas_cap`
 
 Oil initially in place and the gas-cap ratio m from the straight line F/Eo = N + N m Eg/Eo of successive surveys (no water influx).
 
@@ -2385,12 +2333,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `F` | in | underground withdrawals, in v_unit at reservoir conditions | — |
-| `Eo` | in | oil and dissolved-gas expansion per unit of oil in place | — |
-| `Eg` | in | gas-cap expansion term per unit of oil in place | — |
-| `v_unit` | in | unit of F: m3 or bbl | — |
+| `F` | in | underground withdrawals, in v_unit at reservoir conditions | - |
+| `Eo` | in | oil and dissolved-gas expansion per unit of oil in place | - |
+| `Eg` | in | gas-cap expansion term per unit of oil in place | - |
+| `v_unit` | in | unit of F: m3 or bbl | - |
 | `N` | out | oil initially in place (stock-tank volume) | m^3 |
-| `m` | out | ratio of initial gas-cap to oil-zone reservoir volume | — |
+| `m` | out | ratio of initial gas-cap to oil-zone reservoir volume | - |
 
 **Applies when:** no water influx; consistent units.
 
@@ -2407,7 +2355,7 @@ m = 0.2266832918
 
 <a id="chemeng_havlena_odeh_oil_in_place"></a>
 
-#### Oil initially in place from the material balance (Havlena-Odeh straight line) — `chemeng_havlena_odeh_oil_in_place`
+#### Oil initially in place from the material balance (Havlena-Odeh straight line), `chemeng_havlena_odeh_oil_in_place`
 
 Stock-tank oil initially in place from the underground withdrawal F and the total expansion term Et of successive pressure surveys (no water influx), by the straight line F = N Et through the origin.
 
@@ -2417,9 +2365,9 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `F` | in | underground withdrawals at each survey, in v_unit at reservoir conditions | — |
-| `Et` | in | total expansion per unit of oil in place at each survey (reservoir volume per stock-tank volume) | — |
-| `v_unit` | in | unit of F: m3 or bbl | — |
+| `F` | in | underground withdrawals at each survey, in v_unit at reservoir conditions | - |
+| `Et` | in | total expansion per unit of oil in place at each survey (reservoir volume per stock-tank volume) | - |
+| `v_unit` | in | unit of F: m3 or bbl | - |
 | `N` | out | oil initially in place (stock-tank volume) | m^3 |
 
 **Applies when:** volumetric reservoir (no water influx); F and Et on one consistent basis.
@@ -2436,7 +2384,7 @@ N = 9161201.209 m^3
 
 <a id="chemeng_horner_buildup"></a>
 
-#### Pressure build-up test: Horner analysis for permeability and extrapolated pressure — `chemeng_horner_buildup`
+#### Pressure build-up test: Horner analysis for permeability and extrapolated pressure, `chemeng_horner_buildup`
 
 Permeability and the extrapolated pressure p* from the semilog straight line of shut-in pressure against the Horner time ratio (tp + dt)/dt.
 
@@ -2446,10 +2394,10 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `dt` | in | shut-in times, in t_unit | — |
-| `pws` | in | shut-in bottom-hole pressures, in p_unit | — |
-| `t_unit` | in | unit of the shut-in times | — |
-| `p_unit` | in | unit of the pressures | — |
+| `dt` | in | shut-in times, in t_unit | - |
+| `pws` | in | shut-in bottom-hole pressures, in p_unit | - |
+| `t_unit` | in | unit of the shut-in times | - |
+| `p_unit` | in | unit of the pressures | - |
 | `tp` | in | producing time before shut-in | s |
 | `q` | in | flow rate before shut-in at reservoir conditions | m^3/s |
 | `mu` | in | fluid viscosity | Pa*s |
@@ -2479,7 +2427,7 @@ p_star = 23388029.28 Pa
 
 <a id="chemeng_radial_darcy_flow"></a>
 
-#### Steady radial flow of oil to a well (Darcy) and productivity index — `chemeng_radial_darcy_flow`
+#### Steady radial flow of oil to a well (Darcy) and productivity index, `chemeng_radial_darcy_flow`
 
 Steady-state reservoir flow rate into a vertical well from a circular drainage area, with an optional skin factor, and the productivity index.
 
@@ -2496,7 +2444,7 @@ $$
 | `pw` | in | flowing bottom-hole pressure | Pa |
 | `re` | in | drainage radius | m |
 | `rw` | in | wellbore radius | m |
-| `S` | in | skin factor (default 0: undamaged well) (optional) | — |
+| `S` | in | skin factor (default 0: undamaged well) (optional) | - |
 | `q` | out | flow rate at reservoir conditions | m^3/s |
 | `PI` | out | productivity index q/(pe - pw) | m^3/(s*Pa) |
 
@@ -2521,7 +2469,7 @@ In the worked example, k = 9.869233e-14 m^2, h = 9.144 m, mu = 0.0015 Pa*s, pe =
 
 <a id="chemeng_line_source_drawdown"></a>
 
-#### Transient drawdown around a well (line-source solution) — `chemeng_line_source_drawdown`
+#### Transient drawdown around a well (line-source solution), `chemeng_line_source_drawdown`
 
 Pressure drop and pressure at radius r and time t after a well starts producing at a constant rate in an infinite reservoir (line-source, exponential-integral solution).
 
@@ -2535,7 +2483,7 @@ $$
 | `mu` | in | fluid viscosity | Pa*s |
 | `k` | in | permeability | m^2 |
 | `h` | in | net pay thickness | m |
-| `phi` | in | porosity (fraction) | — |
+| `phi` | in | porosity (fraction) | - |
 | `ct` | in | total compressibility (1/psi is converted here) | 1/Pa |
 | `r` | in | radius from the well | m |
 | `t` | in | time since production started | s |
@@ -2568,7 +2516,7 @@ p = 28972671.38 Pa
 
 <a id="chemeng_kremser_absorber"></a>
 
-#### Absorber with N equilibrium stages (Kremser) — `chemeng_kremser_absorber`
+#### Absorber with N equilibrium stages (Kremser), `chemeng_kremser_absorber`
 
 Solute mole fraction in the gas leaving a countercurrent absorber of N ideal stages, and the fraction of solute absorbed, for dilute gas with linear equilibrium y = m x.
 
@@ -2578,13 +2526,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N` | in | number of ideal stages | — |
-| `A` | in | absorption factor A = L/(m V) | — |
-| `m` | in | slope of the equilibrium line y = m x | — |
-| `y_in` | in | solute mole fraction in the entering gas | — |
-| `x_in` | in | solute mole fraction in the entering liquid (solvent) | — |
-| `y_out` | out | solute mole fraction in the leaving gas | — |
-| `recovery` | out | fraction of the entering solute absorbed | — |
+| `N` | in | number of ideal stages | - |
+| `A` | in | absorption factor A = L/(m V) | - |
+| `m` | in | slope of the equilibrium line y = m x | - |
+| `y_in` | in | solute mole fraction in the entering gas | - |
+| `x_in` | in | solute mole fraction in the entering liquid (solvent) | - |
+| `y_out` | out | solute mole fraction in the leaving gas | - |
+| `recovery` | out | fraction of the entering solute absorbed | - |
 
 **Applies when:** dilute, constant L and V, linear equilibrium; y_in > m x_in.
 
@@ -2604,7 +2552,7 @@ recovery = 0.9387399043
 
 <a id="chemeng_nrtl_activity_coefficients"></a>
 
-#### Activity coefficients from the NRTL equation — `chemeng_nrtl_activity_coefficients`
+#### Activity coefficients from the NRTL equation, `chemeng_nrtl_activity_coefficients`
 
 Activity coefficients and excess Gibbs energy of a liquid mixture from NRTL interaction parameters tau_ij and non-randomness parameters alpha_ij.
 
@@ -2614,12 +2562,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | liquid mole fractions | — |
-| `tau` | in | NRTL parameters tau_ij (dimensionless, tau_ii = 0) at the temperature of interest | — |
-| `alpha` | in | non-randomness parameters alpha_ij (symmetric, alpha_ii = 0) | — |
-| `gamma1` | out | activity coefficient of component 1 | — |
-| `gamma` | out | activity coefficients of every component | — |
-| `GE_RT` | out | excess Gibbs energy over RT | — |
+| `x` | in | liquid mole fractions | - |
+| `tau` | in | NRTL parameters tau_ij (dimensionless, tau_ii = 0) at the temperature of interest | - |
+| `alpha` | in | non-randomness parameters alpha_ij (symmetric, alpha_ii = 0) | - |
+| `gamma1` | out | activity coefficient of component 1 | - |
+| `gamma` | out | activity coefficients of every component | - |
+| `GE_RT` | out | excess Gibbs energy over RT | - |
 
 **Applies when:** tau_ii = 0, alpha_ii = 0; all mole fractions positive.
 
@@ -2636,7 +2584,7 @@ GE_RT = 0.3642004538
 
 <a id="chemeng_uniquac_activity_coefficients"></a>
 
-#### Activity coefficients from the UNIQUAC equation — `chemeng_uniquac_activity_coefficients`
+#### Activity coefficients from the UNIQUAC equation, `chemeng_uniquac_activity_coefficients`
 
 Activity coefficients of a liquid mixture from UNIQUAC volume and area parameters r, q and interaction parameters tau_ij (coordination number 10).
 
@@ -2646,12 +2594,12 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | liquid mole fractions | — |
-| `r` | in | UNIQUAC volume parameters r_i | — |
-| `q` | in | UNIQUAC area parameters q_i | — |
-| `tau` | in | UNIQUAC parameters tau_ij = exp(-a_ij/T) at the temperature of interest (tau_ii = 1) | — |
-| `gamma1` | out | activity coefficient of component 1 | — |
-| `gamma` | out | activity coefficients of every component | — |
+| `x` | in | liquid mole fractions | - |
+| `r` | in | UNIQUAC volume parameters r_i | - |
+| `q` | in | UNIQUAC area parameters q_i | - |
+| `tau` | in | UNIQUAC parameters tau_ij = exp(-a_ij/T) at the temperature of interest (tau_ii = 1) | - |
+| `gamma1` | out | activity coefficient of component 1 | - |
+| `gamma` | out | activity coefficients of every component | - |
 
 **Applies when:** tau_ii = 1, tau_ij > 0; all mole fractions positive; coordination number z = 10.
 
@@ -2667,7 +2615,7 @@ gamma = [1.29868568479,1.10358464339]
 
 <a id="chemeng_wilson_activity_coefficients"></a>
 
-#### Activity coefficients from the Wilson equation — `chemeng_wilson_activity_coefficients`
+#### Activity coefficients from the Wilson equation, `chemeng_wilson_activity_coefficients`
 
 Activity coefficients of every component and the excess Gibbs energy of a liquid mixture from Wilson parameters Lambda_ij.
 
@@ -2677,11 +2625,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | liquid mole fractions | — |
-| `Lam` | in | Wilson parameters Lambda_ij (dimensionless, Lambda_ii = 1) at the temperature of interest | — |
-| `gamma1` | out | activity coefficient of component 1 | — |
-| `gamma` | out | activity coefficients of every component | — |
-| `GE_RT` | out | excess Gibbs energy over RT | — |
+| `x` | in | liquid mole fractions | - |
+| `Lam` | in | Wilson parameters Lambda_ij (dimensionless, Lambda_ii = 1) at the temperature of interest | - |
+| `gamma1` | out | activity coefficient of component 1 | - |
+| `gamma` | out | activity coefficients of every component | - |
+| `GE_RT` | out | excess Gibbs energy over RT | - |
 
 **Applies when:** Lambda_ii = 1, Lambda_ij > 0; all mole fractions positive.
 
@@ -2698,7 +2646,7 @@ GE_RT = 0.03140151517
 
 <a id="chemeng_antoine_boiling_temperature"></a>
 
-#### Boiling (saturation) temperature from the Antoine equation — `chemeng_antoine_boiling_temperature`
+#### Boiling (saturation) temperature from the Antoine equation, `chemeng_antoine_boiling_temperature`
 
 Temperature at which a pure liquid boils at pressure P, from Antoine coefficients written in a stated convention.
 
@@ -2708,11 +2656,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `A` | in | Antoine coefficient A | — |
-| `B` | in | Antoine coefficient B | — |
-| `C` | in | Antoine coefficient C | — |
-| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | — |
-| `base` | in | logarithm of the Antoine equation: log10 or ln | — |
+| `A` | in | Antoine coefficient A | - |
+| `B` | in | Antoine coefficient B | - |
+| `C` | in | Antoine coefficient C | - |
+| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | - |
+| `base` | in | logarithm of the Antoine equation: log10 or ln | - |
 | `P` | in | pressure | Pa |
 | `Tsat` | out | saturation temperature | K |
 
@@ -2735,7 +2683,7 @@ Tsat = 373.1468258 K
 
 <a id="chemeng_raoult_bubble_pressure"></a>
 
-#### Bubble-point pressure (Raoult's law) — `chemeng_raoult_bubble_pressure`
+#### Bubble-point pressure (Raoult's law): `chemeng_raoult_bubble_pressure`
 
 Pressure at which a liquid of composition x starts to boil at temperature T, and the composition of the first bubble, for an ideal solution (Raoult's law, Antoine vapour pressures).
 
@@ -2745,13 +2693,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | liquid mole fractions | — |
-| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | — |
-| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | — |
-| `base` | in | logarithm of the Antoine equation: log10 or ln | — |
+| `x` | in | liquid mole fractions | - |
+| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | - |
+| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | - |
+| `base` | in | logarithm of the Antoine equation: log10 or ln | - |
 | `T` | in | temperature | K |
 | `P` | out | bubble-point pressure | Pa |
-| `y` | out | vapour mole fractions of the first bubble | — |
+| `y` | out | vapour mole fractions of the first bubble | - |
 
 **Applies when:** ideal liquid and ideal gas (Raoult's law); fractions sum to 1.
 
@@ -2770,7 +2718,7 @@ y = [0.621965676216,0.378034323784]
 
 <a id="chemeng_modified_raoult_bubble_pressure"></a>
 
-#### Bubble-point pressure by the modified Raoult's law (activity coefficients) — `chemeng_modified_raoult_bubble_pressure`
+#### Bubble-point pressure by the modified Raoult's law (activity coefficients), `chemeng_modified_raoult_bubble_pressure`
 
 The bubble-point pressure P = sum x_i gamma_i P_i^sat of a non-ideal liquid with stated activity coefficients and vapour pressures (low pressure, ideal vapour), and the vapour composition y_i = x_i gamma_i P_i^sat/P.
 
@@ -2780,13 +2728,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | liquid mole fractions (sum to 1) | — |
-| `gamma` | in | activity coefficient of each component at this composition | — |
-| `Psat` | in | vapour pressure of each pure component at the temperature, in the unit p_unit | — |
-| `p_unit` | in | unit of the vapour pressures: Pa, kPa, MPa, bar, atm or psi | — |
+| `x` | in | liquid mole fractions (sum to 1) | - |
+| `gamma` | in | activity coefficient of each component at this composition | - |
+| `Psat` | in | vapour pressure of each pure component at the temperature, in the unit p_unit | - |
+| `p_unit` | in | unit of the vapour pressures: Pa, kPa, MPa, bar, atm or psi | - |
 | `P` | out | bubble-point pressure | Pa |
-| `y1` | out | vapour mole fraction of the first component | — |
-| `y` | out | vapour mole fractions, in the order of x | — |
+| `y1` | out | vapour mole fraction of the first component | - |
+| `y` | out | vapour mole fractions, in the order of x | - |
 
 **Applies when:** low pressure (ideal vapour, Poynting factor 1); activity coefficients stated for this liquid composition and temperature.
 
@@ -2804,7 +2752,7 @@ y = [0.647058823529,0.352941176471]
 
 <a id="chemeng_raoult_bubble_temperature"></a>
 
-#### Bubble-point temperature (Raoult's law) — `chemeng_raoult_bubble_temperature`
+#### Bubble-point temperature (Raoult's law): `chemeng_raoult_bubble_temperature`
 
 Temperature at which a liquid of composition x starts to boil at pressure P, and the first-bubble composition (Raoult's law, Antoine vapour pressures; iterative).
 
@@ -2814,13 +2762,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `x` | in | liquid mole fractions | — |
-| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | — |
-| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | — |
-| `base` | in | logarithm of the Antoine equation: log10 or ln | — |
+| `x` | in | liquid mole fractions | - |
+| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | - |
+| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | - |
+| `base` | in | logarithm of the Antoine equation: log10 or ln | - |
 | `P` | in | pressure | Pa |
 | `T` | out | bubble-point temperature | K |
-| `y` | out | vapour mole fractions of the first bubble | — |
+| `y` | out | vapour mole fractions of the first bubble | - |
 
 **Applies when:** ideal liquid and ideal gas; fractions sum to 1.
 
@@ -2830,8 +2778,8 @@ T = 368.2912291 K
 y = [0.621854561429,0.378145438571]
   by: Bubble-point temperature (Raoult's law)  (sum x_i Psat_i(T) = P solved by bisection between the pure-component boiling points)
   P = 101325 Pa
-  base = log10
   units = mmHg_degC
+  base = log10
   assumes: ideal liquid and ideal gas; fractions sum to 1
 ```
 
@@ -2839,7 +2787,7 @@ y = [0.621854561429,0.378145438571]
 
 <a id="chemeng_countercurrent_extraction"></a>
 
-#### Countercurrent liquid-liquid extraction (N stages, immiscible solvents) — `chemeng_countercurrent_extraction`
+#### Countercurrent liquid-liquid extraction (N stages, immiscible solvents), `chemeng_countercurrent_extraction`
 
 Raffinate and extract solute ratios and the fraction extracted for N ideal countercurrent stages with immiscible carrier and solvent and a constant distribution ratio Y = K X (solute-free mass-ratio basis).
 
@@ -2851,13 +2799,13 @@ $$
 |---|---|---|---|
 | `F` | in | solute-free carrier flow in the feed | kg/s |
 | `S` | in | solute-free solvent flow | kg/s |
-| `K` | in | distribution ratio Y = K X (mass ratios) | — |
-| `N` | in | number of ideal stages | — |
-| `XF` | in | solute ratio in the feed, kg solute per kg carrier | — |
-| `YS` | in | solute ratio in the entering solvent, kg solute per kg solvent | — |
-| `XN` | out | solute ratio in the final raffinate | — |
-| `Y1` | out | solute ratio in the final extract | — |
-| `recovery` | out | fraction of the solute extracted | — |
+| `K` | in | distribution ratio Y = K X (mass ratios) | - |
+| `N` | in | number of ideal stages | - |
+| `XF` | in | solute ratio in the feed, kg solute per kg carrier | - |
+| `YS` | in | solute ratio in the entering solvent, kg solute per kg solvent | - |
+| `XN` | out | solute ratio in the final raffinate | - |
+| `Y1` | out | solute ratio in the final extract | - |
+| `recovery` | out | fraction of the solute extracted | - |
 
 **Applies when:** immiscible carrier and solvent, constant K; XF > YS/K.
 
@@ -2879,7 +2827,7 @@ recovery = 0.8656202967
 
 <a id="chemeng_crosscurrent_extraction"></a>
 
-#### Crosscurrent (multiple-contact) extraction with fresh solvent — `chemeng_crosscurrent_extraction`
+#### Crosscurrent (multiple-contact) extraction with fresh solvent, `chemeng_crosscurrent_extraction`
 
 Raffinate solute ratio after N ideal stages, each fed with the same amount of fresh solvent, for immiscible solvents and a constant distribution ratio.
 
@@ -2891,11 +2839,11 @@ $$
 |---|---|---|---|
 | `F` | in | solute-free carrier flow (or mass) in the feed | kg/s |
 | `S` | in | solute-free solvent flow (or mass) added to EACH stage | kg/s |
-| `K` | in | distribution ratio Y = K X (mass ratios) | — |
-| `N` | in | number of stages | — |
-| `XF` | in | solute ratio in the feed, kg solute per kg carrier | — |
-| `XN` | out | solute ratio in the final raffinate | — |
-| `recovery` | out | fraction of the solute extracted | — |
+| `K` | in | distribution ratio Y = K X (mass ratios) | - |
+| `N` | in | number of stages | - |
+| `XF` | in | solute ratio in the feed, kg solute per kg carrier | - |
+| `XN` | out | solute ratio in the final raffinate | - |
+| `recovery` | out | fraction of the solute extracted | - |
 
 **Applies when:** immiscible carrier and solvent, constant K; fresh (solute-free) solvent to every stage.
 
@@ -2915,7 +2863,7 @@ recovery = 0.6498722034
 
 <a id="chemeng_raoult_dew_pressure"></a>
 
-#### Dew-point pressure (Raoult's law) — `chemeng_raoult_dew_pressure`
+#### Dew-point pressure (Raoult's law): `chemeng_raoult_dew_pressure`
 
 Pressure at which a vapour of composition y starts to condense at temperature T, and the composition of the first drop (Raoult's law, Antoine vapour pressures).
 
@@ -2925,13 +2873,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y` | in | vapour mole fractions | — |
-| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | — |
-| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | — |
-| `base` | in | logarithm of the Antoine equation: log10 or ln | — |
+| `y` | in | vapour mole fractions | - |
+| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | - |
+| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | - |
+| `base` | in | logarithm of the Antoine equation: log10 or ln | - |
 | `T` | in | temperature | K |
 | `P` | out | dew-point pressure | Pa |
-| `x` | out | liquid mole fractions of the first drop | — |
+| `x` | out | liquid mole fractions of the first drop | - |
 
 **Applies when:** ideal liquid and ideal gas; fractions sum to 1.
 
@@ -2950,7 +2898,7 @@ x = [0.212682671661,0.787317328339]
 
 <a id="chemeng_raoult_dew_temperature"></a>
 
-#### Dew-point temperature (Raoult's law) — `chemeng_raoult_dew_temperature`
+#### Dew-point temperature (Raoult's law): `chemeng_raoult_dew_temperature`
 
 Temperature at which a vapour of composition y starts to condense at pressure P, and the first-drop composition (Raoult's law, Antoine vapour pressures; iterative).
 
@@ -2960,13 +2908,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y` | in | vapour mole fractions | — |
-| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | — |
-| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | — |
-| `base` | in | logarithm of the Antoine equation: log10 or ln | — |
+| `y` | in | vapour mole fractions | - |
+| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | - |
+| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | - |
+| `base` | in | logarithm of the Antoine equation: log10 or ln | - |
 | `P` | in | pressure | Pa |
 | `T` | out | dew-point temperature | K |
-| `x` | out | liquid mole fractions of the first drop | — |
+| `x` | out | liquid mole fractions of the first drop | - |
 
 **Applies when:** ideal liquid and ideal gas; fractions sum to 1.
 
@@ -2985,7 +2933,7 @@ x = [0.216263315226,0.783736684774]
 
 <a id="chemeng_wilson_k_flash"></a>
 
-#### Flash with Wilson K-values (hydrocarbon mixtures) — `chemeng_wilson_k_flash`
+#### Flash with Wilson K-values (hydrocarbon mixtures), `chemeng_wilson_k_flash`
 
 Vapour fraction and phase compositions of a hydrocarbon feed at T and P with K-values estimated by Wilson's correlation from critical constants and acentric factors.
 
@@ -2995,17 +2943,17 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | feed mole fractions | — |
-| `Tc` | in | critical temperatures, K | — |
-| `Pc` | in | critical pressures, in the unit p_unit | — |
-| `omega` | in | acentric factors | — |
-| `p_unit` | in | unit of the critical pressures: Pa, kPa, MPa, bar, atm or psi | — |
+| `z` | in | feed mole fractions | - |
+| `Tc` | in | critical temperatures, K | - |
+| `Pc` | in | critical pressures, in the unit p_unit | - |
+| `omega` | in | acentric factors | - |
+| `p_unit` | in | unit of the critical pressures: Pa, kPa, MPa, bar, atm or psi | - |
 | `T` | in | flash temperature | K |
 | `P` | in | flash pressure | Pa |
-| `VF` | out | vapour fraction V/F | — |
-| `x` | out | liquid mole fractions | — |
-| `y` | out | vapour mole fractions | — |
-| `K` | out | Wilson K-values | — |
+| `VF` | out | vapour fraction V/F | - |
+| `x` | out | liquid mole fractions | - |
+| `y` | out | vapour mole fractions | - |
+| `K` | out | Wilson K-values | - |
 
 **Applies when:** two-phase at the Wilson K-values; some K-value differs from 1 by more than 1 %; Wilson's correlation suits light hydrocarbons at low to moderate pressure.
 
@@ -3026,7 +2974,7 @@ K = [16.6622229198,0.503259488285,0.0120693259672]
 
 <a id="chemeng_raoult_isothermal_flash"></a>
 
-#### Isothermal flash of an ideal mixture (Raoult's law) — `chemeng_raoult_isothermal_flash`
+#### Isothermal flash of an ideal mixture (Raoult's law), `chemeng_raoult_isothermal_flash`
 
 Vapour fraction and phase compositions of a feed flashed at temperature T and pressure P, with Raoult's-law K-values from Antoine vapour pressures.
 
@@ -3036,15 +2984,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | feed mole fractions | — |
-| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | — |
-| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | — |
-| `base` | in | logarithm of the Antoine equation: log10 or ln | — |
+| `z` | in | feed mole fractions | - |
+| `ant` | in | Antoine coefficients, one row (A, B, C) per component, in the stated convention | - |
+| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | - |
+| `base` | in | logarithm of the Antoine equation: log10 or ln | - |
 | `T` | in | flash temperature | K |
 | `P` | in | flash pressure | Pa |
-| `VF` | out | vapour fraction V/F | — |
-| `x` | out | liquid mole fractions | — |
-| `y` | out | vapour mole fractions | — |
+| `VF` | out | vapour fraction V/F | - |
+| `x` | out | liquid mole fractions | - |
+| `y` | out | vapour mole fractions | - |
 
 **Applies when:** P between the dew- and bubble-point pressures at T (two phases); ideal liquid and gas; some K-value differs from 1 by more than 1 %.
 
@@ -3056,8 +3004,8 @@ y = [0.626327272537,0.373672727463]
   by: Isothermal flash of an ideal mixture (Raoult's law)  (K_i = Psat_i(T)/P, then the Rachford-Rice equation solved for V/F by bisection)
   T = 368.15 K
   P = 101325 Pa
-  base = log10
   units = mmHg_degC
+  base = log10
   assumes: P between the dew- and bubble-point pressures at T (two phases); ideal liquid and gas; some K-value differs from 1 by more than 1 %
 ```
 
@@ -3065,7 +3013,7 @@ y = [0.626327272537,0.373672727463]
 
 <a id="chemeng_rachford_rice_flash"></a>
 
-#### Isothermal flash with given K-values (Rachford-Rice) — `chemeng_rachford_rice_flash`
+#### Isothermal flash with given K-values (Rachford-Rice), `chemeng_rachford_rice_flash`
 
 Vapour fraction and the liquid and vapour compositions of a feed flashed at conditions where the K-values are known.
 
@@ -3075,11 +3023,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `z` | in | feed mole fractions | — |
-| `K` | in | equilibrium ratios K_i = y_i/x_i | — |
-| `VF` | out | vapour fraction V/F | — |
-| `x` | out | liquid mole fractions | — |
-| `y` | out | vapour mole fractions | — |
+| `z` | in | feed mole fractions | - |
+| `K` | in | equilibrium ratios K_i = y_i/x_i | - |
+| `VF` | out | vapour fraction V/F | - |
+| `x` | out | liquid mole fractions | - |
+| `y` | out | vapour mole fractions | - |
 
 **Applies when:** two-phase: sum z K > 1 and sum z/K > 1; K-values independent of composition; some K-value differs from 1 by more than 1 % (well-conditioned).
 
@@ -3096,7 +3044,7 @@ y = [0.571903654388,0.270871595806,0.157224749806]
 
 <a id="chemeng_mccabe_thiele_stages"></a>
 
-#### McCabe-Thiele number of theoretical stages (binary) — `chemeng_mccabe_thiele_stages`
+#### McCabe-Thiele number of theoretical stages (binary), `chemeng_mccabe_thiele_stages`
 
 Number of theoretical stages (the partial reboiler counted as one) of a binary column at reflux ratio R, by stepping between the operating lines and a constant-alpha equilibrium curve, with the feed switched at the intersection of the operating lines.
 
@@ -3106,14 +3054,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `alpha` | in | relative volatility of the light component (constant) | — |
-| `zF` | in | mole fraction of the light component in the feed | — |
-| `xD` | in | mole fraction of the light component in the distillate | — |
-| `q` | in | feed quality q: 1 saturated liquid, 0 saturated vapour, > 1 subcooled, < 0 superheated | — |
-| `xB` | in | mole fraction of the light component in the bottoms | — |
-| `R` | in | reflux ratio L/D | — |
-| `N` | out | theoretical stages including the partial reboiler | — |
-| `Rmin` | out | minimum reflux ratio | — |
+| `alpha` | in | relative volatility of the light component (constant) | - |
+| `zF` | in | mole fraction of the light component in the feed | - |
+| `xD` | in | mole fraction of the light component in the distillate | - |
+| `q` | in | feed quality q: 1 saturated liquid, 0 saturated vapour, > 1 subcooled, < 0 superheated | - |
+| `xB` | in | mole fraction of the light component in the bottoms | - |
+| `R` | in | reflux ratio L/D | - |
+| `N` | out | theoretical stages including the partial reboiler | - |
+| `Rmin` | out | minimum reflux ratio | - |
 
 **Applies when:** binary, constant alpha, constant molar overflow, total condenser; R > R_min; 0 < xB < zF < xD < 1.
 
@@ -3135,7 +3083,7 @@ Rmin = 1.1
 
 <a id="chemeng_fenske_minimum_stages"></a>
 
-#### Minimum number of stages at total reflux (Fenske) — `chemeng_fenske_minimum_stages`
+#### Minimum number of stages at total reflux (Fenske), `chemeng_fenske_minimum_stages`
 
 The minimum number of equilibrium stages of a binary distillation at total reflux by the Fenske equation (constant relative volatility), counting the partial reboiler as a stage.
 
@@ -3145,11 +3093,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `alpha` | in | relative volatility of the light component (constant) | — |
-| `xD` | in | mole fraction of the light component in the distillate | — |
-| `xB` | in | mole fraction of the light component in the bottoms | — |
-| `Nmin` | out | minimum number of equilibrium stages (partial reboiler included) | — |
-| `Nmin_trays` | out | minimum number of trays (Nmin - 1, the reboiler excluded) | — |
+| `alpha` | in | relative volatility of the light component (constant) | - |
+| `xD` | in | mole fraction of the light component in the distillate | - |
+| `xB` | in | mole fraction of the light component in the bottoms | - |
+| `Nmin` | out | minimum number of equilibrium stages (partial reboiler included) | - |
+| `Nmin_trays` | out | minimum number of trays (Nmin - 1, the reboiler excluded) | - |
 
 **Applies when:** binary, constant alpha; 0 < xB < xD < 1; total reflux, total condenser.
 
@@ -3168,7 +3116,7 @@ Nmin_trays = 5.426866226
 
 <a id="chemeng_multicomponent_underwood"></a>
 
-#### Minimum reflux of a multicomponent column (Underwood) — `chemeng_multicomponent_underwood`
+#### Minimum reflux of a multicomponent column (Underwood), `chemeng_multicomponent_underwood`
 
 The minimum reflux ratio of a multicomponent distillation with constant relative volatilities by Underwood's equations: the root theta between the key volatilities of sum alpha_i z_i/(alpha_i - theta) = 1 - q, then R_min + 1 = sum alpha_i x_D,i/(alpha_i - theta).
 
@@ -3178,14 +3126,14 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `alpha` | in | relative volatility of each component (any common reference, constant) | — |
-| `z` | in | feed mole fractions (sum to 1) | — |
-| `xD` | in | distillate mole fractions at minimum reflux (sum to 1) | — |
-| `q` | in | feed quality q (1 saturated liquid, 0 saturated vapour) | — |
-| `lk` | in | light key: its position in the lists (1 = first) | — |
-| `hk` | in | heavy key: its position in the lists | — |
-| `theta` | out | Underwood root between the key volatilities | — |
-| `Rmin` | out | minimum reflux ratio L/D | — |
+| `alpha` | in | relative volatility of each component (any common reference, constant) | - |
+| `z` | in | feed mole fractions (sum to 1) | - |
+| `xD` | in | distillate mole fractions at minimum reflux (sum to 1) | - |
+| `q` | in | feed quality q (1 saturated liquid, 0 saturated vapour) | - |
+| `lk` | in | light key: its position in the lists (1 = first) | - |
+| `hk` | in | heavy key: its position in the lists | - |
+| `theta` | out | Underwood root between the key volatilities | - |
+| `Rmin` | out | minimum reflux ratio L/D | - |
 
 **Applies when:** constant relative volatilities and molar overflow; adjacent keys (no component between them in volatility); the distillate composition at minimum reflux is stated.
 
@@ -3202,7 +3150,7 @@ Rmin = 0.8020004774
 
 <a id="chemeng_binary_minimum_reflux"></a>
 
-#### Minimum reflux ratio of a binary column (Underwood) — `chemeng_binary_minimum_reflux`
+#### Minimum reflux ratio of a binary column (Underwood), `chemeng_binary_minimum_reflux`
 
 Minimum reflux ratio of a binary distillation with constant relative volatility, for any feed condition q (Underwood's equations).
 
@@ -3212,11 +3160,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `alpha` | in | relative volatility of the light component (constant) | — |
-| `zF` | in | mole fraction of the light component in the feed | — |
-| `xD` | in | mole fraction of the light component in the distillate | — |
-| `q` | in | feed quality q: 1 saturated liquid, 0 saturated vapour, > 1 subcooled, < 0 superheated | — |
-| `Rmin` | out | minimum reflux ratio L/D | — |
+| `alpha` | in | relative volatility of the light component (constant) | - |
+| `zF` | in | mole fraction of the light component in the feed | - |
+| `xD` | in | mole fraction of the light component in the distillate | - |
+| `q` | in | feed quality q: 1 saturated liquid, 0 saturated vapour, > 1 subcooled, < 0 superheated | - |
+| `Rmin` | out | minimum reflux ratio L/D | - |
 
 **Applies when:** binary, constant alpha, constant molar overflow; 0 < zF < xD < 1.
 
@@ -3235,7 +3183,7 @@ Rmin = 1.1
 
 <a id="chemeng_absorber_transfer_units"></a>
 
-#### Packed absorber: number of transfer units and height (Colburn) — `chemeng_absorber_transfer_units`
+#### Packed absorber: number of transfer units and height (Colburn), `chemeng_absorber_transfer_units`
 
 Number of overall gas-phase transfer units and packed height of a dilute countercurrent absorber with linear equilibrium (Colburn's equation).
 
@@ -3245,13 +3193,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `y1` | in | solute mole fraction in the gas entering (bottom) | — |
-| `y2` | in | solute mole fraction in the gas leaving (top) | — |
-| `x2` | in | solute mole fraction in the liquid entering (top) | — |
-| `m` | in | slope of the equilibrium line y = m x | — |
-| `A` | in | absorption factor A = L/(m V) | — |
+| `y1` | in | solute mole fraction in the gas entering (bottom) | - |
+| `y2` | in | solute mole fraction in the gas leaving (top) | - |
+| `x2` | in | solute mole fraction in the liquid entering (top) | - |
+| `m` | in | slope of the equilibrium line y = m x | - |
+| `A` | in | absorption factor A = L/(m V) | - |
 | `HOG` | in | height of an overall gas-phase transfer unit | m |
-| `NOG` | out | number of overall gas-phase transfer units | — |
+| `NOG` | out | number of overall gas-phase transfer units | - |
 | `Z` | out | packed height | m |
 
 **Applies when:** dilute, constant L and V, linear equilibrium; y1 > y2 > m x2; no pinch.
@@ -3274,7 +3222,7 @@ Z = 3.586374296 m
 
 <a id="chemeng_kremser_stripper"></a>
 
-#### Stripper with N equilibrium stages (Kremser) — `chemeng_kremser_stripper`
+#### Stripper with N equilibrium stages (Kremser), `chemeng_kremser_stripper`
 
 Solute mole fraction in the liquid leaving a countercurrent stripper of N ideal stages, and the fraction stripped, for dilute liquid with linear equilibrium y = m x.
 
@@ -3284,13 +3232,13 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `N` | in | number of ideal stages | — |
-| `S` | in | stripping factor S = m V/L | — |
-| `m` | in | slope of the equilibrium line y = m x | — |
-| `x_in` | in | solute mole fraction in the entering liquid | — |
-| `y_in` | in | solute mole fraction in the entering stripping gas | — |
-| `x_out` | out | solute mole fraction in the leaving liquid | — |
-| `recovery` | out | fraction of the entering solute stripped | — |
+| `N` | in | number of ideal stages | - |
+| `S` | in | stripping factor S = m V/L | - |
+| `m` | in | slope of the equilibrium line y = m x | - |
+| `x_in` | in | solute mole fraction in the entering liquid | - |
+| `y_in` | in | solute mole fraction in the entering stripping gas | - |
+| `x_out` | out | solute mole fraction in the leaving liquid | - |
+| `recovery` | out | fraction of the entering solute stripped | - |
 
 **Applies when:** dilute, constant L and V, linear equilibrium; x_in > y_in/m.
 
@@ -3310,7 +3258,7 @@ recovery = 0.96891695
 
 <a id="chemeng_antoine_vapour_pressure"></a>
 
-#### Vapour pressure from the Antoine equation — `chemeng_antoine_vapour_pressure`
+#### Vapour pressure from the Antoine equation: `chemeng_antoine_vapour_pressure`
 
 Vapour pressure of a pure liquid at temperature T from Antoine coefficients written in a stated convention (logarithm and units).
 
@@ -3320,11 +3268,11 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `A` | in | Antoine coefficient A | — |
-| `B` | in | Antoine coefficient B | — |
-| `C` | in | Antoine coefficient C | — |
-| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | — |
-| `base` | in | logarithm of the Antoine equation: log10 or ln | — |
+| `A` | in | Antoine coefficient A | - |
+| `B` | in | Antoine coefficient B | - |
+| `C` | in | Antoine coefficient C | - |
+| `units` | in | units the Antoine coefficients are written for: pressure_temperature, e.g. mmHg_degC (P in mmHg, T in degC) or kPa_K | - |
+| `base` | in | logarithm of the Antoine equation: log10 or ln | - |
 | `T` | in | temperature | K |
 | `Psat` | out | vapour pressure | Pa |
 
@@ -3349,7 +3297,7 @@ Psat = 101336.5294 Pa
 
 <a id="chemeng_cake_filtration_volume"></a>
 
-#### Constant-pressure cake filtration: filtrate volume after a time — `chemeng_cake_filtration_volume`
+#### Constant-pressure cake filtration: filtrate volume after a time, `chemeng_cake_filtration_volume`
 
 Volume of filtrate collected after time t in constant-pressure cake filtration (Ruth equation with cake and medium resistances).
 
@@ -3388,7 +3336,7 @@ V = 0.24 m^3
 
 <a id="chemeng_stefan_diffusion_flux"></a>
 
-#### Diffusion of A through stagnant B (Stefan film) — `chemeng_stefan_diffusion_flux`
+#### Diffusion of A through stagnant B (Stefan film), `chemeng_stefan_diffusion_flux`
 
 Steady molar flux of A diffusing through a stagnant film of non-diffusing B in an ideal gas (evaporation, absorption through an inert).
 
@@ -3402,8 +3350,8 @@ $$
 | `P` | in | total pressure | Pa |
 | `T` | in | temperature | K |
 | `L` | in | film thickness (diffusion path length) | m |
-| `yA1` | in | mole fraction of A at the start of the path | — |
-| `yA2` | in | mole fraction of A at the end of the path | — |
+| `yA1` | in | mole fraction of A at the start of the path | - |
+| `yA2` | in | mole fraction of A at the end of the path | - |
 | `NA` | out | molar flux of A | mol/(m^2*s) |
 
 **Applies when:** steady state, ideal gas, constant D; B stagnant (no net flux of B).
@@ -3425,7 +3373,7 @@ NA = 0.0003379499217 mol/(m^2*s)
 
 <a id="chemeng_equimolar_counterdiffusion"></a>
 
-#### Equimolar counterdiffusion flux — `chemeng_equimolar_counterdiffusion`
+#### Equimolar counterdiffusion flux: `chemeng_equimolar_counterdiffusion`
 
 The molar flux of A through a film of thickness L in equimolar counterdiffusion (N_B = -N_A, ideal gas): N_A = c D (y_A1 - y_A2)/L with c = P/(R T).
 
@@ -3439,8 +3387,8 @@ $$
 | `P` | in | total pressure | Pa |
 | `T` | in | temperature | K |
 | `L` | in | film (path) thickness | m |
-| `yA1` | in | mole fraction of A at z = 0 | — |
-| `yA2` | in | mole fraction of A at z = L | — |
+| `yA1` | in | mole fraction of A at z = 0 | - |
+| `yA2` | in | mole fraction of A at z = L | - |
 | `NA` | out | molar flux of A | mol/(m^2*s) |
 | `NB` | out | molar flux of B (= -N_A) | mol/(m^2*s) |
 
@@ -3464,7 +3412,7 @@ NB = -0.001410154536 mol/(m^2*s)
 
 <a id="chemeng_mass_transfer_coefficient"></a>
 
-#### Mass-transfer coefficient from a stated Sherwood correlation — `chemeng_mass_transfer_coefficient`
+#### Mass-transfer coefficient from a stated Sherwood correlation, `chemeng_mass_transfer_coefficient`
 
 The convective mass-transfer coefficient k_c = Sh D/L from the Reynolds and Schmidt numbers by a stated correlation: a sphere (Ranz-Marshall), a flat plate in laminar flow (average) or turbulent flow in a pipe (Linton-Sherwood).
 
@@ -3474,15 +3422,15 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `geometry` | in | correlation: sphere (Ranz-Marshall), flat_plate (laminar, average) or pipe (Linton-Sherwood, turbulent) | — |
+| `geometry` | in | correlation: sphere (Ranz-Marshall), flat_plate (laminar, average) or pipe (Linton-Sherwood, turbulent) | - |
 | `u` | in | fluid velocity | m/s |
 | `L` | in | characteristic length: sphere or pipe diameter, plate length | m |
 | `D` | in | diffusivity of the solute in the fluid | m^2/s |
 | `rho` | in | fluid density | kg/m^3 |
 | `mu` | in | fluid viscosity | Pa*s |
-| `Re` | out | Reynolds number rho u L/mu | — |
-| `Sc` | out | Schmidt number mu/(rho D) | — |
-| `Sh` | out | Sherwood number | — |
+| `Re` | out | Reynolds number rho u L/mu | - |
+| `Sc` | out | Schmidt number mu/(rho D) | - |
+| `Sh` | out | Sherwood number | - |
 | `kc` | out | mass-transfer coefficient Sh D/L | m/s |
 
 **Applies when:** within each correlation's stated range of Re and Sc; dilute solute.
@@ -3507,7 +3455,7 @@ kc = 0.0001854410643 m/s
 
 <a id="chemeng_carman_pressure_drop"></a>
 
-#### Packed-bed pressure drop (Carman correlation) — `chemeng_carman_pressure_drop`
+#### Packed-bed pressure drop (Carman correlation), `chemeng_carman_pressure_drop`
 
 Pressure drop through a packed bed from Carman's correlation of the bed friction factor (180/Re' + 2.87/Re'^0.1 form).
 
@@ -3518,7 +3466,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `dp` | in | particle diameter | m |
-| `eps` | in | bed voidage (porosity) | — |
+| `eps` | in | bed voidage (porosity) | - |
 | `vs` | in | superficial velocity | m/s |
 | `rho` | in | fluid density | kg/m^3 |
 | `mu` | in | fluid viscosity | Pa*s |
@@ -3544,7 +3492,7 @@ dP = 134368.2731 Pa
 
 <a id="chemeng_ergun_pressure_drop"></a>
 
-#### Packed-bed pressure drop (Ergun equation) — `chemeng_ergun_pressure_drop`
+#### Packed-bed pressure drop (Ergun equation): `chemeng_ergun_pressure_drop`
 
 Pressure drop of a fluid flowing through a packed bed of spheres from the particle size, voidage, superficial velocity and fluid properties (Ergun equation).
 
@@ -3555,7 +3503,7 @@ $$
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
 | `dp` | in | particle diameter | m |
-| `eps` | in | bed voidage (porosity) | — |
+| `eps` | in | bed voidage (porosity) | - |
 | `vs` | in | superficial velocity | m/s |
 | `rho` | in | fluid density | kg/m^3 |
 | `mu` | in | fluid viscosity | Pa*s |
@@ -3581,7 +3529,7 @@ dP = 117187.5 Pa
 
 <a id="chemeng_filtration_constants_fit"></a>
 
-#### Specific cake and medium resistance from constant-pressure filtration data — `chemeng_filtration_constants_fit`
+#### Specific cake and medium resistance from constant-pressure filtration data, `chemeng_filtration_constants_fit`
 
 Specific cake resistance and filter-medium resistance from a constant-pressure filtration test (times and filtrate volumes), by the straight line of t/V against V.
 
@@ -3591,18 +3539,18 @@ $$
 
 | symbol |  | meaning | SI unit |
 |---|---|---|---|
-| `t` | in | times at which the filtrate volumes were read, in t_unit | — |
-| `V` | in | cumulative filtrate volumes, in v_unit | — |
-| `t_unit` | in | unit of the times | — |
-| `v_unit` | in | unit of the volumes | — |
+| `t` | in | times at which the filtrate volumes were read, in t_unit | - |
+| `V` | in | cumulative filtrate volumes, in v_unit | - |
+| `t_unit` | in | unit of the times | - |
+| `v_unit` | in | unit of the volumes | - |
 | `A` | in | filter area | m^2 |
 | `dP` | in | constant pressure difference | Pa |
 | `mu` | in | filtrate viscosity | Pa*s |
 | `c` | in | dry cake mass per volume of filtrate | kg/m^3 |
 | `alpha` | out | specific cake resistance | m/kg |
 | `Rm` | out | filter medium resistance | 1/m |
-| `slope` | out | slope of t/V against V, s/m^6 | — |
-| `intercept` | out | intercept of t/V against V, s/m^3 | — |
+| `slope` | out | slope of t/V against V, s/m^6 | - |
+| `intercept` | out | intercept of t/V against V, s/m^3 | - |
 
 **Applies when:** constant pressure, incompressible cake; a positive slope and intercept.
 
@@ -3617,11 +3565,11 @@ intercept = 28226.88889
   dP = 338000 Pa
   mu = 0.000895 Pa*s
   c = 23.47 kg/m^3
-  v_unit = L
   t_unit = s
+  v_unit = L
   assumes: constant pressure, incompressible cake; a positive slope and intercept
 ```
 
 **What the worked example means:** This calculation determines the specific cake resistance, denoted as alpha, and the filter medium resistance, denoted as Rm, from constant-pressure filtration data. By plotting the ratio of time to filtrate volume against the cumulative filtrate volume, a straight line is obtained whose slope and intercept relate directly to these physical properties. The resulting value for specific cake resistance is 8.07822e+11 m/kg, while the filter medium resistance is 4.67973e+11 1/m. These parameters are essential for scaling up filtration processes and predicting performance under varying operational conditions.
 
-Questions and reports: support@ai999x.com. AI999X — The Future Is Self-Improving.
+Questions and reports: support@ai999x.com. AI999X, The Future Is Self-Improving.

@@ -199,7 +199,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 
 <a id="chemeng_blending_flows"></a>
 
-### Blending: feed flows that make a product of given composition — `chemeng_blending_flows`
+### Blending: feed flows that make a product of given composition, `chemeng_blending_flows`
 
 The mass flow of each feed stream needed to make a product of stated flow and composition, from the component balances (as many feeds as components).
 
@@ -253,7 +253,7 @@ chemical_engineering_ai999x.solve('chemeng_blending_flows', W=[[0.8, 0.1, 0.1], 
 
 <a id="chemeng_binary_separator_balance"></a>
 
-### Two-product separator balance (binary distillation column) — `chemeng_binary_separator_balance`
+### Two-product separator balance (binary distillation column), `chemeng_binary_separator_balance`
 
 Distillate and bottoms flows of a binary separator from the feed flow and the three compositions, with the recoveries of the light component in the distillate and of the heavy component in the bottoms.
 
@@ -311,7 +311,7 @@ chemical_engineering_ai999x.solve('chemeng_binary_separator_balance', F=2.5, zF=
 
 <a id="chemeng_recycle_purge"></a>
 
-### Reactor with recycle and purge — `chemeng_recycle_purge`
+### Reactor with recycle and purge: `chemeng_recycle_purge`
 
 Steady-state flows of a reactor A -> B with complete product separation, recycle of unreacted A and inert, and a purge that removes a fraction of the recycle stream to stop the inert accumulating.
 
@@ -369,7 +369,7 @@ chemical_engineering_ai999x.solve('chemeng_recycle_purge', F0=50.0, zA=0.9, X=0.
 
 <a id="chemeng_unsteady_mixing_tank"></a>
 
-### Unsteady well-mixed tank (concentration change) — `chemeng_unsteady_mixing_tank`
+### Unsteady well-mixed tank (concentration change), `chemeng_unsteady_mixing_tank`
 
 Concentration in a constant-volume well-mixed tank at time t after the inlet concentration changes (inflow equals outflow).
 
@@ -423,7 +423,7 @@ chemical_engineering_ai999x.solve('chemeng_unsteady_mixing_tank', V=2.0, q=0.001
 
 <a id="chemeng_variable_volume_tank"></a>
 
-### Filling or draining well-mixed tank (variable volume) — `chemeng_variable_volume_tank`
+### Filling or draining well-mixed tank (variable volume), `chemeng_variable_volume_tank`
 
 Volume and concentration of a well-mixed tank whose inflow and outflow differ, at time t.
 
@@ -479,7 +479,7 @@ chemical_engineering_ai999x.solve('chemeng_variable_volume_tank', V0=5.0, q_in=0
 
 <a id="chemeng_combustion_flue_gas"></a>
 
-### Combustion with excess air: air requirement and flue-gas composition — `chemeng_combustion_flue_gas`
+### Combustion with excess air: air requirement and flue-gas composition, `chemeng_combustion_flue_gas`
 
 Theoretical oxygen, air supplied, flue-gas moles and wet and dry compositions, and the air-fuel mass ratio for complete combustion of a fuel with excess dry air (21 % O2, 79 % N2).
 
@@ -548,7 +548,7 @@ chemical_engineering_ai999x.solve('chemeng_combustion_flue_gas', fuel='C2H5OH', 
 
 <a id="chemeng_sensible_heat_cp_polynomial"></a>
 
-### Sensible heat with a polynomial heat capacity — `chemeng_sensible_heat_cp_polynomial`
+### Sensible heat with a polynomial heat capacity, `chemeng_sensible_heat_cp_polynomial`
 
 Heat needed to take n moles from T1 to T2 when $cp = a + bT + cT^{2} + dT^{3}$ (J/(mol K), T in K), and the mean heat capacity over the range.
 
@@ -601,7 +601,7 @@ chemical_engineering_ai999x.solve('chemeng_sensible_heat_cp_polynomial', n=1.0, 
 
 <a id="chemeng_reaction_enthalpy_at_temperature"></a>
 
-### Heat of reaction at another temperature (Kirchhoff) — `chemeng_reaction_enthalpy_at_temperature`
+### Heat of reaction at another temperature (Kirchhoff), `chemeng_reaction_enthalpy_at_temperature`
 
 The heat of reaction at T from its value at T0 and the polynomial heat capacities of the species (Kirchhoff's law).
 
@@ -654,7 +654,7 @@ chemical_engineering_ai999x.solve('chemeng_reaction_enthalpy_at_temperature', nu
 
 <a id="chemeng_adiabatic_reactor_temperature"></a>
 
-### Adiabatic reactor outlet temperature — `chemeng_adiabatic_reactor_temperature`
+### Adiabatic reactor outlet temperature: `chemeng_adiabatic_reactor_temperature`
 
 Outlet temperature of an adiabatic reactor from the feed, the conversion of the limiting reactant, the heat of reaction at a reference temperature and polynomial heat capacities.
 
@@ -710,7 +710,7 @@ chemical_engineering_ai999x.solve('chemeng_adiabatic_reactor_temperature', n0=[2
 
 <a id="chemeng_adiabatic_flame_temperature"></a>
 
-### Adiabatic flame temperature (complete combustion, NASA polynomials) — `chemeng_adiabatic_flame_temperature`
+### Adiabatic flame temperature (complete combustion, NASA polynomials), `chemeng_adiabatic_flame_temperature`
 
 Adiabatic flame temperature of a gaseous fuel burned with excess dry air at constant pressure, complete combustion without dissociation, from NASA 7-coefficient polynomials (GRI-Mech 3.0 data).
 
@@ -759,7 +759,7 @@ chemical_engineering_ai999x.solve('chemeng_adiabatic_flame_temperature', fuel='C
 
 <a id="chemeng_batch_heating_temperature"></a>
 
-### Batch heating of a stirred tank: temperature after a time — `chemeng_batch_heating_temperature`
+### Batch heating of a stirred tank: temperature after a time, `chemeng_batch_heating_temperature`
 
 Temperature of a well-stirred batch heated or cooled by a medium at constant temperature (condensing steam, boiling refrigerant) after time t.
 
@@ -810,7 +810,7 @@ chemical_engineering_ai999x.solve('chemeng_batch_heating_temperature', m=500.0, 
 
 <a id="chemeng_batch_heating_time"></a>
 
-### Batch heating of a stirred tank: time to reach a temperature — `chemeng_batch_heating_time`
+### Batch heating of a stirred tank: time to reach a temperature, `chemeng_batch_heating_time`
 
 Time for a well-stirred batch heated or cooled by a medium at constant temperature to reach a stated temperature.
 
@@ -861,7 +861,7 @@ chemical_engineering_ai999x.solve('chemeng_batch_heating_time', m=500.0, cp=2000
 
 <a id="chemeng_batch_coil_cooling"></a>
 
-### Batch cooling (or heating) with a non-isothermal coolant in a coil — `chemeng_batch_coil_cooling`
+### Batch cooling (or heating) with a non-isothermal coolant in a coil, `chemeng_batch_coil_cooling`
 
 Temperature of a well-stirred batch after time t when a coolant (or heating liquid) flows once through a coil and leaves warmer (Kern's batch cooling).
 
@@ -913,7 +913,7 @@ chemical_engineering_ai999x.solve('chemeng_batch_coil_cooling', M=1000.0, cp=418
 
 <a id="chemeng_batch_time_first_order"></a>
 
-### Batch reactor time for a conversion (first order) — `chemeng_batch_time_first_order`
+### Batch reactor time for a conversion (first order), `chemeng_batch_time_first_order`
 
 Reaction time an isothermal batch reactor needs to reach conversion X for a first-order reaction.
 
@@ -965,7 +965,7 @@ chemical_engineering_ai999x.solve('chemeng_batch_time_first_order', k=0.05, X=0.
 
 <a id="chemeng_batch_time_second_order"></a>
 
-### Batch reactor time for a conversion (second order) — `chemeng_batch_time_second_order`
+### Batch reactor time for a conversion (second order), `chemeng_batch_time_second_order`
 
 Reaction time an isothermal batch reactor needs to reach conversion X when -r_A = k $C_A^{2.}$
 
@@ -1013,7 +1013,7 @@ chemical_engineering_ai999x.solve('chemeng_batch_time_second_order', k=5e-06, CA
 
 <a id="chemeng_batch_conversion_first_order"></a>
 
-### Batch reactor conversion after a time (first order) — `chemeng_batch_conversion_first_order`
+### Batch reactor conversion after a time (first order), `chemeng_batch_conversion_first_order`
 
 Conversion reached in an isothermal batch reactor after time t for a first-order reaction.
 
@@ -1064,7 +1064,7 @@ chemical_engineering_ai999x.solve('chemeng_batch_conversion_first_order', k=0.02
 
 <a id="chemeng_batch_conversion_second_order"></a>
 
-### Batch reactor conversion after a time (second order) — `chemeng_batch_conversion_second_order`
+### Batch reactor conversion after a time (second order), `chemeng_batch_conversion_second_order`
 
 Conversion and concentration reached in an isothermal batch reactor after time t when -r_A = k $C_A^{2.}$
 
@@ -1112,7 +1112,7 @@ chemical_engineering_ai999x.solve('chemeng_batch_conversion_second_order', k=5e-
 
 <a id="chemeng_cstr_volume_first_order"></a>
 
-### CSTR volume for a conversion (first order) — `chemeng_cstr_volume_first_order`
+### CSTR volume for a conversion (first order), `chemeng_cstr_volume_first_order`
 
 Volume and space time of a CSTR that reaches conversion X for a first-order liquid-phase reaction.
 
@@ -1165,7 +1165,7 @@ chemical_engineering_ai999x.solve('chemeng_cstr_volume_first_order', v0=0.002, k
 
 <a id="chemeng_cstr_conversion_first_order"></a>
 
-### CSTR conversion for a volume (first order) — `chemeng_cstr_conversion_first_order`
+### CSTR conversion for a volume (first order), `chemeng_cstr_conversion_first_order`
 
 Steady-state conversion of a CSTR of volume V for a first-order liquid-phase reaction.
 
@@ -1220,7 +1220,7 @@ chemical_engineering_ai999x.solve('chemeng_cstr_conversion_first_order', v0=0.00
 
 <a id="chemeng_cstr_conversion_second_order"></a>
 
-### CSTR conversion for a volume (second order) — `chemeng_cstr_conversion_second_order`
+### CSTR conversion for a volume (second order), `chemeng_cstr_conversion_second_order`
 
 Steady-state conversion and exit concentration of a CSTR of volume V when -r_A = k $C_A^{2.}$
 
@@ -1273,7 +1273,7 @@ chemical_engineering_ai999x.solve('chemeng_cstr_conversion_second_order', v0=0.0
 
 <a id="chemeng_pfr_volume_first_order"></a>
 
-### PFR volume for a conversion (first order, liquid) — `chemeng_pfr_volume_first_order`
+### PFR volume for a conversion (first order, liquid), `chemeng_pfr_volume_first_order`
 
 Volume of an isothermal plug-flow reactor that reaches conversion X for a first-order constant-density reaction.
 
@@ -1297,7 +1297,7 @@ $$
 
 ![A plug-flow reactor for a first-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-first-order-reactor)
 
-*A plug-flow reactor for a first-order reaction (the worked example: v0 = 0.01, k = 0.001, X = 0.9): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet — the package's plug-flow conversion at 40 volumes from the inlet. Marked: the package's V = 23.0259 m³ for X = 0.9.*
+*A plug-flow reactor for a first-order reaction (the worked example: v0 = 0.01, k = 0.001, X = 0.9): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: the package's V = 23.0259 m³ for X = 0.9.*
 
 ![V (reactor volume) against X (conversion of A wanted) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-first-order-curve)
 
@@ -1325,7 +1325,7 @@ chemical_engineering_ai999x.solve('chemeng_pfr_volume_first_order', v0=0.002, k=
 
 <a id="chemeng_pfr_volume_second_order"></a>
 
-### PFR volume for a conversion (second order, liquid) — `chemeng_pfr_volume_second_order`
+### PFR volume for a conversion (second order, liquid), `chemeng_pfr_volume_second_order`
 
 Volume of an isothermal plug-flow reactor that reaches conversion X when -r_A = k $C_A^{2}$ (constant density).
 
@@ -1350,7 +1350,7 @@ $$
 
 ![A plug-flow reactor for a second-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-second-order-reactor)
 
-*A plug-flow reactor for a second-order reaction (the worked example: v0 = 0.01, k = 1e-05, CA0 = 1000.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet — the package's plug-flow conversion at 40 volumes from the inlet. Marked: the package's V = 4 m³ for X = 0.8.*
+*A plug-flow reactor for a second-order reaction (the worked example: v0 = 0.01, k = 1e-05, CA0 = 1000.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: the package's V = 4 m³ for X = 0.8.*
 
 ![V (reactor volume) against k (second-order rate constant (-r_A = k C_A^2)) from 5](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-second-order-curve)
 
@@ -1377,7 +1377,7 @@ chemical_engineering_ai999x.solve('chemeng_pfr_volume_second_order', v0=0.001, k
 
 <a id="chemeng_pfr_conversion_first_order"></a>
 
-### PFR conversion for a volume (first order, liquid) — `chemeng_pfr_conversion_first_order`
+### PFR conversion for a volume (first order, liquid), `chemeng_pfr_conversion_first_order`
 
 Conversion at the exit of an isothermal plug-flow reactor of volume V for a first-order constant-density reaction.
 
@@ -1401,7 +1401,7 @@ $$
 
 ![A plug-flow reactor for a first-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-first-order-reactor)
 
-*A plug-flow reactor for a first-order reaction (the worked example: v0 = 0.01, V = 20.0, k = 0.001): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet — the package's plug-flow conversion at 40 volumes from the inlet. Marked: V = 20 m³, the package's X = 0.864665.*
+*A plug-flow reactor for a first-order reaction (the worked example: v0 = 0.01, V = 20.0, k = 0.001): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: V = 20 m³, the package's X = 0.864665.*
 
 ![X (conversion of A) against v0 (volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-first-order-curve)
 
@@ -1428,7 +1428,7 @@ chemical_engineering_ai999x.solve('chemeng_pfr_conversion_first_order', v0=0.002
 
 <a id="chemeng_pfr_conversion_second_order"></a>
 
-### PFR conversion for a volume (second order, liquid) — `chemeng_pfr_conversion_second_order`
+### PFR conversion for a volume (second order, liquid), `chemeng_pfr_conversion_second_order`
 
 Exit conversion and concentration of an isothermal plug-flow reactor of volume V when -r_A = k $C_A^{2}$ (constant density).
 
@@ -1454,7 +1454,7 @@ $$
 
 ![A plug-flow reactor for a second-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-second-order-reactor)
 
-*A plug-flow reactor for a second-order reaction (the worked example: v0 = 0.01, V = 2.0, k = 1e-05, CA0 = 1000.0): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet — the package's plug-flow conversion at 40 volumes from the inlet. Marked: V = 2 m³, the package's X = 0.666667, CA = 333.333 mol/m³.*
+*A plug-flow reactor for a second-order reaction (the worked example: v0 = 0.01, V = 2.0, k = 1e-05, CA0 = 1000.0): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: V = 2 m³, the package's X = 0.666667, CA = 333.333 mol/m³.*
 
 ![X (conversion of A) against v0 (volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-second-order-curve)
 
@@ -1481,7 +1481,7 @@ chemical_engineering_ai999x.solve('chemeng_pfr_conversion_second_order', v0=0.00
 
 <a id="chemeng_pfr_gas_volume_first_order"></a>
 
-### Gas-phase PFR volume with volume change (first order) — `chemeng_pfr_gas_volume_first_order`
+### Gas-phase PFR volume with volume change (first order), `chemeng_pfr_gas_volume_first_order`
 
 Volume of an isothermal, isobaric gas-phase plug-flow reactor for conversion X of a first-order reaction whose mole number changes (factor eps).
 
@@ -1507,7 +1507,7 @@ $$
 
 ![A plug-flow reactor for a first-order reaction in the gas phase with expansion (the worked example: FA0 = 10](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-first-order-reactor)
 
-*A plug-flow reactor for a first-order reaction in the gas phase with expansion (the worked example: FA0 = 10.0, CA0 = 40.0, k = 0.05, eps = 1.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet — the package's volume for 40 conversions up to X = 0.8. Marked: the package's V = 12.0944 m³ for X = 0.8.*
+*A plug-flow reactor for a first-order reaction in the gas phase with expansion (the worked example: FA0 = 10.0, CA0 = 40.0, k = 0.05, eps = 1.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's volume for 40 conversions up to X = 0.8. Marked: the package's V = 12.0944 m³ for X = 0.8.*
 
 ![V (reactor volume) against X (conversion of A wanted) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-first-order-curve)
 
@@ -1534,7 +1534,7 @@ chemical_engineering_ai999x.solve('chemeng_pfr_gas_volume_first_order', FA0=2.0,
 
 <a id="chemeng_pfr_gas_volume_second_order"></a>
 
-### Gas-phase PFR volume with volume change (second order) — `chemeng_pfr_gas_volume_second_order`
+### Gas-phase PFR volume with volume change (second order), `chemeng_pfr_gas_volume_second_order`
 
 Volume of an isothermal, isobaric gas-phase plug-flow reactor for conversion X when -r_A = k $C_A^{2}$ and the mole number changes (factor eps).
 
@@ -1560,7 +1560,7 @@ $$
 
 ![A plug-flow reactor for a second-order reaction in the gas phase with expansion (the worked example: FA0 = 10](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-second-order-reactor)
 
-*A plug-flow reactor for a second-order reaction in the gas phase with expansion (the worked example: FA0 = 10.0, CA0 = 40.0, k = 0.001, eps = 1.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet — the package's volume for 40 conversions up to X = 0.8. Marked: the package's V = 64.7641 m³ for X = 0.8.*
+*A plug-flow reactor for a second-order reaction in the gas phase with expansion (the worked example: FA0 = 10.0, CA0 = 40.0, k = 0.001, eps = 1.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's volume for 40 conversions up to X = 0.8. Marked: the package's V = 64.7641 m³ for X = 0.8.*
 
 ![V (reactor volume) against eps (volume-change factor eps = y_A0 * (change in moles per mole of A); e](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-second-order-curve)
 
@@ -1587,7 +1587,7 @@ chemical_engineering_ai999x.solve('chemeng_pfr_gas_volume_second_order', FA0=2.0
 
 <a id="chemeng_cstrs_in_series_first_order"></a>
 
-### Equal CSTRs in series: conversion (first order) — `chemeng_cstrs_in_series_first_order`
+### Equal CSTRs in series: conversion (first order), `chemeng_cstrs_in_series_first_order`
 
 Conversion leaving N equal CSTRs in series, each of volume V, for a first-order liquid-phase reaction.
 
@@ -1644,7 +1644,7 @@ chemical_engineering_ai999x.solve('chemeng_cstrs_in_series_first_order', v0=0.00
 
 <a id="chemeng_cstrs_in_series_second_order"></a>
 
-### Equal CSTRs in series: conversion (second order) — `chemeng_cstrs_in_series_second_order`
+### Equal CSTRs in series: conversion (second order), `chemeng_cstrs_in_series_second_order`
 
 Conversion leaving N equal CSTRs in series, each of volume V, when -r_A = k $C_A^{2.}$
 
@@ -1698,7 +1698,7 @@ chemical_engineering_ai999x.solve('chemeng_cstrs_in_series_second_order', v0=0.0
 
 <a id="chemeng_recycle_reactor_first_order"></a>
 
-### Plug-flow reactor with recycle: conversion (first order) — `chemeng_recycle_reactor_first_order`
+### Plug-flow reactor with recycle: conversion (first order), `chemeng_recycle_reactor_first_order`
 
 Overall conversion of a plug-flow reactor with recycle ratio R (recycled flow / product flow) for a first-order constant-density reaction.
 
@@ -1723,7 +1723,7 @@ $$
 
 ![A plug-flow reactor with recycle (the worked example: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-reactor-first-order-process)
 
-*A plug-flow reactor with recycle (the worked example: feed 0.01 m³/s, V = 20.0 m³, first-order k = 0.001 1/s, recycle ratio R = 2): part of the outlet returns to the inlet. Marked: the package's overall conversion X = 0.7398; with R = 0 it returns 0.864665 (plug flow) — recycle moves the reactor toward a stirred tank.*
+*A plug-flow reactor with recycle (the worked example: feed 0.01 m³/s, V = 20.0 m³, first-order k = 0.001 1/s, recycle ratio R = 2): part of the outlet returns to the inlet. Marked: the package's overall conversion X = 0.7398; with R = 0 it returns 0.864665 (plug flow), recycle moves the reactor toward a stirred tank.*
 
 ![X (overall conversion of A) against v0 (fresh volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-reactor-first-order-curve)
 
@@ -1750,7 +1750,7 @@ chemical_engineering_ai999x.solve('chemeng_recycle_reactor_first_order', v0=0.00
 
 <a id="chemeng_reversible_first_order_batch"></a>
 
-### Reversible first-order reaction A <-> B in a batch reactor — `chemeng_reversible_first_order_batch`
+### Reversible first-order reaction A <-> B in a batch reactor, `chemeng_reversible_first_order_batch`
 
 Concentrations and conversion after time t, and the equilibrium conversion, for A <-> B with first-order forward and reverse steps.
 
@@ -1806,7 +1806,7 @@ chemical_engineering_ai999x.solve('chemeng_reversible_first_order_batch', k1=0.0
 
 <a id="chemeng_series_reaction_maximum"></a>
 
-### Series reactions A -> B -> C: maximum of the intermediate (batch or PFR) — `chemeng_series_reaction_maximum`
+### Series reactions A -> B -> C: maximum of the intermediate (batch or PFR), `chemeng_series_reaction_maximum`
 
 Time (or plug-flow space time) at which the intermediate B of first-order series reactions A -> B -> C peaks, starting from pure A, and the concentrations there.
 
@@ -1856,7 +1856,7 @@ chemical_engineering_ai999x.solve('chemeng_series_reaction_maximum', k1=0.01, k2
 
 <a id="chemeng_rtd_moments"></a>
 
-### Residence-time distribution: mean, variance and tanks-in-series number from tracer data — `chemeng_rtd_moments`
+### Residence-time distribution: mean, variance and tanks-in-series number from tracer data, `chemeng_rtd_moments`
 
 Mean residence time, variance and the equivalent number of tanks in series from a pulse-tracer response C(t) (trapezoidal rule, uneven spacing allowed).
 
@@ -1906,7 +1906,7 @@ chemical_engineering_ai999x.solve('chemeng_rtd_moments', t=[0.0, 5.0, 10.0, 20.0
 
 <a id="chemeng_antoine_vapour_pressure"></a>
 
-### Vapour pressure from the Antoine equation — `chemeng_antoine_vapour_pressure`
+### Vapour pressure from the Antoine equation: `chemeng_antoine_vapour_pressure`
 
 Vapour pressure of a pure liquid at temperature T from Antoine coefficients written in a stated convention (logarithm and units).
 
@@ -1966,7 +1966,7 @@ chemical_engineering_ai999x.solve('chemeng_antoine_vapour_pressure', A=4.72583, 
 
 <a id="chemeng_antoine_boiling_temperature"></a>
 
-### Boiling (saturation) temperature from the Antoine equation — `chemeng_antoine_boiling_temperature`
+### Boiling (saturation) temperature from the Antoine equation, `chemeng_antoine_boiling_temperature`
 
 Temperature at which a pure liquid boils at pressure P, from Antoine coefficients written in a stated convention.
 
@@ -2026,7 +2026,7 @@ chemical_engineering_ai999x.solve('chemeng_antoine_boiling_temperature', A=4.725
 
 <a id="chemeng_raoult_bubble_pressure"></a>
 
-### Bubble-point pressure (Raoult's law) — `chemeng_raoult_bubble_pressure`
+### Bubble-point pressure (Raoult's law): `chemeng_raoult_bubble_pressure`
 
 Pressure at which a liquid of composition x starts to boil at temperature T, and the composition of the first bubble, for an ideal solution (Raoult's law, Antoine vapour pressures).
 
@@ -2084,7 +2084,7 @@ chemical_engineering_ai999x.solve('chemeng_raoult_bubble_pressure', ant=[[6.9056
 
 <a id="chemeng_raoult_dew_pressure"></a>
 
-### Dew-point pressure (Raoult's law) — `chemeng_raoult_dew_pressure`
+### Dew-point pressure (Raoult's law): `chemeng_raoult_dew_pressure`
 
 Pressure at which a vapour of composition y starts to condense at temperature T, and the composition of the first drop (Raoult's law, Antoine vapour pressures).
 
@@ -2142,7 +2142,7 @@ chemical_engineering_ai999x.solve('chemeng_raoult_dew_pressure', ant=[[6.90565, 
 
 <a id="chemeng_raoult_bubble_temperature"></a>
 
-### Bubble-point temperature (Raoult's law) — `chemeng_raoult_bubble_temperature`
+### Bubble-point temperature (Raoult's law): `chemeng_raoult_bubble_temperature`
 
 Temperature at which a liquid of composition x starts to boil at pressure P, and the first-bubble composition (Raoult's law, Antoine vapour pressures; iterative).
 
@@ -2206,7 +2206,7 @@ chemical_engineering_ai999x.solve('chemeng_raoult_bubble_temperature', ant=[[6.9
 
 <a id="chemeng_raoult_dew_temperature"></a>
 
-### Dew-point temperature (Raoult's law) — `chemeng_raoult_dew_temperature`
+### Dew-point temperature (Raoult's law): `chemeng_raoult_dew_temperature`
 
 Temperature at which a vapour of composition y starts to condense at pressure P, and the first-drop composition (Raoult's law, Antoine vapour pressures; iterative).
 
@@ -2264,7 +2264,7 @@ chemical_engineering_ai999x.solve('chemeng_raoult_dew_temperature', ant=[[6.9056
 
 <a id="chemeng_rachford_rice_flash"></a>
 
-### Isothermal flash with given K-values (Rachford-Rice) — `chemeng_rachford_rice_flash`
+### Isothermal flash with given K-values (Rachford-Rice), `chemeng_rachford_rice_flash`
 
 Vapour fraction and the liquid and vapour compositions of a feed flashed at conditions where the K-values are known.
 
@@ -2321,7 +2321,7 @@ chemical_engineering_ai999x.solve('chemeng_rachford_rice_flash', z=[0.2, 0.5, 0.
 
 <a id="chemeng_raoult_isothermal_flash"></a>
 
-### Isothermal flash of an ideal mixture (Raoult's law) — `chemeng_raoult_isothermal_flash`
+### Isothermal flash of an ideal mixture (Raoult's law), `chemeng_raoult_isothermal_flash`
 
 Vapour fraction and phase compositions of a feed flashed at temperature T and pressure P, with Raoult's-law K-values from Antoine vapour pressures.
 
@@ -2382,7 +2382,7 @@ chemical_engineering_ai999x.solve('chemeng_raoult_isothermal_flash', ant=[[6.905
 
 <a id="chemeng_wilson_k_flash"></a>
 
-### Flash with Wilson K-values (hydrocarbon mixtures) — `chemeng_wilson_k_flash`
+### Flash with Wilson K-values (hydrocarbon mixtures), `chemeng_wilson_k_flash`
 
 Vapour fraction and phase compositions of a hydrocarbon feed at T and P with K-values estimated by Wilson's correlation from critical constants and acentric factors.
 
@@ -2444,7 +2444,7 @@ chemical_engineering_ai999x.solve('chemeng_wilson_k_flash', z=[0.5, 0.5], Tc=[42
 
 <a id="chemeng_binary_minimum_reflux"></a>
 
-### Minimum reflux ratio of a binary column (Underwood) — `chemeng_binary_minimum_reflux`
+### Minimum reflux ratio of a binary column (Underwood), `chemeng_binary_minimum_reflux`
 
 Minimum reflux ratio of a binary distillation with constant relative volatility, for any feed condition q (Underwood's equations).
 
@@ -2493,7 +2493,7 @@ chemical_engineering_ai999x.solve('chemeng_binary_minimum_reflux', alpha=2.4, zF
 
 <a id="chemeng_mccabe_thiele_stages"></a>
 
-### McCabe-Thiele number of theoretical stages (binary) — `chemeng_mccabe_thiele_stages`
+### McCabe-Thiele number of theoretical stages (binary), `chemeng_mccabe_thiele_stages`
 
 Number of theoretical stages (the partial reboiler counted as one) of a binary column at reflux ratio R, by stepping between the operating lines and a constant-alpha equilibrium curve, with the feed switched at the intersection of the operating lines.
 
@@ -2545,7 +2545,7 @@ chemical_engineering_ai999x.solve('chemeng_mccabe_thiele_stages', alpha=2.4, zF=
 
 <a id="chemeng_kremser_absorber"></a>
 
-### Absorber with N equilibrium stages (Kremser) — `chemeng_kremser_absorber`
+### Absorber with N equilibrium stages (Kremser), `chemeng_kremser_absorber`
 
 Solute mole fraction in the gas leaving a countercurrent absorber of N ideal stages, and the fraction of solute absorbed, for dilute gas with linear equilibrium $y = m$ x.
 
@@ -2599,7 +2599,7 @@ chemical_engineering_ai999x.solve('chemeng_kremser_absorber', N=3, A=1.0, m=1.5,
 
 <a id="chemeng_kremser_stripper"></a>
 
-### Stripper with N equilibrium stages (Kremser) — `chemeng_kremser_stripper`
+### Stripper with N equilibrium stages (Kremser), `chemeng_kremser_stripper`
 
 Solute mole fraction in the liquid leaving a countercurrent stripper of N ideal stages, and the fraction stripped, for dilute liquid with linear equilibrium $y = m$ x.
 
@@ -2653,7 +2653,7 @@ chemical_engineering_ai999x.solve('chemeng_kremser_stripper', N=4, S=0.8, m=2.0,
 
 <a id="chemeng_absorber_transfer_units"></a>
 
-### Packed absorber: number of transfer units and height (Colburn) — `chemeng_absorber_transfer_units`
+### Packed absorber: number of transfer units and height (Colburn), `chemeng_absorber_transfer_units`
 
 Number of overall gas-phase transfer units and packed height of a dilute countercurrent absorber with linear equilibrium (Colburn's equation).
 
@@ -2709,7 +2709,7 @@ chemical_engineering_ai999x.solve('chemeng_absorber_transfer_units', y1=0.05, y2
 
 <a id="chemeng_countercurrent_extraction"></a>
 
-### Countercurrent liquid-liquid extraction (N stages, immiscible solvents) — `chemeng_countercurrent_extraction`
+### Countercurrent liquid-liquid extraction (N stages, immiscible solvents), `chemeng_countercurrent_extraction`
 
 Raffinate and extract solute ratios and the fraction extracted for N ideal countercurrent stages with immiscible carrier and solvent and a constant distribution ratio $Y = K$ X (solute-free mass-ratio basis).
 
@@ -2765,7 +2765,7 @@ chemical_engineering_ai999x.solve('chemeng_countercurrent_extraction', F=10.0, S
 
 <a id="chemeng_crosscurrent_extraction"></a>
 
-### Crosscurrent (multiple-contact) extraction with fresh solvent — `chemeng_crosscurrent_extraction`
+### Crosscurrent (multiple-contact) extraction with fresh solvent, `chemeng_crosscurrent_extraction`
 
 Raffinate solute ratio after N ideal stages, each fed with the same amount of fresh solvent, for immiscible solvents and a constant distribution ratio.
 
@@ -2819,7 +2819,7 @@ chemical_engineering_ai999x.solve('chemeng_crosscurrent_extraction', F=10.0, S=1
 
 <a id="chemeng_wilson_activity_coefficients"></a>
 
-### Activity coefficients from the Wilson equation — `chemeng_wilson_activity_coefficients`
+### Activity coefficients from the Wilson equation, `chemeng_wilson_activity_coefficients`
 
 Activity coefficients of every component and the excess Gibbs energy of a liquid mixture from Wilson parameters Lambda_ij.
 
@@ -2867,7 +2867,7 @@ chemical_engineering_ai999x.solve('chemeng_wilson_activity_coefficients', x=[0.2
 
 <a id="chemeng_nrtl_activity_coefficients"></a>
 
-### Activity coefficients from the NRTL equation — `chemeng_nrtl_activity_coefficients`
+### Activity coefficients from the NRTL equation, `chemeng_nrtl_activity_coefficients`
 
 Activity coefficients and excess Gibbs energy of a liquid mixture from NRTL interaction parameters tau_ij and non-randomness parameters alpha_ij.
 
@@ -2916,7 +2916,7 @@ chemical_engineering_ai999x.solve('chemeng_nrtl_activity_coefficients', x=[0.25,
 
 <a id="chemeng_uniquac_activity_coefficients"></a>
 
-### Activity coefficients from the UNIQUAC equation — `chemeng_uniquac_activity_coefficients`
+### Activity coefficients from the UNIQUAC equation, `chemeng_uniquac_activity_coefficients`
 
 Activity coefficients of a liquid mixture from UNIQUAC volume and area parameters r, q and interaction parameters tau_ij (coordination number 10).
 
@@ -2965,7 +2965,7 @@ chemical_engineering_ai999x.solve('chemeng_uniquac_activity_coefficients', x=[0.
 
 <a id="chemeng_peng_robinson"></a>
 
-### Peng-Robinson equation of state: compressibility and fugacity coefficient — `chemeng_peng_robinson`
+### Peng-Robinson equation of state: compressibility and fugacity coefficient, `chemeng_peng_robinson`
 
 Compressibility factors (vapour and liquid roots) and fugacity coefficients of a pure substance at T and P from the Peng-Robinson equation of state.
 
@@ -3018,7 +3018,7 @@ chemical_engineering_ai999x.solve('chemeng_peng_robinson', Tc=190.564, Pc=459900
 
 <a id="chemeng_srk"></a>
 
-### Soave-Redlich-Kwong equation of state: compressibility and fugacity coefficient — `chemeng_srk`
+### Soave-Redlich-Kwong equation of state: compressibility and fugacity coefficient, `chemeng_srk`
 
 Compressibility factors (vapour and liquid roots) and fugacity coefficients of a pure substance at T and P from the Soave-Redlich-Kwong equation of state.
 
@@ -3071,7 +3071,7 @@ chemical_engineering_ai999x.solve('chemeng_srk', Tc=190.564, Pc=4599000.0, omega
 
 <a id="chemeng_lee_kesler_vapour_pressure"></a>
 
-### Vapour pressure by the Lee-Kesler correlation — `chemeng_lee_kesler_vapour_pressure`
+### Vapour pressure by the Lee-Kesler correlation, `chemeng_lee_kesler_vapour_pressure`
 
 Vapour pressure of a pure substance from its critical constants and acentric factor (Lee-Kesler corresponding-states correlation).
 
@@ -3119,7 +3119,7 @@ chemical_engineering_ai999x.solve('chemeng_lee_kesler_vapour_pressure', T=300.0,
 
 <a id="chemeng_watson_heat_of_vaporization"></a>
 
-### Heat of vaporisation at another temperature (Watson) — `chemeng_watson_heat_of_vaporization`
+### Heat of vaporisation at another temperature (Watson), `chemeng_watson_heat_of_vaporization`
 
 Heat of vaporisation at T from a known value at T_ref and the critical temperature (Watson's correlation, exponent 0.38).
 
@@ -3167,7 +3167,7 @@ chemical_engineering_ai999x.solve('chemeng_watson_heat_of_vaporization', T=400.0
 
 <a id="chemeng_riedel_heat_of_vaporization"></a>
 
-### Heat of vaporisation at the normal boiling point (Riedel) — `chemeng_riedel_heat_of_vaporization`
+### Heat of vaporisation at the normal boiling point (Riedel), `chemeng_riedel_heat_of_vaporization`
 
 Heat of vaporisation at the normal boiling point from the boiling point and critical constants (Riedel's equation, Pc in bar).
 
@@ -3214,7 +3214,7 @@ chemical_engineering_ai999x.solve('chemeng_riedel_heat_of_vaporization', Tb=353.
 
 <a id="chemeng_pitzer_heat_of_vaporization"></a>
 
-### Heat of vaporisation from the acentric factor (Pitzer) — `chemeng_pitzer_heat_of_vaporization`
+### Heat of vaporisation from the acentric factor (Pitzer), `chemeng_pitzer_heat_of_vaporization`
 
 Heat of vaporisation at T from the critical temperature and acentric factor (Pitzer's corresponding-states correlation as fitted by Carruth and Kobayashi).
 
@@ -3261,7 +3261,7 @@ chemical_engineering_ai999x.solve('chemeng_pitzer_heat_of_vaporization', T=300.0
 
 <a id="chemeng_rackett_liquid_volume"></a>
 
-### Saturated liquid molar volume (Rackett) — `chemeng_rackett_liquid_volume`
+### Saturated liquid molar volume (Rackett): `chemeng_rackett_liquid_volume`
 
 Molar volume of a saturated liquid from the critical constants and the critical compressibility factor (Rackett equation).
 
@@ -3309,7 +3309,7 @@ chemical_engineering_ai999x.solve('chemeng_rackett_liquid_volume', T=298.15, Tc=
 
 <a id="chemeng_virial_compressibility"></a>
 
-### Gas compressibility from the virial equation (Pitzer-Abbott correlation) — `chemeng_virial_compressibility`
+### Gas compressibility from the virial equation (Pitzer-Abbott correlation), `chemeng_virial_compressibility`
 
 Second virial coefficient from the Abbott (Pitzer) correlation and the compressibility factor $Z = 1 + BP/(RT)$ of a gas at moderate pressure.
 
@@ -3359,7 +3359,7 @@ chemical_engineering_ai999x.solve('chemeng_virial_compressibility', T=300.0, P=1
 
 <a id="chemeng_mass_to_mole_fractions"></a>
 
-### Mass fractions to mole fractions and mean molar mass — `chemeng_mass_to_mole_fractions`
+### Mass fractions to mole fractions and mean molar mass, `chemeng_mass_to_mole_fractions`
 
 Mole fractions of a mixture and its mean molar mass from the mass fractions and the molar masses of the components.
 
@@ -3406,7 +3406,7 @@ chemical_engineering_ai999x.solve('chemeng_mass_to_mole_fractions', w=[0.2, 0.3,
 
 <a id="chemeng_stefan_diffusion_flux"></a>
 
-### Diffusion of A through stagnant B (Stefan film) — `chemeng_stefan_diffusion_flux`
+### Diffusion of A through stagnant B (Stefan film), `chemeng_stefan_diffusion_flux`
 
 Steady molar flux of A diffusing through a stagnant film of non-diffusing B in an ideal gas (evaporation, absorption through an inert).
 
@@ -3433,7 +3433,7 @@ $$
 
 ![Gas-phase diffusion across a film of thickness L = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-stefan-diffusion-flux-profile)
 
-*Gas-phase diffusion across a film of thickness L = 0.1 m (D = 2.6e-05 m²/s, P = 101325.0 Pa, T = 298.15 K; mole fraction of A 0.0313 at z = 0 and 0 at z = L — the worked example). The profile is 1 − yA = (1 − yA1)·((1 − yA2)/(1 − yA1))^(z/L) (A through stagnant B), derived from the end values; B makes up the rest, 1 − yA. Marked: the package's flux N_A = 0.00033795 mol/(m²·s).*
+*Gas-phase diffusion across a film of thickness L = 0.1 m (D = 2.6e-05 m²/s, P = 101325.0 Pa, T = 298.15 K; mole fraction of A 0.0313 at z = 0 and 0 at z = L, the worked example). The profile is 1 − yA = (1 − yA1)·((1 − yA2)/(1 − yA1))^(z/L) (A through stagnant B), derived from the end values; B makes up the rest, 1 − yA. Marked: the package's flux N_A = 0.00033795 mol/(m²·s).*
 
 ![NA (molar flux of A) against yA1 (mole fraction of A at the start of the path) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-stefan-diffusion-flux-curve)
 
@@ -3461,7 +3461,7 @@ chemical_engineering_ai999x.solve('chemeng_stefan_diffusion_flux', D=1e-05, P=20
 
 <a id="chemeng_ergun_pressure_drop"></a>
 
-### Packed-bed pressure drop (Ergun equation) — `chemeng_ergun_pressure_drop`
+### Packed-bed pressure drop (Ergun equation): `chemeng_ergun_pressure_drop`
 
 Pressure drop of a fluid flowing through a packed bed of spheres from the particle size, voidage, superficial velocity and fluid properties (Ergun equation).
 
@@ -3512,7 +3512,7 @@ chemical_engineering_ai999x.solve('chemeng_ergun_pressure_drop', dp=0.005, eps=0
 
 <a id="chemeng_carman_pressure_drop"></a>
 
-### Packed-bed pressure drop (Carman correlation) — `chemeng_carman_pressure_drop`
+### Packed-bed pressure drop (Carman correlation), `chemeng_carman_pressure_drop`
 
 Pressure drop through a packed bed from Carman's correlation of the bed friction factor (180/Re' + $2.87/Re$'^0.1 form).
 
@@ -3562,7 +3562,7 @@ chemical_engineering_ai999x.solve('chemeng_carman_pressure_drop', dp=0.005, eps=
 
 <a id="chemeng_cake_filtration_volume"></a>
 
-### Constant-pressure cake filtration: filtrate volume after a time — `chemeng_cake_filtration_volume`
+### Constant-pressure cake filtration: filtrate volume after a time, `chemeng_cake_filtration_volume`
 
 Volume of filtrate collected after time t in constant-pressure cake filtration (Ruth equation with cake and medium resistances).
 
@@ -3613,7 +3613,7 @@ chemical_engineering_ai999x.solve('chemeng_cake_filtration_volume', A=10.0, dP=3
 
 <a id="chemeng_filtration_constants_fit"></a>
 
-### Specific cake and medium resistance from constant-pressure filtration data — `chemeng_filtration_constants_fit`
+### Specific cake and medium resistance from constant-pressure filtration data, `chemeng_filtration_constants_fit`
 
 Specific cake resistance and filter-medium resistance from a constant-pressure filtration test (times and filtrate volumes), by the straight line of t/V against V.
 
@@ -3672,7 +3672,7 @@ chemical_engineering_ai999x.solve('chemeng_filtration_constants_fit', t=[2.0, 5.
 
 <a id="chemeng_fopdt_step_response"></a>
 
-### First-order-plus-dead-time process: response to a step — `chemeng_fopdt_step_response`
+### First-order-plus-dead-time process: response to a step, `chemeng_fopdt_step_response`
 
 Deviation of the output of a first-order process with dead time at time t after a step of size M in its input.
 
@@ -3726,7 +3726,7 @@ chemical_engineering_ai999x.solve('chemeng_fopdt_step_response', K=-0.8, tau=120
 
 <a id="chemeng_p_control_offset"></a>
 
-### Proportional control: steady-state offset after a set-point step — `chemeng_p_control_offset`
+### Proportional control: steady-state offset after a set-point step, `chemeng_p_control_offset`
 
 Steady-state output (as a fraction of a set-point step) and the offset of a P-only feedback loop around a process of first-order lags in series, after checking the loop is stable.
 
@@ -3780,7 +3780,7 @@ chemical_engineering_ai999x.solve('chemeng_p_control_offset', Kc=0.5, K=2.0, tau
 
 <a id="chemeng_lag_frequency_response"></a>
 
-### Frequency response of first-order lags in series (amplitude ratio and phase) — `chemeng_lag_frequency_response`
+### Frequency response of first-order lags in series (amplitude ratio and phase), `chemeng_lag_frequency_response`
 
 Amplitude ratio and phase angle of a process made of one to three first-order lags in series, at angular frequency w.
 
@@ -3833,7 +3833,7 @@ chemical_engineering_ai999x.solve('chemeng_lag_frequency_response', K=1.0, taus=
 
 <a id="chemeng_pid_controller_output"></a>
 
-### Discrete PID controller output for an error history — `chemeng_pid_controller_output`
+### Discrete PID controller output for an error history, `chemeng_pid_controller_output`
 
 Output of a digital position-form PID controller at each sample for a stated history of errors (rectangular integration, derivative on the error, loop at rest before the first sample).
 
@@ -3888,7 +3888,7 @@ chemical_engineering_ai999x.solve('chemeng_pid_controller_output', Kc=0.5, tauI=
 
 <a id="chemeng_ziegler_nichols_tuning"></a>
 
-### Ziegler-Nichols closed-loop tuning of lags in series — `chemeng_ziegler_nichols_tuning`
+### Ziegler-Nichols closed-loop tuning of lags in series, `chemeng_ziegler_nichols_tuning`
 
 Ultimate gain and period of a process of first-order lags in series, and the Ziegler-Nichols closed-loop settings of a P, PI or PID controller.
 
@@ -3941,7 +3941,7 @@ chemical_engineering_ai999x.solve('chemeng_ziegler_nichols_tuning', K=1.5, taus=
 
 <a id="chemeng_closed_loop_stability"></a>
 
-### Closed-loop stability of a P-controlled process (closed-loop poles) — `chemeng_closed_loop_stability`
+### Closed-loop stability of a P-controlled process (closed-loop poles), `chemeng_closed_loop_stability`
 
 Whether a feedback loop with a proportional controller Kc around a process G(s) = num(s)/den(s) is stable: the largest real part of the closed-loop poles and how many lie in the right half-plane.
 
@@ -3994,7 +3994,7 @@ chemical_engineering_ai999x.solve('chemeng_closed_loop_stability', num=[2.0], de
 
 <a id="chemeng_pi_loop_margins"></a>
 
-### Gain and phase margins of a PI loop around lags in series — `chemeng_pi_loop_margins`
+### Gain and phase margins of a PI loop around lags in series, `chemeng_pi_loop_margins`
 
 Gain margin, phase margin and the two crossover frequencies of a loop with a PI controller and a process of three to five first-order lags.
 
@@ -4046,7 +4046,7 @@ chemical_engineering_ai999x.solve('chemeng_pi_loop_margins', Kc=0.5, tauI=20.0, 
 
 <a id="chemeng_first_order_step_fit"></a>
 
-### Process gain and time constant from step-test data (least squares) — `chemeng_first_order_step_fit`
+### Process gain and time constant from step-test data (least squares), `chemeng_first_order_step_fit`
 
 Gain and time constant of a first-order process (dead time known) fitted by least squares to the recorded response of a step test.
 
@@ -4100,7 +4100,7 @@ chemical_engineering_ai999x.solve('chemeng_first_order_step_fit', t=[0, 10, 20, 
 
 <a id="chemeng_radial_darcy_flow"></a>
 
-### Steady radial flow of oil to a well (Darcy) and productivity index — `chemeng_radial_darcy_flow`
+### Steady radial flow of oil to a well (Darcy) and productivity index, `chemeng_radial_darcy_flow`
 
 Steady-state reservoir flow rate into a vertical well from a circular drainage area, with an optional skin factor, and the productivity index.
 
@@ -4155,7 +4155,7 @@ chemical_engineering_ai999x.solve('chemeng_radial_darcy_flow', k=5e-14, h=15.0, 
 
 <a id="chemeng_exponential_decline"></a>
 
-### Exponential decline curve: rate and cumulative production — `chemeng_exponential_decline`
+### Exponential decline curve: rate and cumulative production, `chemeng_exponential_decline`
 
 Production rate and cumulative production at time t of a well in exponential (constant-percentage) decline (Arps b = 0).
 
@@ -4205,7 +4205,7 @@ chemical_engineering_ai999x.solve('chemeng_exponential_decline', qi=0.01, Di=3.1
 
 <a id="chemeng_hyperbolic_decline"></a>
 
-### Hyperbolic decline curve: rate and cumulative production — `chemeng_hyperbolic_decline`
+### Hyperbolic decline curve: rate and cumulative production, `chemeng_hyperbolic_decline`
 
 Production rate and cumulative production at time t of a well in hyperbolic decline with Arps exponent $0 < b < 1.$
 
@@ -4259,7 +4259,7 @@ chemical_engineering_ai999x.solve('chemeng_hyperbolic_decline', qi=0.01, Di=3.16
 
 <a id="chemeng_harmonic_decline"></a>
 
-### Harmonic decline curve: rate and cumulative production — `chemeng_harmonic_decline`
+### Harmonic decline curve: rate and cumulative production, `chemeng_harmonic_decline`
 
 Production rate and cumulative production at time t of a well in harmonic decline (Arps b = 1).
 
@@ -4307,7 +4307,7 @@ chemical_engineering_ai999x.solve('chemeng_harmonic_decline', qi=0.01, Di=3.1688
 
 <a id="chemeng_havlena_odeh_oil_in_place"></a>
 
-### Oil initially in place from the material balance (Havlena-Odeh straight line) — `chemeng_havlena_odeh_oil_in_place`
+### Oil initially in place from the material balance (Havlena-Odeh straight line), `chemeng_havlena_odeh_oil_in_place`
 
 Stock-tank oil initially in place from the underground withdrawal F and the total expansion term Et of successive pressure surveys (no water influx), by the straight line $F = N$ Et through the origin.
 
@@ -4354,7 +4354,7 @@ chemical_engineering_ai999x.solve('chemeng_havlena_odeh_oil_in_place', F=[120000
 
 <a id="chemeng_havlena_odeh_gas_cap"></a>
 
-### Oil in place and gas-cap size from the material balance (Havlena-Odeh, gas cap) — `chemeng_havlena_odeh_gas_cap`
+### Oil in place and gas-cap size from the material balance (Havlena-Odeh, gas cap), `chemeng_havlena_odeh_gas_cap`
 
 Oil initially in place and the gas-cap ratio m from the straight line $F/Eo = N + N$ m Eg/Eo of successive surveys (no water influx).
 
@@ -4403,7 +4403,7 @@ chemical_engineering_ai999x.solve('chemeng_havlena_odeh_gas_cap', F=[200000.0, 3
 
 <a id="chemeng_gas_pz_material_balance"></a>
 
-### Gas initially in place from the p/z plot — `chemeng_gas_pz_material_balance`
+### Gas initially in place from the p/z plot: `chemeng_gas_pz_material_balance`
 
 Original gas in place of a volumetric gas reservoir from the straight line of p/z against cumulative gas production.
 
@@ -4453,7 +4453,7 @@ chemical_engineering_ai999x.solve('chemeng_gas_pz_material_balance', p=[25.0, 22
 
 <a id="chemeng_horner_buildup"></a>
 
-### Pressure build-up test: Horner analysis for permeability and extrapolated pressure — `chemeng_horner_buildup`
+### Pressure build-up test: Horner analysis for permeability and extrapolated pressure, `chemeng_horner_buildup`
 
 Permeability and the extrapolated pressure p* from the semilog straight line of shut-in pressure against the Horner time ratio (tp + dt)/dt.
 
@@ -4484,7 +4484,7 @@ $$
 
 ![Horner plot of a pressure buildup (the worked example: shut-in times [2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-horner-buildup-fit)
 
-*Horner plot of a pressure buildup (the worked example: shut-in times [2.0, 4.0, 8.0, 16.0, 24.0] h, pressures [2960.0, 3015.0, 3069.0, 3122.0, 3150.0] psi after producing for tp = 500 h): pressure against the Horner ratio (derived) on a logarithmic axis, with the line the package fits — slope m = 1.23929e+06 Pa per cycle (179.743 psi), permeability k = 1.0711e-14 m². Marked: the extrapolated pressure p* = 2.3388e+07 Pa (3392.15 psi) at a ratio of 1.*
+*Horner plot of a pressure buildup (the worked example: shut-in times [2.0, 4.0, 8.0, 16.0, 24.0] h, pressures [2960.0, 3015.0, 3069.0, 3122.0, 3150.0] psi after producing for tp = 500 h): pressure against the Horner ratio (derived) on a logarithmic axis, with the line the package fits, slope m = 1.23929e+06 Pa per cycle (179.743 psi), permeability k = 1.0711e-14 m². Marked: the extrapolated pressure p* = 2.3388e+07 Pa (3392.15 psi) at a ratio of 1.*
 
 ![k (permeability) against h (net pay thickness) from 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-horner-buildup-curve)
 
@@ -4511,7 +4511,7 @@ chemical_engineering_ai999x.solve('chemeng_horner_buildup', dt=[1.0, 3.0, 10.0, 
 
 <a id="chemeng_line_source_drawdown"></a>
 
-### Transient drawdown around a well (line-source solution) — `chemeng_line_source_drawdown`
+### Transient drawdown around a well (line-source solution), `chemeng_line_source_drawdown`
 
 Pressure drop and pressure at radius r and time t after a well starts producing at a constant rate in an infinite reservoir (line-source, exponential-integral solution).
 
@@ -4566,7 +4566,7 @@ chemical_engineering_ai999x.solve('chemeng_line_source_drawdown', q=0.002, mu=0.
 
 <a id="chemeng_gas_well_backpressure"></a>
 
-### Gas-well deliverability from a back-pressure test (Rawlins-Schellhardt) — `chemeng_gas_well_backpressure`
+### Gas-well deliverability from a back-pressure test (Rawlins-Schellhardt), `chemeng_gas_well_backpressure`
 
 Exponent n, coefficient C and absolute open flow of a gas well from multi-rate test data fitted to $q = C$ (pr^2 - pwf^2)^n.
 
@@ -4617,7 +4617,7 @@ chemical_engineering_ai999x.solve('chemeng_gas_well_backpressure', q=[100000.0, 
 
 <a id="chemeng_fenske_minimum_stages"></a>
 
-### Minimum number of stages at total reflux (Fenske) — `chemeng_fenske_minimum_stages`
+### Minimum number of stages at total reflux (Fenske), `chemeng_fenske_minimum_stages`
 
 The minimum number of equilibrium stages of a binary distillation at total reflux by the Fenske equation (constant relative volatility), counting the partial reboiler as a stage.
 
@@ -4666,7 +4666,7 @@ chemical_engineering_ai999x.solve('chemeng_fenske_minimum_stages', alpha=1.5, xD
 
 <a id="chemeng_pump_head"></a>
 
-### Pump total head and power — `chemeng_pump_head`
+### Pump total head and power: `chemeng_pump_head`
 
 The total head a pump adds between its suction and discharge, H = (p2 - p1)/(rho g) + (z2 - z1) + (v2^2 - v1^2)/(2g), with the hydraulic power rho g Q H and the shaft power for an efficiency.
 
@@ -4722,7 +4722,7 @@ chemical_engineering_ai999x.solve('chemeng_pump_head', p1=150000.0, p2=650000.0,
 
 <a id="chemeng_npsh_available"></a>
 
-### Net positive suction head available — `chemeng_npsh_available`
+### Net positive suction head available: `chemeng_npsh_available`
 
 The net positive suction head available at a pump inlet, NPSHa = (p_s - p_v)/(rho g) + z_s - h_f, from the pressure on the liquid surface, the vapour pressure, the static head and the suction-line loss; with the required NPSH, the margin.
 
@@ -4780,7 +4780,7 @@ chemical_engineering_ai999x.solve('chemeng_npsh_available', p_s=101325.0, p_v=47
 
 <a id="chemeng_mass_transfer_coefficient"></a>
 
-### Mass-transfer coefficient from a stated Sherwood correlation — `chemeng_mass_transfer_coefficient`
+### Mass-transfer coefficient from a stated Sherwood correlation, `chemeng_mass_transfer_coefficient`
 
 The convective mass-transfer coefficient $k_c = Sh$ D/L from the Reynolds and Schmidt numbers by a stated correlation: a sphere (Ranz-Marshall), a flat plate in laminar flow (average) or turbulent flow in a pipe (Linton-Sherwood).
 
@@ -4834,7 +4834,7 @@ chemical_engineering_ai999x.solve('chemeng_mass_transfer_coefficient', geometry=
 
 <a id="chemeng_multicomponent_underwood"></a>
 
-### Minimum reflux of a multicomponent column (Underwood) — `chemeng_multicomponent_underwood`
+### Minimum reflux of a multicomponent column (Underwood), `chemeng_multicomponent_underwood`
 
 The minimum reflux ratio of a multicomponent distillation with constant relative volatilities by Underwood's equations: the root theta between the key volatilities of sum alpha_i $z_i/(alpha_i - \theta) = 1 - q$, then R_min + 1 = sum alpha_i x_D,i/(alpha_i - theta).
 
@@ -4886,7 +4886,7 @@ chemical_engineering_ai999x.solve('chemeng_multicomponent_underwood', alpha=[4.0
 
 <a id="chemeng_cstr_volume_second_order"></a>
 
-### CSTR volume for a conversion (second order) — `chemeng_cstr_volume_second_order`
+### CSTR volume for a conversion (second order), `chemeng_cstr_volume_second_order`
 
 Volume and space time of a CSTR that reaches conversion X when -r_A = k $C_A^{2}$ (liquid phase, constant density).
 
@@ -4940,7 +4940,7 @@ chemical_engineering_ai999x.solve('chemeng_cstr_volume_second_order', v0=0.002, 
 
 <a id="chemeng_equimolar_counterdiffusion"></a>
 
-### Equimolar counterdiffusion flux — `chemeng_equimolar_counterdiffusion`
+### Equimolar counterdiffusion flux: `chemeng_equimolar_counterdiffusion`
 
 The molar flux of A through a film of thickness L in equimolar counterdiffusion (N_B = -N_A, ideal gas): $N_A = c$ D $(y_A1 - y_A2)/L$ with c = P/(R T).
 
@@ -4968,7 +4968,7 @@ $$
 
 ![Gas-phase diffusion across a film of thickness L = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equimolar-counterdiffusion-profile)
 
-*Gas-phase diffusion across a film of thickness L = 0.1 m (D = 2.3e-05 m²/s, P = 101325.0 Pa, T = 298.15 K; mole fraction of A 0.2 at z = 0 and 0.05 at z = L — the worked example). The profile is linear (equimolar counter-diffusion), derived from the end values. Marked: the package's flux N_A = 0.00141015 mol/(m²·s) and N_B = -0.00141015 mol/(m²·s).*
+*Gas-phase diffusion across a film of thickness L = 0.1 m (D = 2.3e-05 m²/s, P = 101325.0 Pa, T = 298.15 K; mole fraction of A 0.2 at z = 0 and 0.05 at z = L, the worked example). The profile is linear (equimolar counter-diffusion), derived from the end values. Marked: the package's flux N_A = 0.00141015 mol/(m²·s) and N_B = -0.00141015 mol/(m²·s).*
 
 ![NA (molar flux of A) against T (temperature) from 149](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equimolar-counterdiffusion-curve)
 
@@ -4996,7 +4996,7 @@ chemical_engineering_ai999x.solve('chemeng_equimolar_counterdiffusion', D=1e-05,
 
 <a id="chemeng_modified_raoult_bubble_pressure"></a>
 
-### Bubble-point pressure by the modified Raoult's law (activity coefficients) — `chemeng_modified_raoult_bubble_pressure`
+### Bubble-point pressure by the modified Raoult's law (activity coefficients), `chemeng_modified_raoult_bubble_pressure`
 
 The bubble-point pressure P = sum x_i gamma_i P_i^sat of a non-ideal liquid with stated activity coefficients and vapour pressures (low pressure, ideal vapour), and the vapour composition $y_i = x_i$ gamma_i P_i^sat/P.
 
