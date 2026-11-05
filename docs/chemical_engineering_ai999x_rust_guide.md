@@ -1,6 +1,6 @@
 # chemical-engineering: the Chemical Engineering program — user guide
 
-**chemical-engineering-ai999x 1.0.3**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**chemical-engineering-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
 Chemical Engineering covers material and energy balances, reactor design, separations (distillation, absorption, extraction), transport phenomena, process control and reservoir and petroleum basics. This guide is about `chemical-engineering`, the model as a self-contained program for Windows and Linux: 91 capabilities in 10 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/chemical-engineering-ai999x/); the Python package (`pip install chemical-engineering-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
@@ -17,24 +17,24 @@ Chemical Engineering covers material and energy balances, reactor design, separa
 
 ## 1. Get it
 
-Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS; the newest version is always under https://www.ai999x.com/downloads/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Chemical Engineering | Windows x86-64 | https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-windows-x86_64.zip |
-| Desktop app: Chemical Engineering | Linux x86-64 | https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: Chemical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-windows-x86_64.zip |
+| Desktop app: Chemical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
 Chemical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-chemical-engineering-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-chemical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
 tar xzf ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
 ./ai999x-chemical-engineering-1.4.0-linux-x86_64/ai999x-chemical-engineering
@@ -43,8 +43,8 @@ tar xzf ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
 It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
 tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
 ./ai999x-1.4.0-linux-x86_64/ai999x
@@ -55,8 +55,8 @@ tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
 The bundle holds one program per model; `chemical-engineering` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
 mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
 echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
@@ -69,8 +69,8 @@ The fourth line should print True.
 
 ```powershell
 $F = "ai999x-cli-1.4.0-windows-x86_64.zip"
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.4.0/$F" -OutFile $F
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
 $D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
@@ -1015,8 +1015,8 @@ log10_C = -8.065527458
 AOF = 20.97290776 m^3/s
   by: Gas-well deliverability from a back-pressure test (Rawlins-Schellhardt)  (least squares of log q against log(pr^2 - pwf^2): slope n, intercept log C; AOF = C pr^(2n))
   pr = 2814439.927 Pa
-  p_unit = psi
   q_unit = Mscf_per_day
+  p_unit = psi
   assumes: stabilised flow at every rate; 0.3 < n < 1.5
 ```
 
@@ -1374,8 +1374,8 @@ tauI = 108.8279619 s
 tauD = 27.20699046 s
   by: Ziegler-Nichols closed-loop tuning of lags in series  (phase crossover sum atan(w tau_i) = pi (bisection); Ku = 1/|G(j wu)|, Pu = 2 pi/wu; P: 0.5 Ku; PI: 0.45 Ku, Pu/1.2; PID: 0.6 Ku, Pu/2, Pu/8)
   K = 2
-  t_unit = min
   controller = PID
+  t_unit = min
   assumes: three or more lags (a finite ultimate gain); K > 0
 ```
 
@@ -2366,8 +2366,8 @@ $ chemical-engineering solve chemeng_gas_pz_material_balance "p=[3200, 2925, 252
 G = 4993507777 m^3
 pz_initial = 26084853.14 Pa
   by: Gas initially in place from the p/z plot  (least squares of p/z = (p/z)_i (1 - Gp/G): G = -intercept/slope)
-  p_unit = psi
   gp_unit = Bscf
+  p_unit = psi
   assumes: volumetric (no water drive) gas reservoir; p/z falls with production
 ```
 
@@ -2470,8 +2470,8 @@ p_star = 23388029.28 Pa
   q = 0.0005520392185 m^3/s
   mu = 0.0008 Pa*s
   h = 6.096 m
-  p_unit = psi
   t_unit = h
+  p_unit = psi
   assumes: infinite-acting radial flow on the straight line; the points given lie on the semilog straight line
 ```
 
@@ -2726,8 +2726,8 @@ Tsat = 373.1468258 K
   B = 1730.63
   C = 233.426
   P = 101325 Pa
-  base = log10
   units = mmHg_degC
+  base = log10
   assumes: the convention (units, base) is stated; P within the fitted range
 ```
 
@@ -2830,8 +2830,8 @@ T = 368.2912291 K
 y = [0.621854561429,0.378145438571]
   by: Bubble-point temperature (Raoult's law)  (sum x_i Psat_i(T) = P solved by bisection between the pure-component boiling points)
   P = 101325 Pa
-  units = mmHg_degC
   base = log10
+  units = mmHg_degC
   assumes: ideal liquid and ideal gas; fractions sum to 1
 ```
 
@@ -3056,8 +3056,8 @@ y = [0.626327272537,0.373672727463]
   by: Isothermal flash of an ideal mixture (Raoult's law)  (K_i = Psat_i(T)/P, then the Rachford-Rice equation solved for V/F by bisection)
   T = 368.15 K
   P = 101325 Pa
-  units = mmHg_degC
   base = log10
+  units = mmHg_degC
   assumes: P between the dew- and bubble-point pressures at T (two phases); ideal liquid and gas; some K-value differs from 1 by more than 1 %
 ```
 

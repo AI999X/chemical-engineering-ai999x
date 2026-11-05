@@ -4,7 +4,7 @@
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/chemical-engineering-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/chemical-engineering-ai999x/)** · **[Guides](https://huggingface.co/AI999X/chemical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/chemical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.0.3
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.1.0
 
 Field: **Engineering** · Tasks: Question Answering, Sentence Similarity, Feature Extraction
 
@@ -20,26 +20,13 @@ chemical-engineering-ai999x is an offline, deterministic Python solver that answ
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Chemical Engineering desktop app** 1.2.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-chemical-engineering-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.2.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-1.2.0-linux-x86_64.tar.gz) |
-| **Command line** (`chemical-engineering`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) · [Linux (x86-64)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) |
+| **AI999X Chemical Engineering desktop app** 1.4.0 | Windows, Linux — this model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.4.0 | Windows, Linux — every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz) |
+| **Command line** (`chemical-engineering`) | Windows, Linux — one program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz) |
 | **In your browser** | any device — nothing to install | [Compute on the model page](https://www.ai999x.com/models/chemical-engineering-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install chemical-engineering-ai999x` |
 
-Checksums: [SHA256SUMS](https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS) · every version: [https://www.ai999x.com/downloads/desktop/latest/](https://www.ai999x.com/downloads/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
-
-## Rust versions
-
-Chemical Engineering also comes as native programs compiled from Rust, version 1.2.0 of the AI999X desktop app and command line: they run offline on your computer and need no Python. Each file is in this repository's `rust/` folder, on the [GitHub release v1.0.3](https://github.com/AI999X/chemical-engineering-ai999x/releases/tag/v1.0.3) and on the website.
-
-| Program | System | File | Size | Download | Use |
-|---|---|---|---|---|---|
-| Desktop app (Chemical Engineering) | Windows x86-64 | `ai999x-chemical-engineering-1.2.0-windows-x86_64.zip` | 7.6 MB | [Hub](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/rust/ai999x-chemical-engineering-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/chemical-engineering-ai999x/releases/download/v1.0.3/ai999x-chemical-engineering-1.2.0-windows-x86_64.zip) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-chemical-engineering-1.2.0-windows-x86_64.zip) | unzip, then double-click `ai999x-chemical-engineering.exe` (no installer) |
-| Desktop app (Chemical Engineering) | Linux x86-64 | `ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz` | 8.5 MB | [Hub](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/rust/ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/chemical-engineering-ai999x/releases/download/v1.0.3/ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz) · [website](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz) | extract, then run `./ai999x-chemical-engineering` (X11 or Wayland desktop) |
-| Command line (`chemical-engineering`) | Windows x86-64 | `ai999x-chemical-engineering-cli-1.2.0-windows-x86_64.zip` | 3.2 MB | [Hub](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/rust/ai999x-chemical-engineering-cli-1.2.0-windows-x86_64.zip) · [GitHub](https://github.com/AI999X/chemical-engineering-ai999x/releases/download/v1.0.3/ai999x-chemical-engineering-cli-1.2.0-windows-x86_64.zip) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-windows-x86_64.zip) | unzip, then `chemical-engineering.exe ask "<question>"` or `chemical-engineering.exe solve <capability> name=value` |
-| Command line (`chemical-engineering`) | Linux x86-64 | `ai999x-chemical-engineering-cli-1.2.0-linux-x86_64.tar.gz` | 3.1 MB | [Hub](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/rust/ai999x-chemical-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [GitHub](https://github.com/AI999X/chemical-engineering-ai999x/releases/download/v1.0.3/ai999x-chemical-engineering-cli-1.2.0-linux-x86_64.tar.gz) · [website (all models)](https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz) | extract, then `./chemical-engineering ask "<question>"` or `./chemical-engineering solve <capability> name=value` |
-
-The command-line archive holds `chemical-engineering` with a README of its commands and examples, the licence and the notice. Checksums: [`rust/SHA256SUMS`](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/rust/SHA256SUMS) (`sha256sum -c SHA256SUMS`).
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -50,11 +37,11 @@ Download **AI999X Chemical Engineering** for your system (above), unpack it and 
 Linux, from a terminal:
 
 ```bash
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz
-./ai999x-chemical-engineering-1.2.0-linux-x86_64/ai999x-chemical-engineering
+tar xzf ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
+./ai999x-chemical-engineering-1.4.0-linux-x86_64/ai999x-chemical-engineering
 ```
 
 ### Command line
@@ -62,23 +49,23 @@ tar xzf ai999x-chemical-engineering-1.2.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/ai999x-cli-1.2.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.2.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.2.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 chemical-engineering --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.2.0-windows-x86_64.zip"
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/$F" -OutFile $F
-Invoke-WebRequest "https://www.ai999x.com/downloads/desktop/1.2.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.4.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.2.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 chemical-engineering --version
 ```
@@ -123,26 +110,6 @@ tau = 9000 s
   k = 0.001 1/s
   X = 0.9
   assumes: 0 <= X < 1; steady state, perfect mixing, constant density, -r_A = k C_A
-```
-
-**Draw the figures** — The live figures for your own inputs, written as SVG files into the folder given with --out (here the current folder); open them in any browser. Without --out the SVG text comes back as JSON.
-
-```console
-$ chemical-engineering figures chemeng_cstr_volume_first_order "v0=36 m^3/h" "k=0.06 1/min" X=0.9 --out .
-[
-  {
-    "slug": "chemeng-cstr-volume-first-order-live-1",
-    "title": "Reactor volume as conversion of A wanted varies",
-    "caption": "Reactor volume as X runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your X = 0.9 gives V = 90. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": "./chemeng-cstr-volume-first-order-live-1.svg"
-  },
-  {
-    "slug": "chemeng-cstr-volume-first-order-live-2",
-    "title": "Reactor volume as volumetric feed flow varies",
-    "caption": "Reactor volume as v0 runs from 9 to 63 m^3/h, every other input as you entered it (29 solutions). Marked: your v0 = 36 m^3/h gives V = 90. Your inputs: v0 = 36 m^3/h, k = 0.06 1/min, X = 0.9.",
-    "file": "./chemeng-cstr-volume-first-order-live-2.svg"
-  }
-]
 ```
 
 **Many questions at once** — One JSON request per line in, one JSON answer per line out, in order: for scripts, notebooks and agents (the program starts once). In PowerShell: Get-Content cases.jsonl | chemical-engineering batch
@@ -322,7 +289,7 @@ _What this means:_ This calculation determines the liquid temperature in a well-
 
 | Property | Value |
 |---|---|
-| Package | `chemical-engineering-ai999x` 1.0.3 (import `chemical_engineering_ai999x`) |
+| Package | `chemical-engineering-ai999x` 1.1.0 (import `chemical_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic chemical engineering engine (rule-based reading + certified symbolic capabilities) |
 | Capabilities | 91 certified procedures |
 | Knowledge pack | version 1.0.1 |
@@ -356,7 +323,7 @@ chemical_engineering.ask("Who created you?").message
 # -> chemical-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `chemical-engineering-ai999x "<question>"`; for the native program use `chemical-engineering` (above). The outputs above were produced by running this exact code on chemical-engineering-ai999x 1.0.3.
+The Python package also installs a Python command, `chemical-engineering-ai999x "<question>"`; for the native program use `chemical-engineering` (above). The outputs above were produced by running this exact code on chemical-engineering-ai999x 1.1.0.
 
 ## Find the right capability, and draw it
 
@@ -511,10 +478,10 @@ _Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) in N equa
 ## Citation
 
 ```bibtex
-@software{chemical_engineering_ai999x_1_0_3,
+@software{chemical_engineering_ai999x_1_1_0,
   title  = {chemical-engineering-ai999x: an offline, verified chemical engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.0.3},
+  year   = {2026}, version = {1.1.0},
   url    = {https://huggingface.co/AI999X/chemical-engineering-ai999x}
 }
 ```

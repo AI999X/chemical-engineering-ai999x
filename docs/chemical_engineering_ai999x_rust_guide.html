@@ -21,30 +21,30 @@ figcaption{font-size:9pt;color:#555}
 .pb{page-break-after:always}
 </style></head><body>
 <h1>chemical-engineering: the Chemical Engineering program — user guide</h1>
-<p><strong>chemical-engineering-ai999x 1.0.3</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
+<p><strong>chemical-engineering-ai999x 1.1.0</strong>, Rust build: command line, desktop app and browser. <strong>Creator / engineer:</strong> Ibnul Jaif Farabi · <strong>Company:</strong> AI999X · support@ai999x.com</p>
 <p>Chemical Engineering covers material and energy balances, reactor design, separations (distillation, absorption, extraction), transport phenomena, process control and reservoir and petroleum basics. This guide is about <code>chemical-engineering</code>, the model as a self-contained program for Windows and Linux: 91 capabilities in 10 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model&#x27;s page (https://www.ai999x.com/models/chemical-engineering-ai999x/); the Python package (<code>pip install chemical-engineering-ai999x</code>) has its own guide. Every command output printed here is what the program printed.</p>
 <h2>Contents</h2>
 <ul><li>1. Get it: desktop app, command line, browser, Python</li><li>2. Quick start</li><li>3. Writing inputs</li><li>4. Outcomes and exit codes</li><li>5. Scripts and agents: batch and JSON</li><li>6. Figures</li><li>7. In a web page or Node.js: WebAssembly</li><li>8. Every capability</li></ul>
 <h2>1. Get it</h2>
-<p>Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS; the newest version is always under https://www.ai999x.com/downloads/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/</p>
-<table><thead><tr><th>what</th><th>system</th><th>download</th></tr></thead><tbody><tr><td>Desktop app: Chemical Engineering</td><td>Windows x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: Chemical Engineering</td><td>Linux x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz</td></tr><tr><td>Desktop app: all models</td><td>Windows x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: all models</td><td>Linux x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz</td></tr><tr><td>Command line</td><td>Windows x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip</td></tr><tr><td>Command line</td><td>Linux x86-64</td><td>https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz</td></tr></tbody></table>
+<p>Version 1.4.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/</p>
+<table><thead><tr><th>what</th><th>system</th><th>download</th></tr></thead><tbody><tr><td>Desktop app: Chemical Engineering</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: Chemical Engineering</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz</td></tr><tr><td>Desktop app: all models</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-windows-x86_64.zip</td></tr><tr><td>Desktop app: all models</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz</td></tr><tr><td>Command line</td><td>Windows x86-64</td><td>https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-windows-x86_64.zip</td></tr><tr><td>Command line</td><td>Linux x86-64</td><td>https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz</td></tr></tbody></table>
 <h3>Desktop app</h3>
 <p>Chemical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-chemical-engineering-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-chemical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
-<pre><code class="shell">curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
 tar xzf ai999x-chemical-engineering-1.4.0-linux-x86_64.tar.gz
 ./ai999x-chemical-engineering-1.4.0-linux-x86_64/ai999x-chemical-engineering</code></pre>
 <p>It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.4.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:</p>
-<pre><code class="shell">curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
 tar xzf ai999x-1.4.0-linux-x86_64.tar.gz
 ./ai999x-1.4.0-linux-x86_64/ai999x</code></pre>
 <h3>Command line — Linux</h3>
 <p>The bundle holds one program per model; <code>chemical-engineering</code> is this one. The checksum line should print OK.</p>
-<pre><code class="shell">curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
-curl -LO https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS
+<pre><code class="shell">curl -LO https://downloads.ai999x.com/desktop/1.4.0/ai999x-cli-1.4.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
 mkdir -p ~/.local/share &amp;&amp; tar xzf ai999x-cli-1.4.0-linux-x86_64.tar.gz -C ~/.local/share
 echo &#x27;export PATH=&quot;$HOME/.local/share/ai999x-cli-1.4.0-linux-x86_64:$PATH&quot;&#x27; &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
@@ -52,8 +52,8 @@ chemical-engineering --version</code></pre>
 <h3>Command line — Windows (PowerShell)</h3>
 <p>The fourth line should print True.</p>
 <pre><code class="powershell">$F = &quot;ai999x-cli-1.4.0-windows-x86_64.zip&quot;
-Invoke-WebRequest &quot;https://www.ai999x.com/downloads/desktop/1.4.0/$F&quot; -OutFile $F
-Invoke-WebRequest &quot;https://www.ai999x.com/downloads/desktop/1.4.0/SHA256SUMS&quot; -OutFile SHA256SUMS
+Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.4.0/$F&quot; -OutFile $F
+Invoke-WebRequest &quot;https://downloads.ai999x.com/desktop/1.4.0/SHA256SUMS&quot; -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split &#x27; &#x27;)[0]
 Expand-Archive $F -DestinationPath &quot;$env:LOCALAPPDATA\AI999X&quot; -Force
 $D = &quot;$env:LOCALAPPDATA\AI999X\ai999x-cli-1.4.0-windows-x86_64&quot;; $env:Path += &quot;;$D&quot;
@@ -494,8 +494,8 @@ log10_C = -8.065527458
 AOF = 20.97290776 m^3/s
   by: Gas-well deliverability from a back-pressure test (Rawlins-Schellhardt)  (least squares of log q against log(pr^2 - pwf^2): slope n, intercept log C; AOF = C pr^(2n))
   pr = 2814439.927 Pa
-  p_unit = psi
   q_unit = Mscf_per_day
+  p_unit = psi
   assumes: stabilised flow at every rate; 0.3 &lt; n &lt; 1.5</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the gas well deliverability parameters by fitting test rates [4288, 9265, 15552, 20177] and flowing bottom-hole pressures [403.1, 394, 378.5, 362.6] against the average reservoir pressure 2.81444e+06 Pa. The method uses least squares on the logarithmic form of the Rawlins-Schellhardt equation to find the exponent 0.727757 and the intercept representing the coefficient -8.06553. These values allow prediction of the absolute open flow potential, which is calculated as 20.9729 m^3/s, assuming stabilized flow conditions throughout the test.</p>
 <h4 id="chemeng_harmonic_decline">Harmonic decline curve: rate and cumulative production — <code>chemeng_harmonic_decline</code></h4>
@@ -644,8 +644,8 @@ tauI = 108.8279619 s
 tauD = 27.20699046 s
   by: Ziegler-Nichols closed-loop tuning of lags in series  (phase crossover sum atan(w tau_i) = pi (bisection); Ku = 1/|G(j wu)|, Pu = 2 pi/wu; P: 0.5 Ku; PI: 0.45 Ku, Pu/1.2; PID: 0.6 Ku, Pu/2, Pu/8)
   K = 2
-  t_unit = min
   controller = PID
+  t_unit = min
   assumes: three or more lags (a finite ultimate gain); K &gt; 0</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the ultimate gain 4 and oscillation period 217.656 s for a process with time constants [1, 1, 1] and gain 2. Based on these values, the recommended proportional controller setting is 2.4. For PI or PID configurations, the integral time is 108.828 s and the derivative time is 27.207 s, depending on the selected controller type.</p>
 <h3>Property estimation (8)</h3>
@@ -1064,8 +1064,8 @@ CC = 250 mol/m^3
 G = 4993507777 m^3
 pz_initial = 26084853.14 Pa
   by: Gas initially in place from the p/z plot  (least squares of p/z = (p/z)_i (1 - Gp/G): G = -intercept/slope)
-  p_unit = psi
   gp_unit = Bscf
+  p_unit = psi
   assumes: volumetric (no water drive) gas reservoir; p/z falls with production</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the original gas in place for a volumetric reservoir by analyzing the linear relationship between the ratio of average reservoir pressure to the gas deviation factor and cumulative gas production. By performing a least squares regression on the data points, the method identifies the y-intercept, which represents the initial p/z value at zero production, and the slope of the line. The result, 4.99351e+09 m^3, quantifies the total volume of gas originally present in the formation under standard conditions, providing a critical estimate for resource evaluation.</p>
 <h4 id="chemeng_havlena_odeh_gas_cap">Oil in place and gas-cap size from the material balance (Havlena-Odeh, gas cap) — <code>chemeng_havlena_odeh_gas_cap</code></h4>
@@ -1105,8 +1105,8 @@ p_star = 23388029.28 Pa
   q = 0.0005520392185 m^3/s
   mu = 0.0008 Pa*s
   h = 6.096 m
-  p_unit = psi
   t_unit = h
+  p_unit = psi
   assumes: infinite-acting radial flow on the straight line; the points given lie on the semilog straight line</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines reservoir permeability and initial pressure using shut-in bottom-hole data. Performing a least-squares fit on pressure against the logarithm of the Horner time ratio gives the semilog slope 1.23929e+06 Pa. This slope, combined with flow rate 0.000552039 m^3/s, viscosity 0.0008 Pa*s, and thickness 6.096 m, gives the permeability 1.07115e-14 m^2. The intercept of this line provides the extrapolated pressure 2.3388e+07 Pa, which represents the estimated average reservoir pressure.</p>
 <h4 id="chemeng_radial_darcy_flow">Steady radial flow of oil to a well (Darcy) and productivity index — <code>chemeng_radial_darcy_flow</code></h4>
@@ -1210,8 +1210,8 @@ Tsat = 373.1468258 K
   B = 1730.63
   C = 233.426
   P = 101325 Pa
-  base = log10
   units = mmHg_degC
+  base = log10
   assumes: the convention (units, base) is stated; P within the fitted range</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the boiling point of a pure liquid by inverting the Antoine equation. Using coefficients A, B, and C with the specified units and logarithm base, the formula computes the temperature where vapor pressure equals the external pressure 101325 Pa. The result, 373.147 K, indicates the thermal condition required for phase change at this specific pressure.</p>
 <h4 id="chemeng_raoult_bubble_pressure">Bubble-point pressure (Raoult&#x27;s law) — <code>chemeng_raoult_bubble_pressure</code></h4>
@@ -1251,8 +1251,8 @@ T = 368.2912291 K
 y = [0.621854561429,0.378145438571]
   by: Bubble-point temperature (Raoult&#x27;s law)  (sum x_i Psat_i(T) = P solved by bisection between the pure-component boiling points)
   P = 101325 Pa
-  units = mmHg_degC
   base = log10
+  units = mmHg_degC
   assumes: ideal liquid and ideal gas; fractions sum to 1</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the bubble-point temperature 368.292 K for a liquid mixture with composition [0.4, 0.6] at pressure 101325 Pa. Using Antoine coefficients [6.90565 1211.03 220.79; 6.95464 1344.8 219.482] in units mmHg_degC with base log10, the algorithm solves the Raoult&#x27;s law equation iteratively. The result indicates that boiling begins at 368.292 K, producing a vapor phase with composition [0.621849, 0.378151]. This value represents the threshold temperature where the sum of partial pressures equals the system pressure.</p>
 <h4 id="chemeng_countercurrent_extraction">Countercurrent liquid-liquid extraction (N stages, immiscible solvents) — <code>chemeng_countercurrent_extraction</code></h4>
@@ -1343,8 +1343,8 @@ y = [0.626327272537,0.373672727463]
   by: Isothermal flash of an ideal mixture (Raoult&#x27;s law)  (K_i = Psat_i(T)/P, then the Rachford-Rice equation solved for V/F by bisection)
   T = 368.15 K
   P = 101325 Pa
-  units = mmHg_degC
   base = log10
+  units = mmHg_degC
   assumes: P between the dew- and bubble-point pressures at T (two phases); ideal liquid and gas; some K-value differs from 1 by more than 1 %</code></pre>
 <p><strong>What the worked example means:</strong> This calculation determines the phase distribution of an ideal mixture flashed at temperature 368.15 K and pressure 101325 Pa. Using Raoult&#x27;s law, equilibrium constants are derived from Antoine vapour pressures. The Rachford-Rice equation is then solved to find the vapour fraction 0.430535, which allows for the calculation of the resulting liquid composition [0.404485, 0.595515] and vapour composition [0.626337, 0.373663]. These values represent the split of the feed components between the two phases under the specified conditions.</p>
 <h4 id="chemeng_rachford_rice_flash">Isothermal flash with given K-values (Rachford-Rice) — <code>chemeng_rachford_rice_flash</code></h4>
