@@ -1,5 +1,5 @@
 {
- "package": "1.5.0",
+ "package": "1.6.0",
  "pack": "1.0.1",
  "knowledge_db": null,
  "files": {
@@ -7,8 +7,8 @@
   "dictionary/terms.json": "3781eac9e78cc74a52dfbb7f7c6ecd5f218e2a208be5aad6dabd1094f82ddc60",
   "knowledge/relations.json": "9b1a87994cf16a4b2943127291307de49f12982b254f8393f2b4f6069a558841",
   "knowledge/reference_cases.json": "7414a14e2c4202a7fae8cdd14e1a2ef7267f35a9665b0633001349c698d4e4e7",
-  "capabilities/procedures.py": "e936b33cecc32126dcd24fdefefadcc444ef4fbd884e9d47aefb1a17e9588bba",
-  "capabilities/procedures_certified.json": "cf7381f11c5df51d67846abc717f18e92817dc7db6b80d33cfd5bdeb6ef8aedb",
+  "capabilities/procedures.py": "aa27d5e1a4e163dbcc53de36d8f360d6ac950c1873e4ca61be6459d8203c9e76",
+  "capabilities/procedures_certified.json": "4c90f20bb132cec700b54588bde334b7a226da4c00eb3f6814a9f948c7a820b4",
   "chemical_engineering_knowledge_public.sqlite": "f0fa05c03d9ff2a64f41cb238a3d4dcb56de765136c5fe8bfddadd3958f90af9"
  },
  "engine": [

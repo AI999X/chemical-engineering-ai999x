@@ -4603,6 +4603,81 @@ _add("chemeng_modified_raoult_bubble_pressure",
      extra_q=[{"q": "Modified Raoult bubble pressure: x = [0.4, 0.7], gamma = [1.8, 1.2], Psat = [55, 30], p_unit = kPa", "outcome": "INVALID_INPUT"}])
 
 
+# ================================================================================================ PROCESS DESIGN: cost estimation
+# (2026-11-12, core curriculum gap) Equipment cost scaled with a capacity exponent and brought to the present with cost
+# indices. Example outputs were worked by hand: 2^0.6 = 1.51571656651, 0.25^0.5 = 0.5.
+def cost_scaling(C1, S1, S2, n, I1=None, I2=None):
+    _pos("the known cost and the two capacities", C1, S1, S2)
+    _fin(n)
+    _need(0 < n <= 1.5, "the capacity exponent must lie in (0, 1.5] (0.6 for the six-tenths rule)")
+    ratio = S2 / S1
+    _need(0.1 <= ratio <= 10, "the two capacities must lie within a factor of 10 of each other (the rule is unreliable beyond)")
+    _need((I1 is None) == (I2 is None), "give both cost indices (at the known cost's date and now) or neither")
+    f = ratio ** n
+    Cs = C1 * f
+    ir = 1.0
+    if I1 is not None:
+        _pos("the cost indices", I1, I2)
+        ir = I2 / I1
+    return _out(capacity_ratio=ratio, scale_factor=f, C_scaled=Cs, index_ratio=ir, C2=Cs * ir)
+
+
+def _ref_cost_scaling(C1, S1, S2, n, I1=None, I2=None):
+    """The same rule in exact rational arithmetic (sympy, the power evaluated to 30 digits) from the inputs as written
+    (a definition: a restated reference)."""
+    import sympy as sp
+    q = sp.Rational(repr(S2)) / sp.Rational(repr(S1))
+    f = q ** sp.Rational(repr(n))
+    ir = sp.Rational(repr(I2)) / sp.Rational(repr(I1)) if I1 is not None else sp.Integer(1)
+    cs = sp.Rational(repr(C1)) * f
+    return {"capacity_ratio": float(q), "scale_factor": float(f.evalf(30)), "C_scaled": float(cs.evalf(30)),
+            "index_ratio": float(ir), "C2": float((cs * ir).evalf(30))}
+
+
+def _wrong_cost_scaling(C1, S1, S2, n, I1=None, I2=None):
+    # the capacity ratio inverted (old over new)
+    f = (S1 / S2) ** n
+    ir = I2 / I1 if I1 is not None else 1.0
+    return _out(capacity_ratio=S2 / S1, scale_factor=f, C_scaled=C1 * f, index_ratio=ir, C2=C1 * f * ir)
+
+
+def _rand_cost_scaling(rng):
+    S1 = _sig(_lu(rng, 1.0, 1000.0), 3)
+    x = {"C1": _sig(_lu(rng, 1e4, 1e7), 3), "S1": S1, "S2": _sig(S1 * _lu(rng, 0.15, 8.0), 3), "n": _sig(rng.uniform(0.3, 1.0), 2)}
+    if rng.random() < 0.6:
+        I1 = _sig(rng.uniform(300.0, 600.0), 4)
+        x["I1"] = I1
+        x["I2"] = _sig(I1 * rng.uniform(0.9, 2.0), 4)
+    return x
+
+
+_add("chemeng_equipment_cost_scaling",
+     name="Equipment cost scaling with a capacity exponent and cost indices", topic="process design / cost estimation",
+     purpose="The purchased cost of equipment of a new capacity from the known cost of a similar unit, C = C1 (S2/S1)^n (n = 0.6 is the six-tenths rule), brought from the date of the known cost to now with the cost indices: C2 = C (I2/I1).",
+     inputs=[_numin("C1", "known cost of the existing unit (any currency)"), _numin("S1", "capacity of the existing unit"),
+             _numin("S2", "capacity of the new unit (same unit as S1)"), _numin("n", "capacity (cost) exponent, e.g. 0.6"),
+             _numin("I1", "cost index at the date of the known cost (optional, with I2)", required=False),
+             _numin("I2", "cost index now (optional, with I1)", required=False)],
+     outputs=[_o("capacity_ratio", "number", "capacity ratio S2/S1"), _o("scale_factor", "number", "scale factor (S2/S1)^n"),
+              _o("C_scaled", "number", "cost of the new capacity at the date of the known cost"),
+              _o("index_ratio", "number", "cost-index ratio I2/I1 (1 without indices)"), _o("C2", "number", "estimated cost now")],
+     primary="C2", conditions=["0 < n <= 1.5", "capacities within a factor of 10 of each other", "both cost indices or neither",
+                               "similar equipment, same type and materials"],
+     method="C2 = C1 (S2/S1)^n (I2/I1)", latex=r"C_2 = C_1\left(\frac{S_2}{S_1}\right)^{n}\frac{I_2}{I_1}",
+     run=cost_scaling, reference=_ref_cost_scaling, wrong=_wrong_cost_scaling, rand=_rand_cost_scaling,
+     phrases=("Equipment cost scaling", "Cost scaling", "Six-tenths rule", "Capacity cost scaling"),
+     aliases={"cost": "C1", "known_cost": "C1", "capacity1": "S1", "capacity2": "S2", "exponent": "n", "index1": "I1", "index2": "I2"},
+     examples=[_ex({"C1": 100000.0, "S1": 10.0, "S2": 20.0, "n": 0.6, "I1": 500.0, "I2": 800.0},
+                   {"capacity_ratio": 2.0, "scale_factor": 1.5157165665104, "C_scaled": 151571.65665104, "index_ratio": 1.6,
+                    "C2": 242514.650641664}),
+               _ex({"C1": 250000.0, "S1": 500.0, "S2": 125.0, "n": 0.5},
+                   {"capacity_ratio": 0.25, "scale_factor": 0.5, "C_scaled": 125000.0, "index_ratio": 1.0, "C2": 125000.0})],
+     level="beginner",
+     extra_q=[{"q": "Six-tenths rule: C1 = 100000, S1 = 10, S2 = 20, n = 0.6, I1 = 500, I2 = 800", "like": 0},
+              {"q": "Equipment cost scaling: C1 = 100000, S1 = 10, S2 = 200, n = 0.6", "outcome": "INVALID_INPUT"},
+              {"q": "Equipment cost scaling: C1 = 100000, S1 = 10, S2 = 20, n = 0.6, I1 = 500", "outcome": "INVALID_INPUT"}])
+
+
 # @@END@@
 
 

@@ -39,6 +39,7 @@ result.show()
 | Process control / process dynamics | [First-order-plus-dead-time process: response to a step](#chemeng_fopdt_step_response) |
 | Process control / process identification | [Process gain and time constant from step-test data (least squares)](#chemeng_first_order_step_fit) |
 | Process control / stability | [Closed-loop stability of a P-controlled process (closed-loop poles)](#chemeng_closed_loop_stability), [Gain and phase margins of a PI loop around lags in series](#chemeng_pi_loop_margins) |
+| Process design / cost estimation | [Equipment cost scaling with a capacity exponent and cost indices](#chemeng_equipment_cost_scaling) |
 | Property estimation / equations of state | [Peng-Robinson equation of state: compressibility and fugacity coefficient](#chemeng_peng_robinson), [Soave-Redlich-Kwong equation of state: compressibility and fugacity coefficient](#chemeng_srk) |
 | Property estimation / gas compressibility | [Gas compressibility from the virial equation (Pitzer-Abbott correlation)](#chemeng_virial_compressibility) |
 | Property estimation / heat of vaporisation | [Heat of vaporisation at another temperature (Watson)](#chemeng_watson_heat_of_vaporization), [Heat of vaporisation at the normal boiling point (Riedel)](#chemeng_riedel_heat_of_vaporization), [Heat of vaporisation from the acentric factor (Pitzer)](#chemeng_pitzer_heat_of_vaporization) |
@@ -196,6 +197,7 @@ Call `solve("<id>", **inputs)` with plain numbers; the result's `values` holds e
 | chemeng_cstr_volume_second_order | CSTR volume for a conversion (second order) | v0, k, CA0, X | V, tau |
 | chemeng_equimolar_counterdiffusion | Equimolar counterdiffusion flux | D, P, T, L, yA1, yA2 | NA, NB |
 | chemeng_modified_raoult_bubble_pressure | Bubble-point pressure by the modified Raoult's law (activity coefficients) | x, gamma, Psat, p_unit | P, y1, y |
+| chemeng_equipment_cost_scaling | Equipment cost scaling with a capacity exponent and cost indices | C1, S1, S2, n, I1, I2 | capacity_ratio, scale_factor, C_scaled, index_ratio, C2 |
 
 <a id="chemeng_blending_flows"></a>
 
@@ -5044,3 +5046,60 @@ chemical_engineering_ai999x.solve('chemeng_modified_raoult_bubble_pressure', x=[
 | Modified Raoult bubble pressure: gamma = [1.8, 1.2], Psat = [55.0, 30.0], p_unit = kPa | NEEDS_INPUT | chemeng_modified_raoult_bubble_pressure needs x (liquid mole fractions (sum to 1)). Example: solve('chemeng_modified_rao |
 | Modified Raoult bubble pressure: x = [0.4, 0.6], gamma = [1.8, 1.2], Psat = [55.0, 30.0], p_unit = kPa, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: chemical_engineering_ai999x.templ |
 | Modified Raoult bubble pressure: x = [0.4, 0.7], gamma = [1.8, 1.2], Psat = [55, 30], p_unit = kPa | INVALID_INPUT | Bubble-point pressure by the modified Raoult's law (activity coefficients): x: the fractions must sum to 1. |
+
+<a id="chemeng_equipment_cost_scaling"></a>
+
+### Equipment cost scaling with a capacity exponent and cost indices, `chemeng_equipment_cost_scaling`
+
+The purchased cost of equipment of a new capacity from the known cost of a similar unit, $C = C_{1}$ $(S_{2}/S_{1})^{n}$ (n = 0.6 is the six-tenths rule), brought from the date of the known cost to now with the cost indices: $C_{2} = C$ $(I_{2}/I_{1})$.
+
+$$
+C_2 = C_1\left(\frac{S_2}{S_1}\right)^{n}\frac{I_2}{I_1}
+$$
+
+| input | meaning | condition |
+|---|---|---|
+| `C1` | known cost of the existing unit (any currency) |  |
+| `S1` | capacity of the existing unit |  |
+| `S2` | capacity of the new unit (same unit as S1) |  |
+| `n` | capacity (cost) exponent, e.g. 0.6 |  |
+| `I1` | cost index at the date of the known cost (optional, with I2) |  |
+| `I2` | cost index now (optional, with I1) |  |
+
+| output | meaning |
+|---|---|
+| `capacity_ratio` | capacity ratio $S_{2}/S_{1}$ |
+| `scale_factor` | scale factor $(S_{2}/S_{1})^{n}$ |
+| `C_scaled` | cost of the new capacity at the date of the known cost |
+| `index_ratio` | cost-index ratio $I_{2}/I_{1}$ (1 without indices) |
+| `C2` | estimated cost now |
+
+- **Method:** $C_{2} = C_{1}$ $(S_{2}/S_{1})^{n}$ $(I_{2}/I_{1})$
+- **Assumes:** $0 < n  \leq  1.5$; capacities within a factor of 10 of each other; both cost indices or neither; similar equipment, same type and materials
+- **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
+
+![C2 (estimated cost now) against I1 (cost index at the date of the known cost (optional, with I2)) from 250 to 750](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equipment-cost-scaling-curve)
+
+*C2 (estimated cost now) against I1 (cost index at the date of the known cost (optional, with I2)) from 250 to 750. One curve for each value of C1 (known cost of the existing unit (any currency)): 100000, 50000, 200000. Other inputs as in the worked example: S1 = 10.0, S2 = 20.0, n = 0.6, I2 = 800.0. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, I1 = 500, C2 = 242515.*
+
+```python
+chemical_engineering_ai999x.solve('chemeng_equipment_cost_scaling', C1=100000.0, S1=10.0, S2=20.0, n=0.6, I1=500.0, I2=800.0)
+# -> capacity_ratio = 2, scale_factor = 1.51572, C_scaled = 151572, index_ratio = 1.6, C2 = 242515   (SOLVED)
+```
+
+```python
+chemical_engineering_ai999x.solve('chemeng_equipment_cost_scaling', C1=250000.0, S1=500.0, S2=125.0, n=0.5)
+# -> capacity_ratio = 0.25, scale_factor = 0.5, C_scaled = 125000, index_ratio = 1, C2 = 125000   (SOLVED)
+```
+
+**Questions in words (documented forms), as executed:**
+
+| question | outcome | result |
+|---|---|---|
+| Equipment cost scaling: C1 = 100000.0, S1 = 10.0, S2 = 20.0, n = 0.6, I1 = 500.0, I2 = 800.0 | SOLVED | capacity_ratio = 2, scale_factor = 1.51572, C_scaled = 151572, index_ratio = 1.6, C2 = 242515 |
+| Equipment cost scaling: C1 = 250000.0, S1 = 500.0, S2 = 125.0, n = 0.5 | SOLVED | capacity_ratio = 0.25, scale_factor = 0.5, C_scaled = 125000, index_ratio = 1, C2 = 125000 |
+| Equipment cost scaling: S1 = 10.0, S2 = 20.0, n = 0.6, I1 = 500.0, I2 = 800.0 | NEEDS_INPUT | chemeng_equipment_cost_scaling needs C1 (known cost of the existing unit (any currency)). Example: solve('chemeng_equipm |
+| Equipment cost scaling: C1 = 100000.0, S1 = 10.0, S2 = 20.0, n = 0.6, I1 = 500.0, I2 = 800.0, zz = 1 | UNRECOGNIZED_FORMAT | I could not match this question to a documented form, so I will not guess. Every form: chemical_engineering_ai999x.templ |
+| Six-tenths rule: C1 = 100000, S1 = 10, S2 = 20, n = 0.6, I1 = 500, I2 = 800 | SOLVED | capacity_ratio = 2, scale_factor = 1.51572, C_scaled = 151572, index_ratio = 1.6, C2 = 242515 |
+| Equipment cost scaling: C1 = 100000, S1 = 10, S2 = 200, n = 0.6 | INVALID_INPUT | Equipment cost scaling with a capacity exponent and cost indices: the two capacities must lie within a factor of 10 of e |
+| Equipment cost scaling: C1 = 100000, S1 = 10, S2 = 20, n = 0.6, I1 = 500 | INVALID_INPUT | Equipment cost scaling with a capacity exponent and cost indices: give both cost indices (at the known cost's date and n |

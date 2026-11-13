@@ -90,9 +90,10 @@
   "chemeng_multicomponent_underwood",
   "chemeng_cstr_volume_second_order",
   "chemeng_equimolar_counterdiffusion",
-  "chemeng_modified_raoult_bubble_pressure"
+  "chemeng_modified_raoult_bubble_pressure",
+  "chemeng_equipment_cost_scaling"
  ],
- "generated": "2026-10-24",
+ "generated": "2026-11-13",
  "tool": "tools/certify_procedures.py",
  "report": "release/procedure_certification.json",
  "weak_references": {

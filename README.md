@@ -4,11 +4,11 @@
 
 **[Desktop app & command line](https://www.ai999x.com/desktop-cli/)** · **[Compute in your browser](https://www.ai999x.com/models/chemical-engineering-ai999x/#try)** · **[Install (Python)](https://pypi.org/project/chemical-engineering-ai999x/)** · **[Guides](https://huggingface.co/AI999X/chemical-engineering-ai999x/tree/main/docs)** · **[Evaluation](https://huggingface.co/AI999X/chemical-engineering-ai999x/tree/main/evaluation)** · **[AI999X on Hugging Face](https://huggingface.co/AI999X)** · **[Website](https://ai999x.com)** · **[Support: Buy Me a Coffee](https://buymeacoffee.com/ibnuljaiffarabi)**
 
-License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.5.0
+License: Apache-2.0 · Author: Ibnul Jaif Farabi (creator and engineer) · Organization: AI999X · Version 1.6.0
 
 Field: **Engineering** · Tasks: Question Answering
 
-chemical-engineering-ai999x is an offline, deterministic chemical engineering solver written in Rust: a desktop app, a command-line program, a browser module and a Python package. It answers chemical engineering questions with verified results from 91 certified capabilities, gives 602 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
+chemical-engineering-ai999x is an offline, deterministic chemical engineering solver written in Rust: a desktop app, a command-line program, a browser module and a Python package. It answers chemical engineering questions with verified results from 92 certified capabilities, gives 611 documented answers identically on Windows and Linux, and refuses rather than guesses when an answer cannot be verified.
 
 **chemical-engineering-ai999x** reads a question in plain English (or a typed call), picks a certified chemical engineering capability, computes the answer exactly, checks it, and returns the result with its steps, units, LaTeX and assumptions, or a refusal that says what is missing. It runs fully offline on any CPU, needs no GPU, no API key and no internet, and is built to give **zero wrong answers**: when it is not sure, it refuses instead of guessing.
 
@@ -20,13 +20,13 @@ chemical-engineering-ai999x is an offline, deterministic chemical engineering so
 
 | Way to run it | For | Get it |
 |---|---|---|
-| **AI999X Chemical Engineering desktop app** 1.5.0 | Windows, Linux. This model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz) |
-| **AI999X desktop app** 1.5.0 | Windows, Linux. Every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz) |
-| **Command line** (`chemical-engineering`) | Windows, Linux. One program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz) |
+| **AI999X Chemical Engineering desktop app** 1.6.0 | Windows, Linux. This model in its own app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-chemical-engineering-1.6.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-chemical-engineering-1.6.0-linux-x86_64.tar.gz) |
+| **AI999X desktop app** 1.6.0 | Windows, Linux. Every AI999X model in one app: search, ask in words, forms, live figures, explanations, offline | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz) |
+| **Command line** (`chemical-engineering`) | Windows, Linux. One program per model, offline, no Python | [Windows (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip) · [Linux (x86-64)](https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz) |
 | **In your browser** | any device. Nothing to install | [Compute on the model page](https://www.ai999x.com/models/chemical-engineering-ai999x/#try) |
 | **Python** | Python 3.10+ | `pip install chemical-engineering-ai999x` |
 
-Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
+Checksums: [SHA256SUMS](https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS) · every version: [https://downloads.ai999x.com/desktop/latest/](https://downloads.ai999x.com/desktop/latest/) · install guide: [desktop & command line](https://www.ai999x.com/desktop-cli/)
 
 ## Quick start
 
@@ -37,11 +37,11 @@ Download **AI999X Chemical Engineering** for your system (above), unpack it and 
 Linux, from a terminal:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-chemical-engineering-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz
-./ai999x-chemical-engineering-1.5.0-linux-x86_64/ai999x-chemical-engineering
+tar xzf ai999x-chemical-engineering-1.6.0-linux-x86_64.tar.gz
+./ai999x-chemical-engineering-1.6.0-linux-x86_64/ai999x-chemical-engineering
 ```
 
 ### Command line
@@ -49,23 +49,23 @@ tar xzf ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz
 Linux:
 
 ```bash
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 chemical-engineering --version
 ```
 
 Windows (PowerShell):
 
 ```powershell
-$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.6.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 chemical-engineering --version
 ```
@@ -278,7 +278,7 @@ _What this means:_ This calculation determines the liquid temperature in a well-
 ## Highlights
 
 - **Verified, not generated.** Every answer is computed by a certified chemical engineering capability and checked (substituted back, dimension-checked or compared with an independent computation) before it is returned.
-- **Zero wrong answers by design.** Seven explicit outcomes (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR), never a silent guess. Every one of its 602 documented answers is reproduced exactly on every tested platform.
+- **Zero wrong answers by design.** Seven explicit outcomes (SOLVED, NEEDS_INPUT, AMBIGUOUS, INVALID_INPUT, OUT_OF_SCOPE, UNRECOGNIZED_FORMAT, INTERNAL_ERROR), never a silent guess. Every one of its 611 documented answers is reproduced exactly on every tested platform.
 - **Plain-English questions and a guaranteed typed interface.** `ask()` reads documented question forms; `solve(capability_id, **inputs)` always solves a supported task with valid inputs.
 - **Explains itself.** Steps, formulas in LaTeX, units, assumptions and the model used, ready for notebooks, tutoring apps and homework checkers.
 - **Native and in the browser.** Every capability also computes natively in Rust: the desktop app and the `chemical-engineering` command line for Windows and Linux, and WebAssembly on the model page, no Python, no network.
@@ -289,11 +289,11 @@ _What this means:_ This calculation determines the liquid temperature in a well-
 
 | Property | Value |
 |---|---|
-| Package | `chemical-engineering-ai999x` 1.5.0 (import `chemical_engineering_ai999x`) |
+| Package | `chemical-engineering-ai999x` 1.6.0 (import `chemical_engineering_ai999x`) |
 | Type | Deterministic neuro-symbolic chemical engineering engine (rule-based reading + certified symbolic capabilities) |
-| Capabilities | 91 certified procedures |
+| Capabilities | 92 certified procedures |
 | Knowledge pack | version 1.0.1 |
-| Golden answers | 602 documented answers, identical on every tested platform |
+| Golden answers | 611 documented answers, identical on every tested platform |
 | Platforms tested | Windows (Python 3.13), Linux x86-64 (Python 3.10, 3.11, 3.12, 3.13, 3.14) |
 | Runtime | CPU only, offline; no GPU, no network, no API key |
 | License | Apache-2.0 |
@@ -323,7 +323,7 @@ chemical_engineering.ask("Who created you?").message
 # -> chemical-engineering-ai999x was created and engineered by Ibnul Jaif Farabi at AI999X.
 ```
 
-The Python package also installs a Python command, `chemical-engineering-ai999x "<question>"`; for the native program use `chemical-engineering` (above). The outputs above were produced by running this exact code on chemical-engineering-ai999x 1.5.0.
+The Python package also installs a Python command, `chemical-engineering-ai999x "<question>"`; for the native program use `chemical-engineering` (above). The outputs above were produced by running this exact code on chemical-engineering-ai999x 1.6.0.
 
 ## How every answer is verified
 
@@ -446,7 +446,7 @@ _Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) in N equa
 
 ## Capabilities
 
-91 certified procedures. A few of them:
+92 certified procedures. A few of them:
 
 - **Procedures:** Absorber with N equilibrium stages (Kremser); Activity coefficients from the NRTL equation; Activity coefficients from the UNIQUAC equation; Activity coefficients from the Wilson equation; Adiabatic flame temperature (complete combustion, NASA polynomials); Adiabatic reactor outlet temperature; Batch cooling (or heating) with a non-isothermal coolant in a coil; Batch heating of a stirred tank: temperature after a time; Batch heating of a stirred tank: time to reach a temperature; Batch reactor conversion after a time (first order); Batch reactor conversion after a time (second order); Batch reactor time for a conversion (first order); Batch reactor time for a conversion (second order); Blending: feed flows that make a product of given composition; Boiling (saturation) temperature from the Antoine equation; Bubble-point pressure (Raoult's law); Bubble-point pressure by the modified Raoult's law (activity coefficients); Bubble-point temperature (Raoult's law); CSTR conversion for a volume (first order); CSTR conversion for a volume (second order); CSTR volume for a conversion (first order); CSTR volume for a conversion (second order); Closed-loop stability of a P-controlled process (closed-loop poles); Combustion with excess air: air requirement and flue-gas composition …
 
@@ -467,10 +467,10 @@ _Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) in N equa
 ## Citation
 
 ```bibtex
-@software{chemical_engineering_ai999x_1_5_0,
+@software{chemical_engineering_ai999x_1_6_0,
   title  = {chemical-engineering-ai999x: an offline, verified chemical engineering solver},
   author = {Farabi, Ibnul Jaif}, organization = {AI999X},
-  year   = {2026}, version = {1.5.0},
+  year   = {2026}, version = {1.6.0},
   url    = {https://huggingface.co/AI999X/chemical-engineering-ai999x}
 }
 ```
@@ -487,7 +487,7 @@ Created and engineered by **Ibnul Jaif Farabi** · **[AI999X](https://huggingfac
 
 ## Source and releases
 
-This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/chemical-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v1.5.0`; the [GitHub release](https://github.com/AI999X/chemical-engineering-ai999x/releases/tag/v1.5.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
+This repository holds the installable source of each release, exactly as published on [PyPI](https://pypi.org/project/chemical-engineering-ai999x/) (`pip install .` builds it). Releases are tagged `v1.6.0`; the [GitHub release](https://github.com/AI999X/chemical-engineering-ai999x/releases/tag/v1.6.0) carries the wheel, the desktop app and the command-line program for Windows and Linux, and their checksums.
 
 ## Build the program from source
 

@@ -1,8 +1,8 @@
 # chemical-engineering: the Chemical Engineering program, user guide
 
-**chemical-engineering-ai999x 1.1.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
+**chemical-engineering-ai999x 1.6.0**, Rust build: command line, desktop app and browser. **Creator / engineer:** Ibnul Jaif Farabi · **Company:** AI999X · support@ai999x.com
 
-Chemical Engineering covers material and energy balances, reactor design, separations (distillation, absorption, extraction), transport phenomena, process control and reservoir and petroleum basics. This guide is about `chemical-engineering`, the model as a self-contained program for Windows and Linux: 91 capabilities in 10 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/chemical-engineering-ai999x/); the Python package (`pip install chemical-engineering-ai999x`) has its own guide. Every command output printed here is what the program printed.
+Chemical Engineering covers material and energy balances, reactor design, separations (distillation, absorption, extraction), transport phenomena, process control and reservoir and petroleum basics. This guide is about `chemical-engineering`, the model as a self-contained program for Windows and Linux: 92 capabilities in 11 topics, answered on your own computer with no network, no Python and nothing else to install. The same compiled model runs in the AI999X desktop app and in the browser on the model's page (https://www.ai999x.com/models/chemical-engineering-ai999x/); the Python package (`pip install chemical-engineering-ai999x`) has its own guide. Every command output printed here is what the program printed.
 
 ## Contents
 
@@ -17,37 +17,37 @@ Chemical Engineering covers material and energy balances, reactor design, separa
 
 ## 1. Get it
 
-Version 1.5.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
+Version 1.6.0 of the AI999X desktop app and of the command-line bundle. Checksums for every file: https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS; the newest version is always under https://downloads.ai999x.com/desktop/latest/. Full instructions: https://www.ai999x.com/desktop-cli/
 
 | what | system | download |
 |---|---|---|
-| Desktop app: Chemical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-windows-x86_64.zip |
-| Desktop app: Chemical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz |
-| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-windows-x86_64.zip |
-| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz |
-| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-windows-x86_64.zip |
-| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz |
+| Desktop app: Chemical Engineering | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-chemical-engineering-1.6.0-windows-x86_64.zip |
+| Desktop app: Chemical Engineering | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-chemical-engineering-1.6.0-linux-x86_64.tar.gz |
+| Desktop app: all models | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-windows-x86_64.zip |
+| Desktop app: all models | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz |
+| Command line | Windows x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-windows-x86_64.zip |
+| Command line | Linux x86-64 | https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz |
 
 ### Desktop app
 
-Chemical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-chemical-engineering-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-chemical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+Chemical Engineering in its own app: search, questions in words, input forms, live figures and explanations. Windows: Download ai999x-chemical-engineering-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x-chemical-engineering.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-chemical-engineering-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-chemical-engineering-1.5.0-linux-x86_64.tar.gz
-./ai999x-chemical-engineering-1.5.0-linux-x86_64/ai999x-chemical-engineering
+tar xzf ai999x-chemical-engineering-1.6.0-linux-x86_64.tar.gz
+./ai999x-chemical-engineering-1.6.0-linux-x86_64/ai999x-chemical-engineering
 ```
 
-It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.5.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
+It opens on this model: type a question or pick a capability, fill in the form and press Compute. The AI999X desktop app with every model works the same way (choose the model first). Windows: Download ai999x-1.6.0-windows-x86_64.zip, right-click it → Extract All, then open the folder and start ai999x.exe. If Windows SmartScreen asks, choose More info → Run anyway. Linux:
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
-./ai999x-1.5.0-linux-x86_64/ai999x
+tar xzf ai999x-1.6.0-linux-x86_64.tar.gz
+./ai999x-1.6.0-linux-x86_64/ai999x
 ```
 
 ### Command line: Linux
@@ -55,11 +55,11 @@ tar xzf ai999x-1.5.0-linux-x86_64.tar.gz
 The bundle holds one program per model; `chemical-engineering` is this one. The checksum line should print OK.
 
 ```shell
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/ai999x-cli-1.5.0-linux-x86_64.tar.gz
-curl -LO https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/ai999x-cli-1.6.0-linux-x86_64.tar.gz
+curl -LO https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS
 sha256sum -c --ignore-missing SHA256SUMS
-mkdir -p ~/.local/share && tar xzf ai999x-cli-1.5.0-linux-x86_64.tar.gz -C ~/.local/share
-echo 'export PATH="$HOME/.local/share/ai999x-cli-1.5.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
+mkdir -p ~/.local/share && tar xzf ai999x-cli-1.6.0-linux-x86_64.tar.gz -C ~/.local/share
+echo 'export PATH="$HOME/.local/share/ai999x-cli-1.6.0-linux-x86_64:$PATH"' >> ~/.bashrc && source ~/.bashrc
 chemical-engineering --version
 ```
 
@@ -68,12 +68,12 @@ chemical-engineering --version
 The fourth line should print True.
 
 ```powershell
-$F = "ai999x-cli-1.5.0-windows-x86_64.zip"
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/$F" -OutFile $F
-Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.5.0/SHA256SUMS" -OutFile SHA256SUMS
+$F = "ai999x-cli-1.6.0-windows-x86_64.zip"
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/$F" -OutFile $F
+Invoke-WebRequest "https://downloads.ai999x.com/desktop/1.6.0/SHA256SUMS" -OutFile SHA256SUMS
 (Get-FileHash $F -Algorithm SHA256).Hash.ToLower() -eq ((Select-String -SimpleMatch $F SHA256SUMS).Line -split ' ')[0]
 Expand-Archive $F -DestinationPath "$env:LOCALAPPDATA\AI999X" -Force
-$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.5.0-windows-x86_64"; $env:Path += ";$D"
+$D = "$env:LOCALAPPDATA\AI999X\ai999x-cli-1.6.0-windows-x86_64"; $env:Path += ";$D"
 [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$D", "User")
 chemical-engineering --version
 ```
@@ -96,7 +96,7 @@ Prints the model, its version and that this is the Rust build.
 
 ```shell
 $ chemical-engineering --version
-chemical-engineering-ai999x 1.5.0 (Rust build, ax-engine 1.5.0)
+chemical-engineering-ai999x 1.6.0 (Rust build, ax-engine 1.6.0)
 ```
 
 ### 2.2 Ask in words
@@ -146,7 +146,7 @@ chemeng_antoine_vapour_pressure          Vapour pressure from the Antoine equati
 chemeng_batch_coil_cooling               Batch cooling (or heating) with a non-isothermal coolant in a coil
 chemeng_batch_conversion_first_order     Batch reactor conversion after a time (first order)
 chemeng_batch_conversion_second_order    Batch reactor conversion after a time (second order)
-… 83 more
+… 84 more
 ```
 
 ### 2.5 What a capability needs
@@ -1328,6 +1328,53 @@ tauD = 27.20699046 s
 ```
 
 **What the worked example means:** This calculation determines the ultimate gain 4 and oscillation period 217.656 s for a process with time constants [1, 1, 1] and gain 2. Based on these values, the recommended proportional controller setting is 2.4. For PI or PID configurations, the integral time is 108.828 s and the derivative time is 27.207 s, depending on the selected controller type.
+
+### Process design (1)
+
+<a id="chemeng_equipment_cost_scaling"></a>
+
+#### Equipment cost scaling with a capacity exponent and cost indices, `chemeng_equipment_cost_scaling`
+
+The purchased cost of equipment of a new capacity from the known cost of a similar unit, C = C1 (S2/S1)^n (n = 0.6 is the six-tenths rule), brought from the date of the known cost to now with the cost indices: C2 = C (I2/I1).
+
+$$
+C_2 = C_1\left(\frac{S_2}{S_1}\right)^{n}\frac{I_2}{I_1}
+$$
+
+| symbol |  | meaning | SI unit |
+|---|---|---|---|
+| `C1` | in | known cost of the existing unit (any currency) | - |
+| `S1` | in | capacity of the existing unit | - |
+| `S2` | in | capacity of the new unit (same unit as S1) | - |
+| `n` | in | capacity (cost) exponent, e.g. 0.6 | - |
+| `I1` | in | cost index at the date of the known cost (optional, with I2) (optional) | - |
+| `I2` | in | cost index now (optional, with I1) (optional) | - |
+| `capacity_ratio` | out | capacity ratio S2/S1 | - |
+| `scale_factor` | out | scale factor (S2/S1)^n | - |
+| `C_scaled` | out | cost of the new capacity at the date of the known cost | - |
+| `index_ratio` | out | cost-index ratio I2/I1 (1 without indices) | - |
+| `C2` | out | estimated cost now | - |
+
+**Applies when:** 0 < n <= 1.5; capacities within a factor of 10 of each other; both cost indices or neither; similar equipment, same type and materials.
+
+```shell
+$ chemical-engineering solve chemeng_equipment_cost_scaling C1=100000 S1=10 S2=20 n=0.6 I1=500 I2=800
+capacity_ratio = 2
+scale_factor = 1.515716567
+C_scaled = 151571.6567
+index_ratio = 1.6
+C2 = 242514.6506
+  by: Equipment cost scaling with a capacity exponent and cost indices  (C2 = C1 (S2/S1)^n (I2/I1))
+  C1 = 100000
+  S1 = 10
+  S2 = 20
+  n = 0.6
+  I1 = 500
+  I2 = 800
+  assumes: 0 < n <= 1.5; capacities within a factor of 10 of each other; both cost indices or neither; similar equipment, same type and materials
+```
+
+In the worked example, C1 = 100000, S1 = 10, S2 = 20, n = 0.6, I1 = 500, I2 = 800 go through the equation above and give capacity_ratio = 2, scale_factor = 1.515716567, C_scaled = 151571.6567, index_ratio = 1.6. It applies only when 0 < n <= 1.5; capacities within a factor of 10 of each other; both cost indices or neither; similar equipment, same type and materials: outside that it says what is wrong instead of returning a number.
 
 ### Property estimation (8)
 
