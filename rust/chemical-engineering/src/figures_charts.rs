@@ -531,7 +531,7 @@ pub fn havlena_cap(s: &Solved) -> Option<Figure> {
     let line = vec![(0.0, line_at(0.0)), (xmax * 1.1, line_at(xmax * 1.1))];
     fit_chart(s, &data, &line, (0.0, xmax * 1.1), false, "Eg/Eo", &format!("F/Eo [million {vu}]"),
               "data ratios (from the inputs)", "fitted line: intercept N, slope N·m",
-              &[(0.0, line_at(0.0), format!("N = {} M{vu}", num(n / 1e6)))], "Havlena-Odeh plot with a gas cap",
+              &[(0.0, line_at(0.0), format!("N = {} million {vu}", num(n / 1e6)))], "Havlena-Odeh plot with a gas cap",
               &format!("Havlena-Odeh straight line with a gas cap ({} points): F/Eo against Eg/Eo (ratios of the inputs) \
                         and the line the model fits. Marked: the intercept, oil initially in place N = {} {vu}; gas-cap ratio \
                         m = {}.", f.len(), num(n), num(m)))
@@ -555,7 +555,7 @@ pub fn havlena_oil(s: &Solved) -> Option<Figure> {
     let last = *data.last()?;
     fit_chart(s, &data, &line, (0.0, xmax * 1.1), false, "total expansion per unit of oil in place Et",
               &format!("withdrawal F [million {vu}]"), "data (input)", "fitted line through the origin, slope N",
-              &[(last.0, line_at(last.0), format!("N = {} M{vu}", num(n / 1e6)))], "Havlena-Odeh plot: oil in place",
+              &[(last.0, line_at(last.0), format!("N = {} million {vu}", num(n / 1e6)))], "Havlena-Odeh plot: oil in place",
               &format!("Havlena-Odeh straight line for an oil reservoir without gas cap or aquifer ({} points): the model \
                         fits F = N·Et through the origin. Marked: the slope, oil initially in place N = {} {vu}.", f.len(),
                        num(n)))

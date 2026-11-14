@@ -65,7 +65,7 @@ const KINDS: &[(&str, &[&str])] = &[
     ("chemeng_stefan_diffusion_flux", &["profile"]),
     ("chemeng_unsteady_mixing_tank", &["process"]),
     ("chemeng_variable_volume_tank", &["process"]),
-    ("chemeng_wilson_k_flash", &["bars", "process"]),
+    ("chemeng_wilson_k_flash", &["process"]),
 ];
 
 /// Inputs to change for a capability whose inputs are not plain quantities (a second, different example).
@@ -220,7 +220,7 @@ fn a_changed_input_changes_the_drawing() {
     let p = pack();
     let mut unchanged = vec![];
     for (key, kinds) in KINDS {
-        let own: Vec<&str> = kinds.iter().copied().filter(|k| !(*key == "chemeng_wilson_k_flash" && *k == "bars")).collect();
+        let own: Vec<&str> = kinds.to_vec();
         let given = example(key);
         let base = figures(p, key, &given, None, None);
         let mut tries: Vec<Vec<(String, Input)>> = vec![];
