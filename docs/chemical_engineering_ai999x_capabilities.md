@@ -2417,10 +2417,6 @@ $$
 
 *Flash of a three-component feed z = [0.3, 0.4, 0.3] (critical temperatures [190.564, 369.83, 507.6] K, pressures [45.99, 42.48, 30.25] bar, acentric factors [0.011, 0.152, 0.3]) at T = 300 K, P = 2e+06 Pa (the worked example). Marked: the package's Wilson K values [16.7, 0.503, 0.0121], V/F = 0.362332, y = [0.749, 0.245, 0.00564], x = [0.0449, 0.488, 0.467].*
 
-![Compositions of the worked example's flash: feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-bars)
-
-*Compositions of the worked example's flash: feed z = [0.3, 0.4, 0.3], liquid x = [0.0449, 0.488, 0.467] and vapour y = [0.749, 0.245, 0.00564] returned by the package with V/F = 0.362332 (labels under each group: the package's K values). Components with K > 1 concentrate in the vapour.*
-
 ![VF (vapour fraction V/F) against P (flash pressure) from 200000 Pa to 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-curve)
 
 *VF (vapour fraction V/F) against P (flash pressure) from 200000 Pa to 2.0000e+07 Pa on a logarithmic axis. Other inputs as in the worked example: z = [0.3, 0.4, 0.3], Tc = [190.564, 369.83, 507.6], Pc = [45.99, 42.48, 30.25], omega = [0.011, 0.152, 0.3], p_unit = bar, T = 300.0 K. 35 points computed by chemical-engineering-ai999x; marked: the worked example, P = 2e+06 Pa, VF = 0.362332.*
