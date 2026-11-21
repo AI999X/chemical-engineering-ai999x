@@ -224,17 +224,13 @@ $$
 - **Assumes:** as many feed streams as components (2 to 6); each composition sums to 1; the product lies within the reach of the feeds (no negative flow)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Blending 2 feeds of mass-fraction compositions [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-blending-flows-process)
+![Blending 2 feeds of mass-fraction compositions [[0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-blending-flows-process)
 
-*Blending 2 feeds of mass-fraction compositions [0.9, 0.1], [0.2, 0.8] (rows) into P = 100 kg/s of product with composition [0.5, 0.5]. Marked: the model's feed flows F1 = 42.86 kg/s, F2 = 57.14 kg/s. Your inputs: W = 0.9 0.1; 0.2 0.8, p = 0.5, 0.5, P = 100 kg/s.*
+*Blending 2 feeds of mass-fraction compositions [[0.9, 0.1], [0.2, 0.8]] (rows) into P = 100 kg/s of product with composition [0.5, 0.5] (the worked example). Marked: the package's feed flows F1 = 42.8571 kg/s, F2 = 57.1429 kg/s.*
 
-![Flow of the first feed stream as P runs from 60 to 140 kg/s, every other input as you entered it (37 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-blending-flows-live-1)
+![F1 (flow of the first feed stream) against P (product mass flow) from 50 kg/s to 150 kg/s](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-blending-flows-curve)
 
-*Flow of the first feed stream as P runs from 60 to 140 kg/s, every other input as you entered it (37 solutions). Marked: your P = 100 kg/s gives F1 = 42.86. Your inputs: W = 0.9 0.1; 0.2 0.8, p = 0.5, 0.5, P = 100 kg/s.*
-
-![Every entry of F as computed for your inputs (2 entries: 42](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-blending-flows-live-2)
-
-*Every entry of F as computed for your inputs (2 entries: 42.86, 57.14). Your inputs: W = 0.9 0.1; 0.2 0.8, p = 0.5, 0.5, P = 100 kg/s.*
+*F1 (flow of the first feed stream) against P (product mass flow) from 50 kg/s to 150 kg/s. Other inputs as in the worked example: W = [[0.9, 0.1], [0.2, 0.8]], p = [0.5, 0.5]. 31 points computed by chemical-engineering-ai999x; marked: the worked example, P = 100 kg/s, F1 = 42.8571 kg/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_blending_flows', W=[[0.9, 0.1], [0.2, 0.8]], p=[0.5, 0.5], P=100.0)
@@ -285,17 +281,13 @@ $$
 - **Assumes:** $xB < zF < xD$; steady state, no reaction
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A binary separation (a column) balanced on total flow and the light component: feed F = 100 mol/s at zF = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-separator-balance-process)
+![A binary separation (a column) balanced on total flow and the light component: feed F = 100 at zF = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-separator-balance-process)
 
-*A binary separation (a column) balanced on total flow and the light component: feed F = 100 mol/s at zF = 0.4, distillate at xD = 0.95, bottoms at xB = 0.05. Marked, from the model: D = 38.89 mol/s, B = 61.11 mol/s, recovery of the light component in the distillate 0.9236, of the heavy one in the bottoms 0.9676. Your inputs: F = 100.0 mol/s, zF = 0.4, xD = 0.95, xB = 0.05.*
+*A binary separation (a column) balanced on total flow and the light component: feed F = 100 at zF = 0.4, distillate at xD = 0.95, bottoms at xB = 0.05 (the worked example). Marked, from the package: D = 38.8889, B = 61.1111, recovery of the light component in the distillate 0.923611, of the heavy one in the bottoms 0.967593.*
 
-![Distillate flow and bottoms flow as xD runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-separator-balance-live-1)
+![D (distillate flow) against xD (mole fraction of the light component in the distillate (top product)) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-separator-balance-curve)
 
-*Distillate flow and bottoms flow as xD runs from 0.4091 to 1, every other input as you entered it (33 solutions). Marked: your xD = 0.95 gives D = 38.89. Your inputs: F = 100.0 mol/s, zF = 0.4, xD = 0.95, xB = 0.05.*
-
-![Distillate flow and bottoms flow as zF runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-separator-balance-live-2)
-
-*Distillate flow and bottoms flow as zF runs from 0.1 to 0.7, every other input as you entered it (29 solutions). Marked: your zF = 0.4 gives D = 38.89. Your inputs: F = 100.0 mol/s, zF = 0.4, xD = 0.95, xB = 0.05.*
+*D (distillate flow) against xD (mole fraction of the light component in the distillate (top product)) from 0.475 to 0.999. One curve for each value of F (feed molar flow): 100 mol/s, 50 mol/s, 200 mol/s. Other inputs as in the worked example: zF = 0.4, xB = 0.05. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, xD = 0.95, D = 38.8889 mol/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_binary_separator_balance', F=100.0, zF=0.4, xD=0.95, xB=0.05)
@@ -349,17 +341,13 @@ $$
 - **Assumes:** $0 < zA  \leq  1$; $0 < X < 1$; $0 < f < 1$; A -> B one to one; the separator removes all B
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Recycle with purge: fresh feed F0 = 100 mol/s with A fraction 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-purge-process)
+![Recycle with purge (the worked example: fresh feed F0 = 100 with A fraction 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-purge-process)
 
-*Recycle with purge: fresh feed F0 = 100 mol/s with A fraction 0.98, single-pass conversion 0.25, purge fraction 0.1 of the separator overhead. Marked, all from the model: reactor feed 321.5 mol/s, recycle 221.5 mol/s, purge 24.62 mol/s, product 75.38 mol/s, overall conversion 0.7692, inert fraction in the recycle 0.08125. Your inputs: F0 = 100.0 mol/s, zA = 0.98, X = 0.25, f = 0.1.*
+*Recycle with purge (the worked example: fresh feed F0 = 100 with A fraction 0.98, single-pass conversion 0.25, purge fraction 0.1 of the separator overhead). Marked, all from the package: reactor feed 321.538, recycle 221.538, purge 24.6154, product 75.3846 (flows in the feed's unit), overall conversion 0.769231, inert mole fraction in the recycle 0.08125.*
 
-![Recycle flow, purge flow and combined reactor feed flow as zA runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-purge-live-1)
+![R (recycle flow) against X (single-pass conversion of A in the reactor) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-purge-curve)
 
-*Recycle flow, purge flow and combined reactor feed flow as zA runs from 0.245 to 1, every other input as you entered it (42 solutions). Marked: your zA = 0.98 gives R = 221.5. Your inputs: F0 = 100.0 mol/s, zA = 0.98, X = 0.25, f = 0.1.*
-
-![Recycle flow, purge flow and combined reactor feed flow as F0 runs from 60 to 140 mol/s, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-purge-live-2)
-
-*Recycle flow, purge flow and combined reactor feed flow as F0 runs from 60 to 140 mol/s, every other input as you entered it (29 solutions). Marked: your F0 = 100 mol/s gives R = 221.5. Your inputs: F0 = 100.0 mol/s, zA = 0.98, X = 0.25, f = 0.1.*
+*R (recycle flow) against X (single-pass conversion of A in the reactor) from 0.02 to 0.98. One curve for each value of F0 (fresh feed flow (reactant A plus inert)): 100 mol/s, 50 mol/s, 200 mol/s. Other inputs as in the worked example: zA = 0.98, f = 0.1. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, X = 0.25, R = 221.538 mol/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_recycle_purge', F0=100.0, zA=0.98, X=0.25, f=0.1)
@@ -409,15 +397,11 @@ $$
 
 ![A well-mixed tank (V = 10 m³) fed at q = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-unsteady-mixing-tank-process)
 
-*A well-mixed tank (V = 10 m³) fed at q = 0.01 m³/s with concentration 500, starting at 0, over the concentration the model computes at 50 times up to 4000 s. Marked: C = 316.1 at t = 1000 s. Your inputs: V = 10.0 m^3, q = 0.01 m^3/s, C_in = 500.0 mol/m^3, C0 = 0.0 mol/m^3, t = 1000.0 s.*
+*A well-mixed tank (V = 10 m³) fed at q = 0.01 m³/s with concentration 500, starting at 0 (the worked example), over the concentration the package computes at 50 times up to five residence times (τ = V/q = 1000 s, derived). Marked: C = 316.06 at t = 1000 s.*
 
-![Concentration in the tank (and outlet) at time t as C_in runs from 300 to 700 mol/m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-unsteady-mixing-tank-live-1)
+![C (concentration in the tank (and outlet) at time t) against V (liquid volume of the tank) from 1 m^3 to 100 m^3 on a logarithmic axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-unsteady-mixing-tank-curve)
 
-*Concentration in the tank (and outlet) at time t as C_in runs from 300 to 700 mol/m^3, every other input as you entered it (41 solutions). Marked: your C_in = 500 mol/m^3 gives C = 0.3161 mol/L. Your inputs: V = 10.0 m^3, q = 0.01 m^3/s, C_in = 500.0 mol/m^3, C0 = 0.0 mol/m^3, t = 1000.0 s.*
-
-![Concentration in the tank (and outlet) at time t as q runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-unsteady-mixing-tank-live-2)
-
-*Concentration in the tank (and outlet) at time t as q runs from 0.006 to 0.014 m^3/s, every other input as you entered it (29 solutions). Marked: your q = 0.01 m^3/s gives C = 0.3161 mol/L. Your inputs: V = 10.0 m^3, q = 0.01 m^3/s, C_in = 500.0 mol/m^3, C0 = 0.0 mol/m^3, t = 1000.0 s.*
+*C (concentration in the tank (and outlet) at time t) against V (liquid volume of the tank) from 1 m^3 to 100 m^3 on a logarithmic axis. One curve for each value of C_in (inlet concentration): 500 mol/m^3, 250 mol/m^3, 1000 mol/m^3. Other inputs as in the worked example: q = 0.01 m^3/s, C0 = 0.0 mol/m^3, t = 1000.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, V = 10 m^3, C = 316.06 mol/m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_unsteady_mixing_tank', V=10.0, q=0.01, C_in=500.0, C0=0.0, t=1000.0)
@@ -467,17 +451,13 @@ $$
 - **Assumes:** $V_{0} > 0$, $q_in > 0$; the tank does not empty before t; perfect mixing
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A tank filling while it drains (inflow 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-variable-volume-tank-process)
+![A tank filling while it drains (the worked example: inflow 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-variable-volume-tank-process)
 
-*A tank filling while it drains (inflow 0.002 m³/s at concentration 1000, outflow 0.001 m³/s, starting with 1 m³ at 0): volume and concentration from the model at 40 times to 2000 s. Marked: at t = 1000 s, V = 2 m³ and C = 750. Your inputs: V0 = 1.0 m^3, q_in = 0.002 m^3/s, q_out = 0.001 m^3/s, C_in = 1000.0 mol/m^3, C0 = 0.0 mol/m^3, t = 1000.0 s.*
+*A tank filling while it drains (the worked example: inflow 0.002 m³/s at concentration 1000, outflow 0.001 m³/s, starting with 1 m³ at 0): volume and concentration from the package at 40 times to 2000 s. Marked: at t = 1000 s, V = 2 m³ and C = 750.*
 
-![Concentration at time t as q_in runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-variable-volume-tank-live-1)
+![C (concentration at time t) against V0 (liquid volume at t = 0) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-variable-volume-tank-curve)
 
-*Concentration at time t as q_in runs from 0.0012 to 0.0028 m^3/s, every other input as you entered it (41 solutions). Marked: your q_in = 0.002 m^3/s gives C = 0.75 mol/L. Your inputs: V0 = 1.0 m^3, q_in = 0.002 m^3/s, q_out = 0.001 m^3/s, C_in = 1000.0 mol/m^3, C0 = 0.0 mol/m^3, t = 1000.0 s.*
-
-![Concentration at time t as C_in runs from 600 to 1400 mol/m^3, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-variable-volume-tank-live-2)
-
-*Concentration at time t as C_in runs from 600 to 1400 mol/m^3, every other input as you entered it (29 solutions). Marked: your C_in = 1000 mol/m^3 gives C = 0.75 mol/L. Your inputs: V0 = 1.0 m^3, q_in = 0.002 m^3/s, q_out = 0.001 m^3/s, C_in = 1000.0 mol/m^3, C0 = 0.0 mol/m^3, t = 1000.0 s.*
+*C (concentration at time t) against V0 (liquid volume at t = 0) from 0.1 m^3 to 10 m^3 on a logarithmic axis. One curve for each value of C_in (inlet concentration): 1000 mol/m^3, 500 mol/m^3, 2000 mol/m^3. Other inputs as in the worked example: q_in = 0.002 m^3/s, q_out = 0.001 m^3/s, C0 = 0.0 mol/m^3, t = 1000.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, V0 = 1 m^3, C = 750 mol/m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_variable_volume_tank', V0=1.0, q_in=0.002, q_out=0.001, C_in=1000.0, C0=0.0, t=1000.0)
@@ -532,13 +512,13 @@ $$
 - **Assumes:** complete combustion to CO2, H2O and SO2; fuel N leaves as N2; dry air 21 % $O_{2} / 79$ % N2; 0 <= excess air <= 500 %
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Flue gas from burning CH4 with 20 % excess air: moles of each product per mole of fuel, from the model (CO₂ 1, H₂O 2, O₂ 0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-combustion-flue-gas-bars.svg)
+![Flue gas from burning CH4 with 20 % excess air (the worked example): moles of each product per mole of fuel, from the package](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-combustion-flue-gas-bars)
 
-*Flue gas from burning CH4 with 20 % excess air: moles of each product per mole of fuel, from the model (CO₂ 1, H₂O 2, O₂ 0.4, N₂ 9.029). Dry-basis CO₂ 9.589 % and O₂ 3.836 %, air 11.43 mol per mol fuel, mass air-fuel ratio 20.55. In SI units: y_CO2_dry = 0.09589. Your inputs: fuel = CH4, excess_air = 0.2.*
+*Flue gas from burning CH4 with 20 % excess air (the worked example): moles of each product per mole of fuel, from the package. Marked: CO₂ 1, H₂O 2, O₂ 0.4, N₂ 9.02857; dry-basis CO₂ 9.58904 % and O₂ 3.83562 %, air 11.4286 mol per mol fuel, mass air–fuel ratio 20.5528.*
 
-![CO2 mole fraction, dry basis as excess_air runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-combustion-flue-gas-live-1)
+![y_CO2_dry (CO2 mole fraction, dry basis) against excess_air (excess air as a fraction of the theoretical air (20% = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-combustion-flue-gas-curve)
 
-*CO2 mole fraction, dry basis as excess_air runs from 0.05 to 0.35, every other input as you entered it (41 solutions). Marked: your excess_air = 0.2 gives y_CO2_dry = 0.09589. Your inputs: fuel = CH4, excess_air = 0.2.*
+*y_CO2_dry (CO2 mole fraction, dry basis) against excess_air (excess air as a fraction of the theoretical air (20% = 0.2)) from 0.02 to 0.98. Other inputs as in the worked example: fuel = CH4. 41 points computed by chemical-engineering-ai999x; marked: the worked example, excess_air = 0.2, y_CO2_dry = 0.0958904.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_combustion_flue_gas', fuel='CH4', excess_air=0.2)
@@ -597,13 +577,9 @@ $$
 - **Assumes:** no phase change between T1 and T2; T in kelvin inside the polynomial
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Heat added (negative when cooled) as T1 runs from 260 to 340 K, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-sensible-heat-cp-polynomial-live-1)
+![Q (heat added (negative when cooled)) against T2 (final temperature) from 50 K to 5000 K on a logarithmic axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-sensible-heat-cp-polynomial-curve)
 
-*Heat added (negative when cooled) as T1 runs from 260 to 340 K, every other input as you entered it (41 solutions). Marked: your T1 = 300 K gives Q = 59.6 kJ. Your inputs: n = 10.0 mol, a = 29.0, b = 0.002, c = 0.0, d = 0.0, T1 = 300.0 K, T2 = 500.0 K.*
-
-![Heat added (negative when cooled) as T2 runs from 460 to 540 K, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-sensible-heat-cp-polynomial-live-2)
-
-*Heat added (negative when cooled) as T2 runs from 460 to 540 K, every other input as you entered it (29 solutions). Marked: your T2 = 500 K gives Q = 59.6 kJ. Your inputs: n = 10.0 mol, a = 29.0, b = 0.002, c = 0.0, d = 0.0, T1 = 300.0 K, T2 = 500.0 K.*
+*Q (heat added (negative when cooled)) against T2 (final temperature) from 50 K to 5000 K on a logarithmic axis. One curve for each value of d (cp coefficient d, J/(mol K^4) (default 0)): 0, -0.5, 0.5. Other inputs as in the worked example: n = 10.0 mol, a = 29.0, b = 0.002, c = 0.0, T1 = 300.0 K. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T2 = 500 K, Q = 59600 J.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_sensible_heat_cp_polynomial', n=10.0, a=29.0, b=0.002, c=0.0, d=0.0, T1=300.0, T2=500.0)
@@ -651,17 +627,13 @@ $$
 - **Assumes:** no phase change of any species between T0 and T
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The heat-capacity coefficients cp (input; one row per species, one column per power of T) as a heat map, each cell shaded by its magnitude](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reaction-enthalpy-at-temperature-matrix)
+![The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): cp (input)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reaction-enthalpy-at-temperature-matrix)
 
-*The heat-capacity coefficients cp (input; one row per species, one column per power of T) as a heat map, each cell shaded by its magnitude. With the stoichiometric coefficients [-1, -3, 2] the model returns dH = -1.055e+05 J/mol at T = 700 K (from -9.222e+04 J/mol at 298.1 K). Your inputs: nu = -1, -3, 2, cp = 27.27 0.004927 0 0..., dH0 = -92220 J/mol, T0 = 298.15 K, T = 700 K.*
+*The matrices of the worked example as heatmaps (rows and columns numbered; each cell shaded by its magnitude, negative values in the second colour; each panel shaded by its own largest magnitude): cp (input). Returned with them by chemical-engineering-ai999x: dH = -105497 J/mol. Other inputs: nu = [-1.0, -3.0, 2.0], dH0 = -92220.0 J/mol, T0 = 298.15 K, T = 700.0 K.*
 
-![Heat of reaction at T, per mole of extent as dH0 runs from -1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reaction-enthalpy-at-temperature-live-1)
+![dH (heat of reaction at T, per mole of extent) against T (temperature wanted) from 70 K to 7000 K on a logarithmic axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reaction-enthalpy-at-temperature-curve)
 
-*Heat of reaction at T, per mole of extent as dH0 runs from -1.291e+05 to -5.533e+04 J/mol, every other input as you entered it (41 solutions). Marked: your dH0 = -9.222e+04 J/mol gives dH = -1.055e+05. Your inputs: nu = -1, -3, 2, cp = 27.27 0.004927 0 0..., dH0 = -92220 J/mol, T0 = 298.15 K, T = 700 K.*
-
-![Heat of reaction at T, per mole of extent as ν[2] runs from 0 to 6, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reaction-enthalpy-at-temperature-live-2)
-
-*Heat of reaction at T, per mole of extent as ν[2] runs from 0 to 6, every other input as you entered it (7 solutions). Marked: your ν[2] = 2 gives dH = -1.055e+05. Your inputs: nu = -1, -3, 2, cp = 27.27 0.004927 0 0..., dH0 = -92220 J/mol, T0 = 298.15 K, T = 700 K.*
+*dH (heat of reaction at T, per mole of extent) against T (temperature wanted) from 70 K to 7000 K on a logarithmic axis. One curve for each value of dH0 (heat of reaction at T0, per mole of extent): -92220 J/mol, -46110 J/mol, -184440 J/mol. Other inputs as in the worked example: nu = [-1.0, -3.0, 2.0], cp = [[27.27, 0.004927, 0.0, 0.0], [27.01, 0.00350…, T0 = 298.15 K. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T = 700 K, dH = -105497 J/mol.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_reaction_enthalpy_at_temperature', nu=[-1.0, -3.0, 2.0], cp=[[27.27, 0.004927, 0.0, 0.0], [27.01, 0.003509, 0.0, 0.0], [24.62, 0.03753, -7.1e-06, 0.0]], dH0=-92220.0, T0=298.15, T=700.0)
@@ -711,21 +683,13 @@ $$
 - **Assumes:** adiabatic, no shaft work, no phase change; outlet between 200 and 3200 K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![T_out against T_ref from 29](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-reactor-temperature-curve-2)
+![Outlet temperature of an adiabatic reactor against conversion (the worked example: feed moles [1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-reactor-temperature-curve)
 
-*T_out against T_ref from 29.81 to 2982 on a logarithmic axis, one curve for each T_in: T_in = 400 K, T_in = 200 K, T_in = 800 K (the given value, half and twice it), 41 runs of the model each. Marked: T_ref = 298.1, T_out = 932.3. Your inputs: n0 = 1, 2, 0, nu = -1, -1, 1, cp = 30 0.01; 29 0.004; 45 0.02, dH = -60000 J/mol, T_ref = 298.15 K, T_in = 400 K, key = 1, X = 0.8.*
+*Outlet temperature of an adiabatic reactor against conversion (the worked example: feed moles [1.0, 2.0, 0.0], stoichiometry [-1.0, -1.0, 1.0], heat capacities [[30.0, 0.01], [29.0, 0.004], [45.0, 0.02]], ΔH = -60000.0 J/mol at 298.15 K, feed at 400.0 K, key component 1), 40 conversions from the package. Marked: X = 0.8, T_out = 932.348 K.*
 
-![Adiabatic outlet temperature as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-reactor-temperature-live-1)
+![T_out (adiabatic outlet temperature) against T_ref (reference temperature of dH) from 29](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-reactor-temperature-curve-2)
 
-*Adiabatic outlet temperature as X runs from 0.2 to 0.98, every other input as you entered it (27 solutions). Marked: your X = 0.8 gives T_out = 932.3. Your inputs: n0 = 1, 2, 0, nu = -1, -1, 1, cp = 30 0.01; 29 0.004; 45 0.02, dH = -60000 J/mol, T_ref = 298.15 K, T_in = 400 K, key = 1, X = 0.8.*
-
-![The 3 rows of cp as points (first column across, second up), coloured by n0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-reactor-temperature-live-2)
-
-*The 3 rows of cp as points (first column across, second up), coloured by n0. Your inputs: n0 = 1, 2, 0, nu = -1, -1, 1, cp = 30 0.01; 29 0.004; 45 0.02, dH = -60000 J/mol, T_ref = 298.15 K, T_in = 400 K, key = 1, X = 0.8.*
-
-![Adiabatic outlet temperature as dH runs from -8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-reactor-temperature-live-3)
-
-*Adiabatic outlet temperature as dH runs from -8.4e+04 to -3.6e+04 J/mol, every other input as you entered it (29 solutions). Marked: your dH = -6e+04 J/mol gives T_out = 932.3. Your inputs: n0 = 1, 2, 0, nu = -1, -1, 1, cp = 30 0.01; 29 0.004; 45 0.02, dH = -60000 J/mol, T_ref = 298.15 K, T_in = 400 K, key = 1, X = 0.8.*
+*T_out (adiabatic outlet temperature) against T_ref (reference temperature of dH) from 29.815 K to 2981.5 K on a logarithmic axis. One curve for each value of T_in (feed temperature): 400 K, 200 K, 800 K. Other inputs as in the worked example: n0 = [1.0, 2.0, 0.0], nu = [-1.0, -1.0, 1.0], cp = [[30.0, 0.01], [29.0, 0.004], [45.0, 0.02]], dH = -60000.0 J/mol, key = 1, X = 0.8. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T_ref = 298.15 K, T_out = 932.348 K.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_adiabatic_reactor_temperature', n0=[1.0, 2.0, 0.0], nu=[-1.0, -1.0, 1.0], cp=[[30.0, 0.01], [29.0, 0.004], [45.0, 0.02]], dH=-60000.0, T_ref=298.15, T_in=400.0, key=1, X=0.8)
@@ -770,17 +734,9 @@ $$
 - **Assumes:** complete combustion to CO2 and H2O vapour, no dissociation; 300 $K  \leq  T_in  \leq  1000$ K; result <= 3500 K
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Adiabatic flame temperature as excess_air runs from 0 to 1, every other input as you entered it (41 solutions)](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-adiabatic-flame-temperature-live-1.svg)
+![T_ad (adiabatic flame temperature) against T_in (temperature of the fuel and air entering) from 150 K to 450 K](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-flame-temperature-curve)
 
-*Adiabatic flame temperature as excess_air runs from 0 to 1, every other input as you entered it (41 solutions). Marked: your excess_air = 0 gives T_ad = 2326. Your inputs: fuel = CH4, excess_air = 0, T_in = 300 K.*
-
-![Adiabatic flame temperature for every choice of fuel, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-flame-temperature-live-2)
-
-*Adiabatic flame temperature for every choice of fuel, every other input as you entered it (highlighted: your choice). CH4: 2326; C2H6: 2381; C3H8: 2393; H2: 2520; CO: 2665; C2H4: 2565; C2H2: 2910; CH3OH: 2330. Your inputs: fuel = CH4, excess_air = 0, T_in = 300 K.*
-
-![Adiabatic flame temperature as T_in runs from 300 to 340 K, every other input as you entered it (15 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-adiabatic-flame-temperature-live-3)
-
-*Adiabatic flame temperature as T_in runs from 300 to 340 K, every other input as you entered it (15 solutions). Marked: your T_in = 300 K gives T_ad = 2326. Your inputs: fuel = CH4, excess_air = 0, T_in = 300 K.*
+*T_ad (adiabatic flame temperature) against T_in (temperature of the fuel and air entering) from 150 K to 450 K. One curve for each value of excess_air (excess air as a fraction of theoretical (0 = stoichiometric)): 0, 0.5. Other inputs as in the worked example: fuel = CH4. 16 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T_in = 300 K, T_ad = 2326.32 K.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_adiabatic_flame_temperature', fuel='CH4', excess_air=0.0, T_in=300.0)
@@ -830,13 +786,9 @@ $$
 - **Assumes:** well stirred; constant UA and cp; medium at constant temperature
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Liquid temperature at time t as T_s runs from 353](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-heating-temperature-live-1)
+![T (liquid temperature at time t) against T_s (temperature of the heating or cooling medium (constant, e](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-heating-temperature-curve)
 
-*Liquid temperature at time t as T_s runs from 353.1 to 433.1 K, every other input as you entered it (41 solutions). Marked: your T_s = 393.1 K gives T = 375.3. Your inputs: m = 1000.0 kg, cp = 4180.0 J/(kg*K), UA = 2000.0 W/K, T_s = 393.15 K, T0 = 293.15 K, t = 3600.0 s.*
-
-![Liquid temperature at time t as T0 runs from 253](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-heating-temperature-live-2)
-
-*Liquid temperature at time t as T0 runs from 253.1 to 333.1 K, every other input as you entered it (29 solutions). Marked: your T0 = 293.1 K gives T = 375.3. Your inputs: m = 1000.0 kg, cp = 4180.0 J/(kg*K), UA = 2000.0 W/K, T_s = 393.15 K, T0 = 293.15 K, t = 3600.0 s.*
+*T (liquid temperature at time t) against T_s (temperature of the heating or cooling medium (constant, e.g. condensing steam)) from 196.575 K to 589.725 K. One curve for each value of T0 (initial liquid temperature): 293.15 K, 146.575 K, 586.3 K. Other inputs as in the worked example: m = 1000.0 kg, cp = 4180.0 J/(kg*K), UA = 2000.0 W/K, t = 3600.0 s. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T_s = 393.15 K, T = 375.288 K.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_batch_heating_temperature', m=1000.0, cp=4180.0, UA=2000.0, T_s=393.15, T0=293.15, t=3600.0)
@@ -885,13 +837,9 @@ $$
 - **Assumes:** T between T0 and T_s; well stirred; constant UA and cp
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Time needed as T_s runs from 355](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-heating-time-live-1)
+![t (time needed) against T_s (temperature of the heating or cooling medium (constant, e](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-heating-time-curve)
 
-*Time needed as T_s runs from 355.1 to 433.1 K, every other input as you entered it (40 solutions). Marked: your T_s = 393.1 K gives t = 31.92 min. Your inputs: m = 1000.0 kg, cp = 4180.0 J/(kg*K), UA = 2000.0 W/K, T_s = 393.15 K, T0 = 293.15 K, T = 353.15 K.*
-
-![Time needed as T runs from 313](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-heating-time-live-2)
-
-*Time needed as T runs from 313.1 to 390.3 K, every other input as you entered it (28 solutions). Marked: your T = 353.1 K gives t = 31.92 min. Your inputs: m = 1000.0 kg, cp = 4180.0 J/(kg*K), UA = 2000.0 W/K, T_s = 393.15 K, T0 = 293.15 K, T = 353.15 K.*
+*t (time needed) against T_s (temperature of the heating or cooling medium (constant, e.g. condensing steam)) from 196.575 K to 589.725 K. One curve for each value of m (mass of liquid in the tank): 1000 kg, 500 kg, 2000 kg. Other inputs as in the worked example: cp = 4180.0 J/(kg*K), UA = 2000.0 W/K, T0 = 293.15 K, T = 353.15 K. 19 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T_s = 393.15 K, t = 1915.05 s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_batch_heating_time', m=1000.0, cp=4180.0, UA=2000.0, T_s=393.15, T0=293.15, T=353.15)
@@ -942,13 +890,9 @@ $$
 - **Assumes:** well-stirred batch; constant UA, cp and coolant flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Batch temperature at time t as t_in runs from 248](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-coil-cooling-live-1)
+![T (batch temperature at time t) against W (coolant mass flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-coil-cooling-curve)
 
-*Batch temperature at time t as t_in runs from 248.1 to 328.1 K, every other input as you entered it (41 solutions). Marked: your t_in = 288.1 K gives T = 312.7. Your inputs: M = 5000.0 kg, cp = 2500.0 J/(kg*K), W = 2.0 kg/s, cp_c = 4180.0 J/(kg*K), t_in = 288.15 K, UA = 3000.0 W/K, T0 = 393.15 K, t = 7200.0 s.*
-
-![Batch temperature at time t as T0 runs from 353](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-coil-cooling-live-2)
-
-*Batch temperature at time t as T0 runs from 353.1 to 433.1 K, every other input as you entered it (29 solutions). Marked: your T0 = 393.1 K gives T = 312.7. Your inputs: M = 5000.0 kg, cp = 2500.0 J/(kg*K), W = 2.0 kg/s, cp_c = 4180.0 J/(kg*K), t_in = 288.15 K, UA = 3000.0 W/K, T0 = 393.15 K, t = 7200.0 s.*
+*T (batch temperature at time t) against W (coolant mass flow) from 0.2 kg/s to 20 kg/s on a logarithmic axis. One curve for each value of t_in (coolant inlet temperature): 288.15 K, 144.075 K, 576.3 K. Other inputs as in the worked example: M = 5000.0 kg, cp = 2500.0 J/(kg*K), cp_c = 4180.0 J/(kg*K), UA = 3000.0 W/K, T0 = 393.15 K, t = 7200.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, W = 2 kg/s, T = 312.732 K.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_batch_coil_cooling', M=5000.0, cp=2500.0, W=2.0, cp_c=4180.0, t_in=288.15, UA=3000.0, T0=393.15, t=7200.0)
@@ -992,17 +936,13 @@ $$
 - **Assumes:** $0  \leq  X < 1$; isothermal, constant volume, $-r_A = k$ C_A
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Reaction time t of a first-order batch reaction over rate constant k [1/s] and conversion wanted X: each of the 21 × 15 cells is one run of the model, shaded by its value (darker = larger; refused cells blank)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-first-order-field)
+![t (reaction time) against X (conversion of A wanted) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-first-order-curve)
 
-*Reaction time t of a first-order batch reaction over rate constant k [1/s] and conversion wanted X: each of the 21 × 15 cells is one run of the model, shaded by its value (darker = larger; refused cells blank). Marked: the visitor's point, t = 2303. Your inputs: k = 0.001 1/s, X = 0.9.*
+*t (reaction time) against X (conversion of A wanted) from 0.02 to 0.98. One curve for each value of k (first-order rate constant): 0.001 1/s, 0.0005 1/s, 0.002 1/s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, X = 0.9, t = 2302.59 s.*
 
-![Reaction time as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-first-order-live-1)
+![t (reaction time) over k (first-order rate constant) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-first-order-field)
 
-*Reaction time as X runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your X = 0.9 gives t = 38.38 min. Your inputs: k = 0.001 1/s, X = 0.9.*
-
-![Reaction time as k runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-first-order-live-2)
-
-*Reaction time as k runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your k = 0.001 1/s gives t = 38.38 min. Your inputs: k = 0.001 1/s, X = 0.9.*
+*t (reaction time) over k (first-order rate constant) from 0.0005 1/s to 0.0015 1/s and X (conversion of A wanted) from 0.02 to 0.98: each of the 21 × 15 cells is one run of chemical-engineering-ai999x, shaded by its value (light 13.4685 s to dark 7824.05 s); iso-lines at t = 2000, 4000, 6000 s. Marked: the worked example, k = 0.001 1/s, X = 0.9, t = 2302.59 s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_batch_time_first_order', k=0.001, X=0.9)
@@ -1049,13 +989,9 @@ $$
 - **Assumes:** $0  \leq  X < 1$; isothermal, constant volume
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Reaction time as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-second-order-live-1)
+![t (reaction time) against k (second-order rate constant (-r_A = k C_A^2)) from 5](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-second-order-curve)
 
-*Reaction time as X runs from 0.2 to 0.98, every other input as you entered it (27 solutions). Marked: your X = 0.8 gives t = 40. Your inputs: k = 0.0001 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
-
-![Reaction time as k runs from 6e-05 to 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-time-second-order-live-2)
-
-*Reaction time as k runs from 6e-05 to 0.00014 m^3/(mol*s), every other input as you entered it (29 solutions). Marked: your k = 0.0001 m^3/(mol*s) gives t = 40. Your inputs: k = 0.0001 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
+*t (reaction time) against k (second-order rate constant (-r_A = k C_A^2)) from 5.0000e-05 m^3/(mol*s) to 0.00015 m^3/(mol*s). One curve for each value of X (conversion of A wanted): 0.8, 0.26, 0.74. Other inputs as in the worked example: CA0 = 1000.0 mol/m^3. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k = 0.0001 m^3/(mol*s), t = 40 s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_batch_time_second_order', k=0.0001, CA0=1000.0, X=0.8)
@@ -1100,17 +1036,13 @@ $$
 - **Assumes:** isothermal, constant volume, $-r_A = k$ C_A
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Conversion X of a first-order batch reaction over rate constant k [1/s] and reaction time t [s]: each of the 21 × 15 cells is one run of the model, shaded by its value (darker = larger; refused cells blank)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-first-order-field)
+![X (conversion of A) against k (first-order rate constant) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-first-order-curve)
 
-*Conversion X of a first-order batch reaction over rate constant k [1/s] and reaction time t [s]: each of the 21 × 15 cells is one run of the model, shaded by its value (darker = larger; refused cells blank). Marked: the visitor's point, X = 0.6321. Your inputs: k = 0.001 1/s, t = 1000.0 s.*
+*X (conversion of A) against k (first-order rate constant) from 0.0001 1/s to 0.01 1/s on a logarithmic axis. One curve for each value of t (reaction time): 1000 s, 500 s, 2000 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k = 0.001 1/s, X = 0.632121.*
 
-![Conversion of A as k runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-first-order-live-1)
+![X (conversion of A) over k (first-order rate constant) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-first-order-field)
 
-*Conversion of A as k runs from 0.0006 to 0.0014 1/s, every other input as you entered it (41 solutions). Marked: your k = 0.001 1/s gives X = 0.6321. Your inputs: k = 0.001 1/s, t = 1000.0 s.*
-
-![Conversion of A as t runs from 600 to 1400 s, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-first-order-live-2)
-
-*Conversion of A as t runs from 600 to 1400 s, every other input as you entered it (29 solutions). Marked: your t = 1000 s gives X = 0.6321. Your inputs: k = 0.001 1/s, t = 1000.0 s.*
+*X (conversion of A) over k (first-order rate constant) from 0.0001 1/s to 0.01 1/s and t (reaction time) from 100 s to 10000 s (logarithmic axes): each of the 21 × 15 cells is one run of chemical-engineering-ai999x, shaded by its value (light 0.00995017 to dark 1); iso-lines at X = 0.2, 0.4, 0.6, 0.8. Marked: the worked example, k = 0.001 1/s, t = 1000 s, X = 0.632121.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_batch_conversion_first_order', k=0.001, t=1000.0)
@@ -1157,13 +1089,9 @@ $$
 - **Assumes:** isothermal, constant volume
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Conversion of A as k runs from 6e-05 to 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-second-order-live-1)
+![X (conversion of A) against k (second-order rate constant (-r_A = k C_A^2)) from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-second-order-curve)
 
-*Conversion of A as k runs from 6e-05 to 0.00014 m^3/(mol*s), every other input as you entered it (41 solutions). Marked: your k = 0.0001 m^3/(mol*s) gives X = 0.8. Your inputs: k = 0.0001 m^3/(mol*s), CA0 = 1000.0 mol/m^3, t = 40.0 s.*
-
-![Conversion of A as t runs from 24 to 56 s, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-batch-conversion-second-order-live-2)
-
-*Conversion of A as t runs from 24 to 56 s, every other input as you entered it (29 solutions). Marked: your t = 40 s gives X = 0.8. Your inputs: k = 0.0001 m^3/(mol*s), CA0 = 1000.0 mol/m^3, t = 40.0 s.*
+*X (conversion of A) against k (second-order rate constant (-r_A = k C_A^2)) from 1.0000e-05 m^3/(mol*s) to 0.001 m^3/(mol*s) on a logarithmic axis. One curve for each value of CA0 (feed (initial) concentration of A): 1000 mol/m^3, 500 mol/m^3, 2000 mol/m^3. Other inputs as in the worked example: t = 40.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k = 0.0001 m^3/(mol*s), X = 0.8.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_batch_conversion_second_order', k=0.0001, CA0=1000.0, t=40.0)
@@ -1209,17 +1137,13 @@ $$
 - **Assumes:** $0  \leq  X < 1$; steady state, perfect mixing, constant density, $-r_A = k$ C_A
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A continuous stirred-tank reactor for a first-order (-rA = k·CA) reaction: feed 0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-cstr-volume-first-order-process.svg)
+![A continuous stirred-tank reactor for a first-order (−rA = k·CA) reaction, the worked example: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-first-order-process)
 
-*A continuous stirred-tank reactor for a first-order (-rA = k·CA) reaction: feed 0.01 m³/s, k = 0.001 1/s, conversion X = 0.9 wanted. Marked: the model's V = 90 m³ and τ = 9000 s. Your inputs: v0 = 0.01 m^3/s, k = 0.001 1/s, X = 0.9.*
+*A continuous stirred-tank reactor for a first-order (−rA = k·CA) reaction, the worked example: feed 0.01 m³/s, k = 0.001 1/s, conversion X = 0.9 wanted. Marked: the package's V = 90 m³ and τ = 9000 s.*
 
-![Reactor volume as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-first-order-live-1)
+![V (reactor volume) against k (first-order rate constant) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-first-order-curve)
 
-*Reactor volume as X runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your X = 0.9 gives V = 90. Your inputs: v0 = 0.01 m^3/s, k = 0.001 1/s, X = 0.9.*
-
-![Reactor volume as v0 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-first-order-live-2)
-
-*Reactor volume as v0 runs from 0.006 to 0.014 m^3/s, every other input as you entered it (29 solutions). Marked: your v0 = 0.01 m^3/s gives V = 90. Your inputs: v0 = 0.01 m^3/s, k = 0.001 1/s, X = 0.9.*
+*V (reactor volume) against k (first-order rate constant) from 0.0005 1/s to 0.0015 1/s. One curve for each value of X (conversion of A wanted): 0.9, 0.26, 0.74. Other inputs as in the worked example: v0 = 0.01 m^3/s. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k = 0.001 1/s, V = 90 m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstr_volume_first_order', v0=0.01, k=0.001, X=0.9)
@@ -1265,21 +1189,17 @@ $$
 - **Assumes:** steady state, perfect mixing, constant density, $-r_A = k$ C_A
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A continuous stirred-tank reactor for a first-order (-rA = k·CA) reaction: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-first-order-process)
+![Conversion of a first-order reaction (k = 0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-cstr-conversion-first-order-reactor.svg)
 
-*A continuous stirred-tank reactor for a first-order (-rA = k·CA) reaction: feed 0.01 m³/s, k = 0.001 1/s, V = 20 m³. Marked: the model's X = 0.6667. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s.*
+*Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) against total volume for one CSTR, three equal CSTRs in series and a plug-flow reactor, each computed by the package at 60 volumes. At V = 20 m³ the PFR reaches X = 0.864665; marked: V = 20 m³, X = 0.666667 (CSTR).*
 
-![Conversion of a first-order reaction (k = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-first-order-reactor)
+![A continuous stirred-tank reactor for a first-order (−rA = k·CA) reaction, the worked example: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-first-order-process)
 
-*Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) against total volume for one CSTR, three equal CSTRs in series and a plug-flow reactor, each computed by the model at 60 volumes. Near V = 20 m³ the PFR reaches X = 0.8647. Marked: V = 20 m³, X = 0.6667 (CSTR). Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s.*
+*A continuous stirred-tank reactor for a first-order (−rA = k·CA) reaction, the worked example: feed 0.01 m³/s, k = 0.001 1/s, V = 20 m³ (τ = V/v0 = 2000 s, derived). Marked: the package's X = 0.666667.*
 
-![Conversion of A as V runs from 12 to 28 m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-first-order-live-1)
+![X (conversion of A) against v0 (volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-first-order-curve)
 
-*Conversion of A as V runs from 12 to 28 m^3, every other input as you entered it (41 solutions). Marked: your V = 20 m^3 gives X = 0.6667. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s.*
-
-![Conversion of A as k runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-first-order-live-2)
-
-*Conversion of A as k runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your k = 0.001 1/s gives X = 0.6667. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s.*
+*X (conversion of A) against v0 (volumetric feed flow) from 0.001 m^3/s to 0.1 m^3/s on a logarithmic axis. One curve for each value of V (reactor volume): 20 m^3, 10 m^3, 40 m^3. Other inputs as in the worked example: k = 0.001 1/s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, v0 = 0.01 m^3/s, X = 0.666667.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstr_conversion_first_order', v0=0.01, V=20.0, k=0.001)
@@ -1326,17 +1246,13 @@ $$
 - **Assumes:** steady state, perfect mixing, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A continuous stirred-tank reactor for a second-order (-rA = k·CA²) reaction: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-second-order-process)
+![A continuous stirred-tank reactor for a second-order (−rA = k·CA²) reaction, the worked example: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-second-order-process)
 
-*A continuous stirred-tank reactor for a second-order (-rA = k·CA²) reaction: feed 0.01 m³/s, k = 1e-05 m³/(mol·s), V = 2 m³. Marked: the model's X = 0.5, CA = 500 mol/m³. Your inputs: v0 = 0.01 m^3/s, V = 2.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3.*
+*A continuous stirred-tank reactor for a second-order (−rA = k·CA²) reaction, the worked example: feed 0.01 m³/s at CA0 = 1000 mol/m³, k = 1.0000e-05 m³/(mol·s), V = 2 m³ (τ = V/v0 = 200 s, derived). Marked: the package's X = 0.5, CA = 500 mol/m³.*
 
-![Conversion of A as CA0 runs from 600 to 1400 mol/m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-second-order-live-1)
+![X (conversion of A) against v0 (volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-second-order-curve)
 
-*Conversion of A as CA0 runs from 600 to 1400 mol/m^3, every other input as you entered it (41 solutions). Marked: your CA0 = 1000 mol/m^3 gives X = 0.5. Your inputs: v0 = 0.01 m^3/s, V = 2.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3.*
-
-![Conversion of A as V runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-conversion-second-order-live-2)
-
-*Conversion of A as V runs from 1.2 to 2.8 m^3, every other input as you entered it (29 solutions). Marked: your V = 2 m^3 gives X = 0.5. Your inputs: v0 = 0.01 m^3/s, V = 2.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3.*
+*X (conversion of A) against v0 (volumetric feed flow) from 0.001 m^3/s to 0.1 m^3/s on a logarithmic axis. One curve for each value of V (reactor volume): 2 m^3, 1 m^3, 4 m^3. Other inputs as in the worked example: k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, v0 = 0.01 m^3/s, X = 0.5.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstr_conversion_second_order', v0=0.01, V=2.0, k=1e-05, CA0=1000.0)
@@ -1381,17 +1297,13 @@ $$
 - **Assumes:** $0  \leq  X < 1$; plug flow, isothermal, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A plug-flow reactor for a first-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-first-order-reactor)
+![A plug-flow reactor for a first-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-first-order-reactor)
 
-*A plug-flow reactor for a first-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted). Marked: V = 23.03 m³, X = 0.9. Your inputs: v0 = 0.01 m^3/s, k = 0.001 1/s, X = 0.9.*
+*A plug-flow reactor for a first-order reaction (the worked example: v0 = 0.01, k = 0.001, X = 0.9): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: the package's V = 23.0259 m³ for X = 0.9.*
 
-![Reactor volume as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-first-order-live-1)
+![V (reactor volume) against X (conversion of A wanted) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-first-order-curve)
 
-*Reactor volume as X runs from 0.225 to 0.9675, every other input as you entered it (23 solutions). Marked: your X = 0.9 gives V = 2.303e+04 L. Your inputs: v0 = 0.01 m^3/s, k = 0.001 1/s, X = 0.9.*
-
-![Reactor volume as k runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-first-order-live-2)
-
-*Reactor volume as k runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your k = 0.001 1/s gives V = 23.03. Your inputs: v0 = 0.01 m^3/s, k = 0.001 1/s, X = 0.9.*
+*V (reactor volume) against X (conversion of A wanted) from 0.02 to 0.98. One curve for each value of v0 (volumetric feed flow): 0.01 m^3/s, 0.005 m^3/s, 0.02 m^3/s. Other inputs as in the worked example: k = 0.001 1/s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, X = 0.9, V = 23.0259 m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pfr_volume_first_order', v0=0.01, k=0.001, X=0.9)
@@ -1438,17 +1350,13 @@ $$
 - **Assumes:** $0  \leq  X < 1$; plug flow, isothermal, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A plug-flow reactor for a second-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-second-order-reactor)
+![A plug-flow reactor for a second-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-second-order-reactor)
 
-*A plug-flow reactor for a second-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted). Marked: V = 4 m³, X = 0.8. Your inputs: v0 = 0.01 m^3/s, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
+*A plug-flow reactor for a second-order reaction (the worked example: v0 = 0.01, k = 1e-05, CA0 = 1000.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: the package's V = 4 m³ for X = 0.8.*
 
-![Reactor volume as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-second-order-live-1)
+![V (reactor volume) against k (second-order rate constant (-r_A = k C_A^2)) from 5](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-second-order-curve)
 
-*Reactor volume as X runs from 0.2 to 0.98, every other input as you entered it (27 solutions). Marked: your X = 0.8 gives V = 4000 L. Your inputs: v0 = 0.01 m^3/s, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
-
-![Reactor volume as k runs from 6e-06 to 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-volume-second-order-live-2)
-
-*Reactor volume as k runs from 6e-06 to 1.4e-05 m^3/(mol*s), every other input as you entered it (29 solutions). Marked: your k = 1e-05 m^3/(mol*s) gives V = 4000 L. Your inputs: v0 = 0.01 m^3/s, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
+*V (reactor volume) against k (second-order rate constant (-r_A = k C_A^2)) from 5.0000e-06 m^3/(mol*s) to 1.5000e-05 m^3/(mol*s). One curve for each value of X (conversion of A wanted): 0.8, 0.26, 0.74. Other inputs as in the worked example: v0 = 0.01 m^3/s, CA0 = 1000.0 mol/m^3. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k = 1.0000e-05 m^3/(mol*s), V = 4 m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pfr_volume_second_order', v0=0.01, k=1e-05, CA0=1000.0, X=0.8)
@@ -1493,17 +1401,13 @@ $$
 - **Assumes:** plug flow, isothermal, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A plug-flow reactor for a first-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's plug-flow conversion at 40 volumes)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-first-order-reactor)
+![A plug-flow reactor for a first-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-first-order-reactor)
 
-*A plug-flow reactor for a first-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's plug-flow conversion at 40 volumes). Marked: V = 20 m³, X = 0.8647. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s.*
+*A plug-flow reactor for a first-order reaction (the worked example: v0 = 0.01, V = 20.0, k = 0.001): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: V = 20 m³, the package's X = 0.864665.*
 
-![Conversion of A as V runs from 12 to 28 m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-first-order-live-1)
+![X (conversion of A) against v0 (volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-first-order-curve)
 
-*Conversion of A as V runs from 12 to 28 m^3, every other input as you entered it (41 solutions). Marked: your V = 20 m^3 gives X = 0.8647. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s.*
-
-![Conversion of A as k runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-first-order-live-2)
-
-*Conversion of A as k runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your k = 0.001 1/s gives X = 0.8647. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s.*
+*X (conversion of A) against v0 (volumetric feed flow) from 0.001 m^3/s to 0.1 m^3/s on a logarithmic axis. One curve for each value of V (reactor volume): 20 m^3, 10 m^3, 40 m^3. Other inputs as in the worked example: k = 0.001 1/s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, v0 = 0.01 m^3/s, X = 0.864665.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pfr_conversion_first_order', v0=0.01, V=20.0, k=0.001)
@@ -1550,17 +1454,13 @@ $$
 - **Assumes:** plug flow, isothermal, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A plug-flow reactor for a second-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's plug-flow conversion at 40 volumes)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-second-order-reactor)
+![A plug-flow reactor for a second-order reaction (the worked example: v0 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-second-order-reactor)
 
-*A plug-flow reactor for a second-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's plug-flow conversion at 40 volumes). Marked: V = 2 m³, X = 0.6667. Your inputs: v0 = 0.01 m^3/s, V = 2.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3.*
+*A plug-flow reactor for a second-order reaction (the worked example: v0 = 0.01, V = 2.0, k = 1e-05, CA0 = 1000.0): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's plug-flow conversion at 40 volumes from the inlet. Marked: V = 2 m³, the package's X = 0.666667, CA = 333.333 mol/m³.*
 
-![Conversion of A as v0 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-second-order-live-1)
+![X (conversion of A) against v0 (volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-second-order-curve)
 
-*Conversion of A as v0 runs from 0.006 to 0.014 m^3/s, every other input as you entered it (41 solutions). Marked: your v0 = 0.01 m^3/s gives X = 0.6667. Your inputs: v0 = 0.01 m^3/s, V = 2.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3.*
-
-![Conversion of A as V runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-conversion-second-order-live-2)
-
-*Conversion of A as V runs from 1.2 to 2.8 m^3, every other input as you entered it (29 solutions). Marked: your V = 2 m^3 gives X = 0.6667. Your inputs: v0 = 0.01 m^3/s, V = 2.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3.*
+*X (conversion of A) against v0 (volumetric feed flow) from 0.001 m^3/s to 0.1 m^3/s on a logarithmic axis. One curve for each value of V (reactor volume): 2 m^3, 1 m^3, 4 m^3. Other inputs as in the worked example: k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, v0 = 0.01 m^3/s, X = 0.666667.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pfr_conversion_second_order', v0=0.01, V=2.0, k=1e-05, CA0=1000.0)
@@ -1607,17 +1507,13 @@ $$
 - **Assumes:** isothermal, isobaric ideal gas; eps > -1; $0  \leq  X < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A plug-flow reactor for a first-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-first-order-reactor)
+![A plug-flow reactor for a first-order reaction in the gas phase with expansion (the worked example: FA0 = 10](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-first-order-reactor)
 
-*A plug-flow reactor for a first-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted). Marked: V = 12.09 m³, X = 0.8. Your inputs: FA0 = 10.0 mol/s, CA0 = 40.0 mol/m^3, k = 0.05 1/s, eps = 1.0, X = 0.8.*
+*A plug-flow reactor for a first-order reaction in the gas phase with expansion (the worked example: FA0 = 10.0, CA0 = 40.0, k = 0.05, eps = 1.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's volume for 40 conversions up to X = 0.8. Marked: the package's V = 12.0944 m³ for X = 0.8.*
 
-![Reactor volume as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-first-order-live-1)
+![V (reactor volume) against X (conversion of A wanted) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-first-order-curve)
 
-*Reactor volume as X runs from 0.2 to 0.98, every other input as you entered it (27 solutions). Marked: your X = 0.8 gives V = 1.209e+04 L. Your inputs: FA0 = 10.0 mol/s, CA0 = 40.0 mol/m^3, k = 0.05 1/s, eps = 1.0, X = 0.8.*
-
-![Reactor volume as CA0 runs from 24 to 56 mol/m^3, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-first-order-live-2)
-
-*Reactor volume as CA0 runs from 24 to 56 mol/m^3, every other input as you entered it (29 solutions). Marked: your CA0 = 40 mol/m^3 gives V = 12.09. Your inputs: FA0 = 10.0 mol/s, CA0 = 40.0 mol/m^3, k = 0.05 1/s, eps = 1.0, X = 0.8.*
+*V (reactor volume) against X (conversion of A wanted) from 0.02 to 0.98. One curve for each value of FA0 (molar feed flow of A): 10 mol/s, 5 mol/s, 20 mol/s. Other inputs as in the worked example: CA0 = 40.0 mol/m^3, k = 0.05 1/s, eps = 1.0. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, X = 0.8, V = 12.0944 m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pfr_gas_volume_first_order', FA0=10.0, CA0=40.0, k=0.05, eps=1.0, X=0.8)
@@ -1664,17 +1560,13 @@ $$
 - **Assumes:** isothermal, isobaric ideal gas; eps > -1; $0  \leq  X < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A plug-flow reactor for a second-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-second-order-reactor)
+![A plug-flow reactor for a second-order reaction in the gas phase with expansion (the worked example: FA0 = 10](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-second-order-reactor)
 
-*A plug-flow reactor for a second-order reaction: the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet (the model's volume for 40 conversions up to the one wanted). Marked: V = 64.76 m³, X = 0.8. Your inputs: FA0 = 10.0 mol/s, CA0 = 40.0 mol/m^3, k = 0.001 m^3/(mol*s), eps = 1.0, X = 0.8.*
+*A plug-flow reactor for a second-order reaction in the gas phase with expansion (the worked example: FA0 = 10.0, CA0 = 40.0, k = 0.001, eps = 1.0, X = 0.8): the tube drawn to the length of its volume axis, over the conversion reached at each volume from the inlet, the package's volume for 40 conversions up to X = 0.8. Marked: the package's V = 64.7641 m³ for X = 0.8.*
 
-![Reactor volume as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-second-order-live-1)
+![V (reactor volume) against eps (volume-change factor eps = y_A0 * (change in moles per mole of A); e](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-second-order-curve)
 
-*Reactor volume as X runs from 0.2 to 0.98, every other input as you entered it (27 solutions). Marked: your X = 0.8 gives V = 64.76. Your inputs: FA0 = 10.0 mol/s, CA0 = 40.0 mol/m^3, k = 0.001 m^3/(mol*s), eps = 1.0, X = 0.8.*
-
-![Reactor volume as CA0 runs from 24 to 56 mol/m^3, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pfr-gas-volume-second-order-live-2)
-
-*Reactor volume as CA0 runs from 24 to 56 mol/m^3, every other input as you entered it (29 solutions). Marked: your CA0 = 40 mol/m^3 gives V = 64.76. Your inputs: FA0 = 10.0 mol/s, CA0 = 40.0 mol/m^3, k = 0.001 m^3/(mol*s), eps = 1.0, X = 0.8.*
+*V (reactor volume) against eps (volume-change factor eps = y_A0 * (change in moles per mole of A); e.g. A -> 2B with pure A: eps = 1) from 0.1 to 10 on a logarithmic axis. One curve for each value of X (conversion of A wanted): 0.8, 0.26, 0.74. Other inputs as in the worked example: FA0 = 10.0 mol/s, CA0 = 40.0 mol/m^3, k = 0.001 m^3/(mol*s). 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, eps = 1, V = 64.7641 m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pfr_gas_volume_second_order', FA0=10.0, CA0=40.0, k=0.001, eps=1.0, X=0.8)
@@ -1720,21 +1612,17 @@ $$
 - **Assumes:** equal tanks; steady state, perfect mixing in each tank, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![3 equal CSTRs in series (each V = 5 m³, feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-first-order-process)
+![Conversion of a first-order reaction (k = 0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-cstrs-in-series-first-order-heatmap.svg)
 
-*3 equal CSTRs in series (each V = 5 m³, feed 0.01 m³/s, k = 0.001 1/s). The conversion after each tank drawn is the model's result for a train of that many tanks: 0.3333, 0.5556, 0.7037; marked: X = 0.7037 leaving the train. Your inputs: v0 = 0.01 m^3/s, V = 5.0 m^3, k = 0.001 1/s, N = 3.*
+*Conversion of a first-order reaction (k = 0.001 1/s, feed 0.01 m³/s) in N equal CSTRs in series (rows, N = 1 to 5) sharing a total volume of 5, 10, 20, 40, 80 m³ (columns), each cell computed by the package. More tanks approach plug flow: a PFR of the same volumes gives 0.393469, 0.632121, 0.864665, 0.981684, 0.999665.*
 
-![Conversion of a first-order reaction in N equal CSTRs in series (rows, N = 1 to 5) with each tank of volume 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-first-order-heatmap)
+![3 equal CSTRs in series (the worked example: each V = 5](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-first-order-process)
 
-*Conversion of a first-order reaction in N equal CSTRs in series (rows, N = 1 to 5) with each tank of volume 1.25, 2.5, 5, 10, 20 (columns), every cell computed by the model. More tanks of the same size convert more. The visitor's train: N = 3, V = 5 m³, X = 0.7037. Your inputs: v0 = 0.01 m^3/s, V = 5.0 m^3, k = 0.001 1/s, N = 3.*
+*3 equal CSTRs in series (the worked example: each V = 5.0 m³, feed 0.01 m³/s, k = 0.001). The conversion after each tank is the package's result for a train of that many tanks: 0.333333, 0.555556, 0.703704; marked: X = 0.703704 leaving the train.*
 
-![Overall conversion of A as V runs from 3 to 7 m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-first-order-live-1)
+![X (overall conversion of A) against N (number of equal tanks in series) from 1 to 11](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-first-order-curve)
 
-*Overall conversion of A as V runs from 3 to 7 m^3, every other input as you entered it (41 solutions). Marked: your V = 5 m^3 gives X = 0.7037. Your inputs: v0 = 0.01 m^3/s, V = 5.0 m^3, k = 0.001 1/s, N = 3.*
-
-![Overall conversion of A as k runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-first-order-live-2)
-
-*Overall conversion of A as k runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your k = 0.001 1/s gives X = 0.7037. Your inputs: v0 = 0.01 m^3/s, V = 5.0 m^3, k = 0.001 1/s, N = 3.*
+*X (overall conversion of A) against N (number of equal tanks in series) from 1 to 11. One curve for each value of v0 (volumetric feed flow): 0.01 m^3/s, 0.005 m^3/s, 0.02 m^3/s. Other inputs as in the worked example: V = 5.0 m^3, k = 0.001 1/s. 11 points per curve computed by chemical-engineering-ai999x; marked: the worked example, N = 3, X = 0.703704.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstrs_in_series_first_order', v0=0.01, V=5.0, k=0.001, N=3)
@@ -1783,17 +1671,13 @@ $$
 - **Assumes:** equal tanks; steady state, perfect mixing, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![3 equal CSTRs in series (each V = 1 m³, feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-second-order-process)
+![3 equal CSTRs in series (the worked example: each V = 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-second-order-process)
 
-*3 equal CSTRs in series (each V = 1 m³, feed 0.01 m³/s, k = 1e-05 m³/(mol·s)). The conversion after each tank drawn is the model's result for a train of that many tanks: 0.382, 0.5683, 0.6744; marked: X = 0.6744 leaving the train. Your inputs: v0 = 0.01 m^3/s, V = 1.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, N = 3.*
+*3 equal CSTRs in series (the worked example: each V = 1.0 m³, feed 0.01 m³/s, k = 1e-05, CA0 = 1000.0 mol/m³). The conversion after each tank is the package's result for a train of that many tanks: 0.381966, 0.568317, 0.674359; marked: X = 0.674359 leaving the train, CA = 325.641 mol/m³.*
 
-![Overall conversion of A as v0 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-second-order-live-1)
+![X (overall conversion of A) against N (number of equal tanks in series) from 1 to 11](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-second-order-curve)
 
-*Overall conversion of A as v0 runs from 0.006 to 0.014 m^3/s, every other input as you entered it (41 solutions). Marked: your v0 = 0.01 m^3/s gives X = 0.6744. Your inputs: v0 = 0.01 m^3/s, V = 1.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, N = 3.*
-
-![Overall conversion of A as N runs from 1 to 7, every other input as you entered it (7 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstrs-in-series-second-order-live-2)
-
-*Overall conversion of A as N runs from 1 to 7, every other input as you entered it (7 solutions). Marked: your N = 3 gives X = 0.6744. Your inputs: v0 = 0.01 m^3/s, V = 1.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, N = 3.*
+*X (overall conversion of A) against N (number of equal tanks in series) from 1 to 11. One curve for each value of v0 (volumetric feed flow): 0.01 m^3/s, 0.005 m^3/s, 0.02 m^3/s. Other inputs as in the worked example: V = 1.0 m^3, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3. 11 points per curve computed by chemical-engineering-ai999x; marked: the worked example, N = 3, X = 0.674359.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstrs_in_series_second_order', v0=0.01, V=1.0, k=1e-05, CA0=1000.0, N=3)
@@ -1839,17 +1723,13 @@ $$
 - **Assumes:** $R  \geq  0$ (R = 0 is a plain PFR; large R approaches a CSTR); isothermal, constant density
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A plug-flow reactor with recycle: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-reactor-first-order-process)
+![A plug-flow reactor with recycle (the worked example: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-reactor-first-order-process)
 
-*A plug-flow reactor with recycle: feed 0.01 m³/s, V = 20 m³, first-order k = 0.001 1/s, recycle ratio R = 2; part of the outlet returns to the inlet. Marked: the model's overall conversion X = 0.7398; with R = 0 it returns 0.8647. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s, R = 2.0.*
+*A plug-flow reactor with recycle (the worked example: feed 0.01 m³/s, V = 20.0 m³, first-order k = 0.001 1/s, recycle ratio R = 2): part of the outlet returns to the inlet. Marked: the package's overall conversion X = 0.7398; with R = 0 it returns 0.864665 (plug flow), recycle moves the reactor toward a stirred tank.*
 
-![Overall conversion of A as V runs from 12 to 28 m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-reactor-first-order-live-1)
+![X (overall conversion of A) against v0 (fresh volumetric feed flow) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-reactor-first-order-curve)
 
-*Overall conversion of A as V runs from 12 to 28 m^3, every other input as you entered it (41 solutions). Marked: your V = 20 m^3 gives X = 0.7398. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s, R = 2.0.*
-
-![Overall conversion of A as k runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-recycle-reactor-first-order-live-2)
-
-*Overall conversion of A as k runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your k = 0.001 1/s gives X = 0.7398. Your inputs: v0 = 0.01 m^3/s, V = 20.0 m^3, k = 0.001 1/s, R = 2.0.*
+*X (overall conversion of A) against v0 (fresh volumetric feed flow) from 0.001 m^3/s to 0.1 m^3/s on a logarithmic axis. One curve for each value of V (reactor volume): 20 m^3, 10 m^3, 40 m^3. Other inputs as in the worked example: k = 0.001 1/s, R = 2.0. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, v0 = 0.01 m^3/s, X = 0.7398.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_recycle_reactor_first_order', v0=0.01, V=20.0, k=0.001, R=2.0)
@@ -1899,17 +1779,13 @@ $$
 - **Assumes:** isothermal, constant volume
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![X against k1 from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reversible-first-order-batch-curve-2)
+![Reversible first-order reaction A ⇌ B in a batch reactor (k1 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reversible-first-order-batch-curve)
 
-*X against k1 from 0.0002 to 0.02 on a logarithmic axis, one curve for each t: t = 300 s, t = 150 s, t = 600 s (the given value, half and twice it), 41 runs of the model each. Marked: k1 = 0.002, X = 0.3956. Your inputs: k1 = 0.002 1/s, k2 = 0.001 1/s, CA0 = 1000.0 mol/m^3, CB0 = 0.0 mol/m^3, t = 300.0 s.*
+*Reversible first-order reaction A ⇌ B in a batch reactor (k1 = 0.002 1/s, k2 = 0.001 1/s, CA0 = 1000 mol/m³, CB0 = 0.0; the worked example): both concentrations from the package at 60 times to five relaxation times. The equilibrium level of A is CA0·(1 − X_eq) with the package's X_eq = 0.666667 (derived). Marked: at t = 300 s, CA = 604.38, CB = 395.62, X = 0.39562.*
 
-![Concentration of B at t as CA0 runs from 600 to 1400 mol/m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reversible-first-order-batch-live-1)
+![X (conversion of A at t) against k1 (forward rate constant (A -> B)) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reversible-first-order-batch-curve-2)
 
-*Concentration of B at t as CA0 runs from 600 to 1400 mol/m^3, every other input as you entered it (41 solutions). Marked: your CA0 = 1000 mol/m^3 gives CB = 0.3956 mol/L. Your inputs: k1 = 0.002 1/s, k2 = 0.001 1/s, CA0 = 1000.0 mol/m^3, CB0 = 0.0 mol/m^3, t = 300.0 s.*
-
-![Conversion of A at t as k1 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-reversible-first-order-batch-live-2)
-
-*Conversion of A at t as k1 runs from 0.0012 to 0.0028 1/s, every other input as you entered it (29 solutions). Marked: your k1 = 0.002 1/s gives X = 0.3956. Your inputs: k1 = 0.002 1/s, k2 = 0.001 1/s, CA0 = 1000.0 mol/m^3, CB0 = 0.0 mol/m^3, t = 300.0 s.*
+*X (conversion of A at t) against k1 (forward rate constant (A -> B)) from 0.0002 1/s to 0.02 1/s on a logarithmic axis. One curve for each value of t (reaction time): 300 s, 150 s, 600 s. Other inputs as in the worked example: k2 = 0.001 1/s, CA0 = 1000.0 mol/m^3, CB0 = 0.0 mol/m^3. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k1 = 0.002 1/s, X = 0.39562.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_reversible_first_order_batch', k1=0.002, k2=0.001, CA0=1000.0, CB0=0.0, t=300.0)
@@ -1957,13 +1833,9 @@ $$
 - **Assumes:** starting from pure A (no B or C); isothermal, constant volume, first-order steps
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Concentration of C at the maximum as CA0 runs from 600 to 1400 mol/m^3, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-series-reaction-maximum-live-1)
+![t_max (time (or space time) of the maximum of B) against k1 (rate constant of A -> B) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-series-reaction-maximum-curve)
 
-*Concentration of C at the maximum as CA0 runs from 600 to 1400 mol/m^3, every other input as you entered it (41 solutions). Marked: your CA0 = 1000 mol/m^3 gives CC = 0.25 mol/L. Your inputs: k1 = 0.002 1/s, k2 = 0.001 1/s, CA0 = 1000.0 mol/m^3.*
-
-![Time (or space time) of the maximum of B as k2 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-series-reaction-maximum-live-2)
-
-*Time (or space time) of the maximum of B as k2 runs from 0.0006 to 0.0014 1/s, every other input as you entered it (29 solutions). Marked: your k2 = 0.001 1/s gives t_max = 11.55 min. Your inputs: k1 = 0.002 1/s, k2 = 0.001 1/s, CA0 = 1000.0 mol/m^3.*
+*t_max (time (or space time) of the maximum of B) against k1 (rate constant of A -> B) from 0.0002 1/s to 0.02 1/s on a logarithmic axis. One curve for each value of k2 (rate constant of B -> C): 0.001 1/s, 0.0005 1/s, 0.002 1/s. Other inputs as in the worked example: CA0 = 1000.0 mol/m^3. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k1 = 0.002 1/s, t_max = 693.147 s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_series_reaction_maximum', k1=0.002, k2=0.001, CA0=1000.0)
@@ -2010,9 +1882,9 @@ $$
 - **Assumes:** pulse tracer, closed vessel; times increasing, concentrations >= 0
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Tracer response to a pulse (13 samples in min) with the moments the model computes: mean residence time 307](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rtd-moments-data)
+![Tracer response to a pulse (the worked example: 13 samples in min) with the moments the package computes: mean residence time 307](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rtd-moments-data)
 
-*Tracer response to a pulse (13 samples in min) with the moments the model computes: mean residence time 307.6 s (5.127 min), variance 2.142e+04 s² (the shaded band is the mean ± one standard deviation, its square root), equivalent tanks in series 4.418. Your inputs: t = 0, 1, 2, 3, 4, 5, 6, 7..., C = 0, 1, 5, 8, 10, 8, 6, 4..., t_unit = min.*
+*Tracer response to a pulse (the worked example: 13 samples in min) with the moments the package computes: mean residence time 307.641 s (5.12734 min), variance 21424.3 s² (the shaded band is the mean ± one standard deviation, its square root, derived), equivalent tanks in series 4.41753.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_rtd_moments', t=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 12.0, 14.0], C=[0.0, 1.0, 5.0, 8.0, 10.0, 8.0, 6.0, 4.0, 3.0, 2.2, 1.5, 0.6, 0.0], t_unit='min')
@@ -2063,19 +1935,15 @@ $$
 
 ![Vapour-pressure curve from the Antoine constants A = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-vapour-pressure-chart)
 
-*Vapour-pressure curve from the Antoine constants A = 8.071, B = 1731, C = 233.4 (mmHg_degC, log10), 56 temperatures from the model, logarithmic pressure axis. Marked: Psat = 101.3 kPa at 373.1 K. In SI units: Psat = 1.013e+05 Pa. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, T = 373.15 K.*
+*Vapour-pressure curve from the Antoine constants A = 8.07131, B = 1730.63, C = 233.426 (mmHg_degC, log10; the worked example), 56 temperatures from the package, logarithmic pressure axis. The normal boiling point at 1 atm, 373.147 K, is the package's boiling temperature. Marked: Psat = 101337 Pa at T = 373.15 K.*
 
-![The model's Antoine vapour pressures (A = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-vapour-pressure-chart-2)
+![The same Antoine vapour pressures (A = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-vapour-pressure-chart-2)
 
-*The model's Antoine vapour pressures (A = 8.071, B = 1731, C = 233.4) on Clausius-Clapeyron axes, log pressure against 1000/T: nearly a straight line whose slope reflects the heat of vaporisation; 41 runs of the model. Marked: Psat = 101.3 kPa at 373.1 K. In SI units: Psat = 1.013e+05 Pa. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, T = 373.15 K.*
+*The same Antoine vapour pressures (A = 8.07131, B = 1730.63, C = 233.426) on Clausius–Clapeyron axes, log pressure against 1000/T (reciprocal derived from the temperatures): nearly a straight line whose slope reflects the heat of vaporisation; 41 runs of the package. Marked: the package's normal boiling point, 373.147 K at 101.325 kPa.*
 
-![Vapour pressure as T runs from 333](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-vapour-pressure-live-1)
+![Psat (vapour pressure) against T (temperature) from 37](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-vapour-pressure-curve)
 
-*Vapour pressure as T runs from 333.1 to 413.1 K, every other input as you entered it (41 solutions). Marked: your T = 373.1 K gives Psat = 101.3 kPa. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, T = 373.15 K.*
-
-![Vapour pressure as A runs from 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-vapour-pressure-live-2)
-
-*Vapour pressure as A runs from 2.018 to 14.12, every other input as you entered it (29 solutions). Marked: your A = 8.071 gives Psat = 101.3 kPa. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, T = 373.15 K.*
+*Psat (vapour pressure) against T (temperature) from 37.315 K to 3731.5 K on a logarithmic axis. One curve for each value of A (Antoine coefficient A): 8.07131, 4.03566, 16.1426. Other inputs as in the worked example: B = 1730.63, C = 233.426, units = mmHg_degC, base = log10. 40 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T = 373.15 K, Psat = 101337 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_antoine_vapour_pressure', A=8.07131, B=1730.63, C=233.426, units='mmHg_degC', base='log10', T=373.15)
@@ -2127,19 +1995,15 @@ $$
 
 ![Vapour-pressure curve from the Antoine constants A = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-boiling-temperature-chart)
 
-*Vapour-pressure curve from the Antoine constants A = 8.071, B = 1731, C = 233.4 (mmHg_degC, log10), 56 temperatures from the model, logarithmic pressure axis. Marked: Tsat = 373.1 K at 101.3 kPa. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Vapour-pressure curve from the Antoine constants A = 8.07131, B = 1730.63, C = 233.426 (mmHg_degC, log10; the worked example), 56 temperatures from the package, logarithmic pressure axis. The normal boiling point at 1 atm, 373.147 K, is the package's boiling temperature. Marked: Tsat = 373.147 K at P = 101325 Pa.*
 
-![The model's Antoine vapour pressures (A = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-boiling-temperature-chart-2)
+![The same Antoine vapour pressures (A = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-boiling-temperature-chart-2)
 
-*The model's Antoine vapour pressures (A = 8.071, B = 1731, C = 233.4) on Clausius-Clapeyron axes, log pressure against 1000/T: nearly a straight line whose slope reflects the heat of vaporisation; 41 runs of the model. Marked: Tsat = 373.1 K at 101.3 kPa. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, P = 101325 Pa.*
+*The same Antoine vapour pressures (A = 8.07131, B = 1730.63, C = 233.426) on Clausius–Clapeyron axes, log pressure against 1000/T (reciprocal derived from the temperatures): nearly a straight line whose slope reflects the heat of vaporisation; 41 runs of the package. Marked: the package's normal boiling point, 373.147 K at 101.325 kPa.*
 
-![Saturation temperature as A runs from 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-boiling-temperature-live-1)
+![Tsat (saturation temperature) against A (Antoine coefficient A) from 4](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-boiling-temperature-curve)
 
-*Saturation temperature as A runs from 2.926 to 14.12, every other input as you entered it (38 solutions). Marked: your A = 8.071 gives Tsat = 373.1. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, P = 101325 Pa.*
-
-![Saturation temperature as B runs from 432](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-antoine-boiling-temperature-live-2)
-
-*Saturation temperature as B runs from 432.7 to 3029, every other input as you entered it (29 solutions). Marked: your B = 1731 gives Tsat = 373.1. Your inputs: A = 8.07131, B = 1730.63, C = 233.426, units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Tsat (saturation temperature) against A (Antoine coefficient A) from 4.03566 to 12.107. One curve for each value of B (Antoine coefficient B): 1730.63, 865.315, 3461.26. Other inputs as in the worked example: C = 233.426, units = mmHg_degC, base = log10, P = 101325.0 Pa. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, A = 8.07131, Tsat = 373.147 K.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_antoine_boiling_temperature', A=8.07131, B=1730.63, C=233.426, units='mmHg_degC', base='log10', P=101325.0)
@@ -2189,25 +2053,17 @@ $$
 - **Assumes:** ideal liquid and ideal gas (Raoult's law); fractions sum to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Pressure-composition diagram of the binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-phase)
+![Pressure–composition diagram of an ideal binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-phase)
 
-*Pressure-composition diagram of the binary mixture at T = 368.1 K (Raoult's law): bubble and dew pressures from the model at up to 41 compositions each; between them liquid and vapour coexist. The tie line joins the liquid x1 = 0.4 and the vapour y1 = 0.622 at P = 100.9 kPa. In SI units: P = 1.009e+05 Pa. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
+*Pressure–composition diagram of an ideal binary mixture at T = 368.15 K (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]): bubble and dew pressures from the package at 41 compositions each (the bubble line is straight under Raoult's law). The worked example's tie line joins x₁ = 0.4 and y₁ = 0.621961; marked: P = 100.906 kPa.*
 
-![Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-phase-2)
+![Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-phase-2)
 
-*Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at T = 368.1 K (Raoult's law): the vapour in equilibrium with each liquid, from the model's bubble point at 41 compositions. Marked: x1 = 0.4, y1 = 0.622. In SI units: P = 1.009e+05 Pa. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
+*Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at T = 368.15 K (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]): the vapour in equilibrium with each liquid, from the package's bubble-point pressure at 39 compositions. Marked: the worked example, x₁ = 0.4, y₁ = 0.621961.*
 
-![Bubble and dew pressure against temperature for the composition z1 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-phase-3)
+![Bubble and dew pressure against temperature for the worked example's composition [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-phase-3)
 
-*Bubble and dew pressure against temperature for the composition z1 = 0.4 (ideal mixture, Raoult's law), each line up to 36 runs of the model; between them the mixture is partly vaporised. Marked: the bubble point, P = 100.9 kPa. In SI units: P = 1.009e+05 Pa. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
-
-![Bubble-point pressure as T runs from 328](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-live-1)
-
-*Bubble-point pressure as T runs from 328.1 to 408.1 K, every other input as you entered it (37 solutions). Marked: your T = 368.1 K gives P = 100.9 kPa. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
-
-![Every entry of y as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-pressure-live-2)
-
-*Every entry of y as computed for your inputs (2 entries: 0.622, 0.378). Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
+*Bubble and dew pressure against temperature for the worked example's composition [0.4, 0.6] (ideal mixture, Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]), each line 36 runs of the package; between them the mixture is partly vaporised. Marked: bubble P = 100.9 kPa at the example's T = 368.15 K.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_raoult_bubble_pressure', ant=[[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], units='mmHg_degC', base='log10', x=[0.4, 0.6], T=368.15)
@@ -2255,25 +2111,17 @@ $$
 - **Assumes:** ideal liquid and ideal gas; fractions sum to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Pressure-composition diagram of the binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-phase)
+![Pressure–composition diagram of an ideal binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-phase)
 
-*Pressure-composition diagram of the binary mixture at T = 368.1 K (Raoult's law): bubble and dew pressures from the model at up to 41 compositions each; between them liquid and vapour coexist. The tie line joins the liquid x1 = 0.2127 and the vapour y1 = 0.4 at P = 83.43 kPa. In SI units: P = 8.343e+04 Pa. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
+*Pressure–composition diagram of an ideal binary mixture at T = 368.15 K (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]): bubble and dew pressures from the package at 41 compositions each (the bubble line is straight under Raoult's law). The worked example's tie line joins x₁ = 0.212686 and y₁ = 0.4; marked: P = 83.426 kPa.*
 
-![Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-phase-2)
+![Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at T = 368](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-phase-2)
 
-*Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at T = 368.1 K (Raoult's law): the vapour in equilibrium with each liquid, from the model's bubble point at 41 compositions. Marked: x1 = 0.2127, y1 = 0.4. In SI units: P = 8.343e+04 Pa. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
+*Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at T = 368.15 K (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]): the vapour in equilibrium with each liquid, from the package's bubble-point pressure at 39 compositions. Marked: the worked example, x₁ = 0.212686, y₁ = 0.4.*
 
-![Bubble and dew pressure against temperature for the composition z1 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-phase-3)
+![Bubble and dew pressure against temperature for the worked example's composition [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-phase-3)
 
-*Bubble and dew pressure against temperature for the composition z1 = 0.4 (ideal mixture, Raoult's law), each line up to 36 runs of the model; between them the mixture is partly vaporised. Marked: the dew point, P = 83.43 kPa. In SI units: P = 8.343e+04 Pa. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
-
-![Dew-point pressure as T runs from 328](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-live-1)
-
-*Dew-point pressure as T runs from 328.1 to 408.1 K, every other input as you entered it (37 solutions). Marked: your T = 368.1 K gives P = 83.43 kPa. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
-
-![Every entry of x as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-pressure-live-2)
-
-*Every entry of x as computed for your inputs (2 entries: 0.2127, 0.7873). Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K.*
+*Bubble and dew pressure against temperature for the worked example's composition [0.4, 0.6] (ideal mixture, Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]), each line 36 runs of the package; between them the mixture is partly vaporised. Marked: dew P = 83.43 kPa at the example's T = 368.15 K.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_raoult_dew_pressure', ant=[[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], units='mmHg_degC', base='log10', y=[0.4, 0.6], T=368.15)
@@ -2321,29 +2169,21 @@ $$
 - **Assumes:** ideal liquid and ideal gas; fractions sum to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Boiling-point diagram of the binary mixture at P = 101](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-raoult-bubble-temperature-phase.svg)
+![Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law with the Antoine constants [[6](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-raoult-bubble-temperature-phase.svg)
 
-*Boiling-point diagram of the binary mixture at P = 101.3 kPa (Raoult's law): bubble and dew temperatures from the model at up to 39 compositions each; between them liquid and vapour coexist. The tie line joins the liquid x1 = 0.4 and the vapour y1 = 0.6218 at T = 368.3 K. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law with the Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], mmHg and °C): bubble and dew temperatures computed by the package at 40 compositions each; between them (shaded) liquid and vapour coexist. The tie line joins a liquid with x₁ = 0.4 to its vapour y₁ = 0.621849; marked: x₁ = 0.4, T = 368.292 K.*
 
-![Boiling-point diagram of the binary mixture at P = 101](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-phase-2)
+![Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-phase-2)
 
-*Boiling-point diagram of the binary mixture at P = 101.3 kPa (Raoult's law): bubble and dew temperatures from the model at up to 39 compositions each; between them liquid and vapour coexist. The tie line joins the liquid x1 = 0.4 and the vapour y1 = 0.6218 at T = 368.3 K. Heated at x1 = 0.4, the mixture is all vapour at the dew point T = 374.6 K. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], mmHg and °C): bubble and dew temperatures from the package at 39 compositions each. The worked example's tie line joins the liquid x₁ = 0.4 and the vapour y₁ = 0.621849 in equilibrium; marked: T = 368.292 K.*
 
-![Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at P = 101](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-phase-3)
+![Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-phase-3)
 
-*Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at P = 101.3 kPa (Raoult's law): the vapour in equilibrium with each liquid, from the model's bubble point at 39 compositions. Marked: x1 = 0.4, y1 = 0.6218. In SI units: T = 368.3 K. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]): the vapour in equilibrium with each liquid, from the package's bubble-point temperature at 39 compositions. Marked: the worked example, x₁ = 0.4, y₁ = 0.621849.*
 
-![Bubble and dew temperature against pressure for the composition z1 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-phase-4)
+![Bubble and dew temperature against pressure for the worked example's composition [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-phase-4)
 
-*Bubble and dew temperature against pressure for the composition z1 = 0.4 (ideal mixture, Raoult's law), each line up to 31 runs of the model; between them the mixture is partly vaporised. Marked: the bubble point, T = 368.3 K. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
-
-![Bubble-point temperature as P runs from 6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-live-1)
-
-*Bubble-point temperature as P runs from 6.08e+04 to 1.419e+05 Pa, every other input as you entered it (37 solutions). Marked: your P = 1.013e+05 Pa gives T = 368.3. Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
-
-![Every entry of y as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-bubble-temperature-live-2)
-
-*Every entry of y as computed for your inputs (2 entries: 0.6218, 0.3782). Your inputs: x = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Bubble and dew temperature against pressure for the worked example's composition [0.4, 0.6] (ideal mixture, Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]), each line 31 runs of the package; between them the mixture is partly vaporised. Marked: bubble T = 368.3 K at the example's P = 101325 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_raoult_bubble_temperature', ant=[[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], units='mmHg_degC', base='log10', x=[0.4, 0.6], P=101325.0)
@@ -2393,25 +2233,17 @@ $$
 - **Assumes:** ideal liquid and ideal gas; fractions sum to 1
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Boiling-point diagram of the binary mixture at P = 101](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-phase)
+![Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-phase)
 
-*Boiling-point diagram of the binary mixture at P = 101.3 kPa (Raoult's law): bubble and dew temperatures from the model at up to 39 compositions each; between them liquid and vapour coexist. The tie line joins the liquid x1 = 0.2163 and the vapour y1 = 0.4 at T = 374.6 K. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Boiling-point diagram of an ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], mmHg and °C): bubble and dew temperatures from the package at 39 compositions each. The worked example's tie line joins the liquid x₁ = 0.216267 and the vapour y₁ = 0.4 in equilibrium; marked: T = 374.635 K.*
 
-![Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at P = 101](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-phase-2)
+![Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-phase-2)
 
-*Vapour-liquid equilibrium (x-y) diagram of the ideal binary mixture at P = 101.3 kPa (Raoult's law): the vapour in equilibrium with each liquid, from the model's bubble point at 39 compositions. Marked: x1 = 0.2163, y1 = 0.4. In SI units: T = 374.6 K. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Vapour–liquid equilibrium (x–y) diagram of the ideal binary mixture at P = 101325 Pa (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]): the vapour in equilibrium with each liquid, from the package's bubble-point temperature at 39 compositions. Marked: the worked example, x₁ = 0.216267, y₁ = 0.4.*
 
-![Bubble and dew temperature against pressure for the composition z1 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-phase-3)
+![Bubble and dew temperature against pressure for the worked example's composition [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-phase-3)
 
-*Bubble and dew temperature against pressure for the composition z1 = 0.4 (ideal mixture, Raoult's law), each line up to 31 runs of the model; between them the mixture is partly vaporised. Marked: the dew point, T = 374.6 K. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
-
-![Dew-point temperature as P runs from 6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-live-1)
-
-*Dew-point temperature as P runs from 6.08e+04 to 1.419e+05 Pa, every other input as you entered it (37 solutions). Marked: your P = 1.013e+05 Pa gives T = 374.6. Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
-
-![Every entry of x as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-dew-temperature-live-2)
-
-*Every entry of x as computed for your inputs (2 entries: 0.2163, 0.7837). Your inputs: y = 0.4, 0.6, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, P = 101325 Pa.*
+*Bubble and dew temperature against pressure for the worked example's composition [0.4, 0.6] (ideal mixture, Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]]), each line 31 runs of the package; between them the mixture is partly vaporised. Marked: dew T = 374.6 K at the example's P = 101325 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_raoult_dew_temperature', ant=[[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], units='mmHg_degC', base='log10', y=[0.4, 0.6], P=101325.0)
@@ -2457,21 +2289,17 @@ $$
 - **Assumes:** two-phase: sum z $K > 1$ and sum $z/K > 1$; K-values independent of composition; some K-value differs from 1 by more than 1 % (well-conditioned)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Flash of a 3-component feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rachford-rice-flash-bars)
+![Isothermal flash of a 3-component feed z = [0](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-rachford-rice-flash-bars.svg)
 
-*Flash of a 3-component feed z = [0.5, 0.3, 0.2]: the model's vapour fraction V/F = 0.6907 with liquid x = [0.339, 0.365, 0.296] and vapour y = [0.572, 0.271, 0.157] (labels under each group: K values). Components with K > 1 concentrate in the vapour. Your inputs: z = 0.5, 0.3, 0.2, K = 1.685, 0.742, 0.532.*
-
-![Each component of one mole of feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rachford-rice-flash-bars-2)
-
-*Each component of one mole of feed z = [0.5, 0.3, 0.2] split between the phases: V/F·y to the vapour and L/F·x to the liquid, from the model's V/F = 0.6907, y = [0.572, 0.271, 0.157] and x = [0.339, 0.365, 0.296]; the two parts add up to the feed. Your inputs: z = 0.5, 0.3, 0.2, K = 1.685, 0.742, 0.532.*
+*Isothermal flash of a 3-component feed z = [0.5, 0.3, 0.2] with equilibrium ratios K = [1.685, 0.742, 0.532]: the package solves the Rachford–Rice equation for a vapour fraction of 0.69073 and returns the liquid x = [0.339409, 0.365056, 0.295535] and vapour y = [0.571904, 0.270872, 0.157225] compositions (bars).*
 
 ![Isothermal flash of a feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rachford-rice-flash-process)
 
-*Isothermal flash of a feed z = [0.5, 0.3, 0.2] with equilibrium ratios K = [1.69, 0.742, 0.532]. Marked: the model's vapour fraction V/F = 0.6907 from the Rachford-Rice equation, vapour y = [0.572, 0.271, 0.157] and liquid x = [0.339, 0.365, 0.296] (L/F = 1 - V/F). Your inputs: z = 0.5, 0.3, 0.2, K = 1.685, 0.742, 0.532.*
+*Isothermal flash of a feed z = [0.5, 0.3, 0.2] with equilibrium ratios K = [1.69, 0.742, 0.532] (the worked example). Marked: the package's vapour fraction V/F = 0.69073 from the Rachford–Rice equation, vapour y = [0.572, 0.271, 0.157] and liquid x = [0.339, 0.365, 0.296] (L/F = 1 − V/F).*
 
-![Every entry of x, y as computed for your inputs (3 entries, x first: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rachford-rice-flash-live-1)
+![Compositions of the worked example's flash: feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rachford-rice-flash-bars-2)
 
-*Every entry of x, y as computed for your inputs (3 entries, x first: 0.3394, 0.3651, 0.2955). Your inputs: z = 0.5, 0.3, 0.2, K = 1.685, 0.742, 0.532.*
+*Compositions of the worked example's flash: feed z = [0.5, 0.3, 0.2], liquid x = [0.339, 0.365, 0.296] and vapour y = [0.572, 0.271, 0.157] returned by the package with V/F = 0.69073 (labels under each group: the stated K values). Components with K > 1 concentrate in the vapour.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_rachford_rice_flash', z=[0.5, 0.3, 0.2], K=[1.685, 0.742, 0.532])
@@ -2522,29 +2350,17 @@ $$
 - **Assumes:** P between the dew- and bubble-point pressures at T (two phases); ideal liquid and gas; some K-value differs from 1 by more than 1 %
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Flash of a 2-component feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-bars)
+![Isothermal flash of an ideal binary mixture (Raoult's law, Antoine constants [[6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-process)
 
-*Flash of a 2-component feed z = [0.5, 0.5]: the model's vapour fraction V/F = 0.4305 with liquid x = [0.404, 0.596] and vapour y = [0.626, 0.374] (labels under each group: K values). Components with K > 1 concentrate in the vapour. Your inputs: z = 0.5, 0.5, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K, P = 101325 Pa.*
+*Isothermal flash of an ideal binary mixture (Raoult's law, Antoine constants [[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], mmHg and °C) fed at z = [0.5, 0.5] into a drum at T = 368.15 K and P = 101325 Pa (the worked example). Marked: the package's V/F = 0.430535, y = [0.626, 0.374], x = [0.404, 0.596].*
 
-![Boiling-point diagram of the binary mixture at P = 101](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-phase)
+![The worked example's flash on the boiling-point diagram at P = 101325 Pa (bubble and dew temperatures from the package at 39 compositions): a feed z₁ = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-phase)
 
-*Boiling-point diagram of the binary mixture at P = 101.3 kPa (Raoult's law): bubble and dew temperatures from the model at up to 38 compositions each; between them liquid and vapour coexist. The tie line joins the liquid x1 = 0.4045 and the vapour y1 = 0.6263 at T = 368.1 K. In SI units: VF = 0.4305. Your inputs: z = 0.5, 0.5, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K, P = 101325 Pa.*
+*The worked example's flash on the boiling-point diagram at P = 101325 Pa (bubble and dew temperatures from the package at 39 compositions): a feed z₁ = 0.5 at T = 368.15 K splits along the tie line into liquid x₁ = 0.404485 and vapour y₁ = 0.626337; the package's vapour fraction V/F = 0.430535 is the lever ratio (z₁ − x₁)/(y₁ − x₁). Marked: the feed point.*
 
-![Isothermal flash of an ideal mixture (Raoult's law) fed at z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-process)
+![Compositions of the worked example's flash: feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-bars)
 
-*Isothermal flash of an ideal mixture (Raoult's law) fed at z = [0.5, 0.5] into a drum at T = 368.1 K and P = 101.3 kPa. Marked: the model's V/F = 0.4305, vapour y = [0.626, 0.374], liquid x = [0.404, 0.596]. Your inputs: z = 0.5, 0.5, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K, P = 101325 Pa.*
-
-![Vapour fraction V/F as T runs from 365](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-live-1)
-
-*Vapour fraction V/F as T runs from 365.3 to 371.9 K, every other input as you entered it (22 solutions). Marked: your T = 368.1 K gives VF = 0.4305. Your inputs: z = 0.5, 0.5, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K, P = 101325 Pa.*
-
-![Every entry of x, y as computed for your inputs (2 entries, x first: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-live-2)
-
-*Every entry of x, y as computed for your inputs (2 entries, x first: 0.4045, 0.5955). Your inputs: z = 0.5, 0.5, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K, P = 101325 Pa.*
-
-![Vapour fraction V/F as P runs from 9](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-raoult-isothermal-flash-live-3)
-
-*Vapour fraction V/F as P runs from 9.264e+04 to 1.1e+05 Pa, every other input as you entered it (7 solutions). Marked: your P = 1.013e+05 Pa gives VF = 0.4305. Your inputs: z = 0.5, 0.5, ant = 6.90565 1211.033 220.79..., units = mmHg_degC, base = log10, T = 368.15 K, P = 101325 Pa.*
+*Compositions of the worked example's flash: feed z = [0.5, 0.5], liquid x = [0.404, 0.596] and vapour y = [0.626, 0.374] returned by the package with V/F = 0.430535 (labels under each group: K = y/x of the returned compositions). Components with K > 1 concentrate in the vapour.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_raoult_isothermal_flash', ant=[[6.90565, 1211.033, 220.79], [6.95464, 1344.8, 219.482]], units='mmHg_degC', base='log10', z=[0.5, 0.5], T=368.15, P=101325.0)
@@ -2597,21 +2413,13 @@ $$
 - **Assumes:** two-phase at the Wilson K-values; some K-value differs from 1 by more than 1 %; Wilson's correlation suits light hydrocarbons at low to moderate pressure
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Flash of a feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-process)
+![Flash of a three-component feed z = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-process)
 
-*Flash of a feed z = [0.3, 0.4, 0.3] at T = 300 K, P = 2 MPa. Marked: the model's Wilson K values [16.7, 0.503, 0.0121], V/F = 0.3623, vapour y = [0.749, 0.245, 0.00564], liquid x = [0.0449, 0.488, 0.467]. Your inputs: z = 0.3, 0.4, 0.3, Tc = 190.564, 369.83, 507.6, Pc = 45.99, 42.48, 30.25, omega = 0.011, 0.152, 0.3, p_unit = bar, T = 300 K, P = 2000000 Pa.*
+*Flash of a three-component feed z = [0.3, 0.4, 0.3] (critical temperatures [190.564, 369.83, 507.6] K, pressures [45.99, 42.48, 30.25] bar, acentric factors [0.011, 0.152, 0.3]) at T = 300 K, P = 2e+06 Pa (the worked example). Marked: the package's Wilson K values [16.7, 0.503, 0.0121], V/F = 0.362332, y = [0.749, 0.245, 0.00564], x = [0.0449, 0.488, 0.467].*
 
-![Vapour fraction V/F as T runs from 260 to 340 K, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-live-1)
+![VF (vapour fraction V/F) against P (flash pressure) from 200000 Pa to 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-curve)
 
-*Vapour fraction V/F as T runs from 260 to 340 K, every other input as you entered it (41 solutions). Marked: your T = 300 K gives VF = 0.3623. Your inputs: z = 0.3, 0.4, 0.3, Tc = 190.564, 369.83, 507.6, Pc = 45.99, 42.48, 30.25, omega = 0.011, 0.152, 0.3, p_unit = bar, T = 300 K, P = 2000000 Pa.*
-
-![Every entry of x, y, K as computed for your inputs (3 entries, x first: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-live-2)
-
-*Every entry of x, y, K as computed for your inputs (3 entries, x first: 0.04494, 0.4878, 0.4673). Your inputs: z = 0.3, 0.4, 0.3, Tc = 190.564, 369.83, 507.6, Pc = 45.99, 42.48, 30.25, omega = 0.011, 0.152, 0.3, p_unit = bar, T = 300 K, P = 2000000 Pa.*
-
-![Vapour fraction V/F as P runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-k-flash-live-3)
-
-*Vapour fraction V/F as P runs from 1.2e+06 to 2.8e+06 Pa, every other input as you entered it (29 solutions). Marked: your P = 2e+06 Pa gives VF = 0.3623. Your inputs: z = 0.3, 0.4, 0.3, Tc = 190.564, 369.83, 507.6, Pc = 45.99, 42.48, 30.25, omega = 0.011, 0.152, 0.3, p_unit = bar, T = 300 K, P = 2000000 Pa.*
+*VF (vapour fraction V/F) against P (flash pressure) from 200000 Pa to 2.0000e+07 Pa on a logarithmic axis. Other inputs as in the worked example: z = [0.3, 0.4, 0.3], Tc = [190.564, 369.83, 507.6], Pc = [45.99, 42.48, 30.25], omega = [0.011, 0.152, 0.3], p_unit = bar, T = 300.0 K. 35 points computed by chemical-engineering-ai999x; marked: the worked example, P = 2e+06 Pa, VF = 0.362332.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_wilson_k_flash', z=[0.3, 0.4, 0.3], Tc=[190.564, 369.83, 507.6], Pc=[45.99, 42.48, 30.25], omega=[0.011, 0.152, 0.3], p_unit='bar', T=300.0, P=2000000.0)
@@ -2657,13 +2465,9 @@ $$
 - **Assumes:** binary, constant alpha, constant molar overflow; $0 < zF < xD < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Minimum reflux ratio L/D as α runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-minimum-reflux-live-1)
+![Rmin (minimum reflux ratio L/D) against zF (mole fraction of the light component in the feed) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-minimum-reflux-curve)
 
-*Minimum reflux ratio L/D as α runs from 1.094 to 4.375, every other input as you entered it (36 solutions). Marked: your α = 2.5 gives Rmin = 1.1. Your inputs: alpha = 2.5, zF = 0.5, xD = 0.95, q = 1.0.*
-
-![Minimum reflux ratio L/D as zF runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-binary-minimum-reflux-live-2)
-
-*Minimum reflux ratio L/D as zF runs from 0.125 to 0.875, every other input as you entered it (29 solutions). Marked: your zF = 0.5 gives Rmin = 1.1. Your inputs: alpha = 2.5, zF = 0.5, xD = 0.95, q = 1.0.*
+*Rmin (minimum reflux ratio L/D) against zF (mole fraction of the light component in the feed) from 0.02 to 0.98. One curve for each value of alpha (relative volatility of the light component (constant)): 2.5, 1.25, 5. Other inputs as in the worked example: xD = 0.95, q = 1.0. 36 points per curve computed by chemical-engineering-ai999x; marked: the worked example, zF = 0.5, Rmin = 1.1.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_binary_minimum_reflux', alpha=2.5, zF=0.5, xD=0.95, q=1.0)
@@ -2713,13 +2517,9 @@ $$
 - **Assumes:** binary, constant alpha, constant molar overflow, total condenser; R > R_min; $0 < xB < zF < xD < 1$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Theoretical stages including the partial](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-mccabe-thiele-stages-live-1.svg)
+![N (theoretical stages including the partial reboiler) against R (reflux ratio L/D) from 1 to 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mccabe-thiele-stages-curve)
 
-*Theoretical stages including the partial... as xD runs from 0.5044 to 0.9809, every other input as you entered it (27 solutions). Marked: your xD = 0.95 gives N = 11. Your inputs: alpha = 2.5, zF = 0.5, xD = 0.95, q = 1.0, xB = 0.05, R = 2.0.*
-
-![Theoretical stages including the partial](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mccabe-thiele-stages-live-2)
-
-*Theoretical stages including the partial... as zF runs from 0.3125 to 0.875, every other input as you entered it (22 solutions). Marked: your zF = 0.5 gives N = 11. Your inputs: alpha = 2.5, zF = 0.5, xD = 0.95, q = 1.0, xB = 0.05, R = 2.0.*
+*N (theoretical stages including the partial reboiler) against R (reflux ratio L/D) from 1 to 3. One curve for each value of xD (mole fraction of the light component in the distillate): 0.95, 0.74. Other inputs as in the worked example: alpha = 2.5, zF = 0.5, q = 1.0, xB = 0.05. 29 points per curve computed by chemical-engineering-ai999x; marked: the worked example, R = 2, N = 11.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_mccabe_thiele_stages', alpha=2.5, zF=0.5, xD=0.95, q=1.0, xB=0.05, R=2.0)
@@ -2770,15 +2570,11 @@ $$
 
 ![A countercurrent absorber (gas up, solvent down) of 5 ideal stages with equilibrium y = m·x, m = 2, and absorption factor A = 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-absorber-process)
 
-*A countercurrent absorber (gas up, solvent down) of 5 ideal stages with equilibrium y = m·x, m = 2, and absorption factor A = 1.4. Marked, from the model's Kremser equation: leaving gas y = 0.003063, fraction of the solute transferred 0.9387. Your inputs: N = 5, A = 1.4, m = 2.0, y_in = 0.05, x_in = 0.0.*
+*A countercurrent absorber (gas up, solvent down) of 5 ideal stages with equilibrium y = m·x, m = 2, and absorption factor A = 1.4 (the worked example). Marked, from the package's Kremser equation: leaving gas y = 0.003063, fraction of the solute transferred 0.93874.*
 
-![Solute mole fraction in the leaving gas as A runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-absorber-live-1)
+![y_out (solute mole fraction in the leaving gas) against N (number of ideal stages) from 1 to 13](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-absorber-curve)
 
-*Solute mole fraction in the leaving gas as A runs from 0.35 to 2.45, every other input as you entered it (35 solutions). Marked: your A = 1.4 gives y_out = 0.003063. Your inputs: N = 5, A = 1.4, m = 2.0, y_in = 0.05, x_in = 0.0.*
-
-![Solute mole fraction in the leaving gas as N runs from 1 to 9, every other input as you entered it (9 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-absorber-live-2)
-
-*Solute mole fraction in the leaving gas as N runs from 1 to 9, every other input as you entered it (9 solutions). Marked: your N = 5 gives y_out = 0.003063. Your inputs: N = 5, A = 1.4, m = 2.0, y_in = 0.05, x_in = 0.0.*
+*y_out (solute mole fraction in the leaving gas) against N (number of ideal stages) from 1 to 13. One curve for each value of y_in (solute mole fraction in the entering gas): 0.05, 0.26, 0.74. Other inputs as in the worked example: A = 1.4, m = 2.0, x_in = 0.0. 13 points per curve computed by chemical-engineering-ai999x; marked: the worked example, N = 5, y_out = 0.003063.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_kremser_absorber', N=5, A=1.4, m=2.0, y_in=0.05, x_in=0.0)
@@ -2828,15 +2624,11 @@ $$
 
 ![A countercurrent stripper (liquid down, stripping gas up) of 6 ideal stages with equilibrium y = m·x, m = 3, and stripping factor S = 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-stripper-process)
 
-*A countercurrent stripper (liquid down, stripping gas up) of 6 ideal stages with equilibrium y = m·x, m = 3, and stripping factor S = 1.5. Marked, from the model's Kremser equation: leaving liquid x = 0.0003108, fraction of the solute transferred 0.9689. Your inputs: N = 6, S = 1.5, m = 3.0, x_in = 0.01, y_in = 0.0.*
+*A countercurrent stripper (liquid down, stripping gas up) of 6 ideal stages with equilibrium y = m·x, m = 3, and stripping factor S = 1.5 (the worked example). Marked, from the package's Kremser equation: leaving liquid x = 0.000310831, fraction of the solute transferred 0.968917.*
 
-![Solute mole fraction in the leaving liquid as S runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-stripper-live-1)
+![x_out (solute mole fraction in the leaving liquid) against N (number of ideal stages) from 1 to 14](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-stripper-curve)
 
-*Solute mole fraction in the leaving liquid as S runs from 0.375 to 2.625, every other input as you entered it (35 solutions). Marked: your S = 1.5 gives x_out = 0.0003108. Your inputs: N = 6, S = 1.5, m = 3.0, x_in = 0.01, y_in = 0.0.*
-
-![Solute mole fraction in the leaving liquid as N runs from 1 to 11, every other input as you entered it (11 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-kremser-stripper-live-2)
-
-*Solute mole fraction in the leaving liquid as N runs from 1 to 11, every other input as you entered it (11 solutions). Marked: your N = 6 gives x_out = 0.0003108. Your inputs: N = 6, S = 1.5, m = 3.0, x_in = 0.01, y_in = 0.0.*
+*x_out (solute mole fraction in the leaving liquid) against N (number of ideal stages) from 1 to 14. One curve for each value of x_in (solute mole fraction in the entering liquid): 0.01, 0.26, 0.74. Other inputs as in the worked example: S = 1.5, m = 3.0, y_in = 0.0. 14 points per curve computed by chemical-engineering-ai999x; marked: the worked example, N = 6, x_out = 0.000310831.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_kremser_stripper', N=6, S=1.5, m=3.0, x_in=0.01, y_in=0.0)
@@ -2885,17 +2677,13 @@ $$
 - **Assumes:** dilute, constant L and V, linear equilibrium; $y_{1} > y_{2} > m$ x2; no pinch
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A packed absorber: gas enters at the bottom with y1 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-absorber-transfer-units-process)
+![A packed absorber (the worked example): gas enters at the bottom with y1 = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-absorber-transfer-units-process)
 
-*A packed absorber: gas enters at the bottom with y1 = 0.02 and leaves at the top with y2 = 0.001; solvent enters at the top with x2 = 0; equilibrium slope m = 1.2, absorption factor A = 1.5, HOG = 600 mm. Marked: the model's number of transfer units NOG = 5.977 and packed height Z = 3.586 m. Your inputs: y1 = 0.02, y2 = 0.001, x2 = 0.0, m = 1.2, A = 1.5, HOG = 0.6 m.*
+*A packed absorber (the worked example): gas enters at the bottom with y1 = 0.02 and leaves at the top with y2 = 0.001; solvent enters at the top with x2 = 0; equilibrium slope m = 1.2, absorption factor A = 1.5, HOG = 0.6 m. Marked: the package's number of transfer units NOG = 5.97729 and packed height Z = 3.58637 m.*
 
-![Packed height as HOG runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-absorber-transfer-units-live-1)
+![NOG (number of overall gas-phase transfer units) against y1 (solute mole fraction in the gas entering (bottom)) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-absorber-transfer-units-curve)
 
-*Packed height as HOG runs from 0.36 to 0.84 m, every other input as you entered it (37 solutions). Marked: your HOG = 0.6 m gives Z = 3.586. Your inputs: y1 = 0.02, y2 = 0.001, x2 = 0.0, m = 1.2, A = 1.5, HOG = 0.6 m.*
-
-![Number of overall gas-phase transfer units as A runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-absorber-transfer-units-live-2)
-
-*Number of overall gas-phase transfer units as A runs from 1.018 to 2.625, every other input as you entered it (21 solutions). Marked: your A = 1.5 gives NOG = 5.977. Your inputs: y1 = 0.02, y2 = 0.001, x2 = 0.0, m = 1.2, A = 1.5, HOG = 0.6 m.*
+*NOG (number of overall gas-phase transfer units) against y1 (solute mole fraction in the gas entering (bottom)) from 0.02 to 0.98. One curve for each value of A (absorption factor A = L/(m V)): 1.5, 3. Other inputs as in the worked example: y2 = 0.001, x2 = 0.0, m = 1.2, HOG = 0.6 m. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, y1 = 0.02, NOG = 5.97729.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_absorber_transfer_units', y1=0.02, y2=0.001, x2=0.0, m=1.2, A=1.5, HOG=0.6)
@@ -2946,17 +2734,13 @@ $$
 - **Assumes:** immiscible carrier and solvent, constant K; $XF > YS/K$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Countercurrent extraction in 4 ideal stages: feed F = 100 kg/s (solute-free carrier) at XF = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-countercurrent-extraction-process)
+![Countercurrent extraction in 4 ideal stages (the worked example): feed F = 100 (solute-free carrier) at XF = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-countercurrent-extraction-process)
 
-*Countercurrent extraction in 4 ideal stages: feed F = 100 kg/s (solute-free carrier) at XF = 0.1 enters stage 1, solvent S = 80 kg/s at YS = 0 enters stage 4, distribution Y = K·X with K = 1.5. Marked, from the model: raffinate XN = 0.01344, extract Y1 = 0.1082, solute recovered 0.8656. Your inputs: F = 100.0 kg/s, S = 80.0 kg/s, K = 1.5, N = 4, XF = 0.1, YS = 0.0.*
+*Countercurrent extraction in 4 ideal stages (the worked example): feed F = 100 (solute-free carrier) at XF = 0.1 enters stage 1, solvent S = 80 at YS = 0 enters stage 4, distribution Y = K·X with K = 1.5. Marked, from the package: raffinate XN = 0.013438, extract Y1 = 0.108203, solute recovered 0.86562.*
 
-![Solute ratio in the final raffinate as F runs from 60 to 140 kg/s, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-countercurrent-extraction-live-1)
+![XN (solute ratio in the final raffinate) against N (number of ideal stages) from 1 to 12](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-countercurrent-extraction-curve)
 
-*Solute ratio in the final raffinate as F runs from 60 to 140 kg/s, every other input as you entered it (41 solutions). Marked: your F = 100 kg/s gives XN = 0.01344. Your inputs: F = 100.0 kg/s, S = 80.0 kg/s, K = 1.5, N = 4, XF = 0.1, YS = 0.0.*
-
-![Solute ratio in the final raffinate as YS runs from 0 to 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-countercurrent-extraction-live-2)
-
-*Solute ratio in the final raffinate as YS runs from 0 to 0.1471, every other input as you entered it (12 solutions). Marked: your YS = 0 gives XN = 0.01344. Your inputs: F = 100.0 kg/s, S = 80.0 kg/s, K = 1.5, N = 4, XF = 0.1, YS = 0.0.*
+*XN (solute ratio in the final raffinate) against N (number of ideal stages) from 1 to 12. One curve for each value of XF (solute ratio in the feed, kg solute per kg carrier): 0.1, 0.26, 0.74. Other inputs as in the worked example: F = 100.0 kg/s, S = 80.0 kg/s, K = 1.5, YS = 0.0. 12 points per curve computed by chemical-engineering-ai999x; marked: the worked example, N = 4, XN = 0.013438.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_countercurrent_extraction', F=100.0, S=80.0, K=1.5, N=4, XF=0.1, YS=0.0)
@@ -3004,17 +2788,13 @@ $$
 - **Assumes:** immiscible carrier and solvent, constant K; fresh (solute-free) solvent to every stage
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Crosscurrent extraction (feed carrier at XF = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-crosscurrent-extraction-process)
+![Crosscurrent extraction (the worked example: feed carrier F = 100 at XF = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-crosscurrent-extraction-process)
 
-*Crosscurrent extraction (feed carrier at XF = 0.1, fresh solvent S = 20 kg/s to each of 4 stages, K = 1.5). The raffinate ratio after each stage drawn is the model's result for that many stages: 0.07692, 0.05917, 0.04552, 0.03501; marked: XN = 0.03501, recovery 0.6499. Your inputs: F = 100.0 kg/s, S = 20.0 kg/s, K = 1.5, N = 4, XF = 0.1.*
+*Crosscurrent extraction (the worked example: feed carrier F = 100 at XF = 0.1, fresh solvent S = 20 to each of 4 stages, K = 1.5). The raffinate ratio after each stage is the package's result for that many stages: 0.0769231, 0.0591716, 0.0455166, 0.0350128; marked: XN = 0.0350128, recovery 0.649872.*
 
-![Solute ratio in the final raffinate as F runs from 60 to 140 kg/s, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-crosscurrent-extraction-live-1)
+![XN (solute ratio in the final raffinate) against N (number of stages) from 1 to 12](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-crosscurrent-extraction-curve)
 
-*Solute ratio in the final raffinate as F runs from 60 to 140 kg/s, every other input as you entered it (41 solutions). Marked: your F = 100 kg/s gives XN = 0.03501. Your inputs: F = 100.0 kg/s, S = 20.0 kg/s, K = 1.5, N = 4, XF = 0.1.*
-
-![Solute ratio in the final raffinate as N runs from 1 to 8, every other input as you entered it (8 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-crosscurrent-extraction-live-2)
-
-*Solute ratio in the final raffinate as N runs from 1 to 8, every other input as you entered it (8 solutions). Marked: your N = 4 gives XN = 0.03501. Your inputs: F = 100.0 kg/s, S = 20.0 kg/s, K = 1.5, N = 4, XF = 0.1.*
+*XN (solute ratio in the final raffinate) against N (number of stages) from 1 to 12. One curve for each value of XF (solute ratio in the feed, kg solute per kg carrier): 0.1, 0.26, 0.74. Other inputs as in the worked example: F = 100.0 kg/s, S = 20.0 kg/s, K = 1.5. 12 points per curve computed by chemical-engineering-ai999x; marked: the worked example, N = 4, XN = 0.0350128.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_crosscurrent_extraction', F=100.0, S=20.0, K=1.5, N=4, XF=0.1)
@@ -3060,9 +2840,9 @@ $$
 - **Assumes:** $Lambda_ii = 1$, $Lambda_ij > 0$; all mole fractions positive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Every entry of gamma as computed for your inputs (2 entries: 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-activity-coefficients-live-1)
+![Activity coefficients of a binary mixture from the Wilson model (Lam = [[1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-wilson-activity-coefficients-curve)
 
-*Every entry of gamma as computed for your inputs (2 entries: 1.058, 1.021). Your inputs: x = 0.3, 0.7, Lam = 1 0.5; 1.5 1.*
+*Activity coefficients of a binary mixture from the Wilson model (Lam = [[1.0, 0.5], [1.5, 1.0]]; the worked example) at 49 compositions, each a run of the package, with the excess Gibbs energy Gᴱ/RT dashed. Ideal solution: γ = 1. Marked: x₁ = 0.3, γ₁ = 1.05781, γ₂ = 1.02099, Gᴱ/RT = 0.0314015.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_wilson_activity_coefficients', x=[0.3, 0.7], Lam=[[1.0, 0.5], [1.5, 1.0]])
@@ -3109,9 +2889,9 @@ $$
 - **Assumes:** $tau_ii = 0$, $alpha_ii = 0$; all mole fractions positive
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Every entry of gamma as computed for your inputs (2 entries: 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-nrtl-activity-coefficients-live-1)
+![Activity coefficients of a binary mixture from the NRTL model (tau = [[0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-nrtl-activity-coefficients-curve)
 
-*Every entry of gamma as computed for your inputs (2 entries: 2.253, 1.188). Your inputs: x = 0.3, 0.7, tau = 0 0.8; 1.2 0, alpha = 0 0.3; 0.3 0.*
+*Activity coefficients of a binary mixture from the NRTL model (tau = [[0.0, 0.8], [1.2, 0.0]], alpha = [[0.0, 0.3], [0.3, 0.0]]; the worked example) at 49 compositions, each a run of the package, with the excess Gibbs energy Gᴱ/RT dashed. Ideal solution: γ = 1. Marked: x₁ = 0.3, γ₁ = 2.25346, γ₂ = 1.18778, Gᴱ/RT = 0.3642.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_nrtl_activity_coefficients', x=[0.3, 0.7], tau=[[0.0, 0.8], [1.2, 0.0]], alpha=[[0.0, 0.3], [0.3, 0.0]])
@@ -3158,17 +2938,9 @@ $$
 - **Assumes:** $tau_ii = 1$, $tau_ij > 0$; all mole fractions positive; coordination number $z = 10$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Activity coefficient of component 1 as tau[1,2] runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-uniquac-activity-coefficients-live-1)
+![Activity coefficients of a binary mixture from the UNIQUAC model (r = [2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-uniquac-activity-coefficients-curve)
 
-*Activity coefficient of component 1 as tau[1,2] runs from 0.225 to 1.575, every other input as you entered it (41 solutions). Marked: your tau[1,2] = 0.9 gives γ1 = 1.299. Your inputs: x = 0.3, 0.7, r = 2.1055, 0.92, q = 1.972, 1.4, tau = 1 0.9; 1.1 1.*
-
-![Every entry of gamma as computed for your inputs (2 entries: 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-uniquac-activity-coefficients-live-2)
-
-*Every entry of gamma as computed for your inputs (2 entries: 1.299, 1.104). Your inputs: x = 0.3, 0.7, r = 2.1055, 0.92, q = 1.972, 1.4, tau = 1 0.9; 1.1 1.*
-
-![Activity coefficient of component 1 as tau[2,1] runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-uniquac-activity-coefficients-live-3)
-
-*Activity coefficient of component 1 as tau[2,1] runs from 0.275 to 1.925, every other input as you entered it (29 solutions). Marked: your tau[2,1] = 1.1 gives γ1 = 1.299. Your inputs: x = 0.3, 0.7, r = 2.1055, 0.92, q = 1.972, 1.4, tau = 1 0.9; 1.1 1.*
+*Activity coefficients of a binary mixture from the UNIQUAC model (r = [2.1055, 0.92], q = [1.972, 1.4], tau = [[1.0, 0.9], [1.1, 1.0]]; the worked example) at 49 compositions, each a run of the package. Ideal solution: γ = 1. Marked: x₁ = 0.3, γ₁ = 1.29869, γ₂ = 1.10358.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_uniquac_activity_coefficients', x=[0.3, 0.7], r=[2.1055, 0.92], q=[1.972, 1.4], tau=[[1.0, 0.9], [1.1, 1.0]])
@@ -3219,13 +2991,9 @@ $$
 - **Assumes:** pure substance; not too close to the critical point or a spinodal (a double root is refused); one real root: both roots reported equal
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Compressibility factor of the vapour-like](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-peng-robinson-live-1)
+![Z_vapour (compressibility factor of the vapour-like (largest) root) against Pc (critical pressure) from 302500 Pa to 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-peng-robinson-curve)
 
-*Compressibility factor of the vapour-like... as T runs from 360 to 440 K, every other input as you entered it (41 solutions). Marked: your T = 400 K gives Z_vapour = 0.644. Your inputs: Tc = 507.6 K, Pc = 3025000.0 Pa, omega = 0.2975, T = 400.0 K, P = 1000000.0 Pa.*
-
-![Compressibility factor of the vapour-like](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-peng-robinson-live-2)
-
-*Compressibility factor of the vapour-like... as Tc runs from 467.6 to 547.6 K, every other input as you entered it (29 solutions). Marked: your Tc = 507.6 K gives Z_vapour = 0.644. Your inputs: Tc = 507.6 K, Pc = 3025000.0 Pa, omega = 0.2975, T = 400.0 K, P = 1000000.0 Pa.*
+*Z_vapour (compressibility factor of the vapour-like (largest) root) against Pc (critical pressure) from 302500 Pa to 3.0250e+07 Pa on a logarithmic axis. One curve for each value of Tc (critical temperature): 507.6 K, 253.8 K, 1015.2 K. Other inputs as in the worked example: omega = 0.2975, T = 400.0 K, P = 1000000.0 Pa. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Pc = 3.025e+06 Pa, Z_vapour = 0.644021.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_peng_robinson', Tc=507.6, Pc=3025000.0, omega=0.2975, T=400.0, P=1000000.0)
@@ -3276,13 +3044,9 @@ $$
 - **Assumes:** pure substance; not too close to the critical point or a spinodal; one real root: both roots reported equal
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Compressibility factor of the vapour-like](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-srk-live-1)
+![Z_vapour (compressibility factor of the vapour-like (largest) root) against Pc (critical pressure) from 302500 Pa to 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-srk-curve)
 
-*Compressibility factor of the vapour-like... as T runs from 360 to 440 K, every other input as you entered it (41 solutions). Marked: your T = 400 K gives Z_vapour = 0.6589. Your inputs: Tc = 507.6 K, Pc = 3025000.0 Pa, omega = 0.2975, T = 400.0 K, P = 1000000.0 Pa.*
-
-![Compressibility factor of the vapour-like](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-srk-live-2)
-
-*Compressibility factor of the vapour-like... as Tc runs from 467.6 to 547.6 K, every other input as you entered it (29 solutions). Marked: your Tc = 507.6 K gives Z_vapour = 0.6589. Your inputs: Tc = 507.6 K, Pc = 3025000.0 Pa, omega = 0.2975, T = 400.0 K, P = 1000000.0 Pa.*
+*Z_vapour (compressibility factor of the vapour-like (largest) root) against Pc (critical pressure) from 302500 Pa to 3.0250e+07 Pa on a logarithmic axis. One curve for each value of Tc (critical temperature): 507.6 K, 253.8 K, 1015.2 K. Other inputs as in the worked example: omega = 0.2975, T = 400.0 K, P = 1000000.0 Pa. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Pc = 3.025e+06 Pa, Z_vapour = 0.65891.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_srk', Tc=507.6, Pc=3025000.0, omega=0.2975, T=400.0, P=1000000.0)
@@ -3328,13 +3092,9 @@ $$
 - **Assumes:** $T < Tc$; non-polar or slightly polar substances
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Vapour pressure as T runs from 360 to 440 K, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lee-kesler-vapour-pressure-live-1)
+![Psat (vapour pressure) against T (temperature) from 200 K to 600 K, logarithmic output axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lee-kesler-vapour-pressure-curve)
 
-*Vapour pressure as T runs from 360 to 440 K, every other input as you entered it (41 solutions). Marked: your T = 400 K gives Psat = 104.8 kPa. Your inputs: T = 400.0 K, Tc = 568.7 K, Pc = 2490000.0 Pa, omega = 0.399.*
-
-![Vapour pressure as Tc runs from 528](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lee-kesler-vapour-pressure-live-2)
-
-*Vapour pressure as Tc runs from 528.7 to 608.7 K, every other input as you entered it (29 solutions). Marked: your Tc = 568.7 K gives Psat = 104.8 kPa. Your inputs: T = 400.0 K, Tc = 568.7 K, Pc = 2490000.0 Pa, omega = 0.399.*
+*Psat (vapour pressure) against T (temperature) from 200 K to 600 K, logarithmic output axis. One curve for each value of Pc (critical pressure): 2.49e+06 Pa, 1.245e+06 Pa, 4.98e+06 Pa. Other inputs as in the worked example: Tc = 568.7 K, omega = 0.399. 28 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T = 400 K, Psat = 104829 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_lee_kesler_vapour_pressure', T=400.0, Tc=568.7, Pc=2490000.0, omega=0.399)
@@ -3380,13 +3140,9 @@ $$
 - **Assumes:** T, T_ref < Tc
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Heat of vaporisation at T as Tc runs from 607](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-watson-heat-of-vaporization-live-1)
+![Hvap (heat of vaporisation at T) against Tc (critical temperature) from 323](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-watson-heat-of-vaporization-curve)
 
-*Heat of vaporisation at T as Tc runs from 607.1 to 687.1 K, every other input as you entered it (41 solutions). Marked: your Tc = 647.1 K gives Hvap = 4.457e+04. Your inputs: T = 298.15 K, T_ref = 373.15 K, Hvap_ref = 40656.0 J/mol, Tc = 647.1 K.*
-
-![Heat of vaporisation at T as Hvap_ref runs from 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-watson-heat-of-vaporization-live-2)
-
-*Heat of vaporisation at T as Hvap_ref runs from 2.439e+04 to 5.692e+04 J/mol, every other input as you entered it (29 solutions). Marked: your Hvap_ref = 4.066e+04 J/mol gives Hvap = 4.457e+04. Your inputs: T = 298.15 K, T_ref = 373.15 K, Hvap_ref = 40656.0 J/mol, Tc = 647.1 K.*
+*Hvap (heat of vaporisation at T) against Tc (critical temperature) from 323.55 K to 970.65 K. One curve for each value of Hvap_ref (heat of vaporisation at T_ref): 40656 J/mol, 20328 J/mol, 81312 J/mol. Other inputs as in the worked example: T = 298.15 K, T_ref = 373.15 K. 28 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Tc = 647.1 K, Hvap = 44571.7 J/mol.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_watson_heat_of_vaporization', T=298.15, T_ref=373.15, Hvap_ref=40656.0, Tc=647.1)
@@ -3431,13 +3187,9 @@ $$
 - **Assumes:** Tb well below Tc
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Heat of vaporisation at the normal boiling point as Tb runs from 254 to 334 K, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-riedel-heat-of-vaporization-live-1)
+![Hvap_b (heat of vaporisation at the normal boiling point) against Tb (normal boiling point) from 147 K to 441 K](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-riedel-heat-of-vaporization-curve)
 
-*Heat of vaporisation at the normal boiling point as Tb runs from 254 to 334 K, every other input as you entered it (41 solutions). Marked: your Tb = 294 K gives Hvap_b = 2.683e+04. Your inputs: Tb = 294.0 K, Tc = 466.0 K, Pc = 5550000.0 Pa.*
-
-![Heat of vaporisation at the normal boiling point as Tc runs from 426 to 506 K, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-riedel-heat-of-vaporization-live-2)
-
-*Heat of vaporisation at the normal boiling point as Tc runs from 426 to 506 K, every other input as you entered it (29 solutions). Marked: your Tc = 466 K gives Hvap_b = 2.683e+04. Your inputs: Tb = 294.0 K, Tc = 466.0 K, Pc = 5550000.0 Pa.*
+*Hvap_b (heat of vaporisation at the normal boiling point) against Tb (normal boiling point) from 147 K to 441 K. Other inputs as in the worked example: Tc = 466.0 K, Pc = 5550000.0 Pa. 30 points computed by chemical-engineering-ai999x; marked: the worked example, Tb = 294 K, Hvap_b = 26828.6 J/mol.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_riedel_heat_of_vaporization', Tb=294.0, Tc=466.0, Pc=5550000.0)
@@ -3482,13 +3234,9 @@ $$
 - **Assumes:** $0.6 < Tr < 1$ (fit range)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Heat of vaporisation as T runs from 412 to 492 K, every other input as you entered it (41 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pitzer-heat-of-vaporization-live-1)
+![Hvap (heat of vaporisation) against Tc (critical temperature) from 322](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pitzer-heat-of-vaporization-curve)
 
-*Heat of vaporisation as T runs from 412 to 492 K, every other input as you entered it (41 solutions). Marked: your T = 452 K gives Hvap = 3.669e+04. Your inputs: T = 452.0 K, Tc = 645.6 K, omega = 0.35.*
-
-![Heat of vaporisation as Tc runs from 605](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pitzer-heat-of-vaporization-live-2)
-
-*Heat of vaporisation as Tc runs from 605.6 to 685.6 K, every other input as you entered it (29 solutions). Marked: your Tc = 645.6 K gives Hvap = 3.669e+04. Your inputs: T = 452.0 K, Tc = 645.6 K, omega = 0.35.*
+*Hvap (heat of vaporisation) against Tc (critical temperature) from 322.8 K to 968.4 K. One curve for each value of omega (acentric factor): 0.35, 0.26, 0.74. Other inputs as in the worked example: T = 452.0 K. 24 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Tc = 645.6 K, Hvap = 36691 J/mol.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pitzer_heat_of_vaporization', T=452.0, Tc=645.6, omega=0.35)
@@ -3534,13 +3282,9 @@ $$
 - **Assumes:** $T < Tc$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Saturated liquid molar volume as Zc runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rackett-liquid-volume-live-1)
+![Vm (saturated liquid molar volume) against Tc (critical temperature) from 184](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rackett-liquid-volume-curve)
 
-*Saturated liquid molar volume as Zc runs from 0.06907 to 0.4835, every other input as you entered it (41 solutions). Marked: your Zc = 0.2763 gives Vm = 8.299e-05. Your inputs: T = 272.03889 K, Tc = 369.83 K, Pc = 4248000.0 Pa, Zc = 0.2763.*
-
-![Saturated liquid molar volume as Pc runs from 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-rackett-liquid-volume-live-2)
-
-*Saturated liquid molar volume as Pc runs from 2.549e+06 to 5.947e+06 Pa, every other input as you entered it (29 solutions). Marked: your Pc = 4.248e+06 Pa gives Vm = 8.299e-05. Your inputs: T = 272.03889 K, Tc = 369.83 K, Pc = 4248000.0 Pa, Zc = 0.2763.*
+*Vm (saturated liquid molar volume) against Tc (critical temperature) from 184.915 K to 554.745 K. One curve for each value of Pc (critical pressure): 4.248e+06 Pa, 2.124e+06 Pa, 8.496e+06 Pa. Other inputs as in the worked example: T = 272.03889 K, Zc = 0.2763. 23 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Tc = 369.83 K, Vm = 8.2992e-05 m^3/mol.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_rackett_liquid_volume', T=272.03889, Tc=369.83, Pc=4248000.0, Zc=0.2763)
@@ -3588,13 +3332,9 @@ $$
 - **Assumes:** moderate pressure (truncated virial equation); non-polar or slightly polar gas
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Compressibility factor as Tc runs from 385](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-virial-compressibility-live-1)
+![Z (compressibility factor) against Pc (critical pressure) from 379600 Pa to 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-virial-compressibility-curve)
 
-*Compressibility factor as Tc runs from 385.1 to 465.1 K, every other input as you entered it (41 solutions). Marked: your Tc = 425.1 K gives Z = 0.8789. Your inputs: T = 510.0 K, P = 2500000.0 Pa, Tc = 425.1 K, Pc = 3796000.0 Pa, omega = 0.2.*
-
-![Compressibility factor as T runs from 470 to 550 K, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-virial-compressibility-live-2)
-
-*Compressibility factor as T runs from 470 to 550 K, every other input as you entered it (29 solutions). Marked: your T = 510 K gives Z = 0.8789. Your inputs: T = 510.0 K, P = 2500000.0 Pa, Tc = 425.1 K, Pc = 3796000.0 Pa, omega = 0.2.*
+*Z (compressibility factor) against Pc (critical pressure) from 379600 Pa to 3.7960e+07 Pa on a logarithmic axis. One curve for each value of Tc (critical temperature): 425.1 K, 212.55 K, 850.2 K. Other inputs as in the worked example: T = 510.0 K, P = 2500000.0 Pa, omega = 0.2. 33 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Pc = 3.796e+06 Pa, Z = 0.878925.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_virial_compressibility', T=510.0, P=2500000.0, Tc=425.1, Pc=3796000.0, omega=0.2)
@@ -3641,11 +3381,7 @@ $$
 
 ![Mass fractions w = [0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mass-to-mole-fractions-bars)
 
-*Mass fractions w = [0.5, 0.5] of 2 components with molar masses [32, 18] g/mol converted to mole fractions. Marked: the model's z = [0.36, 0.64] and mean molar mass 23.06 g/mol; the lighter components gain share by moles. In SI units: MW_mean = 0.02306 kg/mol. Your inputs: w = 0.5, 0.5, MW = 32.042, 18.015.*
-
-![Every entry of z as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mass-to-mole-fractions-live-1)
-
-*Every entry of z as computed for your inputs (2 entries: 0.3599, 0.6401). Your inputs: w = 0.5, 0.5, MW = 32.042, 18.015.*
+*Mass fractions w = [0.5, 0.5] of 2 components with molar masses [32, 18] g/mol (the worked example) converted to mole fractions. Marked: the package's z = [0.3599, 0.6401] and mean molar mass 0.0230632 kg/mol; the lighter component gains share by moles.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_mass_to_mole_fractions', w=[0.5, 0.5], MW=[32.042, 18.015])
@@ -3693,17 +3429,13 @@ $$
 - **Assumes:** steady state, ideal gas, constant D; B stagnant (no net flux of B)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Gas-phase diffusion (A through stagnant B) across a film of thickness L = 100 mm (mole fraction of A 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-stefan-diffusion-flux-profile)
+![Gas-phase diffusion across a film of thickness L = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-stefan-diffusion-flux-profile)
 
-*Gas-phase diffusion (A through stagnant B) across a film of thickness L = 100 mm (mole fraction of A 0.0313 at z = 0 and 0 at z = L). Each inner point is the composition at which the model's flux across that depth equals the flux of the whole film, 0.0003379 mol/(m²·s). Your inputs: D = 2.6e-05 m^2/s, P = 101325.0 Pa, T = 298.15 K, L = 0.1 m, yA1 = 0.0313, yA2 = 0.0.*
+*Gas-phase diffusion across a film of thickness L = 0.1 m (D = 2.6e-05 m²/s, P = 101325.0 Pa, T = 298.15 K; mole fraction of A 0.0313 at z = 0 and 0 at z = L, the worked example). The profile is 1 − yA = (1 − yA1)·((1 − yA2)/(1 − yA1))^(z/L) (A through stagnant B), derived from the end values; B makes up the rest, 1 − yA. Marked: the package's flux N_A = 0.00033795 mol/(m²·s).*
 
-![Molar flux of A as yA1 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-stefan-diffusion-flux-live-1)
+![NA (molar flux of A) against yA1 (mole fraction of A at the start of the path) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-stefan-diffusion-flux-curve)
 
-*Molar flux of A as yA1 runs from 0.007825 to 0.05478, every other input as you entered it (41 solutions). Marked: your yA1 = 0.0313 gives NA = 0.0003379. Your inputs: D = 2.6e-05 m^2/s, P = 101325.0 Pa, T = 298.15 K, L = 0.1 m, yA1 = 0.0313, yA2 = 0.0.*
-
-![Molar flux of A as T runs from 258](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-stefan-diffusion-flux-live-2)
-
-*Molar flux of A as T runs from 258.1 to 338.1 K, every other input as you entered it (29 solutions). Marked: your T = 298.1 K gives NA = 0.0003379. Your inputs: D = 2.6e-05 m^2/s, P = 101325.0 Pa, T = 298.15 K, L = 0.1 m, yA1 = 0.0313, yA2 = 0.0.*
+*NA (molar flux of A) against yA1 (mole fraction of A at the start of the path) from 0.02 to 0.98. One curve for each value of D (diffusivity of A in B): 2.6000e-05 m^2/s, 1.3000e-05 m^2/s, 5.2000e-05 m^2/s. Other inputs as in the worked example: P = 101325.0 Pa, T = 298.15 K, L = 0.1 m, yA2 = 0.0. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, yA1 = 0.0313, NA = 0.00033795 mol/(m^2*s).*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_stefan_diffusion_flux', D=2.6e-05, P=101325.0, T=298.15, L=0.1, yA1=0.0313, yA2=0.0)
@@ -3752,13 +3484,9 @@ $$
 - **Assumes:** 0 < eps < 1; incompressible flow (or small pressure drop for a gas); spherical or equivalent particles
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Pressure drop across the bed as ε runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-ergun-pressure-drop-live-1)
+![dP (pressure drop across the bed) against vs (superficial velocity) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-ergun-pressure-drop-curve)
 
-*Pressure drop across the bed as ε runs from 0.1 to 0.7, every other input as you entered it (41 solutions). Marked: your ε = 0.4 gives dP = 117.2 kPa. Your inputs: dp = 0.0008 m, eps = 0.4, vs = 0.05 m/s, rho = 1000.0 kg/m^3, mu = 0.001 Pa*s, L = 1.0 m.*
-
-![Pressure drop across the bed as dp runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-ergun-pressure-drop-live-2)
-
-*Pressure drop across the bed as dp runs from 0.00048 to 0.00112 m, every other input as you entered it (29 solutions). Marked: your dp = 0.0008 m gives dP = 117.2 kPa. Your inputs: dp = 0.0008 m, eps = 0.4, vs = 0.05 m/s, rho = 1000.0 kg/m^3, mu = 0.001 Pa*s, L = 1.0 m.*
+*dP (pressure drop across the bed) against vs (superficial velocity) from 0.005 m/s to 0.5 m/s on a logarithmic axis. One curve for each value of eps (bed voidage (porosity)): 0.4, 0.26, 0.74. Other inputs as in the worked example: dp = 0.0008 m, rho = 1000.0 kg/m^3, mu = 0.001 Pa*s, L = 1.0 m. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, vs = 0.05 m/s, dP = 117188 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_ergun_pressure_drop', dp=0.0008, eps=0.4, vs=0.05, rho=1000.0, mu=0.001, L=1.0)
@@ -3807,13 +3535,9 @@ $$
 - **Assumes:** 0 < eps < 1; incompressible flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Pressure drop across the bed as ε runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-carman-pressure-drop-live-1)
+![dP (pressure drop across the bed) against vs (superficial velocity) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-carman-pressure-drop-curve)
 
-*Pressure drop across the bed as ε runs from 0.1 to 0.7, every other input as you entered it (41 solutions). Marked: your ε = 0.4 gives dP = 134.4 kPa. Your inputs: dp = 0.0008 m, eps = 0.4, vs = 0.05 m/s, rho = 1000.0 kg/m^3, mu = 0.001 Pa*s, L = 1.0 m.*
-
-![Pressure drop across the bed as dp runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-carman-pressure-drop-live-2)
-
-*Pressure drop across the bed as dp runs from 0.00048 to 0.00112 m, every other input as you entered it (29 solutions). Marked: your dp = 0.0008 m gives dP = 134.4 kPa. Your inputs: dp = 0.0008 m, eps = 0.4, vs = 0.05 m/s, rho = 1000.0 kg/m^3, mu = 0.001 Pa*s, L = 1.0 m.*
+*dP (pressure drop across the bed) against vs (superficial velocity) from 0.005 m/s to 0.5 m/s on a logarithmic axis. One curve for each value of eps (bed voidage (porosity)): 0.4, 0.26, 0.74. Other inputs as in the worked example: dp = 0.0008 m, rho = 1000.0 kg/m^3, mu = 0.001 Pa*s, L = 1.0 m. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, vs = 0.05 m/s, dP = 134368 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_carman_pressure_drop', dp=0.0008, eps=0.4, vs=0.05, rho=1000.0, mu=0.001, L=1.0)
@@ -3862,13 +3586,9 @@ $$
 - **Assumes:** constant pressure, incompressible cake; $Rm > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Filtrate volume collected as A runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cake-filtration-volume-live-1)
+![V (filtrate volume collected) against mu (filtrate viscosity) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cake-filtration-volume-curve)
 
-*Filtrate volume collected as A runs from 0.6 to 1.4 m^2, every other input as you entered it (41 solutions). Marked: your A = 1 m^2 gives V = 240 L. Your inputs: A = 1.0 m^2, dP = 100000.0 Pa, mu = 0.001 Pa*s, alpha = 100000000000.0 m/kg, c = 20.0 kg/m^3, Rm = 10000000000.0 1/m, t = 600.0 s.*
-
-![Filtrate volume collected as dP runs from 6e+04 to 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cake-filtration-volume-live-2)
-
-*Filtrate volume collected as dP runs from 6e+04 to 1.4e+05 Pa, every other input as you entered it (29 solutions). Marked: your dP = 1e+05 Pa gives V = 240 L. Your inputs: A = 1.0 m^2, dP = 100000.0 Pa, mu = 0.001 Pa*s, alpha = 100000000000.0 m/kg, c = 20.0 kg/m^3, Rm = 10000000000.0 1/m, t = 600.0 s.*
+*V (filtrate volume collected) against mu (filtrate viscosity) from 0.0005 Pa*s to 0.0015 Pa*s. One curve for each value of A (filter area): 1 m^2, 0.5 m^2, 2 m^2. Other inputs as in the worked example: dP = 100000.0 Pa, alpha = 100000000000.0 m/kg, c = 20.0 kg/m^3, Rm = 10000000000.0 1/m, t = 600.0 s. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, mu = 0.001 Pa*s, V = 0.24 m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cake_filtration_volume', A=1.0, dP=100000.0, mu=0.001, alpha=100000000000.0, c=20.0, Rm=10000000000.0, t=600.0)
@@ -3921,17 +3641,13 @@ $$
 - **Assumes:** constant pressure, incompressible cake; a positive slope and intercept
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Constant-pressure filtration data (6 times and filtrate volumes) as t/V against V, with the straight line the model fits (slope 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-filtration-constants-fit-fit)
+![Constant-pressure filtration data (the worked example: 6 times in s and filtrate volumes in L, area 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-filtration-constants-fit-fit)
 
-*Constant-pressure filtration data (6 times and filtrate volumes) as t/V against V, with the straight line the model fits (slope 1.302e+07 s/m⁶, intercept 2.823e+04 s/m³, drawn per L). From the line: specific cake resistance 8.078e+11 m/kg and medium resistance 4.68e+11 1/m. Your inputs: t = 17.3, 41.3, 72, 108.3..., V = 0.5, 1, 1.5, 2, 2.5, 3, t_unit = s, v_unit = L, A = 0.0439 m^2, dP = 338000 Pa, mu = 0.000895 Pa*s, c = 23.47 kg/m^3.*
+*Constant-pressure filtration data (the worked example: 6 times in s and filtrate volumes in L, area 0.0439 m², Δp = 338000.0 Pa, μ = 0.000895 Pa·s, solids 23.47 kg/m³) as t/V against V, with the straight line the package fits (slope 1.3025e+07 s/m⁶, intercept 28226.9 s/m³, drawn in litres). From them it returns the cake resistance α = 8.0782e+11 m/kg and the medium resistance Rm = 4.6797e+11 1/m; marked: the intercept.*
 
-![Specific cake resistance as A runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-filtration-constants-fit-live-1)
+![alpha (specific cake resistance) against mu (filtrate viscosity) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-filtration-constants-fit-curve)
 
-*Specific cake resistance as A runs from 0.02634 to 0.06146 m^2, every other input as you entered it (41 solutions). Marked: your A = 0.0439 m^2 gives α = 8.078e+11. Your inputs: t = 17.3, 41.3, 72, 108.3..., V = 0.5, 1, 1.5, 2, 2.5, 3, t_unit = s, v_unit = L, A = 0.0439 m^2, dP = 338000 Pa, mu = 0.000895 Pa*s, c = 23.47 kg/m^3.*
-
-![Specific cake resistance as μ runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-filtration-constants-fit-live-2)
-
-*Specific cake resistance as μ runs from 0.000537 to 0.001253 Pa*s, every other input as you entered it (29 solutions). Marked: your μ = 0.000895 Pa*s gives α = 8.078e+11. Your inputs: t = 17.3, 41.3, 72, 108.3..., V = 0.5, 1, 1.5, 2, 2.5, 3, t_unit = s, v_unit = L, A = 0.0439 m^2, dP = 338000 Pa, mu = 0.000895 Pa*s, c = 23.47 kg/m^3.*
+*alpha (specific cake resistance) against mu (filtrate viscosity) from 0.0004475 Pa*s to 0.0013425 Pa*s. One curve for each value of A (filter area): 0.0439 m^2, 0.02195 m^2, 0.0878 m^2. Other inputs as in the worked example: t = [17.3, 41.3, 72.0, 108.3, 152.1, 201.7], V = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0], t_unit = s, v_unit = L, dP = 338000.0 Pa, c = 23.47 kg/m^3. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, mu = 0.000895 Pa*s, alpha = 8.0782e+11 m/kg.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_filtration_constants_fit', t=[17.3, 41.3, 72.0, 108.3, 152.1, 201.7], V=[0.5, 1.0, 1.5, 2.0, 2.5, 3.0], t_unit='s', v_unit='L', A=0.0439, dP=338000.0, mu=0.000895, c=23.47)
@@ -3978,17 +3694,13 @@ $$
 - **Assumes:** the process starts at steady state; linear first-order dynamics with dead time
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Step response of a first-order-plus-dead-time process (gain K = 2, time constant τ = 300 s, dead time θ = 60 s) to a step of size M = 5: the model's output at 81 times](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fopdt-step-response-response)
+![Step response of a first-order-plus-dead-time process (gain K = 2, time constant τ = 300 s, dead time θ = 60 s) to a step of size M = 5 (the worked example): the package's output at 81 times](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fopdt-step-response-response)
 
-*Step response of a first-order-plus-dead-time process (gain K = 2, time constant τ = 300 s, dead time θ = 60 s) to a step of size M = 5: the model's output at 81 times. Final value (the model at a long time): 10. Marked: y = 6.321 at t = 360 s. Your inputs: K = 2.0, tau = 300.0 s, theta = 60.0 s, M = 5.0, t = 360.0 s.*
+*Step response of a first-order-plus-dead-time process (gain K = 2, time constant τ = 300 s, dead time θ = 60 s) to a step of size M = 5 (the worked example): the package's output at 81 times. Guides: the final value K·M = 10 and the times θ and θ + τ (where 63.2 % of the change is reached), derived from the inputs. Marked: y = 6.32121 at t = 360 s.*
 
-![Output deviation at time t (in the output's](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fopdt-step-response-live-1)
+![y (output deviation at time t (in the output's units)) against theta (dead time) from 6 s to 600 s on a logarithmic axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fopdt-step-response-curve)
 
-*Output deviation at time t (in the output's... as K runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your K = 2 gives y = 6.321. Your inputs: K = 2.0, tau = 300.0 s, theta = 60.0 s, M = 5.0, t = 360.0 s.*
-
-![Output deviation at time t (in the output's](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fopdt-step-response-live-2)
-
-*Output deviation at time t (in the output's... as M runs from 1.25 to 8.75, every other input as you entered it (29 solutions). Marked: your M = 5 gives y = 6.321. Your inputs: K = 2.0, tau = 300.0 s, theta = 60.0 s, M = 5.0, t = 360.0 s.*
+*y (output deviation at time t (in the output's units)) against theta (dead time) from 6 s to 600 s on a logarithmic axis. One curve for each value of K (process gain (output change per unit input change)): 2, 1, 4. Other inputs as in the worked example: tau = 300.0 s, M = 5.0, t = 360.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, theta = 60 s, y = 6.32121.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_fopdt_step_response', K=2.0, tau=300.0, theta=60.0, M=5.0, t=360.0)
@@ -4036,17 +3748,13 @@ $$
 - **Assumes:** Kc $K > 0$; the closed loop is stable (checked by the Routh array)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Steady-state offset per unit set-point change over controller gain Kc and process gain K: each of the 21 × 15 cells is one run of the model, shaded by its value (darker = larger; refused cells blank)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-p-control-offset-field)
+![offset (steady-state offset per unit set-point change) against Kc (controller gain) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-p-control-offset-curve)
 
-*Steady-state offset per unit set-point change over controller gain Kc and process gain K: each of the 21 × 15 cells is one run of the model, shaded by its value (darker = larger; refused cells blank). Marked: the visitor's point, offset = 0.25. Your inputs: Kc = 2, K = 1.5, taus = 5, 2, t_unit = min.*
+*offset (steady-state offset per unit set-point change) against Kc (controller gain) from 0.2 to 20 on a logarithmic axis. One curve for each value of K (process gain): 1.5, 0.75, 3. Other inputs as in the worked example: taus = [5.0, 2.0], t_unit = min. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Kc = 2, offset = 0.25.*
 
-![Steady-state offset per unit set-point change as Kc runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-p-control-offset-live-1)
+![offset (steady-state offset per unit set-point change) over Kc (controller gain) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-p-control-offset-field)
 
-*Steady-state offset per unit set-point change as Kc runs from 0.5 to 3.5, every other input as you entered it (39 solutions). Marked: your Kc = 2 gives offset = 0.25. Your inputs: Kc = 2, K = 1.5, taus = 5, 2, t_unit = min.*
-
-![Steady-state offset per unit set-point change as K runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-p-control-offset-live-2)
-
-*Steady-state offset per unit set-point change as K runs from 0.375 to 2.625, every other input as you entered it (29 solutions). Marked: your K = 1.5 gives offset = 0.25. Your inputs: Kc = 2, K = 1.5, taus = 5, 2, t_unit = min.*
+*offset (steady-state offset per unit set-point change) over Kc (controller gain) from 0.2 to 20 and K (process gain) from 0.15 to 15 (logarithmic axes): each of the 21 × 15 cells is one run of chemical-engineering-ai999x, shaded by its value (light 0.00332226 to dark 0.970874); iso-lines at offset = 0.2, 0.4, 0.6, 0.8. Other inputs as in the worked example: taus = [5.0, 2.0], t_unit = min. Marked: the worked example, Kc = 2, K = 1.5, offset = 0.25.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_p_control_offset', Kc=2.0, K=1.5, taus=[5.0, 2.0], t_unit='min')
@@ -4094,17 +3802,13 @@ $$
 - **Assumes:** $K > 0$; linear lags without dead time
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Bode diagram of a gain K = 2 with first-order lags τ = [10] (s): amplitude ratio (log-log, top) and phase (bottom) from the model at 61 frequencies over four decades around the given one](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lag-frequency-response-response)
+![Bode diagram of a gain K = 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lag-frequency-response-response)
 
-*Bode diagram of a gain K = 2 with first-order lags τ = [10] (s): amplitude ratio (log-log, top) and phase (bottom) from the model at 61 frequencies over four decades around the given one. Marked: ω = 0.1 rad/s, AR = 1.414, phase -45°. Your inputs: K = 2, taus = 10, t_unit = s, w = 0.1 rad/s.*
+*Bode diagram of a gain K = 2.0 with first-order lags τ = [10.0] s (the worked example): amplitude ratio (log–log, top) and phase (bottom) from the package at 61 frequencies over four decades around 1/τ. Marked: ω = 0.1 rad/s, AR = 1.41421, phase -45°.*
 
-![Amplitude ratio (output amplitude per input](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lag-frequency-response-live-1)
+![AR (amplitude ratio (output amplitude per input amplitude)) against w (angular frequency of the input sinusoid) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lag-frequency-response-curve)
 
-*Amplitude ratio (output amplitude per input... as K runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your K = 2 gives AR = 1.414. Your inputs: K = 2, taus = 10, t_unit = s, w = 0.1 rad/s.*
-
-![Amplitude ratio (output amplitude per input](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-lag-frequency-response-live-2)
-
-*Amplitude ratio (output amplitude per input... as w runs from 0.06 to 0.14 rad/s, every other input as you entered it (29 solutions). Marked: your w = 0.1 rad/s gives AR = 1.414. Your inputs: K = 2, taus = 10, t_unit = s, w = 0.1 rad/s.*
+*AR (amplitude ratio (output amplitude per input amplitude)) against w (angular frequency of the input sinusoid) from 0.01 rad/s to 1 rad/s on a logarithmic axis. One curve for each value of K (process gain): 2, 1, 4. Other inputs as in the worked example: taus = [10.0], t_unit = s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, w = 0.1 rad/s, AR = 1.41421.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_lag_frequency_response', K=2.0, taus=[10.0], t_unit='s', w=0.1)
@@ -4153,21 +3857,13 @@ $$
 - **Assumes:** position form, $e_0 = 0$ before the first sample; rectangular integration including the current sample
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A discrete PID controller (Kc = 2, τI = 10 s, τD = 1 s, sample time 1 s, bias 50) fed the error samples [1, 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pid-controller-output-response)
+![A discrete PID controller (Kc = 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pid-controller-output-response)
 
-*A discrete PID controller (Kc = 2, τI = 10 s, τD = 1 s, sample time 1 s, bias 50) fed the error samples [1, 0.8, 0.5, 0.3] (top). Below: the model's outputs u = [54.2, 51.6, 50.9, 50.7], last 50.72. Your inputs: Kc = 2, tauI = 10 s, tauD = 1 s, dt = 1 s, e = 1, 0.8, 0.5, 0.3, bias = 50.*
+*A discrete PID controller (Kc = 2.0, τI = 10.0 s, τD = 1.0 s, sample time 1 s, bias 50.0; the worked example) fed the error samples [1.0, 0.8, 0.5, 0.3] (top). Marked (bottom): the package's outputs u = [54.2, 51.56, 50.86, 50.72], last 50.72.*
 
-![Controller output at the last sample as bias runs from 12](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pid-controller-output-live-1)
+![u_last (controller output at the last sample) against tauI (integral (reset) time) from 1 s to 100 s on a logarithmic axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pid-controller-output-curve)
 
-*Controller output at the last sample as bias runs from 12.5 to 87.5, every other input as you entered it (41 solutions). Marked: your bias = 50 gives u_last = 50.72. Your inputs: Kc = 2, tauI = 10 s, tauD = 1 s, dt = 1 s, e = 1, 0.8, 0.5, 0.3, bias = 50.*
-
-![Every entry of u as computed for your inputs (4 entries: 54](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pid-controller-output-live-2)
-
-*Every entry of u as computed for your inputs (4 entries: 54.2, 51.56, 50.86, 50.72). Your inputs: Kc = 2, tauI = 10 s, tauD = 1 s, dt = 1 s, e = 1, 0.8, 0.5, 0.3, bias = 50.*
-
-![Controller output at the last sample as e[3] runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pid-controller-output-live-3)
-
-*Controller output at the last sample as e[3] runs from 0.075 to 0.525, every other input as you entered it (29 solutions). Marked: your e[3] = 0.3 gives u_last = 50.72. Your inputs: Kc = 2, tauI = 10 s, tauD = 1 s, dt = 1 s, e = 1, 0.8, 0.5, 0.3, bias = 50.*
+*u_last (controller output at the last sample) against tauI (integral (reset) time) from 1 s to 100 s on a logarithmic axis. One curve for each value of bias (controller output bias (output when the error has always been zero)): 50, 25, 100. Other inputs as in the worked example: Kc = 2.0, tauD = 1.0 s, dt = 1.0 s, e = [1.0, 0.8, 0.5, 0.3]. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, tauI = 10 s, u_last = 50.72.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pid_controller_output', Kc=2.0, tauI=10.0, tauD=1.0, dt=1.0, e=[1.0, 0.8, 0.5, 0.3], bias=50.0)
@@ -4217,13 +3913,9 @@ $$
 - **Assumes:** three or more lags (a finite ultimate gain); $K > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Ultimate gain as K runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-ziegler-nichols-tuning-live-1)
+![Ku (ultimate gain) against K (process gain) from 1 to 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-ziegler-nichols-tuning-curve)
 
-*Ultimate gain as K runs from 0.5 to 3.5, every other input as you entered it (41 solutions). Marked: your K = 2 gives Ku = 4. Your inputs: K = 2, taus = 1, 1, 1, t_unit = min, controller = PID.*
-
-![Ultimate gain as taus[1] runs from 1 to 5, every other input as you entered it (5 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-ziegler-nichols-tuning-live-2)
-
-*Ultimate gain as taus[1] runs from 1 to 5, every other input as you entered it (5 solutions). Marked: your taus[1] = 1 gives Ku = 4. Your inputs: K = 2, taus = 1, 1, 1, t_unit = min, controller = PID.*
+*Ku (ultimate gain) against K (process gain) from 1 to 3. Other inputs as in the worked example: taus = [1.0, 1.0, 1.0], t_unit = min, controller = PID. 31 points computed by chemical-engineering-ai999x; marked: the worked example, K = 2, Ku = 4.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_ziegler_nichols_tuning', K=2.0, taus=[1.0, 1.0, 1.0], t_unit='min', controller='PID')
@@ -4271,17 +3963,13 @@ $$
 - **Assumes:** proper process; no pole on the imaginary axis or nearly repeated poles (refused)
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Stable or unstable along Kc from 1 to 100 (logarithmic axis): 81 runs of the model, each band coloured by the verdict returned (stable, unstable); it changes near Kc = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-closed-loop-stability-decision)
+![stable or unstable (text) (stable) along Kc (controller gain) from 1 to 100 (logarithmic axis): 81 runs of chemical-engineering-ai999x, each band coloured by the verdict returned (stable, unstable); it changes near Kc = 8](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-closed-loop-stability-decision)
 
-*Stable or unstable along Kc from 1 to 100 (logarithmic axis): 81 runs of the model, each band coloured by the verdict returned (stable, unstable); it changes near Kc = 8.175; the line is the largest real part of the closed-loop poles. Marked: Kc = 10, unstable. In SI units: max_real = 0.07722. Your inputs: num = 1, den = 1, 3, 3, 1, Kc = 10.*
+*stable or unstable (text) (stable) along Kc (controller gain) from 1 to 100 (logarithmic axis): 81 runs of chemical-engineering-ai999x, each band coloured by the verdict returned (stable, unstable); it changes near Kc = 8.17523; the line is max_real (largest real part of the closed-loop poles, 1/(time unit of the coefficients)). Other inputs as in the worked example: num = [1.0], den = [1.0, 3.0, 3.0, 1.0]. Marked: the worked example, Kc = 10 → unstable.*
 
-![Largest real part of the closed-loop poles](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-closed-loop-stability-live-1)
+![max_real (largest real part of the closed-loop poles, 1/(time unit of the coefficients)) against Kc (controller gain) from 1 to 100 on a logarithmic axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-closed-loop-stability-curve)
 
-*Largest real part of the closed-loop poles... as Kc runs from 2.5 to 17.5, every other input as you entered it (41 solutions). Marked: your Kc = 10 gives max_real = 0.07722. Shaded by stable or unstable (text): stable, unstable. Your inputs: num = 1, den = 1, 3, 3, 1, Kc = 10.*
-
-![Largest real part of the closed-loop poles](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-closed-loop-stability-live-2)
-
-*Largest real part of the closed-loop poles... as den[0] runs from 0 to 5, every other input as you entered it (6 solutions). Marked: your den[0] = 1 gives max_real = 0.07722. Shaded by stable or unstable (text): stable, unstable. Your inputs: num = 1, den = 1, 3, 3, 1, Kc = 10.*
+*max_real (largest real part of the closed-loop poles, 1/(time unit of the coefficients)) against Kc (controller gain) from 1 to 100 on a logarithmic axis. Other inputs as in the worked example: num = [1.0], den = [1.0, 3.0, 3.0, 1.0]. 41 points computed by chemical-engineering-ai999x; marked: the worked example, Kc = 10, max_real = 0.0772173.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_closed_loop_stability', num=[1.0], den=[1.0, 3.0, 3.0, 1.0], Kc=10.0)
@@ -4331,13 +4019,9 @@ $$
 - **Assumes:** one phase crossover (refused otherwise); Kc $K > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Gain margin as Kc runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pi-loop-margins-live-1)
+![GM (gain margin (ratio)) against Kc (controller gain) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pi-loop-margins-curve)
 
-*Gain margin as Kc runs from 0.25 to 1.75, every other input as you entered it (41 solutions). Marked: your Kc = 1 gives GM = 3.221. Your inputs: Kc = 1, tauI = 5 s, K = 2, taus = 1, 1, 1, t_unit = min.*
-
-![Gain margin as K runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pi-loop-margins-live-2)
-
-*Gain margin as K runs from 0.5 to 3.5, every other input as you entered it (29 solutions). Marked: your K = 2 gives GM = 3.221. Your inputs: Kc = 1, tauI = 5 s, K = 2, taus = 1, 1, 1, t_unit = min.*
+*GM (gain margin (ratio)) against Kc (controller gain) from 0.5 to 1.5. One curve for each value of K (process gain): 2, 1, 4. Other inputs as in the worked example: tauI = 5.0 s, taus = [1.0, 1.0, 1.0], t_unit = min. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Kc = 1, GM = 3.22094.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pi_loop_margins', Kc=1.0, tauI=5.0, K=2.0, taus=[1.0, 1.0, 1.0], t_unit='min')
@@ -4385,17 +4069,13 @@ $$
 - **Assumes:** step from steady state; first-order response after the dead time; a unique interior least-squares minimum
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A measured step response (12 samples in min, step size M = 5, dead time θ = 60 s) and the first-order model fitted by the model, K = 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-first-order-step-fit-fit)
+![A measured step response (the worked example: 12 samples in min, step size M = 5, dead time θ = 60 s) and the first-order model fitted by the package, K = 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-first-order-step-fit-fit)
 
-*A measured step response (12 samples in min, step size M = 5, dead time θ = 60 s) and the first-order model fitted by the model, K = 1.867, τ = 292.8 s, drawn with its own step-response capability at 81 times. Marked: the model at t = θ + τ. The final value K·M = 9.335. Your inputs: t = 0, 1, 2, 3, 4, 5, 6, 8..., y = 0, 0, 1.7, 3.1, 4.3..., t_unit = min, M = 5, theta = 60 s.*
+*A measured step response (the worked example: 12 samples in min, step size M = 5, dead time θ = 60 s) and the first-order model fitted by the package, K = 1.86707, τ = 292.778 s, drawn with its own step-response capability at 81 times. Marked: the model at t = θ + τ; the final value K·M = 9.33537 is derived.*
 
-![Process gain as M runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-first-order-step-fit-live-1)
+![tau (time constant) against theta (dead time (known)) from 6 s to 600 s on a logarithmic axis](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-first-order-step-fit-curve)
 
-*Process gain as M runs from 1.25 to 8.75, every other input as you entered it (41 solutions). Marked: your M = 5 gives K = 1.867. Your inputs: t = 0, 1, 2, 3, 4, 5, 6, 8..., y = 0, 0, 1.7, 3.1, 4.3..., t_unit = min, M = 5, theta = 60 s.*
-
-![Time constant as θ runs from 36 to 84 s, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-first-order-step-fit-live-2)
-
-*Time constant as θ runs from 36 to 84 s, every other input as you entered it (29 solutions). Marked: your θ = 60 s gives τ = 4.88 min. Your inputs: t = 0, 1, 2, 3, 4, 5, 6, 8..., y = 0, 0, 1.7, 3.1, 4.3..., t_unit = min, M = 5, theta = 60 s.*
+*tau (time constant) against theta (dead time (known)) from 6 s to 600 s on a logarithmic axis. Other inputs as in the worked example: t = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20], y = [0.0, 0.0, 1.7, 3.1, 4.3, 5.2, 6.0, 7.1, 7.9…, t_unit = min, M = 5.0. 41 points computed by chemical-engineering-ai999x; marked: the worked example, theta = 60 s, tau = 292.778 s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_first_order_step_fit', t=[0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20], y=[0.0, 0.0, 1.7, 3.1, 4.3, 5.2, 6.0, 7.1, 7.9, 8.4, 8.8, 9.1], t_unit='min', M=5.0, theta=60.0)
@@ -4446,13 +4126,9 @@ $$
 - **Assumes:** steady state, single-phase incompressible flow; $re > rw$, $pe > pw$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Flow rate at reservoir conditions as pe runs from 1](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-radial-darcy-flow-live-1.svg)
+![q (flow rate at reservoir conditions) against mu (fluid viscosity (cP is converted here)) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-radial-darcy-flow-curve)
 
-*Flow rate at reservoir conditions as pe runs from 1.737e+07 to 2.896e+07 Pa, every other input as you entered it (29 solutions). Marked: your pe = 2.068e+07 Pa gives q = 1.607 L/s. Your inputs: k = 9.869233e-14 m^2, h = 9.144 m, mu = 0.0015 Pa*s, pe = 20684271.879505083 Pa, pw = 17236893.232920904 Pa, re = 304.8 m, rw = 0.09144000000000001 m.*
-
-![Flow rate at reservoir conditions as pw runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-radial-darcy-flow-live-2)
-
-*Flow rate at reservoir conditions as pw runs from 1.034e+07 to 2.019e+07 Pa, every other input as you entered it (21 solutions). Marked: your pw = 1.724e+07 Pa gives q = 1.607 L/s. Your inputs: k = 9.869233e-14 m^2, h = 9.144 m, mu = 0.0015 Pa*s, pe = 20684271.879505083 Pa, pw = 17236893.232920904 Pa, re = 304.8 m, rw = 0.09144000000000001 m.*
+*q (flow rate at reservoir conditions) against mu (fluid viscosity (cP is converted here)) from 0.00075 Pa*s to 0.00225 Pa*s. One curve for each value of pe (pressure at the drainage radius): 2.0684e+07 Pa, 4.1369e+07 Pa. Other inputs as in the worked example: k = 9.869233e-14 m^2, h = 9.144 m, pw = 17236893.232920904 Pa, re = 304.8 m, rw = 0.09144000000000001 m. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, mu = 0.0015 Pa*s, q = 0.00160651 m^3/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_radial_darcy_flow', k=9.869233e-14, h=9.144, mu=0.0015, pe=20684271.879505083, pw=17236893.232920904, re=304.8, rw=0.09144000000000001)
@@ -4500,13 +4176,9 @@ $$
 - **Assumes:** boundary-dominated flow, constant operating conditions
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rate at time t as qi runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-exponential-decline-live-1)
+![q (rate at time t) against Di (initial nominal decline rate, e](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-exponential-decline-curve)
 
-*Rate at time t as qi runs from 0.001104 to 0.002576 m^3/s, every other input as you entered it (41 solutions). Marked: your qi = 0.00184 m^3/s gives q = 1.01 L/s. Your inputs: qi = 0.0018401307283333335 m^3/s, Di = 9.506426344208685e-09 1/s, t = 63115200.0 s.*
-
-![Rate at time t as t runs from 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-exponential-decline-live-2)
-
-*Rate at time t as t runs from 3.787e+07 to 8.836e+07 s, every other input as you entered it (29 solutions). Marked: your t = 6.312e+07 s gives q = 1.01 L/s. Your inputs: qi = 0.0018401307283333335 m^3/s, Di = 9.506426344208685e-09 1/s, t = 63115200.0 s.*
+*q (rate at time t) against Di (initial nominal decline rate, e.g. 0.3 1/yr) from 9.5064e-10 1/s to 9.5064e-08 1/s on a logarithmic axis. One curve for each value of qi (initial rate (bbl/day and STB/day are converted here)): 0.00184013 m^3/s, 0.000920065 m^3/s, 0.00368026 m^3/s. Other inputs as in the worked example: t = 63115200.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Di = 9.5064e-09 1/s, q = 0.00100989 m^3/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_exponential_decline', qi=0.0018401307283333335, Di=9.506426344208685e-09, t=63115200.0)
@@ -4555,17 +4227,13 @@ $$
 - **Assumes:** $0 < b < 1$; boundary-dominated flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Well production rate against time for the decline laws from the same initial rate qi = 159 m³/day and decline Di = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-hyperbolic-decline-decline)
+![Well production rate against time for three decline laws from the same initial rate qi = 158](https://huggingface.co/AI999X/chemical-engineering-ai999x/resolve/main/figures/chemeng-hyperbolic-decline-decline.svg)
 
-*Well production rate against time for the decline laws from the same initial rate qi = 159 m³/day and decline Di = 0.5 per year, each computed by the model at 81 times over 9 years. Marked: the given b = 0.5 at t = 3 years, q = 51.91 m³/day. In SI units: q = 0.0006009 m^3/s. Your inputs: qi = 0.0018401307283333335 m^3/s, Di = 1.5844043907014474e-08 1/s, b = 0.5, t = 94672800.0 s.*
+*Well production rate against time for three decline laws from the same initial rate qi = 158.987 m³/day, each computed by the package at 81 times over 10 years. After 10 years: exponential (Di = 0.3 per year) 7.91551 m³/day; hyperbolic, b = 0.5 (Di = 0.5 per year) 12.9786 m³/day; harmonic (Di = 0.4 per year) 31.7975 m³/day.*
 
-![Rate at time t as qi runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-hyperbolic-decline-live-1)
+![q (rate at time t) against Di (initial nominal decline rate, e](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-hyperbolic-decline-curve)
 
-*Rate at time t as qi runs from 0.001104 to 0.002576 m^3/s, every other input as you entered it (41 solutions). Marked: your qi = 0.00184 m^3/s gives q = 0.6009 L/s. Your inputs: qi = 0.0018401307283333335 m^3/s, Di = 1.5844043907014474e-08 1/s, b = 0.5, t = 94672800.0 s.*
-
-![Rate at time t as Di runs from 9](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-hyperbolic-decline-live-2)
-
-*Rate at time t as Di runs from 9.506e-09 to 2.218e-08 1/s, every other input as you entered it (29 solutions). Marked: your Di = 1.584e-08 1/s gives q = 0.6009 L/s. Your inputs: qi = 0.0018401307283333335 m^3/s, Di = 1.5844043907014474e-08 1/s, b = 0.5, t = 94672800.0 s.*
+*q (rate at time t) against Di (initial nominal decline rate, e.g. 0.3 1/yr) from 1.5844e-09 1/s to 1.5844e-07 1/s on a logarithmic axis. One curve for each value of qi (initial rate (bbl/day and STB/day are converted here)): 0.00184013 m^3/s, 0.000920065 m^3/s, 0.00368026 m^3/s. Other inputs as in the worked example: b = 0.5, t = 94672800.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Di = 1.5844e-08 1/s, q = 0.000600859 m^3/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_hyperbolic_decline', qi=0.0018401307283333335, Di=1.5844043907014474e-08, b=0.5, t=94672800.0)
@@ -4612,13 +4280,9 @@ $$
 - **Assumes:** boundary-dominated flow
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Rate at time t as qi runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-harmonic-decline-live-1)
+![q (rate at time t) against Di (initial nominal decline rate, e](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-harmonic-decline-curve)
 
-*Rate at time t as qi runs from 0.001104 to 0.002576 m^3/s, every other input as you entered it (41 solutions). Marked: your qi = 0.00184 m^3/s gives q = 0.8364 L/s. Your inputs: qi = 0.0018401307283333335 m^3/s, Di = 1.2675235125611581e-08 1/s, t = 94672800.0 s.*
-
-![Rate at time t as t runs from 5](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-harmonic-decline-live-2)
-
-*Rate at time t as t runs from 5.68e+07 to 1.325e+08 s, every other input as you entered it (29 solutions). Marked: your t = 9.467e+07 s gives q = 0.8364 L/s. Your inputs: qi = 0.0018401307283333335 m^3/s, Di = 1.2675235125611581e-08 1/s, t = 94672800.0 s.*
+*q (rate at time t) against Di (initial nominal decline rate, e.g. 0.3 1/yr) from 1.2675e-09 1/s to 1.2675e-07 1/s on a logarithmic axis. One curve for each value of qi (initial rate (bbl/day and STB/day are converted here)): 0.00184013 m^3/s, 0.000920065 m^3/s, 0.00368026 m^3/s. Other inputs as in the worked example: t = 94672800.0 s. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, Di = 1.2675e-08 1/s, q = 0.000836423 m^3/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_harmonic_decline', qi=0.0018401307283333335, Di=1.2675235125611581e-08, t=94672800.0)
@@ -4663,9 +4327,9 @@ $$
 - **Assumes:** volumetric reservoir (no water influx); F and Et on one consistent basis
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Havlena-Odeh straight line for an oil reservoir without gas cap or aquifer (4 points): the model fits F = N·Et through the origin](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-havlena-odeh-oil-in-place-fit)
+![Havlena–Odeh straight line for an oil reservoir without gas cap or aquifer (the worked example: withdrawals [580700](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-havlena-odeh-oil-in-place-fit)
 
-*Havlena-Odeh straight line for an oil reservoir without gas cap or aquifer (4 points): the model fits F = N·Et through the origin. Marked: the slope, oil initially in place N = 5.762e+07 bbl. In SI units: N = 9.161e+06 m^3. Your inputs: F = 580700, 1600000, 2800000,..., Et = 0.0101, 0.0278, 0.0485..., v_unit = bbl.*
+*Havlena–Odeh straight line for an oil reservoir without gas cap or aquifer (the worked example: withdrawals [580700.0, 1600000.0, 2800000.0, 4100000.0] bbl at expansions [0.0101, 0.0278, 0.0485, 0.0712]): the package fits F = N·Et through the origin. Marked: the slope, oil initially in place N = 9.1612e+06 m³ (5.7622e+07 bbl, converted).*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_havlena_odeh_oil_in_place', F=[580700.0, 1600000.0, 2800000.0, 4100000.0], Et=[0.0101, 0.0278, 0.0485, 0.0712], v_unit='bbl')
@@ -4712,9 +4376,9 @@ $$
 - **Assumes:** no water influx; consistent units
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Havlena-Odeh straight line with a gas cap (4 points): F/Eo against Eg/Eo (ratios of the inputs) and the line the model fits](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-havlena-odeh-gas-cap-fit)
+![Havlena–Odeh straight line with a gas cap (the worked example: withdrawals [5000000](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-havlena-odeh-gas-cap-fit)
 
-*Havlena-Odeh straight line with a gas cap (4 points): F/Eo against Eg/Eo (ratios of the inputs) and the line the model fits. Marked: the intercept, oil initially in place N = 3.183e+08 bbl; gas-cap ratio m = 0.2267. In SI units: N = 5.06e+07 m^3. Your inputs: F = 5000000, 9300000, 1430000..., Eo = 0.01, 0.018, 0.027, 0.036, Eg = 0.025, 0.05, 0.08, 0.11, v_unit = bbl.*
+*Havlena–Odeh straight line with a gas cap (the worked example: withdrawals [5000000.0, 9300000.0, 14300000.0, 19500000.0] bbl, oil expansions [0.01, 0.018, 0.027, 0.036], gas-cap expansions [0.025, 0.05, 0.08, 0.11]): F/Eo against Eg/Eo (ratios derived from the inputs) and the line the package fits. Marked: oil in place N = 5.0598e+07 m³ (318.254 MMbbl, converted) as the intercept, gas-cap ratio m = 0.226683 from the slope N·m.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_havlena_odeh_gas_cap', F=[5000000.0, 9300000.0, 14300000.0, 19500000.0], Eo=[0.01, 0.018, 0.027, 0.036], Eg=[0.025, 0.05, 0.08, 0.11], v_unit='bbl')
@@ -4762,9 +4426,9 @@ $$
 - **Assumes:** volumetric (no water drive) gas reservoir; p/z falls with production
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Gas material balance (4 surveys): p/z of each survey (from the inputs) against cumulative production, and the straight line the model fits](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-gas-pz-material-balance-fit)
+![Gas material balance (the worked example: pressures [3200](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-gas-pz-material-balance-fit)
 
-*Gas material balance (4 surveys): p/z of each survey (from the inputs) against cumulative production, and the straight line the model fits. Marked: initial p/z = 3783 psi and the gas in place G = 176.3 Bscf where the line reaches p/z = 0. In SI units: G = 4.994e+09 m^3. Your inputs: p = 3200, 2925, 2525, 2125, z = 0.85, 0.84, 0.83, 0.82, Gp = 0, 15, 35, 55, p_unit = psi, gp_unit = Bscf.*
+*Gas material balance (the worked example: pressures [3200.0, 2925.0, 2525.0, 2125.0] psi, deviation factors [0.85, 0.84, 0.83, 0.82], cumulative production [0.0, 15.0, 35.0, 55.0] Bscf): p/z of each survey (derived from the inputs) against production, and the straight line the package fits. Marked: its p/z at no production, 2.6085e+07 Pa (3783.29 psi), and the original gas in place G = 4.9935e+09 m³ (176.344 Bscf, converted), where the line reaches zero.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_gas_pz_material_balance', p=[3200.0, 2925.0, 2525.0, 2125.0], z=[0.85, 0.84, 0.83, 0.82], Gp=[0.0, 15.0, 35.0, 55.0], p_unit='psi', gp_unit='Bscf')
@@ -4816,17 +4480,13 @@ $$
 - **Assumes:** infinite-acting radial flow on the straight line; the points given lie on the semilog straight line
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Horner plot of a pressure buildup (5 shut-in times, producing time tp = 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-horner-buildup-fit)
+![Horner plot of a pressure buildup (the worked example: shut-in times [2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-horner-buildup-fit)
 
-*Horner plot of a pressure buildup (5 shut-in times, producing time tp = 1.8e+06 s): pressure against the Horner ratio on a logarithmic axis, with the line the model fits: slope m = 179.7 psi per log cycle, extrapolated pressure p* = 3392 psi, permeability 1.071e-14 m². Your inputs: dt = 2, 4, 8, 16, 24, pws = 2960, 3015, 3069, 3122, 3150, t_unit = h, p_unit = psi, tp = 1800000 s, q = 0.0005520392185 m^3/s, mu = 0.0008 Pa*s, h = 6.096 m.*
+*Horner plot of a pressure buildup (the worked example: shut-in times [2.0, 4.0, 8.0, 16.0, 24.0] h, pressures [2960.0, 3015.0, 3069.0, 3122.0, 3150.0] psi after producing for tp = 500 h): pressure against the Horner ratio (derived) on a logarithmic axis, with the line the package fits, slope m = 1.23929e+06 Pa per cycle (179.743 psi), permeability k = 1.0711e-14 m². Marked: the extrapolated pressure p* = 2.3388e+07 Pa (3392.15 psi) at a ratio of 1.*
 
-![Permeability as q runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-horner-buildup-live-1)
+![k (permeability) against h (net pay thickness) from 3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-horner-buildup-curve)
 
-*Permeability as q runs from 0.0003312 to 0.0007729 m^3/s, every other input as you entered it (41 solutions). Marked: your q = 0.000552 m^3/s gives k = 1.071e-14. Your inputs: dt = 2, 4, 8, 16, 24, pws = 2960, 3015, 3069, 3122, 3150, t_unit = h, p_unit = psi, tp = 1800000 s, q = 0.0005520392185 m^3/s, mu = 0.0008 Pa*s, h = 6.096 m.*
-
-![Permeability as μ runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-horner-buildup-live-2)
-
-*Permeability as μ runs from 0.00048 to 0.00112 Pa*s, every other input as you entered it (29 solutions). Marked: your μ = 0.0008 Pa*s gives k = 1.071e-14. Your inputs: dt = 2, 4, 8, 16, 24, pws = 2960, 3015, 3069, 3122, 3150, t_unit = h, p_unit = psi, tp = 1800000 s, q = 0.0005520392185 m^3/s, mu = 0.0008 Pa*s, h = 6.096 m.*
+*k (permeability) against h (net pay thickness) from 3.048 m to 9.144 m. One curve for each value of q (flow rate before shut-in at reservoir conditions): 0.000552039 m^3/s, 0.00027602 m^3/s, 0.00110408 m^3/s. Other inputs as in the worked example: dt = [2.0, 4.0, 8.0, 16.0, 24.0], pws = [2960.0, 3015.0, 3069.0, 3122.0, 3150.0], t_unit = h, p_unit = psi, tp = 1800000.0 s, mu = 0.0008 Pa*s. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, h = 6.096 m, k = 1.0711e-14 m^2.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_horner_buildup', dt=[2.0, 4.0, 8.0, 16.0, 24.0], pws=[2960.0, 3015.0, 3069.0, 3122.0, 3150.0], t_unit='h', p_unit='psi', tp=1800000.0, q=0.0005520392185, mu=0.0008, h=6.096)
@@ -4878,13 +4538,9 @@ $$
 - **Assumes:** infinite-acting, homogeneous, slightly compressible fluid; constant rate from $t = 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Pressure at r and t as pi runs from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-line-source-drawdown-live-1)
+![dp (pressure drop at r and t) against h (net pay thickness) from 5 m to 15 m](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-line-source-drawdown-curve)
 
-*Pressure at r and t as pi runs from 1.8e+07 to 4.2e+07 Pa, every other input as you entered it (41 solutions). Marked: your pi = 3e+07 Pa gives p = 28.97 MPa. Your inputs: q = 0.001 m^3/s, mu = 0.001 Pa*s, k = 1e-13 m^2, h = 10.0 m, phi = 0.2, ct = 1e-09 1/Pa, r = 0.1 m, t = 3600.0 s.*
-
-![Pressure drop at r and t and pressure at r and t as h runs from 6 to 14 m, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-line-source-drawdown-live-2)
-
-*Pressure drop at r and t and pressure at r and t as h runs from 6 to 14 m, every other input as you entered it (29 solutions). Marked: your h = 10 m gives dp = 1.027 MPa. Your inputs: q = 0.001 m^3/s, mu = 0.001 Pa*s, k = 1e-13 m^2, h = 10.0 m, phi = 0.2, ct = 1e-09 1/Pa, r = 0.1 m, t = 3600.0 s.*
+*dp (pressure drop at r and t) against h (net pay thickness) from 5 m to 15 m. One curve for each value of q (flow rate at reservoir conditions): 0.001 m^3/s, 0.0005 m^3/s, 0.002 m^3/s. Other inputs as in the worked example: mu = 0.001 Pa*s, k = 1e-13 m^2, phi = 0.2, ct = 1e-09 1/Pa, r = 0.1 m, t = 3600.0 s, pi = 30000000.0 Pa. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, h = 10 m, dp = 1.02733e+06 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_line_source_drawdown', q=0.001, mu=0.001, k=1e-13, h=10.0, phi=0.2, ct=1e-09, r=0.1, t=3600.0, pi=30000000.0)
@@ -4934,13 +4590,9 @@ $$
 - **Assumes:** stabilised flow at every rate; $0.3 < n < 1.5$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The test data pwf against q as given (4 points)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-gas-well-backpressure-xy)
+![The data pwf (flowing bottom-hole pressures at those rates, in p_unit) against q (test gas rates, in q_unit) as given in the worked example (4 points)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-gas-well-backpressure-xy)
 
-*The test data pwf against q as given (4 points). Returned from them: deliverability exponent n = 0.7278, log10 C = -8.066, absolute open flow AOF = 20.97 m³/s. Your inputs: q = 4288, 9265, 15552, 20177, pwf = 403.1, 394, 378.5, 362.6, q_unit = Mscf_per_day, p_unit = psi, pr = 2814439.927071325 Pa.*
-
-![Absolute open flow (rate at pwf = 0) as pr runs from 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-gas-well-backpressure-live-1)
-
-*Absolute open flow (rate at pwf = 0) as pr runs from 2.785e+06 to 2.92e+06 Pa, every other input as you entered it (23 solutions). Marked: your pr = 2.814e+06 Pa gives AOF = 20.97. Your inputs: q = 4288, 9265, 15552, 20177, pwf = 403.1, 394, 378.5, 362.6, q_unit = Mscf_per_day, p_unit = psi, pr = 2814439.927071325 Pa.*
+*The data pwf (flowing bottom-hole pressures at those rates, in p_unit) against q (test gas rates, in q_unit) as given in the worked example (4 points). Also returned: n = 0.727757, log10_C = -8.06553, AOF = 20.9729 m^3/s. Other inputs: q_unit = Mscf_per_day, p_unit = psi, pr = 2814439.927071325 Pa.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_gas_well_backpressure', q=[4288.0, 9265.0, 15552.0, 20177.0], pwf=[403.1, 394.0, 378.5, 362.6], q_unit='Mscf_per_day', p_unit='psi', pr=2814439.927071325)
@@ -4986,13 +4638,9 @@ $$
 - **Assumes:** binary, constant alpha; $0 < xB < xD < 1$; total reflux, total condenser
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Minimum number of equilibrium stages](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fenske-minimum-stages-live-1)
+![Nmin (minimum number of equilibrium stages (partial reboiler included)) against alpha (relative volatility of the light component (constant)) from 1](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fenske-minimum-stages-curve)
 
-*Minimum number of equilibrium stages... as α runs from 1.094 to 4.375, every other input as you entered it (36 solutions). Marked: your α = 2.5 gives Nmin = 6.427. Your inputs: alpha = 2.5, xD = 0.95, xB = 0.05.*
-
-![Minimum number of equilibrium stages](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-fenske-minimum-stages-live-2)
-
-*Minimum number of equilibrium stages... as xD runs from 0.2375 to 0.9728, every other input as you entered it (29 solutions). Marked: your xD = 0.95 gives Nmin = 6.427. Your inputs: alpha = 2.5, xD = 0.95, xB = 0.05.*
+*Nmin (minimum number of equilibrium stages (partial reboiler included)) against alpha (relative volatility of the light component (constant)) from 1.25 to 3.75. One curve for each value of xD (mole fraction of the light component in the distillate): 0.95, 0.26, 0.74. Other inputs as in the worked example: xB = 0.05. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, alpha = 2.5, Nmin = 6.42687.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_fenske_minimum_stages', alpha=2.5, xD=0.95, xB=0.05)
@@ -5046,13 +4694,9 @@ $$
 - **Assumes:** absolute pressures; incompressible liquid; $H > 0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Total head as p2 runs from 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pump-head-live-1)
+![H (total head) against rho (liquid density) from 500 kg/m^3 to 1500 kg/m^3](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pump-head-curve)
 
-*Total head as p2 runs from 2.4e+05 to 5.6e+05 Pa, every other input as you entered it (41 solutions). Marked: your p2 = 4e+05 Pa gives H = 30.59. Your inputs: p1 = 100000.0 Pa, p2 = 400000.0 Pa, rho = 1000.0 kg/m^3.*
-
-![Total head as ρ runs from 600 to 1400 kg/m^3, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-pump-head-live-2)
-
-*Total head as ρ runs from 600 to 1400 kg/m^3, every other input as you entered it (29 solutions). Marked: your ρ = 1000 kg/m^3 gives H = 30.59. Your inputs: p1 = 100000.0 Pa, p2 = 400000.0 Pa, rho = 1000.0 kg/m^3.*
+*H (total head) against rho (liquid density) from 500 kg/m^3 to 1500 kg/m^3. One curve for each value of p2 (discharge pressure (absolute)): 400000 Pa, 200000 Pa, 800000 Pa. Other inputs as in the worked example: p1 = 100000.0 Pa. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, rho = 1000 kg/m^3, H = 30.5915 m.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_pump_head', p1=100000.0, p2=400000.0, rho=1000.0)
@@ -5104,17 +4748,13 @@ $$
 - **Assumes:** absolute pressures; $h_f  \geq  0$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Net positive suction head available built up as a waterfall: pressure head 10](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-npsh-available-diagram)
+![Net positive suction head available, built up as a waterfall (the worked example: suction-surface pressure 101325 Pa, vapour pressure 2339 Pa, density 998 kg/m³, liquid surface 2 m above the pump, suction friction loss 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-npsh-available-diagram)
 
-*Net positive suction head available built up as a waterfall: pressure head 10.35 m, static head 2 m, friction loss 0.5 m, vapour-pressure head 0.239 m (the model's heads; the inputs for the static and friction terms). Marked: NPSHa = 11.61 m. Your inputs: p_s = 101325.0 Pa, p_v = 2339.0 Pa, rho = 998.0 kg/m^3, z_s = 2.0 m, h_f = 0.5 m.*
+*Net positive suction head available, built up as a waterfall (the worked example: suction-surface pressure 101325 Pa, vapour pressure 2339 Pa, density 998 kg/m³, liquid surface 2 m above the pump, suction friction loss 0.5 m). Marked: the package's pressure head 10.353 m, vapour head 0.23899 m and NPSHa = 11.614 m; the static head and friction loss are the stated inputs.*
 
-![NPSH available and p_s/(rho g) as ρ runs from 598](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-npsh-available-live-1)
+![NPSHa (NPSH available) against rho (liquid density) from 99](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-npsh-available-curve)
 
-*NPSH available and p_s/(rho g) as ρ runs from 598.8 to 1397 kg/m^3, every other input as you entered it (41 solutions). Marked: your ρ = 998 kg/m^3 gives NPSHa = 11.61. Your inputs: p_s = 101325.0 Pa, p_v = 2339.0 Pa, rho = 998.0 kg/m^3, z_s = 2.0 m, h_f = 0.5 m.*
-
-![NPSH available and p_s/(rho g) as p_s runs from 6](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-npsh-available-live-2)
-
-*NPSH available and p_s/(rho g) as p_s runs from 6.08e+04 to 1.419e+05 Pa, every other input as you entered it (29 solutions). Marked: your p_s = 1.013e+05 Pa gives NPSHa = 11.61. Your inputs: p_s = 101325.0 Pa, p_v = 2339.0 Pa, rho = 998.0 kg/m^3, z_s = 2.0 m, h_f = 0.5 m.*
+*NPSHa (NPSH available) against rho (liquid density) from 99.8 kg/m^3 to 9980 kg/m^3 on a logarithmic axis. One curve for each value of p_s (absolute pressure on the suction liquid surface): 101325 Pa, 50662.5 Pa, 202650 Pa. Other inputs as in the worked example: p_v = 2339.0 Pa, z_s = 2.0 m, h_f = 0.5 m. 41 points per curve computed by chemical-engineering-ai999x; marked: the worked example, rho = 998 kg/m^3, NPSHa = 11.614 m.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_npsh_available', p_s=101325.0, p_v=2339.0, rho=998.0, z_s=2.0, h_f=0.5)
@@ -5166,17 +4806,9 @@ $$
 - **Assumes:** within each correlation's stated range of Re and Sc; dilute solute
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Mass-transfer coefficient Sh D/L as μ runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mass-transfer-coefficient-live-1)
+![kc (mass-transfer coefficient Sh D/L) against L (characteristic length: sphere or pipe diameter, plate length) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mass-transfer-coefficient-curve)
 
-*Mass-transfer coefficient Sh D/L as μ runs from 0.0006 to 0.0014 Pa*s, every other input as you entered it (41 solutions). Marked: your μ = 0.001 Pa*s gives kc = 0.0001854. Your inputs: geometry = sphere, u = 0.1 m/s, L = 0.001 m, D = 5e-09 m^2/s, rho = 1000 kg/m^3, mu = 0.001 Pa*s.*
-
-![Mass-transfer coefficient Sh D/L for every choice of geometry, every other input as you entered it (highlighted: your choice)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mass-transfer-coefficient-live-2)
-
-*Mass-transfer coefficient Sh D/L for every choice of geometry, every other input as you entered it (highlighted: your choice). sphere: 0.0001854; flat_plate: 0.0001942; pipe: no answer. Your inputs: geometry = sphere, u = 0.1 m/s, L = 0.001 m, D = 5e-09 m^2/s, rho = 1000 kg/m^3, mu = 0.001 Pa*s.*
-
-![Mass-transfer coefficient Sh D/L as u runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-mass-transfer-coefficient-live-3)
-
-*Mass-transfer coefficient Sh D/L as u runs from 0.06 to 0.14 m/s, every other input as you entered it (29 solutions). Marked: your u = 0.1 m/s gives kc = 0.0001854. Your inputs: geometry = sphere, u = 0.1 m/s, L = 0.001 m, D = 5e-09 m^2/s, rho = 1000 kg/m^3, mu = 0.001 Pa*s.*
+*kc (mass-transfer coefficient Sh D/L) against L (characteristic length: sphere or pipe diameter, plate length) from 0.0005 m to 0.0015 m. One curve for each value of D (diffusivity of the solute in the fluid): 5.0000e-09 m^2/s, 2.5000e-09 m^2/s, 1.0000e-08 m^2/s. Other inputs as in the worked example: geometry = sphere, u = 0.1 m/s, rho = 1000.0 kg/m^3, mu = 0.001 Pa*s. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, L = 0.001 m, kc = 0.000185441 m/s.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_mass_transfer_coefficient', geometry='sphere', u=0.1, L=0.001, D=5e-09, rho=1000.0, mu=0.001)
@@ -5226,9 +4858,9 @@ $$
 - **Assumes:** constant relative volatilities and molar overflow; adjacent keys (no component between them in volatility); the distillate composition at minimum reflux is stated
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Minimum reflux ratio L/D as q runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-multicomponent-underwood-live-1)
+![Rmin (minimum reflux ratio L/D) against q (feed quality q (1 saturated liquid, 0 saturated vapour)) from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-multicomponent-underwood-curve)
 
-*Minimum reflux ratio L/D as q runs from 0.25 to 1.75, every other input as you entered it (41 solutions). Marked: your q = 1 gives Rmin = 0.802. Your inputs: alpha = 2.5, 1, 0.5, z = 0.4, 0.3, 0.3, xD = 0.9, 0.1, 0, q = 1, lk = 1, hk = 2.*
+*Rmin (minimum reflux ratio L/D) against q (feed quality q (1 saturated liquid, 0 saturated vapour)) from 0.5 to 1.5. Other inputs as in the worked example: alpha = [2.5, 1.0, 0.5], z = [0.4, 0.3, 0.3], xD = [0.9, 0.1, 0.0], lk = 1, hk = 2. 31 points computed by chemical-engineering-ai999x; marked: the worked example, q = 1, Rmin = 0.802.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_multicomponent_underwood', alpha=[2.5, 1.0, 0.5], z=[0.4, 0.3, 0.3], xD=[0.9, 0.1, 0.0], q=1.0, lk=1, hk=2)
@@ -5276,17 +4908,13 @@ $$
 - **Assumes:** $0  \leq  X < 1$; steady state, perfect mixing, constant density, $-r_A = k$ $C_A^{2}$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![A continuous stirred-tank reactor for a second-order (-rA = k·CA²) reaction: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-second-order-process)
+![A continuous stirred-tank reactor for a second-order (−rA = k·CA²) reaction, the worked example: feed 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-second-order-process)
 
-*A continuous stirred-tank reactor for a second-order (-rA = k·CA²) reaction: feed 0.01 m³/s, k = 1e-05 m³/(mol·s), conversion X = 0.8 wanted. Marked: the model's V = 20 m³ and τ = 2000 s. Your inputs: v0 = 0.01 m^3/s, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
+*A continuous stirred-tank reactor for a second-order (−rA = k·CA²) reaction, the worked example: feed 0.01 m³/s at CA0 = 1000 mol/m³, k = 1.0000e-05 m³/(mol·s), conversion X = 0.8 wanted. Marked: the package's V = 20 m³ and τ = 2000 s.*
 
-![Reactor volume as X runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-second-order-live-1)
+![V (reactor volume) against k (second-order rate constant (-r_A = k C_A^2)) from 5](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-second-order-curve)
 
-*Reactor volume as X runs from 0.2 to 0.98, every other input as you entered it (27 solutions). Marked: your X = 0.8 gives V = 2e+04 L. Your inputs: v0 = 0.01 m^3/s, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
-
-![Reactor volume as v0 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-cstr-volume-second-order-live-2)
-
-*Reactor volume as v0 runs from 0.006 to 0.014 m^3/s, every other input as you entered it (29 solutions). Marked: your v0 = 0.01 m^3/s gives V = 20. Your inputs: v0 = 0.01 m^3/s, k = 1e-05 m^3/(mol*s), CA0 = 1000.0 mol/m^3, X = 0.8.*
+*V (reactor volume) against k (second-order rate constant (-r_A = k C_A^2)) from 5.0000e-06 m^3/(mol*s) to 1.5000e-05 m^3/(mol*s). One curve for each value of X (conversion of A wanted): 0.8, 0.26, 0.74. Other inputs as in the worked example: v0 = 0.01 m^3/s, CA0 = 1000.0 mol/m^3. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, k = 1.0000e-05 m^3/(mol*s), V = 20 m^3.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_cstr_volume_second_order', v0=0.01, k=1e-05, CA0=1000.0, X=0.8)
@@ -5336,17 +4964,13 @@ $$
 - **Assumes:** steady state, ideal gas, constant D; equimolar counterdiffusion $(N_B = -N_A)$; $yA1 > yA2$
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Gas-phase diffusion (equimolar counter-diffusion) across a film of thickness L = 100 mm (mole fraction of A 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equimolar-counterdiffusion-profile)
+![Gas-phase diffusion across a film of thickness L = 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equimolar-counterdiffusion-profile)
 
-*Gas-phase diffusion (equimolar counter-diffusion) across a film of thickness L = 100 mm (mole fraction of A 0.2 at z = 0 and 0.05 at z = L). Each inner point is the composition at which the model's flux across that depth equals the flux of the whole film, 0.00141 mol/(m²·s) and N_B = -0.00141 mol/(m²·s). Your inputs: D = 2.3e-05 m^2/s, P = 101325.0 Pa, T = 298.15 K, L = 0.1 m, yA1 = 0.2, yA2 = 0.05.*
+*Gas-phase diffusion across a film of thickness L = 0.1 m (D = 2.3e-05 m²/s, P = 101325.0 Pa, T = 298.15 K; mole fraction of A 0.2 at z = 0 and 0.05 at z = L, the worked example). The profile is linear (equimolar counter-diffusion), derived from the end values. Marked: the package's flux N_A = 0.00141015 mol/(m²·s) and N_B = -0.00141015 mol/(m²·s).*
 
-![Molar flux of A and molar flux of B as yA1 runs from 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equimolar-counterdiffusion-live-1)
+![NA (molar flux of A) against T (temperature) from 149](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equimolar-counterdiffusion-curve)
 
-*Molar flux of A and molar flux of B as yA1 runs from 0.0575 to 0.35, every other input as you entered it (40 solutions). Marked: your yA1 = 0.2 gives NA = 0.00141. Your inputs: D = 2.3e-05 m^2/s, P = 101325.0 Pa, T = 298.15 K, L = 0.1 m, yA1 = 0.2, yA2 = 0.05.*
-
-![Molar flux of A and molar flux of B as T runs from 258](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equimolar-counterdiffusion-live-2)
-
-*Molar flux of A and molar flux of B as T runs from 258.1 to 338.1 K, every other input as you entered it (29 solutions). Marked: your T = 298.1 K gives NA = 0.00141. Your inputs: D = 2.3e-05 m^2/s, P = 101325.0 Pa, T = 298.15 K, L = 0.1 m, yA1 = 0.2, yA2 = 0.05.*
+*NA (molar flux of A) against T (temperature) from 149.075 K to 447.225 K. One curve for each value of D (diffusivity of A in B): 2.3000e-05 m^2/s, 1.1500e-05 m^2/s, 4.6000e-05 m^2/s. Other inputs as in the worked example: P = 101325.0 Pa, L = 0.1 m, yA1 = 0.2, yA2 = 0.05. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, T = 298.15 K, NA = 0.00141015 mol/(m^2*s).*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_equimolar_counterdiffusion', D=2.3e-05, P=101325.0, T=298.15, L=0.1, yA1=0.2, yA2=0.05)
@@ -5395,13 +5019,9 @@ $$
 - **Assumes:** low pressure (ideal vapour, Poynting factor 1); activity coefficients stated for this liquid composition and temperature
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![The plane vectors of the request as arrows from the origin: input x = (0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-modified-raoult-bubble-pressure-vectors)
+![The plane vectors of the worked example as arrows from the origin: input x = (0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-modified-raoult-bubble-pressure-vectors)
 
-*The plane vectors of the request as arrows from the origin: input x = (0.4, 0.6), gamma = (1.8, 1.2); returned by the model: y = (0.6471, 0.3529) at P = 61.2 kPa. Marked: the tip of the returned vector. In SI units: P = 6.12e+04 Pa. Your inputs: x = 0.4, 0.6, gamma = 1.8, 1.2, Psat = 55, 30, p_unit = kPa.*
-
-![Every entry of y as computed for your inputs (2 entries: 0](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-modified-raoult-bubble-pressure-live-1)
-
-*Every entry of y as computed for your inputs (2 entries: 0.6471, 0.3529). Your inputs: x = 0.4, 0.6, gamma = 1.8, 1.2, Psat = 55, 30, p_unit = kPa.*
+*The plane vectors of the worked example as arrows from the origin: input x = (0.4, 0.6), gamma = (1.8, 1.2); returned by chemical-engineering-ai999x: y = (0.647059, 0.352941); also returned P = 61200, y1 = 0.647059. Other inputs: p_unit = kPa. Marked: the tip of each returned vector.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_modified_raoult_bubble_pressure', x=[0.4, 0.6], gamma=[1.8, 1.2], Psat=[55.0, 30.0], p_unit='kPa')
@@ -5454,13 +5074,9 @@ $$
 - **Assumes:** $0 < n  \leq  1.5$; capacities within a factor of 10 of each other; both cost indices or neither; similar equipment, same type and materials
 - **Evidence:** certified procedure (gates: conditions, control, examples, fast_enough, questions, reference, sensitivity, templates)
 
-![Estimated cost now as C1 runs from 2](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equipment-cost-scaling-live-1)
+![C2 (estimated cost now) against I1 (cost index at the date of the known cost (optional, with I2)) from 250 to 750](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equipment-cost-scaling-curve)
 
-*Estimated cost now as C1 runs from 2.5e+04 to 1.75e+05, every other input as you entered it (41 solutions). Marked: your C1 = 1e+05 gives C2 = 2.425e+05. Your inputs: C1 = 100000.0, S1 = 10.0, S2 = 20.0, n = 0.6, I1 = 500.0, I2 = 800.0.*
-
-![Estimated cost now as I2 runs from 200 to 1400, every other input as you entered it (29 solutions)](https://www.ai999x.com/?ax_fig=chemical-engineering-ai999x/chemeng-equipment-cost-scaling-live-2)
-
-*Estimated cost now as I2 runs from 200 to 1400, every other input as you entered it (29 solutions). Marked: your I2 = 800 gives C2 = 2.425e+05. Your inputs: C1 = 100000.0, S1 = 10.0, S2 = 20.0, n = 0.6, I1 = 500.0, I2 = 800.0.*
+*C2 (estimated cost now) against I1 (cost index at the date of the known cost (optional, with I2)) from 250 to 750. One curve for each value of C1 (known cost of the existing unit (any currency)): 100000, 50000, 200000. Other inputs as in the worked example: S1 = 10.0, S2 = 20.0, n = 0.6, I2 = 800.0. 31 points per curve computed by chemical-engineering-ai999x; marked: the worked example, I1 = 500, C2 = 242515.*
 
 ```python
 chemical_engineering_ai999x.solve('chemeng_equipment_cost_scaling', C1=100000.0, S1=10.0, S2=20.0, n=0.6, I1=500.0, I2=800.0)
