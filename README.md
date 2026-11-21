@@ -10,8 +10,8 @@ Chemical Engineering covers material and energy balances, reactor design, separa
 
 | | |
 |---|---|
-| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-chemical-engineering-1.6.5-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.5/ai999x-chemical-engineering-1.6.5-linux-x86_64.tar.gz) |
-| **Command line** `chemical-engineering` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.4/ai999x-cli-1.6.4-linux-x86_64.tar.gz) |
+| **Desktop app** (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-chemical-engineering-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-chemical-engineering-1.6.6-linux-x86_64.tar.gz) |
+| **Command line** `chemical-engineering` (Windows, Linux) | [Windows](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-windows-x86_64.zip) · [Linux](https://github.com/AI999X/ai999x-desktop/releases/download/v1.6.6/ai999x-cli-1.6.6-linux-x86_64.tar.gz) |
 | **Browser** (any device) | [Try it on the model page](https://www.ai999x.com/models/chemical-engineering-ai999x/#capabilities) |
 | **Python** 3.10+ | `pip install chemical-engineering-ai999x`: on Windows and Linux (x86-64) `pip` installs the same compiled engine; on other systems (macOS, ARM) it installs a pure-Python build that gives the same answers |
 
@@ -226,105 +226,6 @@ log10_C = -8.065527458
 AOF = 20.97290776 m^3/s
 ```
 
-## Rust library: 15 examples
-
-The crate `chemical-engineering-ai999x` (in `rust/` of the GitHub repository) answers a JSON request with `chemical_engineering_ai999x::solve_json`. Each call below was compiled and run on this release; the comment under it is what it printed. The whole program is `rust/chemical-engineering/examples/readme.rs`: `cd rust && cargo run --release --example readme -p chemical-engineering-ai999x`.
-
-```rust
-use serde_json::{json, Value};
-
-fn show(request: Value) {
-    let answer: Value = serde_json::from_str(&chemical_engineering_ai999x::solve_json(&request.to_string())).unwrap();
-    println!("{}", answer["outcome"].as_str().unwrap_or(""));
-    for v in answer["values"].as_array().into_iter().flatten() {
-        let unit = v[2].as_str().unwrap_or("");
-        let unit = if unit.is_empty() || unit == "1" { String::new() } else { format!(" {unit}") };
-        println!("{} = {}{}", v[0].as_str().unwrap_or(""), v[1], unit);
-    }
-}
-
-show(json!({"key": "chemeng_adiabatic_flame_temperature", "inputs": {"fuel": "CH4", "excess_air": "0", "T_in": "300 K"}}));
-// SOLVED
-// T_ad = 2326.32176453 K
-
-show(json!({"key": "chemeng_npsh_available", "inputs": {"p_s": "101325 Pa", "p_v": "2339 Pa", "rho": "998 kg/m^3", "z_s": "2 m", "h_f": "0.5 m"}}));
-// SOLVED
-// NPSHa = 11.6139908876 m
-// pressure_head = 10.352980489 m
-// vapour_head = 0.238989601418 m
-
-show(json!({"key": "chemeng_blending_flows", "inputs": {"W": [[0.9, 0.1], [0.2, 0.8]], "p": [0.5, 0.5], "P": "100 kg/s"}}));
-// SOLVED
-// F1 = 42.8571428571 kg/s
-// F = [42.8571428571,57.1428571429]
-
-show(json!({"key": "chemeng_exponential_decline", "inputs": {"qi": "0.001840130728 m^3/s", "Di": "9.506426344e-09 1/s", "t": "63115200 s"}}));
-// SOLVED
-// q = 0.00100988515547 m^3/s
-// Np = 87335.1922671 m^3
-
-show(json!({"key": "chemeng_closed_loop_stability", "inputs": {"num": [1], "den": [1, 3, 3, 1], "Kc": "10"}}));
-// SOLVED
-// max_real = 0.0772173450159
-// n_rhp = 2
-// stable = "unstable"
-
-show(json!({"key": "chemeng_equipment_cost_scaling", "inputs": {"C1": "100000", "S1": "10", "S2": "20", "n": "0.6", "I1": "500", "I2": "800"}}));
-// SOLVED
-// capacity_ratio = 2.0
-// scale_factor = 1.51571656651
-// C_scaled = 151571.656651
-// index_ratio = 1.6
-// C2 = 242514.650642
-
-show(json!({"key": "chemeng_virial_compressibility", "inputs": {"T": "510 K", "P": "2500000 Pa", "Tc": "425.1 K", "Pc": "3796000 Pa", "omega": "0.2"}}));
-// SOLVED
-// B = -0.000205361258975 m^3/mol
-// Z = 0.878925087003
-
-show(json!({"key": "chemeng_batch_conversion_first_order", "inputs": {"k": "0.001 1/s", "t": "1000 s"}}));
-// SOLVED
-// X = 0.632120558829
-
-show(json!({"key": "chemeng_gas_pz_material_balance", "inputs": {"p": [3200, 2925, 2525, 2125], "z": [0.85, 0.84, 0.83, 0.82], "Gp": [0, 15, 35, 55], "p_unit": "psi", "gp_unit": "Bscf"}}));
-// SOLVED
-// G = 4993507776.93 m^3
-// pz_initial = 26084853.1419 Pa
-
-show(json!({"key": "chemeng_kremser_absorber", "inputs": {"N": "5", "A": "1.4", "m": "2", "y_in": "0.05", "x_in": "0"}}));
-// SOLVED
-// y_out = 0.00306300478319
-// recovery = 0.938739904336
-
-show(json!({"key": "chemeng_cake_filtration_volume", "inputs": {"A": "1 m^2", "dP": "100000 Pa", "mu": "0.001 Pa*s", "alpha": "1e+11 m/kg", "c": "20 kg/m^3", "Rm": "1e+10 1/m", "t": "600 s"}}));
-// SOLVED
-// V = 0.24 m^3
-
-show(json!({"key": "chemeng_adiabatic_reactor_temperature", "inputs": {"n0": [1, 2, 0], "nu": [-1, -1, 1], "cp": [[30, 0.01], [29, 0.004], [45, 0.02]], "dH": "-60000 J/mol", "T_ref": "298.15 K", "T_in": "400 K", "key": "1", "X": "0.8"}}));
-// SOLVED
-// T_out = 932.348285267 K
-
-show(json!({"key": "chemeng_pump_head", "inputs": {"p1": "100000 Pa", "p2": "400000 Pa", "rho": "1000 kg/m^3"}}));
-// SOLVED
-// H = 30.5914863893 m
-// dp_equivalent = 300000.0 Pa
-
-show(json!({"key": "chemeng_combustion_flue_gas", "inputs": {"fuel": "CH4", "excess_air": "0.2"}}));
-// SOLVED
-// O2_theoretical = 2.0
-// air = 11.4285714286
-// n_CO2 = 1.0
-// n_H2O = 2.0
-// n_SO2 = 0.0
-// n_O2 = 0.4
-
-show(json!({"key": "chemeng_gas_well_backpressure", "inputs": {"q": [4288, 9265, 15552, 20177], "pwf": [403.1, 394, 378.5, 362.6], "q_unit": "Mscf_per_day", "p_unit": "psi", "pr": "2814439.927 Pa"}}));
-// SOLVED
-// n = 0.727757448269
-// log10_C = -8.0655274584
-// AOF = 20.9729077625 m^3/s
-```
-
 ## Guides
 
 - Desktop app guide: the window, every calculation, scenes and charts: [PDF](https://huggingface.co/AI999X/chemical-engineering-ai999x/blob/main/docs/chemical_engineering_ai999x_desktop_guide.pdf) · [HTML](https://huggingface.co/AI999X/chemical-engineering-ai999x/blob/main/docs/chemical_engineering_ai999x_desktop_guide.html) · [Markdown](https://huggingface.co/AI999X/chemical-engineering-ai999x/blob/main/docs/chemical_engineering_ai999x_desktop_guide.md)
@@ -333,7 +234,7 @@ show(json!({"key": "chemeng_gas_well_backpressure", "inputs": {"q": [4288, 9265,
 
 Every calculation, with its formula, a worked example and its figures: **[Chemical Engineering on ai999x.com](https://www.ai999x.com/models/chemical-engineering-ai999x/)**. Install guides for the app and the command line: [https://www.ai999x.com/desktop-cli/](https://www.ai999x.com/desktop-cli/).
 
-Version 1.6.4 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
+Version 1.6.6 · License: Apache-2.0 · Author: Ibnul Jaif Farabi · Organization: AI999X · Contact: support@ai999x.com · [Support the project](https://buymeacoffee.com/ibnuljaiffarabi)
 
 *The Future Is Self-Improving.*
 
